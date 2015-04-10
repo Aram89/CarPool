@@ -1,0 +1,289 @@
+ *{
+	margin:0;
+	border:0;
+	padding:0;
+	}
+
+ body{
+	background-color:#fff;
+	margin:0;
+	display:block;
+	font-family:'DroidSans';
+	font-size:20px;
+	margin-bottom:0px;
+	}
+	
+@font-face {
+    font-family:'DroidSans';
+    src: url('../fonts/DroidSans.ttf');
+	}
+/*header*/
+header {
+	width: 100%;
+	height: 50px;
+	position:absolute;
+	top: 0px;
+	left: 50%;
+	margin-left:-50%;
+	z-index: 999999999;
+	background:#ccc;
+	}
+/*Navigation*/ 
+nav  {
+	float:left; 
+	padding-left:40px;
+	margin-top:1%;
+	}
+#menu-icon{
+	display:hidden;
+	background: url("../images/slide/rsz_blk-menu-icon.png") left ;
+	border-radius: 5px ;
+	width:30px;
+	height:30px;
+	}
+
+a:hover#menu-icon{
+	border-radius: 5px ;
+	text-decoration:none;
+	}
+ul{
+	list-style:none;
+	}
+nav ul li{
+	display:inline-block;
+	padding-left:20px;
+	}
+nav ul li a,visited{
+	color:#333;
+	display:block;
+	text-decoration:none;
+	letter-spacing: 2px;
+	font-weight:900;
+	}
+nav ul li a:hover{
+	color:#fff;
+	text-decoration:none;
+	letter-spacing: 2px;
+	font-weight:900;
+	}	
+/*Awesome fonts*/
+#awesome{
+	float:right;
+	padding-right:40px;
+	margin-top:1%;
+	}
+.font{
+	color:#333;
+	padding-left:20px;
+	}
+.font:hover{
+	color:#fff;
+	padding-left:20px;
+	}
+/*Weather*/
+.weather-block{
+	height: 40px;
+	display: inline-block;
+	position: absolute;
+	left: 83%;
+	margin-top: -6px !important;
+	}
+#weather{
+	display:inline-block;
+	}
+i {
+  font-family: weather;
+	}
+#weather h2 {
+  font-size: 18px;
+	}	
+#weather li {
+  display: inline-block;
+  font-size:16px;
+  margin-top:0%;
+}
+/*Slide-show*/
+#doc{
+	margin: 0% auto;
+	cursor:all-scroll;
+	}	
+#content{
+	margin: 0 auto;
+	max-width:100%;
+	position:relative;
+	}
+.rslides {
+	  position: relative;
+	  list-style: none;
+	  overflow: hidden;
+	  width: 100%;
+	  padding: 0;
+	  margin: 0;
+	  }
+
+.rslides li {
+	  -webkit-backface-visibility: hidden;
+	  position: absolute;
+	  display: none;
+	  width: 100%;
+	  left: 0;
+	  top: 0;
+	  }
+
+.rslides li:first-child {
+	  position: relative;
+	  display: block;
+	  float: left;
+	  }
+
+.rslides img {
+	  display: block;
+	  height: auto;
+	  float: left;
+	  width: 100%;
+	  border: 0;
+	  }
+	  
+.slider-text {
+	position: absolute;
+	 width: 480px;
+	top: 43%;
+	right: 5%;
+	padding-left: 29px;
+	padding-right: 90px;
+	color: #fff;
+	background-color:#333;
+	/* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  /* IE 5-7 */
+  filter: alpha(opacity=70);
+  /* Netscape */
+  -moz-opacity: 0.7;
+  /* Safari 1.x */
+  -khtml-opacity: 0.7;
+  /* Good browsers */
+  opacity:0.7;
+	}
+.centered-btns_nav {
+	 z-index: 3;
+	  position: absolute;
+	  -webkit-tap-highlight-color: rgba(0,0,0,0);
+	  top: 50%;
+	  left: 0;
+	  opacity: 0.7;
+	  text-indent: -9999px;
+	  overflow: hidden;
+	  text-decoration: none;
+	  height: 61px;
+	  width: 38px;
+	  background: transparent url("../images/slide/themes.gif") no-repeat left top;
+	  margin-top: -45px;
+	}
+	
+.centered-btns_nav:hover {
+	 opacity: 1.0;
+	}
+	
+.rslides1-nav .prev{
+	left: auto;
+	right: 0;
+	 }
+	 
+.centered-btns_nav.next {
+	  left: auto;
+	  background-position: right top;
+	  right: 0;
+	 }
+/*Pagination*/
+.container{
+	width:100%;
+	max-width:250px;
+	margin:auto;
+	}
+/*Responsive*/
+/*For Ipad*/
+@media screen and (max-width: 480px){
+	body{
+		position:absolute;
+		}
+	}
+	
+@media screen and (max-width: 740px){
+	header{
+		position:absolute;
+		}
+/*Awesome fonts*/
+	#awesome{
+		margin-left:-7%;
+	}
+/*Navigation*/
+	#menu-icon{
+		display:inline-block;
+		margin-top:0%;
+		}	
+	nav ul, nav:active ul{
+		display:none;
+		position:absolute;
+		padding:10px;
+		background:#ccc;
+		border:1px solid #333;
+		left:0px;
+		top:40px;
+		width:25%;
+		border:2px solid #333;
+		border-radius:5px;
+		}
+	nav li{
+		width:100%;
+		padding:10px 0;
+		}
+	nav:hover ul {
+		display:block;
+		}
+	/*Weather*/
+	.weather-block{
+		left: 67%;
+		margin-top: -10px !important;
+		}
+/*Slider*/
+	.slider-text {
+		position: absolute;
+		top: 60%;
+		right: 6.5%;
+		padding-left: 29px;
+		padding-right: 90px;
+		color: #fff;
+		background-color:#333;
+		/* IE 8 */
+	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	  /* IE 5-7 */
+	  filter: alpha(opacity=70);
+	  /* Netscape */
+	  -moz-opacity: 0.7;
+	  /* Safari 1.x */
+	  -khtml-opacity: 0.7;
+	  /* Good browsers */
+	  opacity:0.7;
+	  width: 200px;
+		}
+	.caption{
+		font-size: 16px;
+		/* line-height: 51px; */
+		display: inline-block;
+		border-bottom: 2px solid #fff;
+		}
+	.intro{
+		font-size:12px;
+		margin:1%;
+		}
+	
+}
+	
+
+
+
+
+
+
+
+
