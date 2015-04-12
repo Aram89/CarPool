@@ -7,6 +7,5 @@ public class TestDAO {
     private void foo() {
 
 
-
     }
 }
