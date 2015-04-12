@@ -68,29 +68,6 @@
     <br clear="all" />
 </div>
 
-<section>
-    <article>
-        <div class="container">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </article>
-    <br clear="all" />
-</section>
 
 <!--Add slideshow  JS&CSS files -->
 <script src="/resources/js/responsiveslides.min.js"></script>
