@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Test1</title>
 </head>
 <body>
-<h2>Welcome To Carpool Project</h2>
+<h2 style="color:#f9ff64;">Welcome To Carpool Project</h2>
 </body>
 </html>
