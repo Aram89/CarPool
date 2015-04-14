@@ -27,8 +27,20 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+    <bean id="sqlMap"
+          class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+        <property name="configLocation">
+            <value>WEB-INF/SqlMapConfig.xml</value>
+        </property>
+        <!--<property name="dataSource" ref="dataSource" />-->
+    </bean>
+
+    <bean id="userDAO"
+          class="org.proffart.carpool.dao.UserDAOImpl">
+        <property name="sqlMapClient" ref="sqlMap" />
+    </bean>
+
+    <mvc:resources mapping="/resources/**" location="/resources/" />
 	
 	<mvc:annotation-driven />
  
