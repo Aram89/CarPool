@@ -32,25 +32,24 @@
     <nav>
         <a id="menu-icon" href=""></a>
         <ul>
-            <li><a href="#home"> CarPool </a></li>
-            <li><a href="#home"> Home </a></li>
-            <li><a href="#about"> join </a></li>
-            <li><a href="#gallery"> About </a></li>
-            <li><a href="#contact"> Find </a></li>
+            <li> <a href="#home"> CarPool </a> </li>
+            <li> <a href="#home"> Home </a> </li>
+            <li> <a href="#about"> join </a> </li>
+            <li> <a href="#gallery"> About  </a></li>
+            <li> <a href="#contact"> Find </a></li>
         </ul>
     </nav>
     <div id="awesome">
         <a href="https://www.facebook.com"><i class="fa font fa-facebook"></i></a>
-        <a href="https://twitter.com"><i class="fa font fa-twitter"></i></a>
+        <a href="https://twitter.com"><i  class="fa font fa-twitter"></i></a>
         <a href="https://instagram.com"><i class="fa font fa-google-plus"></i></a>
     </div>
     <!--Weather-->
     <div class="weather-block">
         <i class="fa fa-umbrella"></i>
-
         <div id="weather"></div>
     </div>
-    <br clear="all"/>
+    <br clear="all" />
 </header>
 
 <!--Slide-show-->
@@ -66,38 +65,15 @@
             </li>
         </ul>
     </div>
-    <br clear="all"/>
+    <br clear="all" />
 </div>
 
-<section>
-    <article>
-        <div class="container">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </article>
-    <br clear="all"/>
-</section>
 
 <!--Add slideshow  JS&CSS files -->
 <script src="/resources/js/responsiveslides.min.js"></script>
 <!-- Slider -->
 <script>
-    $(function () {
+    $(function() {
         $(".rslides").responsiveSlides({
             nav: true,
             timeout: 5000,
@@ -112,22 +88,22 @@
             location: 'Yerevan, Armenia',
             woeid: '',
             unit: 'c',
-            success: function (weather) {
-                html = '<h2><i class="icon-' + weather.code + '"></i> ' + weather.temp + '&deg;' + weather.units.temp + '</h2>';
+            success: function(weather) {
+                html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
 
                 $("#weather").html(html);
             },
-            error: function (error) {
-                $("#weather").html('<p>' + error + '</p>');
+            error: function(error) {
+                $("#weather").html('<p>'+error+'</p>');
             }
         });
     });
-    window.onload = (function () {
+    window.onload = (function(){
         $(window).scroll(function () {
-            if ($(window).scrollTop() > 200) {
+            if( $(window).scrollTop() > 200 ) {
                 //$('#header').css('display','block');
                 $('#header').fadeIn();
-            } else {
+            }else{
                 $('#header').fadeOut();
                 //$('#header').css('display','none');
             }
