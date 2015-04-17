@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>
+         (Registration)
+      </title>
+	  <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css' />
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	  <script src="/resources/js/ng/registration.js"></script>
+   </head>
+   <body>
+	<header>
+		<hgroup>
+
+		</hgroup>
+	</header>
+	<nav>
+		<menu>
+
+		</menu>
+	</nav>
+  
+	<div class="container" ng-app="registration">
+        <div class="row text-center pad-top ">
+            <div class="col-md-12">
+                <h2>Registration Page</h2>
+            </div>
+        </div>
+		<div class="row pad-top">
+
+			<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong> Register Yourself </strong>  
+					</div>
+					<div class="panel-body">
+						<form name="regForm" role="form" ng-controller="registrationController" novalidate>
+							<br/>
+							<div class="form-group input-group" ng-class="{ 'has-error' : regForm.name.$invalid && !regForm.name.$pristine }">
+								<span class="input-group-addon"><i class="fa fa-user"  ></i></span>
+								<input type="text" class="form-control" placeholder="Your Name" name="name" ng-model="user.name" required/>
+							</div>
+							
+							<div class="form-group input-group" ng-class="{ 'has-error' : regForm.email.$invalid && !regForm.email.$pristine }">
+								<span class="input-group-addon"><i class="fa fa-at"  ></i></span>
+								<input type="email" class="form-control" placeholder="Your Email" name="email" ng-model="user.email" required/>
+							</div>
+							
+							<div class="form-group input-group" ng-class="{ 'has-error' : regForm.passwd.$invalid && !regForm.passwd.$pristine }">
+								<span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+								<input type="password" class="form-control" placeholder="Enter Password" name="passwd" ng-model="user.passwd" required/>
+							</div>
+							
+							<div class="form-group input-group" ng-class="{ 'has-error' : regForm.passwdagan.$invalid && !regForm.passwdagan.$pristine }">
+								<span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+								<input type="password" class="form-control" placeholder="Retype Password" name="passwdagan" ng-model="user.passwdagan" required/>
+							</div>
+							 
+							<a href="#" class="btn btn-success">Register Me</a>
+							<hr />
+							<!-- Already Registered ?  <a href="#" >Login here</a> -->
+						</form>
+					</div>
+				   
+				</div>
+			</div>
+
+        </div>
+    </div>
+  
+	<footer>
+	</footer>
+   </body>
+</html>
