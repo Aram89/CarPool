@@ -4,7 +4,6 @@
 <sqlMap namespace="user">
     <typeAlias alias="user" type="org.proffart.carpool.domain.User" />
 
-
     <resultMap id="result" class="user">
         <result property="id" column="id"/>
         <result property="userName" column="user_name"/>
@@ -22,9 +21,9 @@
         <result property="goID" column="go_id"/>
     </resultMap>
 
-    <insert id="insert" parameterClass="map">
-        INSERT INTO user(id)
-        values (#id#)
+    <insert id="insert" parameterClass="user">
+        INSERT INTO user(id,password,email,phone,token,enabled,fb_link,tw_link,go_link,user_name,first_name,last_name)
+        values (#id#,MD5(#password#),#email#,#phone#,#token#,#enabled#,#fbLink#,#twLink#,#goLink#,#userName#,#firstName#,#lastName#)
 
         <selectKey resultClass="int" keyProperty="id">
             select last_insert_id() as id

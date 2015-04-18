@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.io.Reader;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,20 +21,7 @@ import java.util.Map;
 
 public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
     @Override
-    public void insert(User user) {
-        try{
-            Map<String, Object> params = new HashMap<String, Object>();
-            params.put("id",205);
-            params.put("userName", user.getUserName());
-            params.put("password", user.getPassword());
-            Integer id = (Integer)getSqlMapClient().insert("user.insert", params);
-            System.out.println(id);
-
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            //TODO
-        }
-
+    public void insert(User user) throws SQLException {
+        Integer id = (Integer) getSqlMapClient().insert("user.insert", user);
     }
 }

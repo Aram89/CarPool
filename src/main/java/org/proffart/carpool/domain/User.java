@@ -1,8 +1,15 @@
 package org.proffart.carpool.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Created by Aram on 4/11/2015.
  */
+
+@XmlRootElement
 public class User {
 
     private int id;
@@ -21,9 +28,11 @@ public class User {
     private long twID;
     private long goID;
 
+
     public int getId() {
         return id;
     }
+
 
     public void setId(int id) {
         this.id = id;
@@ -36,6 +45,7 @@ public class User {
     public void setToken(String token) {
         this.token = token;
     }
+
 
     public String getUserName() {
         return userName;
@@ -76,7 +86,7 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
+;
     public String getPassword() {
         return password;
     }
