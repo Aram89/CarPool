@@ -7,7 +7,9 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.proffart.carpool.dao.UserDAO;
 import org.proffart.carpool.domain.User;
 import org.proffart.carpool.service.UserService;
+import org.proffart.carpool.utils.ErrorStings;
 import org.proffart.carpool.utils.RequestMappings;
+import org.proffart.carpool.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -31,18 +33,44 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @RequestMapping(value =  RequestMappings.login, method = RequestMethod.POST)
+    public ResponseEntity login (@RequestBody User user) {
+       try{
+           String userName = user.getUserName();
+           String password = user.getPassword();
+           if (!userService.userExists(userName)) {
+               return ResultUtil.sendError(ErrorStings.WRONG_USER_NAME);
+           }
+           if (!userService.checkCredentials(userName,password)) {
+               return ResultUtil.sendError(ErrorStings.WRONG_PASSWORD);
+           }
+           return new ResponseEntity(HttpStatus.OK);
+       }
+       catch (Exception e) {
+           return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+       }
+
+    }
+
+    @RequestMapping(value = RequestMappings.checkUserName, method = RequestMethod.POST)
+    public ResponseEntity checkUserName(@RequestBody User user) {
+        try {
+            String userName = user.getUserName();
+            if (userService.userExists(userName)) {
+                return ResultUtil.sendError(ErrorStings.USER_NAME_EXISTS);
+            }
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @RequestMapping(value = RequestMappings.create, method = RequestMethod.POST)
     public ResponseEntity create(@RequestBody User user) throws IOException {
-        try{
+        try {
             userService.create(user);
-            User response = new User();
-            ObjectMapper mapper = new ObjectMapper();
-            String json = mapper.writeValueAsString(response);
-            HttpHeaders headers = new HttpHeaders();
-            headers.set("token", response.getToken());
-            return new ResponseEntity(json,headers,HttpStatus.OK);
-        }
-        catch (Exception e) {
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }

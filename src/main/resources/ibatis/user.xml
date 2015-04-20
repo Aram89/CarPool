@@ -20,6 +20,8 @@
         <result property="twID" column="tw_id"/>
         <result property="goID" column="go_id"/>
     </resultMap>
+    
+
 
     <insert id="insert" parameterClass="user">
         INSERT INTO user(id,password,email,phone,token,enabled,fb_link,tw_link,go_link,user_name,first_name,last_name)
@@ -30,8 +32,14 @@
         </selectKey>
     </insert>
 
-    <select id="getAll" resultClass="user">
-        SELECT * FROM User
+    <select id="checkUserName" resultClass="int" parameterClass="String">
+        SELECT COUNT(*) FROM user
+        where user_name = #userName#
+    </select>
+
+    <select id="checkCredentials" resultClass="int" parameterClass="map">
+        SELECT COUNT(*) FROM user
+        where user_name = #userName# AND password = MD5(#password#)
     </select>
 
     <update id="update" parameterClass="User">

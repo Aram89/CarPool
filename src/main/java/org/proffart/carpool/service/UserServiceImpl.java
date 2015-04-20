@@ -22,4 +22,16 @@ public class UserServiceImpl implements UserService {
     public void create(User user) throws SQLException {
         userDAO.insert(user);
     }
+
+    @Override
+    public Boolean userExists(String userName) throws SQLException {
+        Integer count = userDAO.getCount(userName);
+        return !count.equals(0);
+    }
+
+    @Override
+    public Boolean checkCredentials(String userName, String password) throws SQLException {
+        Integer count = userDAO.checkCredentials(userName,password);
+        return !count.equals(0);
+    }
 }

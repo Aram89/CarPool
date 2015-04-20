@@ -10,5 +10,7 @@ import java.sql.SQLException;
 public interface UserDAO {
 
     public void insert (User user) throws SQLException;
+    public Integer getCount (String userName) throws SQLException;
+    public Integer checkCredentials (String userName, String password) throws SQLException;
 
 }

@@ -24,4 +24,17 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
     public void insert(User user) throws SQLException {
         Integer id = (Integer) getSqlMapClient().insert("user.insert", user);
     }
+
+    @Override
+    public Integer getCount(String userName) throws SQLException {
+        return (Integer)getSqlMapClient().queryForObject("user.checkUserName", userName);
+    }
+
+    @Override
+    public Integer checkCredentials(String userName, String password) throws SQLException {
+        Map<String,Object> params = new HashMap<String, Object>();
+        params.put("userName",userName);
+        params.put("password",password);
+        return (Integer)getSqlMapClient().queryForObject("user.checkCredentials", params);
+    }
 }
