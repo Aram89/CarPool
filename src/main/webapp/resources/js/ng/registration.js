@@ -1,6 +1,12 @@
-alert(1);
 var registration = angular.module('registration', []);
-registration.controller('registrationController', function($scope) {
-	alert(2);
-	//$scope.userType = 'guest';
+registration.controller('registrationController', function($scope, $http) {
+	
+	$scope.registration = function() {
+		$http.post('' , $scope.user)
+		.success(function(data) {
+			console.log(data);
+		});
+	};
+	
+	
 });
