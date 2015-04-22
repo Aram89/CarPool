@@ -7,8 +7,8 @@ public interface RequestMappings {
 
     public static final String create = "create";
     public static final String login = "login";
-    public static final String checkUserName = "checkUserName";
-    public static final String checkEmail = "checkEmail";
+    public static final String checkUserName = "check-user-name";
+    public static final String checkEmail = "check-email";
 
 
 }
