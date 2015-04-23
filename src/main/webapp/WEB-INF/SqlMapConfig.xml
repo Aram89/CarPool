@@ -15,6 +15,6 @@
         </dataSource>
     </transactionManager>
     <sqlMap resource="main/resources/ibatis/user.xml"/>
-    <!--<sqlMap resource="../WEB-INF/user.xml"/>-->
+    <sqlMap resource="main/resources/ibatis/ride.xml"/>
 
 </sqlMapConfig>

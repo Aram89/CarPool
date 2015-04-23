@@ -16,10 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.core.Response;
 import java.io.IOException;
@@ -27,6 +24,7 @@ import java.io.IOException;
 /**
  * Created by Aram on 4/11/2015.
  */
+@RequestMapping (value = RequestMappings.user)
 @RestController
 public class UserController {
 
@@ -34,6 +32,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value =  RequestMappings.login, method = RequestMethod.POST)
+    @ExceptionHandler (value = Exception.class)
     public ResponseEntity login (@RequestBody User user) {
        try{
            String userName = user.getUserName();
@@ -65,13 +64,12 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = RequestMappings.create, method = RequestMethod.POST)
+    @RequestMapping(value = RequestMappings.createUser, method = RequestMethod.POST)
     public ResponseEntity create(@RequestBody User user) throws IOException {
         try {
             userService.create(user);
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {
-            e.printStackTrace();
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
