@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ride">
+    <typeAlias alias="ride" type="org.proffart.carpool.domain.Ride" />
+    <resultMap id="result" class="ride">
+        <result property="userID" column="userID"/>
+        <result property="carID" column="carID"/>
+        <result property="status" column="status"/>
+        <result property="type" column="type"/>
+        <result property="duration" column="duration"/>
+        <result property="length" column="length"/>
+        <result property="date" column="length"/>
+        <result property="startPoint" column="startPoint"/>
+        <result property="endPoint" column="endPoint"/>
+        <result property="startCoordinate" column="startCoordinate"/>
+        <result property="endCoordinate" column="endCoordinate"/>
+    </resultMap>
+
+
+
+    <insert id="insert" parameterClass="ride">
+        INSERT INTO ride(userID,carID,status,type,duration,date,length,startPoint,endPoint,startCoordinate,endCoordinate)
+        values (#userID#,#carID#,#status#,#type#,#duration#,#date#,#length#,#startPoint#,#endPoint#,#startCoordinate#,#endCoordinate#)
+
+        <selectKey resultClass="int" keyProperty="id">
+            select last_insert_id() as id
+        </selectKey>
+    </insert>
+</sqlMap>
