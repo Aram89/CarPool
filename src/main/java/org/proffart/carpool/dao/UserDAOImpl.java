@@ -37,4 +37,9 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
         params.put("password",password);
         return (Integer)getSqlMapClient().queryForObject("user.checkCredentials", params);
     }
+
+    @Override
+    public User getPassword(String userName) throws SQLException {
+        return (User)getSqlMapClient().queryForObject("user.getPassword",userName);
+    }
 }

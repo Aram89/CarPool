@@ -40,6 +40,11 @@
         <property name="sqlMapClient" ref="sqlMap" />
     </bean>
 
+    <bean id="rideDAO"
+          class="org.proffart.carpool.dao.RideDAOImpl">
+        <property name="sqlMapClient" ref="sqlMap" />
+    </bean>
+
     <mvc:resources mapping="/resources/**" location="/resources/" />
 	
 	<mvc:annotation-driven />
