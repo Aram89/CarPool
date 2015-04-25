@@ -1,7 +1,9 @@
 package org.proffart.carpool.utils;
 
-import org.codehaus.jackson.JsonGenerationException;
+import com.fasterxml.jackson.databind.SerializationConfig;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.proffart.carpool.controller.json.CheckResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -12,10 +14,12 @@ import java.io.IOException;
  */
 public class ResultUtil {
 
-    public static ResponseEntity sendError (String errorString) throws IOException {
-        ErrorStings error = new ErrorStings(errorString);
+    public static ResponseEntity sendCheckResult (boolean result, String error) throws IOException {
+        CheckResponse response = new CheckResponse();
+        response.setErrorString(error);
+        response.setResult(result);
         ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(error);
+        String json = mapper.writeValueAsString(response);
         return new ResponseEntity(json, HttpStatus.OK);
     }
 }

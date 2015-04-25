@@ -13,6 +13,7 @@ public interface RequestMappings {
 
     public static final String ride = "route";
     public static final String createRide = "/create";
+    public static final String searchRide = "/search";
 
 
 }

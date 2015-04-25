@@ -37,10 +37,10 @@ public class UserController {
            String userName = user.getUserName();
            String password = user.getPassword();
            if (!userService.userExists(userName)) {
-               return ResultUtil.sendError(ErrorStings.WRONG_USER_NAME);
+               return ResultUtil.sendCheckResult(false,ErrorStings.WRONG_USER_NAME);
            }
            if (!userService.checkCredentials(userName,password)) {
-               return ResultUtil.sendError(ErrorStings.WRONG_PASSWORD);
+               return ResultUtil.sendCheckResult(false,ErrorStings.WRONG_PASSWORD);
            }
            return new ResponseEntity(HttpStatus.OK);
        }
@@ -55,9 +55,9 @@ public class UserController {
         try {
             String userName = user.getUserName();
             if (userService.userExists(userName)) {
-                return ResultUtil.sendError(ErrorStings.USER_NAME_EXISTS);
+                return ResultUtil.sendCheckResult(false, ErrorStings.USER_NAME_EXISTS);
             }
-            return new ResponseEntity(HttpStatus.OK);
+            return ResultUtil.sendCheckResult(true,null);
         } catch (Exception e) {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -66,6 +66,9 @@ public class UserController {
     @RequestMapping(value = RequestMappings.createUser, method = RequestMethod.POST)
     public ResponseEntity create(@RequestBody User user) throws IOException {
         try {
+            if (userService.userExists(user.getUserName())) {
+                return ResultUtil.sendCheckResult(false,ErrorStings.USER_NAME_EXISTS);
+            }
             userService.create(user);
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {

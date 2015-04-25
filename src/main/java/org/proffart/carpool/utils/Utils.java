@@ -10,7 +10,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class Utils {
 
     public static String hash (String key) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(key);
+        String sha256hex = DigestUtils.sha256Hex(key);
         return sha256hex;
     }
 }
