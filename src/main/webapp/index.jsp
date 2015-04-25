@@ -68,6 +68,59 @@
     <br clear="all" />
 </div>
 
+<section>
+    <div class="inner-container">
+        <article>
+            <h1> Heading 2 join</h1>
+            <blockquote class="block_left">Carpool commuting is more popular for people who work in places with more jobs nearby, and who live in places with higher residential densities. Carpooling is significantly correlated with transport operating costs, including gas prices and commute length, and with measures of social capital, such as time spent with others, time spent eating and drinking, and being unmarried. However, carpooling is significantly less likely among people who spend more time at work, older workers, and homeowners.
+            </blockquote>
+            <img class="img_right" src="images/slide/car.jpg" width="600px"/>
+
+            <div class="wrap-join">
+                <div class="join">
+                    <i class="fa fa-plus"></i> join as driver
+                </div>
+                <div class="join">
+                    <i class="fa fa-plus"></i> join as 2
+                </div>
+            </div>
+            <br clear="all" />
+        </article>
+
+        <article class="art_border">
+            <h4 class="head_4"> Find car or drive ))</h4>
+            <div class="border_grey"></div>
+            <div class="data">
+                <p> from
+                    <input type="text" name="LastName" value="" class="border-max">
+                </p>
+            </div>
+
+            <div class="data">
+                <p> to
+                    <input type="text" name="LastName" value="" class="border-max">
+                </p>
+            </div>
+
+            <div class="data">
+                <p>time
+                    <input type="text" name="LastName" value="" class="border-min">
+                </p>
+            </div>
+
+            <div class="data">
+                <p>date
+                    <input type="text" name="LastName" value="" class="border-min">
+                </p>
+            </div>
+            <div class="data">
+                <input type="submit" value="Find" class="border-min">
+            </div>
+
+        </article>
+    </div>
+    <br clear="all" />
+</section>
 
 <!--Add slideshow  JS&CSS files -->
 <script src="/resources/js/responsiveslides.min.js"></script>
