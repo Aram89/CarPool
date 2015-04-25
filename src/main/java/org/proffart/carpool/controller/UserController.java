@@ -32,7 +32,6 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value =  RequestMappings.login, method = RequestMethod.POST)
-    @ExceptionHandler (value = Exception.class)
     public ResponseEntity login (@RequestBody User user) {
        try{
            String userName = user.getUserName();

@@ -19,6 +19,10 @@ public class User {
     private String email;
     private String phone;
     private String password;
+    private String salt;
+
+
+
     private String token;
     private String enabled;
     private String fbLink;
@@ -46,7 +50,13 @@ public class User {
         this.token = token;
     }
 
+    public String getSalt() {
+        return salt;
+    }
 
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
     public String getUserName() {
         return userName;
     }

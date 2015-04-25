@@ -20,12 +20,17 @@
         <result property="twID" column="tw_id"/>
         <result property="goID" column="go_id"/>
     </resultMap>
+
+    <resultMap id="password" class="user">
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+    </resultMap>
     
 
 
     <insert id="insert" parameterClass="user">
-        INSERT INTO user(id,password,email,phone,token,enabled,fb_link,tw_link,go_link,user_name,first_name,last_name)
-        values (#id#,MD5(#password#),#email#,#phone#,#token#,#enabled#,#fbLink#,#twLink#,#goLink#,#userName#,#firstName#,#lastName#)
+        INSERT INTO user(id,password,salt,email,phone,token,enabled,fb_link,tw_link,go_link,userName,first_name,last_name)
+        values (#id#,#password#,#salt#,#email#,#phone#,#token#,#enabled#,#fbLink#,#twLink#,#goLink#,#userName#,#firstName#,#lastName#)
 
         <selectKey resultClass="int" keyProperty="id">
             select last_insert_id() as id
@@ -34,12 +39,12 @@
 
     <select id="checkUserName" resultClass="int" parameterClass="String">
         SELECT COUNT(*) FROM user
-        where user_name = #userName#
+        where userName = #userName#
     </select>
 
     <select id="checkCredentials" resultClass="int" parameterClass="map">
         SELECT COUNT(*) FROM user
-        where user_name = #userName# AND password = MD5(#password#)
+        where userName = #userName# AND password = MD5(#password#)
     </select>
 
     <update id="update" parameterClass="User">
@@ -54,9 +59,9 @@
     </delete>
 
 
-    <select id="useResultMap" resultMap="result">
-        SELECT * FROM User
-        WHERE id=#id#
+    <select id="getPassword" resultMap="password" parameterClass="String">
+        SELECT password,salt  FROM User
+        WHERE userName=#userName#
     </select>
 
 </sqlMap>

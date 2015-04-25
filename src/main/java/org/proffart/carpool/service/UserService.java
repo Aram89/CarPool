@@ -4,6 +4,8 @@ import org.proffart.carpool.domain.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 /**
@@ -13,9 +15,9 @@ import java.sql.SQLException;
 @Service
 public interface UserService {
 
-    public void create (User user) throws SQLException;
+    public void create (User user) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException;
     public Boolean userExists (String userName) throws SQLException;
-    public Boolean checkCredentials (String userName, String password) throws SQLException;
+    public Boolean checkCredentials (String userName, String password) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException;
 
 
 }
