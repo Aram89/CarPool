@@ -31,12 +31,10 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
     }
 
     @Override
-    public Integer checkCredentials(String userName, String password) throws SQLException {
-        Map<String,Object> params = new HashMap<String, Object>();
-        params.put("userName",userName);
-        params.put("password",password);
-        return (Integer)getSqlMapClient().queryForObject("user.checkCredentials", params);
+    public Integer getEmailCount(String email) throws SQLException {
+        return (Integer)getSqlMapClient().queryForObject("user.checkEmail", email);
     }
+
 
     @Override
     public User getPassword(String userName) throws SQLException {

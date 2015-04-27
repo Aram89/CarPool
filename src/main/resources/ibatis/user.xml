@@ -42,10 +42,11 @@
         where userName = #userName#
     </select>
 
-    <select id="checkCredentials" resultClass="int" parameterClass="map">
+    <select id="checkEmail" resultClass="int" parameterClass="String">
         SELECT COUNT(*) FROM user
-        where userName = #userName# AND password = MD5(#password#)
+        where email = #email#
     </select>
+
 
     <update id="update" parameterClass="User">
         UPDATE User

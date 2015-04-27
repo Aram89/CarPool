@@ -42,6 +42,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Boolean emailExists(String email) throws SQLException {
+        Integer count = userDAO.getCount(email);
+        return !count.equals(0);
+    }
+
+    @Override
     public Boolean checkCredentials(String userName, String password) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException {
         User user = new User();
         user = userDAO.getPassword(userName);

@@ -61,6 +61,18 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = RequestMappings.checkEmail, method = RequestMethod.GET)
+    public ResponseEntity checkEmail(@RequestParam (value = "email") String email) {
+        try {
+            if (userService.emailExists(email)) {
+                return ResultUtil.sendCheckResult(false, ErrorStings.EMAIL_EXISTS);
+            }
+            return ResultUtil.sendCheckResult(true,null);
+        } catch (Exception e) {
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @RequestMapping(value = RequestMappings.createUser, method = RequestMethod.POST)
     public ResponseEntity create(@RequestBody User user) throws IOException {
         try {
