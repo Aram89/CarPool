@@ -32,6 +32,19 @@
 				
 
 				var validator = function (value) {
+					ctrl.$$rawModelValue = value;
+					ctrl.$validate();
+					if(ctrl.$error) {
+						var k = 0, key;
+						for(key in ctrl.$error) {
+							if(key != 'remote') ++k;
+						}
+						if(k) {
+							ctrl.$setValidity('remote', true);
+							return value;
+						}
+					}
+					
 					isValid = oldVal == value;
 					if(!value) isValid = true;
 					if(!isValid) {

@@ -52,8 +52,8 @@
 							  ng-remote-check="user/check-user-name"
 							  required type="text">
 							</div>
-							<p class="help-block" ng-show="regForm.userName.$error.required && !regForm.userName.$pristine">error required</p>
-							<p class="help-block" ng-show="regForm.userName.$error.remote && !regForm.userName.$pristine">error remote</p>
+							<p class="help-block" ng-show="regForm.userName.$error.required && !regForm.userName.$pristine">Please enter your login</p>
+							<p class="help-block" ng-show="regForm.userName.$error.remote && !regForm.userName.$pristine">This login already exist</p>
 						  </div>
 						</div>
 
@@ -63,10 +63,14 @@
 						  <div class="col-md-6">
 							<div class="input-group">
 							  <span class="input-group-addon"><i class="fa fa-at" ></i></span>
-							  <input id="email" name="email" class="form-control" placeholder="Your Email" ng-model="user.email" required type="email">
+							  <input id="email" name="email" class="form-control" placeholder="Your Email" 
+							  ng-model="user.email"
+							  ng-remote-check="user/check-email"
+							  required type="email">
 							</div>
-							<p class="help-block" ng-show="regForm.email.$error.required && !regForm.email.$pristine">error required</p>
-							<p class="help-block" ng-show="regForm.email.$error.email && !regForm.email.$pristine">email is not a valid</p>
+							<p class="help-block" ng-show="regForm.email.$error.required && !regForm.email.$pristine">Please enter your email</p>
+							<p class="help-block" ng-show="regForm.email.$error.email && !regForm.email.$pristine">Email is not a valid</p>
+							<p class="help-block" ng-show="regForm.email.$error.remote && !regForm.email.$pristine">This email already exist</p>
 						  </div>
 						</div>
 
@@ -77,7 +81,7 @@
 							  <span class="input-group-addon"><i class="fa fa-lock" ></i></span>
 							  <input id="passwd" name="passwd" class="form-control" placeholder="Enter Password"  ng-model="user.password" required type="password">
 							</div>
-							<p class="help-block" ng-show="regForm.passwd.$error.required && !regForm.passwd.$pristine">error required</p>
+							<p class="help-block" ng-show="regForm.passwd.$error.required && !regForm.passwd.$pristine">Please enter your password</p>
 						  </div>
 						</div>
 
@@ -92,8 +96,8 @@
 							  ng-match="user.password"
 							  required type="password">
 							</div>
-							<p class="help-block" ng-show="regForm.confirmPassword.$error.required && !regForm.confirmPassword.$pristine">error required</p>
-							<p class="help-block" ng-show="regForm.confirmPassword.$error.match && !regForm.confirmPassword.$pristine">error match</p>
+							<p class="help-block" ng-show="regForm.confirmPassword.$error.required && !regForm.confirmPassword.$pristine">Please enter your verify password</p>
+							<p class="help-block" ng-show="regForm.confirmPassword.$error.match && !regForm.confirmPassword.$pristine">Password confirmation doesnot match</p>
 						  </div>
 						</div>
 
