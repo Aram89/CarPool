@@ -6,6 +6,7 @@ import org.proffart.carpool.utils.RequestMappings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 public class RideController {
     @Autowired
     RideService rideService;
+
+
 
     @RequestMapping(value = RequestMappings.createRide, method = RequestMethod.POST)
     public ResponseEntity create(@RequestBody Ride ride) {

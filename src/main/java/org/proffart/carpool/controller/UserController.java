@@ -37,23 +37,21 @@ public class UserController {
            String userName = user.getUserName();
            String password = user.getPassword();
            if (!userService.userExists(userName)) {
-               return ResultUtil.sendCheckResult(false,ErrorStings.WRONG_USER_NAME);
+               return ResultUtil.sendCheckResult(false, ErrorStings.WRONG_USER_NAME);
            }
            if (!userService.checkCredentials(userName,password)) {
-               return ResultUtil.sendCheckResult(false,ErrorStings.WRONG_PASSWORD);
+               return ResultUtil.sendCheckResult(false, ErrorStings.WRONG_PASSWORD);
            }
            return new ResponseEntity(HttpStatus.OK);
        }
        catch (Exception e) {
            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
        }
-
     }
 
-    @RequestMapping(value = RequestMappings.checkUserName, method = RequestMethod.POST)
-    public ResponseEntity checkUserName(@RequestBody User user) {
+    @RequestMapping(value = RequestMappings.checkUserName, method = RequestMethod.GET)
+    public ResponseEntity checkUserName(@RequestParam (value = "userName") String userName) {
         try {
-            String userName = user.getUserName();
             if (userService.userExists(userName)) {
                 return ResultUtil.sendCheckResult(false, ErrorStings.USER_NAME_EXISTS);
             }
@@ -67,7 +65,10 @@ public class UserController {
     public ResponseEntity create(@RequestBody User user) throws IOException {
         try {
             if (userService.userExists(user.getUserName())) {
-                return ResultUtil.sendCheckResult(false,ErrorStings.USER_NAME_EXISTS);
+                return ResultUtil.sendCheckResult(false, ErrorStings.USER_NAME_EXISTS);
+            }
+            if (!user.getPassword().equals(user.getConfirmPassword())) {
+                return ResultUtil.sendCheckResult(false,ErrorStings.WRONG_PASSWORD);
             }
             userService.create(user);
             return new ResponseEntity(HttpStatus.OK);

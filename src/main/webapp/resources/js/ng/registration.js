@@ -6,7 +6,7 @@
 	registration.controller('registrationController', function($scope, $http) {
 		
 		$scope.registration = function() {
-			$http.post('http://localhost/test.php' , $scope.user)
+			$http.post('user/create' , $scope.user)
 			.success(function(data) {
 				console.log(data);
 			});
@@ -39,11 +39,7 @@
 						timeoutId = setTimeout(function(){
 							$http.get(checkUrl + '?'+propName+'='+value)
 							.success(function(data, status, headers, config) {
-								console.log(data);
-								console.log(status);
-								console.log(headers);
-								console.log(config);
-								isValid = data;
+								isValid = data.result;
 								ctrl.$setValidity('remote', isValid);
 								if(isValid) oldVal = value;
 							});

@@ -42,18 +42,18 @@
 
 
 						
-						<div class="form-group" ng-class="{ 'has-error' : regForm.login.$invalid && !regForm.login.$pristine }">
-						  <label class="col-md-4 control-label" for="login">Login Name</label>
+						<div class="form-group" ng-class="{ 'has-error' : regForm.userName.$invalid && !regForm.userName.$pristine }">
+						  <label class="col-md-4 control-label" for="userName">Login Name</label>
 						  <div class="col-md-6">
 							<div class="input-group">
 							  <span class="input-group-addon"><i class="fa fa-user" ></i></span>
-							  <input id="login" name="login" class="form-control" placeholder="Your login name" 
-							  ng-model="user.login"
-							  ng-remote-check="http://localhost/test.php"
+							  <input id="userName" name="userName" class="form-control" placeholder="Your login name"
+							  ng-model="user.userName"
+							  ng-remote-check="user/check-user-name"
 							  required type="text">
 							</div>
-							<p class="help-block" ng-show="regForm.login.$error.required && !regForm.login.$pristine">error required</p>
-							<p class="help-block" ng-show="regForm.login.$error.remote && !regForm.login.$pristine">error remote</p>
+							<p class="help-block" ng-show="regForm.userName.$error.required && !regForm.userName.$pristine">error required</p>
+							<p class="help-block" ng-show="regForm.userName.$error.remote && !regForm.userName.$pristine">error remote</p>
 						  </div>
 						</div>
 
@@ -82,18 +82,18 @@
 						</div>
 
 						
-						<div class="form-group " ng-class="{ 'has-error' : regForm.passwdagan.$invalid && !regForm.passwdagan.$pristine }">
-						  <label class="col-md-4 control-label" for="passwdagan">Password Agan</label>
+						<div class="form-group " ng-class="{ 'has-error' : regForm.confirmPassword.$invalid && !regForm.confirmPassword.$pristine }">
+						  <label class="col-md-4 control-label" for="confirmPassword">Password Agan</label>
 						  <div class="col-md-6">
 							<div class="input-group">
 							  <span class="input-group-addon"><i class="fa fa-lock" ></i></span>
-							  <input id="passwdagan" name="passwdagan" class="form-control" placeholder="Retype Password" 
-							  ng-model="user.passwdagan" 
+							  <input id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Retype Password"
+							  ng-model="user.confirmPassword"
 							  ng-match="user.password"
 							  required type="password">
 							</div>
-							<p class="help-block" ng-show="regForm.passwdagan.$error.required && !regForm.passwdagan.$pristine">error required</p>
-							<p class="help-block" ng-show="regForm.passwdagan.$error.match && !regForm.passwdagan.$pristine">error match</p>
+							<p class="help-block" ng-show="regForm.confirmPassword.$error.required && !regForm.confirmPassword.$pristine">error required</p>
+							<p class="help-block" ng-show="regForm.confirmPassword.$error.match && !regForm.confirmPassword.$pristine">error match</p>
 						  </div>
 						</div>
 

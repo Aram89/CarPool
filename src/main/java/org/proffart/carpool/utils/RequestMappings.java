@@ -11,9 +11,13 @@ public interface RequestMappings {
     public static final String checkUserName = "/check-user-name";
     public static final String checkEmail = "/check-email";
 
-    public static final String ride = "route";
+    public static final String ride = "ride";
     public static final String createRide = "/create";
     public static final String searchRide = "/search";
+
+    public static final String mapPage = "map";
+    public static final String registrationPage = "registration";
+
 
 
 }
