@@ -13,12 +13,16 @@ public class Ride {
     private String date;
     private String status;
     private String type;
-    private long duration;
-    private long length;
+    private double duration;
+    private double length;
     private String startPoint;
     private String endPoint;
-    private long startCoordinate;
-    private long endCoordinate;
+    private double startLatitude;
+    private double startLongitude;
+    private double endLatitude;
+    private double endLongitude;
+
+
 
     public String getStartPoint() {
         return startPoint;
@@ -36,35 +40,51 @@ public class Ride {
         this.endPoint = endPoint;
     }
 
-    public long getStartCoordinate() {
-        return startCoordinate;
+    public double getStartLatitude() {
+        return startLatitude;
     }
 
-    public void setStartCoordinate(long startCoordinate) {
-        this.startCoordinate = startCoordinate;
+    public void setStartLatitude(double startLatitude) {
+        this.startLatitude = startLatitude;
     }
 
-    public long getEndCoordinate() {
-        return endCoordinate;
+    public double getStartLongitude() {
+        return startLongitude;
     }
 
-    public void setEndCoordinate(long endCoordinate) {
-        this.endCoordinate = endCoordinate;
+    public void setStartLongitude(double startLongitude) {
+        this.startLongitude = startLongitude;
     }
 
-    public long getLength() {
+    public double getEndLatitude() {
+        return endLatitude;
+    }
+
+    public void setEndLatitude(double endLatitude) {
+        this.endLatitude = endLatitude;
+    }
+
+    public double getEndLongitude() {
+        return endLongitude;
+    }
+
+    public void setEndLongitude(double endLongitude) {
+        this.endLongitude = endLongitude;
+    }
+
+    public double getLength() {
         return length;
     }
 
-    public void setLength(long length) {
+    public void setLength(double length) {
         this.length = length;
     }
 
-    public long getDuration() {
+    public double getDuration() {
         return duration;
     }
 
-    public void setDuration(long duration) {
+    public void setDuration(double duration) {
         this.duration = duration;
     }
 
