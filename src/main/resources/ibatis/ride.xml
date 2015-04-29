@@ -12,15 +12,15 @@
         <result property="date" column="length"/>
         <result property="startPoint" column="startPoint"/>
         <result property="endPoint" column="endPoint"/>
-        <result property="startCoordinate" column="startCoordinate"/>
-        <result property="endCoordinate" column="endCoordinate"/>
+        <result property="startLatitude" column="startLatitude"/>
+        <result property="endLatitude" column="endLatitude"/>
     </resultMap>
 
 
 
     <insert id="insert" parameterClass="ride">
-        INSERT INTO ride(userID,carID,status,type,duration,date,length,startPoint,endPoint,startCoordinate,endCoordinate)
-        values (#userID#,#carID#,#status#,#type#,#duration#,#date#,#length#,#startPoint#,#endPoint#,#startCoordinate#,#endCoordinate#)
+        INSERT INTO ride(userID,carID,status,type,duration,date,length,startPoint,endPoint,startLatitude,endLatitude)
+        values (#userID#,#carID#,#status#,#type#,#duration#,#date#,#length#,#startPoint#,#endPoint#,#startLatitude#,#endLatitude#)
 
         <selectKey resultClass="int" keyProperty="id">
             select last_insert_id() as id
