@@ -170,10 +170,10 @@
       <img alt="join as" src="/resources/images/join_as.jpg" style="width: 100%;">
       <div class="row clearfix join-buttons">
         <div class="col-xs-6 column text-right">
-           <button type="button" class="btn btn-default">Default</button>
+           <a class="btn btn-default" href="#modal-container-registration" role="button" data-toggle="modal"> Join Default</a>
         </div>
         <div class="col-xs-6 column text-left">
-           <button type="button" class="btn btn-default">Default</button>
+           <a class="btn btn-default" href="#modal-container-registration" role="button" data-toggle="modal"> Join Default</a>
         </div>
       </div>
     </div>
@@ -236,11 +236,37 @@
     </div>
   </div>
   <div class="row clearfix">
-    <div class="col-md-12 column">
-       <span class="label label-success">Label</span>
+    <div class="col-md-12 column text-center">
+      <span class="label label-primary">email@site.com</span>
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </div>
   </div>
 </div>
+<!-- modal -->
+
+<div class="modal fade" id="modal-container-registration" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Modal title
+                </h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 
 <!-- angular scripts -->
 <script type="text/javascript" src="/resources/js/angular.min.js"></script>
