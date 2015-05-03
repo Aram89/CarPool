@@ -13,7 +13,6 @@
   <!--append ‘#!watch’ to the browser URL, then refresh the page. -->
   
   <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
   <link href="/resources/css/scrolling-nav.css" rel="stylesheet">
   <link href="/resources/css/style.css" rel="stylesheet">
 
@@ -48,7 +47,7 @@
     </div>
 
     <div>
-    class="collapse navbar-collapse navbar-ex1-collapse">
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
         <li class="hidden">
           <a class="page-scroll" href="#page-top"></a>
@@ -64,6 +63,9 @@
         </li>
       </ul>
     </div>
+      <div>
+        <i class="fa fa-facebook"></i>
+      </div>
   </div>
 </nav>
 
