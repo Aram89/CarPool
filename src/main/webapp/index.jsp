@@ -66,6 +66,8 @@
     </div>
       <div>
         <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-google-plus"></i>
       </div>
   </div>
 </nav>
