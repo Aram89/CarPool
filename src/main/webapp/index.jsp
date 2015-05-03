@@ -60,7 +60,7 @@
           <a class="page-scroll" href="#find">Find</a>
         </li>
         <li>
-          <a class="page-scroll" href="#about"> <i class="fa fa-facebook"></i> About</a>
+          <a class="page-scroll" href="#about">About</a>
         </li>
       </ul>
     </div>
