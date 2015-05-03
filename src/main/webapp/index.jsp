@@ -64,9 +64,9 @@
         </li>
       </ul>
       <ul class="nav navbar-right navbar-nav">
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-google-plus"></i>
+        <i class="fa fa-facebook icon"></i>
+        <i class="fa fa-twitter icon"></i>
+        <i class="fa fa-google-plus icon"></i>
       </ul>
     </div>
 
