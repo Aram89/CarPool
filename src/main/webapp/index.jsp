@@ -63,12 +63,11 @@
           <a class="page-scroll" href="#about">About</a>
         </li>
       </ul>
-      <ul class="nav navbar-right navbar-nav">
-        <i class="fa fa-facebook icon"></i>
-        <i class="fa fa-twitter icon"></i>
-        <i class="fa fa-google-plus icon"></i>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
       </ul>
-    </div>
 
   </div>
 </nav>
