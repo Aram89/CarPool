@@ -1,9 +1,9 @@
 (function () {
 	'use strict';
 
-	var registration = angular.module('registration', []);
-	
-	registration.controller('registrationController', function($scope, $http) {
+	var carpool = angular.module('carpool', []);
+
+	carpool.controller('registrationController', function($scope, $http) {
 		
 		$scope.registration = function() {
 			$http.post('user/create' , $scope.user)
@@ -14,8 +14,8 @@
 		
 		
 	});
-	
-	registration.directive('ngRemoteCheck', ['$http', function ($http) {
+
+	carpool.directive('ngRemoteCheck', ['$http', function ($http) {
 		return {
 			restrict : 'A',
 			require  : '?ngModel',
@@ -71,8 +71,8 @@
 			}
 		};
 	}]);
-	
-	registration.directive('ngMatch', ['$parse', function ($parse) {
+
+	carpool.directive('ngMatch', ['$parse', function ($parse) {
 
 		return {
 			restrict : 'A',
