@@ -47,7 +47,7 @@
       <a class="navbar-brand page-scroll" href="#page-top">Carpool</a>
     </div>
 
-    <ul>
+
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
         <li class="hidden">
@@ -68,6 +68,7 @@
         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
       </ul>
+    </div>
 
   </div>
 </nav>
