@@ -47,7 +47,7 @@
       <a class="navbar-brand page-scroll" href="#page-top">Carpool</a>
     </div>
 
-
+    <ul>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
         <li class="hidden">
@@ -63,14 +63,14 @@
           <a class="page-scroll" href="#about">About</a>
         </li>
       </ul>
-    </div>
-      <div>
-        <i class="fa fa-facebook"></i>
-      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+      </ul>
+
   </div>
 </nav>
-
-
 <!-- Intro Section -->
 <section id="intro" class="intro-section section">
   <div class="container">
@@ -214,10 +214,13 @@
 
       <div class="col-md-12 column">
         <h3 class="text-muted">
-          h3. Lorem ipsum dolor sit amet.
+          About
         </h3>
         <div class="row clearfix">
           <div class="col-md-8 column">
+            <div class="col-md-4">
+              <img alt="" src="http://lorempixel.com/1600/500/sports/2" style="width: 100%;">
+            </div>
             <p>
               Lorem ipsum dolor sit amet,
               <strong>consectetur adipiscing elit</strong>.
@@ -243,6 +246,9 @@
           <div class="col-md-4 column">
           </div>
           <div class="col-md-8 column">
+            <div class="col-md-4 pull-right">
+              <img alt="" src="http://lorempixel.com/1600/500/sports/2" style="width: 100%;">
+            </div>
             <p>
               Lorem ipsum dolor sit amet,
               <strong>consectetur adipiscing elit</strong>.
@@ -260,6 +266,7 @@
                 et feugiat ipsum consequat eu.
               </small>
             </p>
+
           </div>
         </div>
       </div>
