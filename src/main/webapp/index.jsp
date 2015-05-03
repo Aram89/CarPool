@@ -32,7 +32,7 @@
 </head>
 
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="carpool">
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -201,6 +201,7 @@
       </form>
 
 
+
     </div>
   </div>
 </section>
@@ -293,7 +294,7 @@
 
 <!-- modal -->
 
-<div class="modal fade" id="modal-container-registration" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" ng-controller="registrationController" id="modal-container-registration" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -303,16 +304,101 @@
         </h4>
       </div>
       <div class="modal-body">
-
-        <div ng-include="'/reg.html'"></div>
-
+        <div class="panel-body">
+          <form class="form-horizontal" name="regForm" ng-submit="registration()" 1novalidate>
+            <ng-include src="'registration-fieldset.html'"></ng-include>
+          </form>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-success" ng-click="registration()" ng-disabled="regForm.$invalid">
+          Register Me
+        </button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- angular templates -->
+<script type="text/ng-template" id="registration-fieldset.html">
+
+<fieldset>
+
+
+  <div class="form-group" ng-class="{ 'has-error' : regForm.userName.$invalid && !regForm.userName.$pristine }">
+    <label class="col-md-4 control-label" for="userName">Login Name</label>
+
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input id="userName" name="userName" class="form-control" placeholder="Your login name"
+               ng-model="user.userName"
+               ng-remote-check="user/check-user-name"
+               required type="text">
+      </div>
+      <p class="help-block" ng-show="regForm.userName.$error.required && !regForm.userName.$pristine">Please enter your login</p>
+
+      <p class="help-block" ng-show="regForm.userName.$error.remote && !regForm.userName.$pristine">This login already exist</p>
+    </div>
+  </div>
+
+
+  <div class="form-group" ng-class="{ 'has-error' : regForm.email.$invalid && !regForm.email.$pristine }">
+    <label class="col-md-4 control-label" for="email">Email</label>
+
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-at"></i></span>
+        <input id="email" name="email" class="form-control" placeholder="Your Email"
+               ng-model="user.email"
+               ng-remote-check="user/check-email"
+               required type="email">
+      </div>
+      <p class="help-block" ng-show="regForm.email.$error.required && !regForm.email.$pristine">Please enter your email</p>
+      <p class="help-block" ng-show="regForm.email.$error.email && !regForm.email.$pristine">Email is not a valid</p>
+      <p class="help-block" ng-show="regForm.email.$error.remote && !regForm.email.$pristine">This email already exist</p>
+    </div>
+  </div>
+
+  <div class="form-group" ng-class="{ 'has-error' : regForm.passwd.$invalid && !regForm.passwd.$pristine }">
+    <label class="col-md-4 control-label" for="passwd">Password</label>
+
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input id="passwd" name="passwd" class="form-control" placeholder="Enter Password"
+               ng-model="user.password" required type="password">
+      </div>
+      <p class="help-block" ng-show="regForm.passwd.$error.required && !regForm.passwd.$pristine">Please enter
+        your password</p>
+    </div>
+  </div>
+
+
+  <div class="form-group " ng-class="{ 'has-error' : regForm.confirmPassword.$invalid && !regForm.confirmPassword.$pristine }">
+    <label class="col-md-4 control-label" for="confirmPassword">Password Agan</label>
+
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Retype Password"
+               ng-model="user.confirmPassword"
+               ng-match="user.password"
+               required type="password">
+      </div>
+      <p class="help-block" ng-show="regForm.confirmPassword.$error.required && !regForm.confirmPassword.$pristine">Please enter your verify password</p>
+      <p class="help-block" ng-show="regForm.confirmPassword.$error.match && !regForm.confirmPassword.$pristine">Password confirmation doesnot match</p>
+    </div>
+  </div>
+
+</fieldset>
+
+</script>
+
+
 
 <!-- jquery and bootstrap scripts -->
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
@@ -322,108 +408,10 @@
 <!-- angular scripts -->
 <script type="text/javascript" src="/resources/js/angular.min.js"></script>
 <script type="text/javascript" src="/resources/js/angular-google-maps.min.js"></script>
+<script type="text/javascript" src="/resources/js/ng/registration.js"></script>
+<!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>
 
-<script type="text/ng-template" id="/reg.html">
-
-<div class="panel-body">
-  <form class="form-horizontal" name="regForm"
-        ng-controller="registrationController"
-        ng-submit="registration()"
-        novalidate>
-    <fieldset>
-
-
-      <div class="form-group" ng-class="{ 'has-error' : regForm.userName.$invalid && !regForm.userName.$pristine }">
-        <label class="col-md-4 control-label" for="userName">Login Name</label>
-
-        <div class="col-md-6">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input id="userName" name="userName" class="form-control" placeholder="Your login name"
-                   ng-model="user.userName"
-                   ng-remote-check="user/check-user-name"
-                   required type="text">
-          </div>
-          <p class="help-block" ng-show="regForm.userName.$error.required && !regForm.userName.$pristine">Please enter your login</p>
-
-          <p class="help-block" ng-show="regForm.userName.$error.remote && !regForm.userName.$pristine">This login already exist</p>
-        </div>
-      </div>
-
-
-      <div class="form-group" ng-class="{ 'has-error' : regForm.email.$invalid && !regForm.email.$pristine }">
-        <label class="col-md-4 control-label" for="email">Email</label>
-
-        <div class="col-md-6">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-at"></i></span>
-            <input id="email" name="email" class="form-control" placeholder="Your Email"
-                   ng-model="user.email"
-                   ng-remote-check="user/check-email"
-                   required type="email">
-          </div>
-          <p class="help-block" ng-show="regForm.email.$error.required && !regForm.email.$pristine">Please enter your email</p>
-          <p class="help-block" ng-show="regForm.email.$error.email && !regForm.email.$pristine">Email is not a valid</p>
-          <p class="help-block" ng-show="regForm.email.$error.remote && !regForm.email.$pristine">This email already exist</p>
-        </div>
-      </div>
-
-      <div class="form-group" ng-class="{ 'has-error' : regForm.passwd.$invalid && !regForm.passwd.$pristine }">
-        <label class="col-md-4 control-label" for="passwd">Password</label>
-
-        <div class="col-md-6">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-            <input id="passwd" name="passwd" class="form-control" placeholder="Enter Password"
-                   ng-model="user.password" required type="password">
-          </div>
-          <p class="help-block" ng-show="regForm.passwd.$error.required && !regForm.passwd.$pristine">Please enter
-            your password</p>
-        </div>
-      </div>
-
-
-      <div class="form-group "
-           ng-class="{ 'has-error' : regForm.confirmPassword.$invalid && !regForm.confirmPassword.$pristine }">
-        <label class="col-md-4 control-label" for="confirmPassword">Password Agan</label>
-
-        <div class="col-md-6">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-            <input id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Retype Password"
-                   ng-model="user.confirmPassword"
-                   ng-match="user.password"
-                   required type="password">
-          </div>
-          <p class="help-block"
-             ng-show="regForm.confirmPassword.$error.required && !regForm.confirmPassword.$pristine">Please enter
-            your verify password</p>
-
-          <p class="help-block"
-             ng-show="regForm.confirmPassword.$error.match && !regForm.confirmPassword.$pristine">Password
-            confirmation doesnot match</p>
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="register"></label>
-
-        <div class="col-md-4">
-          <button type="submit" id="register" name="register" class="btn btn-success" ng-disabled="regForm.$invalid">
-            Register Me
-          </button>
-        </div>
-      </div>
-
-    </fieldset>
-
-  </form>
-
-</div>
-
-</script>
 
 </body>
 </html>
