@@ -1,4 +1,12 @@
 .join-buttons {
     position: relative;
-    top: -80px;
+    top: -57px;
+}
+
+.section {
+    overflow: hidden;
+}
+
+.find-input {
+    margin-bottom: 12px;
 }

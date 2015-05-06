@@ -15,6 +15,7 @@
   <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
   <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
   <link href="/resources/css/scrolling-nav.css" rel="stylesheet">
+  <link href="/resources/css/bootstrap-timepicker.min.css" rel="stylesheet">
   <link href="/resources/css/style.css" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -72,19 +73,22 @@
 
   </div>
 </nav>
+
+
+
 <!-- Intro Section -->
 <section id="intro" class="intro-section section">
   <div class="container">
     <div class="row">
 
       <div class="col-md-12 column">
-        <div class="carousel slide" id="carousel-407436">
+        <div class="carousel slide" id="carouselCarpool">
           <ol class="carousel-indicators">
-            <li data-slide-to="0" data-target="#carousel-407436">
+            <li data-slide-to="0" data-target="#carouselCarpool">
             </li>
-            <li data-slide-to="1" data-target="#carousel-407436" class="active">
+            <li data-slide-to="1" data-target="#carouselCarpool" class="active">
             </li>
-            <li data-slide-to="2" data-target="#carousel-407436">
+            <li data-slide-to="2" data-target="#carouselCarpool">
             </li>
           </ol>
           <div class="carousel-inner">
@@ -121,7 +125,7 @@
                 </p>
               </div>
             </div>
-          </div> <a class="left carousel-control" href="#carousel-407436" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-407436" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          </div> <a class="left carousel-control" href="#carouselCarpool" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carouselCarpool" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
 
@@ -167,40 +171,7 @@
   <div class="container">
     <div class="row">
 
-
-      <form class="form-inline" role="form">
-
-        <div class="form-group">
-          <label for="searchFrom" class="col-sm-2 control-label">From</label>
-          <div class="col-sm-10">
-            <input class="form-control" id="searchFrom" type="text" />
-          </div>
-        </div>
-
-
-        <div class="form-group">
-          <label for="searchTo" class="col-sm-2 control-label">To</label>
-          <div class="col-sm-10">
-            <input class="form-control" id="searchTo" type="text" />
-          </div>
-        </div>
-
-
-        <div class="form-group">
-          <label for="searchTime" class="col-sm-1 control-label">Time</label>
-          <div class="col-sm-5">
-            <input class="form-control" id="searchTime" type="text" />
-          </div>
-          <label for="searchDate" class="col-sm-1 control-label">Date</label>
-          <div class="col-sm-5">
-            <input class="form-control" id="searchDate" type="text" />
-          </div>
-        </div>
-
-
-      </form>
-
-
+      <ng-include src="'search-form.html'"></ng-include>
 
     </div>
   </div>
@@ -398,17 +369,53 @@
 
 </script>
 
+<script type="text/ng-template" id="search-form.html">
 
+  <div class="row" ng-controller="findController">
+
+    <div class="col-md-4 col-xs-12">
+      <input id="searchFrom" type="text" class="form-control find-input" placeholder="From">
+    </div>
+
+    <div class="col-md-4 col-xs-12">
+      <input id="searchTo" type="text" class="form-control find-input" placeholder="To">
+    </div>
+
+    <div class="col-md-3 col-xs-12">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="bootstrap-timepicker"/>
+          <input id="searchTime" type="text" class="form-control find-input" placeholder="Time"
+                 data-show-meridian="false" >
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <input id="searchDate" type="text" class="form-control find-input" placeholder="Date">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1 col-xs-12">
+      <button class="btn btn-block btn-default">
+        <i class="fa fa-search"></i> Find
+      </button>
+    </div>
+
+  </div>
+
+</script>
 
 <!-- jquery and bootstrap scripts -->
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript" src="/resources/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/resources/js/scrolling-nav.js"></script>
+<script type="text/javascript" src="/resources/js/bootstrap-timepicker.min.js"></script>
 <!-- angular scripts -->
+<script type="text/javascript" src="/resources/js/lodash.min.js"></script>
 <script type="text/javascript" src="/resources/js/angular.min.js"></script>
 <script type="text/javascript" src="/resources/js/angular-google-maps.min.js"></script>
-<script type="text/javascript" src="/resources/js/ng/registration.js"></script>
+<script type="text/javascript" src="/resources/js/ng/carpool.js"></script>
 <!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>
 

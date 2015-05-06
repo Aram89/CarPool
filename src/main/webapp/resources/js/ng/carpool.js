@@ -1,7 +1,14 @@
 (function () {
 	'use strict';
 
-	var carpool = angular.module('carpool', []);
+	var carpool = angular.module('carpool', ['uiGmapgoogle-maps']);
+	carpool.config(function(uiGmapGoogleMapApiProvider) {
+		uiGmapGoogleMapApiProvider.configure({
+			//    key: 'your api key',
+			v: '3.17',
+			libraries: 'places'
+		});
+	});
 
 	carpool.controller('registrationController', function($scope, $http) {
 		
@@ -100,4 +107,21 @@
 		};
 
 	}]);
+
+	carpool.controller('findController', function($scope, $http, uiGmapGoogleMapApi) {
+		$('#searchTime').timepicker();
+		uiGmapGoogleMapApi.then(function(maps) {
+			var findFromInput = document.getElementById('searchFrom'),
+				findToInput = document.getElementById('searchTo'),
+				findFromAutocomplete = new google.maps.places.Autocomplete(findFromInput, {types: ['geocode']}),
+				findToAutocomplete   = new google.maps.places.Autocomplete(findToInput, {types: ['geocode']});
+
+			google.maps.event.addListener(findFromAutocomplete, 'place_changed', function() {
+
+			});
+			google.maps.event.addListener(findToAutocomplete, 'place_changed', function() {
+
+			});
+		});
+	});
 })();
