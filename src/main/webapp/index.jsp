@@ -111,8 +111,8 @@
                 </h2>
                 <p>
                     <H3>
-                  Wish you all the best!<br>
-                  Thanks for your support and help. Together we will create an awesome application!
+                  Wish You all the best!<br>
+                  Thanks for Your help and support. Together we will create an awesome application!
                   </H3>
                 </p>
               </div>
