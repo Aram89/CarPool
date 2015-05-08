@@ -92,39 +92,42 @@
             </li>
           </ol>
           <div class="carousel-inner">
-            <div class="item">
-              <img alt="" src="http://lorempixel.com/1600/500/sports/1">
-              <div class="carousel-caption">
-                <h4>
-                  First Thumbnail label
-                </h4>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                </p>
-              </div>
-            </div>
+            <%--<div class="item">--%>
+              <%--<img alt="" src="http://image.shutterstock.com/display_pic_with_logo/348181/241775728/stock-photo-gps-satellite-navigation-travel-tourism-and-location-route-planning-business-concept-smartphone-241775728.jpg">--%>
+              <%--<div class="carousel-caption">--%>
+                <%--<h4>--%>
+                  <%--Mobile Appli--%>
+                <%--</h4>--%>
+                <%--<p>--%>
+                  <%--Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.--%>
+                <%--</p>--%>
+              <%--</div>--%>
+            <%--</div>--%>
             <div class="item active">
-              <img alt="" src="http://lorempixel.com/1600/500/sports/2">
+              <img alt="" src="/resources/images/birthday.jpg">
               <div class="carousel-caption">
-                <h4>
-                  Second Thumbnail label
-                </h4>
+                <h2>
+                  Happy Birthday Karine Jan:)
+                </h2>
                 <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    <H3>
+                  Wish you all the best!<br>
+                  Thanks for your support and help. Together we will create an awesome application!
+                  </H3>
                 </p>
               </div>
             </div>
-            <div class="item">
-              <img alt="" src="http://lorempixel.com/1600/500/sports/3">
-              <div class="carousel-caption">
-                <h4>
-                  Third Thumbnail label
-                </h4>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                </p>
-              </div>
-            </div>
+            <%--<div class="item">--%>
+              <%--<img alt="" src="http://lorempixel.com/1600/500/sports/3">--%>
+              <%--<div class="carousel-caption">--%>
+                <%--<h4>--%>
+                  <%--Third Thumbnail label--%>
+                <%--</h4>--%>
+                <%--<p>--%>
+                  <%--Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.--%>
+                <%--</p>--%>
+              <%--</div>--%>
+            <%--</div>--%>
           </div> <a class="left carousel-control" href="#carouselCarpool" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carouselCarpool" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
