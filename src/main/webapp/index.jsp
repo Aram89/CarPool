@@ -196,9 +196,6 @@
         </h3>
         <div class="row clearfix">
           <div class="col-md-8 column">
-            <div class="col-md-4">
-              <img alt="" src="http://lorempixel.com/1600/500/sports/2" style="width: 100%;">
-            </div>
             <p>
               Lorem ipsum dolor sit amet,
               <strong>consectetur adipiscing elit</strong>.
@@ -218,15 +215,14 @@
             </p>
           </div>
           <div class="col-md-4 column">
+            <img src="/resources/images/join_as.jpg" style="width: 100%;" class="img-thumbnail">
           </div>
         </div>
         <div class="row clearfix">
           <div class="col-md-4 column">
+            <img src="/resources/images/join_as.jpg" style="width: 100%;" class="img-thumbnail">
           </div>
           <div class="col-md-8 column">
-            <div class="col-md-4 pull-right">
-              <img alt="" src="http://lorempixel.com/1600/500/sports/2" style="width: 100%;">
-            </div>
             <p>
               Lorem ipsum dolor sit amet,
               <strong>consectetur adipiscing elit</strong>.
