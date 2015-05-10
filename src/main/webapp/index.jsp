@@ -178,77 +178,7 @@
 
     </div>
 
-    <div class="content-wrap">
-      <div class="row section-row">
-        <div class="col-xs-6 col-md-4">
-          <img src="/resources/images/car-wide.jpg" class="img-responsive" alt="vvd" width="200px" height="200px"/>
-        </div>
-        <div class="col-xs-6 col-md-4">
-          <h3>Profile Name </h3>
-          <ul>
-            <li> from:</li>
-            <li> to:</li>
-            <li> date:</li>
-          </ul>
-        </div>
-
-        <div class="col-xs-6 col-md-4" style="padding:25px">
-          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
-          <div class="col-xs-8 col-md-10">
-            <button type="button" class="btn btn-default">Details</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row section-row">
-        <div class="col-xs-6 col-md-4">
-          <img src="/resources/images/car-wide.jpg" class="img-responsive" alt="vvd" width="200px" height="200px"/>
-        </div>
-        <div class="col-xs-6 col-md-4">
-          <h3>Profile Name </h3>
-          <ul>
-            <li> from:</li>
-            <li> to:</li>
-            <li> date:</li>
-          </ul>
-        </div>
-
-        <div class="col-xs-6 col-md-4" style="padding:25px">
-          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
-          <div class="col-xs-8 col-md-10">
-            <button type="button" class="btn btn-default">Details</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row section-row">
-        <div class="col-xs-6 col-md-4">
-          <img src="/resources/images/car-wide.jpg" class="img-responsive" alt="vvd" width="200px" height="200px"/>
-        </div>
-        <div class="col-xs-6 col-md-4">
-          <h3>Profile Name </h3>
-          <ul>
-            <li> from:</li>
-            <li> to:</li>
-            <li> date:</li>
-          </ul>
-        </div>
-
-        <div class="col-xs-6 col-md-4" style="padding:25px">
-          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
-          <div class="col-xs-8 col-md-10">
-            <button type="button" class="btn btn-default">Details</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+  </div>
 
 </section>
 
@@ -485,18 +415,82 @@
       </div>
 
     </div>
-    <div class="row" style="height: 100%">
-      p
-      p
-      p
-      p
-      p
-      p
-      p
-      p
-      p
-      p
+
+
+    <div class="content-wrap">
+
+      <div class="row section-row">
+        <div class="col-xs-6 col-md-4">
+          <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <h3>Profile Name </h3>
+          <ul>
+            <li> from:</li>
+            <li> to:</li>
+            <li> date:</li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-4" style="padding:25px">
+          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          <div class="col-xs-8 col-md-10">
+            <button type="button" class="btn btn-default">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row section-row">
+        <div class="col-xs-6 col-md-4">
+          <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <h3>Profile Name </h3>
+          <ul>
+            <li> from:</li>
+            <li> to:</li>
+            <li> date:</li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-4" style="padding:25px">
+          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          <div class="col-xs-8 col-md-10">
+            <button type="button" class="btn btn-default">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row section-row">
+        <div class="col-xs-6 col-md-4">
+          <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <h3>Profile Name </h3>
+          <ul>
+            <li> from:</li>
+            <li> to:</li>
+            <li> date:</li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-4" style="padding:25px">
+          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          <div class="col-xs-8 col-md-10">
+            <button type="button" class="btn btn-default">Details</button>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+
   </div>
 
 </script>
