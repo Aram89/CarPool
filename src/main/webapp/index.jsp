@@ -374,43 +374,57 @@
 
 <script type="text/ng-template" id="search-form.html">
 
-  <h3 class="text-muted">
-    Find Car or Driver
-  </h3>
-  <hr>
-  <div class="row" ng-controller="findController">
+  <div ng-controller="findController">
+    <h3 class="text-muted">
+      Find Car or Driver
+    </h3>
+    <hr>
+    <div class="row" >
 
-    <div class="col-md-4 col-xs-12">
-      <input id="searchFrom" type="text" class="form-control find-input" placeholder="From">
-    </div>
+      <div class="col-md-4 col-xs-12">
+        <input id="searchFrom" type="text" class="form-control find-input" placeholder="From">
+      </div>
 
-    <div class="col-md-4 col-xs-12">
-      <input id="searchTo" type="text" class="form-control find-input" placeholder="To">
-    </div>
+      <div class="col-md-4 col-xs-12">
+        <input id="searchTo" type="text" class="form-control find-input" placeholder="To">
+      </div>
 
-    <div class="col-md-3 col-xs-12">
-      <div class="row">
-        <div class="col-xs-12">
+      <div class="col-md-3 col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
 
-          <div class="form-group">
-            <div id="searchDateBlock"  class="input-group date" >
-              <input id="searchDate" type="text" class="form-control" >
-                <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+            <div class="form-group">
+              <div id="searchDateBlock"  class="input-group date" >
+                <input id="searchDate" type="text" class="form-control" >
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-1 col-xs-12">
-      <button class="btn btn-block btn-default">
-        <i class="fa fa-search"></i> Find
-      </button>
-    </div>
+      <div class="col-md-1 col-xs-12">
+        <button class="btn btn-block btn-default">
+          <i class="fa fa-search"></i> Find
+        </button>
+      </div>
 
+    </div>
+    <div class="row" style="height: 100%">
+      p
+      p
+      p
+      p
+      p
+      p
+      p
+      p
+      p
+      p
+    </div>
   </div>
 
 </script>
