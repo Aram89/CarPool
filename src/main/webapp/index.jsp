@@ -384,9 +384,8 @@
     <div class="col-md-3 col-xs-12">
       <div class="row">
         <div class="col-xs-6">
-          <div class="bootstrap-timepicker"/>
-          <input id="searchTime" type="text" class="form-control find-input" placeholder="Time"
-                 data-show-meridian="false" >
+          <div class="bootstrap-timepicker">
+            <input id="searchTime" type="text" class="form-control find-input" placeholder="Time" data-show-meridian="false" >
           </div>
         </div>
         <div class="col-xs-6">
