@@ -109,7 +109,11 @@
 	}]);
 
 	carpool.controller('findController', function($scope, $http, uiGmapGoogleMapApi) {
-		$('#searchTime').timepicker();
+		$('#searchDateBlock').datetimepicker({
+			sideBySide: true,
+			format : 'DD/MM/YYYY HH:mm',
+			defaultDate: new Date()
+		});
 		uiGmapGoogleMapApi.then(function(maps) {
 			var findFromInput = document.getElementById('searchFrom'),
 				findToInput = document.getElementById('searchTo'),

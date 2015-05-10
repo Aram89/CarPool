@@ -15,7 +15,7 @@
   <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
   <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
   <link href="/resources/css/scrolling-nav.css" rel="stylesheet">
-  <link href="/resources/css/bootstrap-timepicker.min.css" rel="stylesheet">
+  <link href="/resources/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
   <link href="/resources/css/style.css" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -104,7 +104,7 @@
               <%--</div>--%>
             <%--</div>--%>
             <div class="item active">
-              <img alt="" src="/resources/images/birthday.jpg">
+              <img alt="" src="/resources/images/">
               <div class="carousel-caption">
                 <h2>
                   Happy Birthday Karine Jan:)
@@ -252,9 +252,9 @@
         <div class="row">
           <div class="col-md-12 column text-center">
             <span class="label label-primary">email@site.com</span>
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-google-plus"></i>
           </div>
         </div>
       </div>
@@ -374,6 +374,10 @@
 
 <script type="text/ng-template" id="search-form.html">
 
+  <h3 class="text-muted">
+    Find Car or Driver
+  </h3>
+  <hr>
   <div class="row" ng-controller="findController">
 
     <div class="col-md-4 col-xs-12">
@@ -386,13 +390,17 @@
 
     <div class="col-md-3 col-xs-12">
       <div class="row">
-        <div class="col-xs-6">
-          <div class="bootstrap-timepicker">
-            <input id="searchTime" type="text" class="form-control find-input" placeholder="Time" data-show-meridian="false" >
+        <div class="col-xs-12">
+
+          <div class="form-group">
+            <div id="searchDateBlock"  class="input-group date" >
+              <input id="searchDate" type="text" class="form-control" >
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-6">
-          <input id="searchDate" type="text" class="form-control find-input" placeholder="Date">
+
         </div>
       </div>
     </div>
@@ -412,7 +420,8 @@
 <script type="text/javascript" src="/resources/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/resources/js/scrolling-nav.js"></script>
-<script type="text/javascript" src="/resources/js/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="/resources/js/moment.js"></script>
+<script type="text/javascript" src="/resources/js/bootstrap-datetimepicker.min.js"></script>
 <!-- angular scripts -->
 <script type="text/javascript" src="/resources/js/lodash.min.js"></script>
 <script type="text/javascript" src="/resources/js/angular.min.js"></script>
