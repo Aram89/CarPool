@@ -69,6 +69,15 @@
         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
       </ul>
+      <form class="navbar-form navbar-right" ng-controller="loginController" ng-submit="login">
+        <div class="form-group">
+          <input class="form-control" type="text" ng-model="user.userName" placeholder="Login" />
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" ng-model="user.password" placeholder="Password" />
+        </div>
+        <button type="submit" class="btn btn-default">Login</button>
+      </form>
     </div>
 
   </div>
@@ -394,7 +403,7 @@
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
         <input id="userName" name="userName" class="form-control" placeholder="Your login name"
                ng-model="user.userName"
-               ng-remote-check="user/check-user-name"
+               ng-remote-check="user/check-user-name/"
                required type="text">
       </div>
       <p class="help-block" ng-show="regForm.userName.$error.required && !regForm.userName.$pristine">Please enter your login</p>
@@ -412,7 +421,7 @@
         <span class="input-group-addon"><i class="fa fa-at"></i></span>
         <input id="email" name="email" class="form-control" placeholder="Your Email"
                ng-model="user.email"
-               ng-remote-check="user/check-email"
+               ng-remote-check="user/check-email/"
                required type="email">
       </div>
       <p class="help-block" ng-show="regForm.email.$error.required && !regForm.email.$pristine">Please enter your email</p>

@@ -67,7 +67,7 @@
 					}
 					ctrl.$setValidity('remote', isValid);
 					return value;
-				}
+				};
 
 				ctrl.$parsers.unshift(validator);
 				ctrl.$formatters.push(validator);
@@ -95,7 +95,7 @@
 					v = value === temp;
 					ctrl.$setValidity('match', v);
 					return value;
-				}
+				};
 
 				ctrl.$parsers.unshift(validator);
 				ctrl.$formatters.push(validator);
@@ -128,4 +128,16 @@
 			});
 		});
 	});
+
+	carpool.controller('loginController', function($scope, $http) {
+		$scope.user = {};
+
+		$scope.login = function(){
+			$http.post( 'user/login', $scope.user)
+			.success(function(){
+
+			});
+		};
+	});
+
 })();

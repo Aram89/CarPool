@@ -10,12 +10,14 @@
 .find-input {
     margin-bottom: 12px;
 }
-.content-wrap{
-    margin-top:5%;
-    height:350px;
+.content-wrap {
+    height:450px;
     overflow-x: hidden;
     overflow-y: scroll
 }
-.section-row{
-    padding: 30px;
+.section-row {
+    padding: 12px;
+}
+.img-profile-thumbnail {
+    width: 200px;
 }
