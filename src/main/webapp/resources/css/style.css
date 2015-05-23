@@ -18,6 +18,12 @@
 .section-row {
     padding: 12px;
 }
+.map-section {
+    padding-top: 100px;
+}
 .img-profile-thumbnail {
     width: 200px;
+}
+.angular-google-map-container {
+    height: 600px;
 }

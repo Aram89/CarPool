@@ -63,6 +63,9 @@
         <li>
           <a class="page-scroll" href="#about">About</a>
         </li>
+        <li>
+          <a class="page-scroll" href="/map">Map</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
