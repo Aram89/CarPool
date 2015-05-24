@@ -42,7 +42,7 @@ public class UserController {
            if (!userService.checkCredentials(userName,password)) {
                return ResultUtil.sendCheckResult(false, ErrorStings.WRONG_PASSWORD);
            }
-           return ResultUtil.sendCheckResult(true,null);
+           return ResultUtil.sendCheckResult(true, null);
        }
        catch (Exception e) {
            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
