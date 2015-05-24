@@ -295,7 +295,7 @@
           <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;
             overflow: hidden;">
             <div>
-              <a u=image href="#"><img src="/resources/images/01.jpg" /></a>
+              <a u=image href="#"><img src="/resources/images/republic_square.jpg" /></a>
               <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
                 slideshow transition twins
               </div>
