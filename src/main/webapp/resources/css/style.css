@@ -4,65 +4,71 @@
 }
 
 .section {
-    overflow: hidden;
+   /* overflow: hidden;*/
 }
 
 .find-input {
     margin-bottom: 12px;
 }
+
 .content-wrap {
-    height:450px;
+    height: 450px;
     overflow-x: hidden;
     overflow-y: scroll
 }
+
 .section-row {
     padding: 12px;
 }
+
 .map-section {
     padding-top: 100px;
 }
+
 .img-profile-thumbnail {
     width: 200px;
 }
+
 .angular-google-map-container {
     height: 600px;
 }
+
 /*Slide Show*/
-.captionOrange, .captionBlack
-{
+.captionOrange, .captionBlack {
     color: #fff;
     font-size: 20px;
     line-height: 30px;
     text-align: center;
     border-radius: 4px;
 }
-.captionOrange
-{
+
+.captionOrange {
     background: #EB5100;
     background-color: rgba(235, 81, 0, 0.6);
 }
-.captionBlack
-{
-    font-size:16px;
+
+.captionBlack {
+    font-size: 16px;
     background: #000;
     background-color: rgba(0, 0, 0, 0.4);
 }
-a.captionOrange, A.captionOrange:active, A.captionOrange:visited
-{
+
+a.captionOrange, A.captionOrange:active, A.captionOrange:visited {
     color: #ffffff;
     text-decoration: none;
 }
-a.captionOrange:hover
-{
+
+a.captionOrange:hover {
     color: #eb5100;
     text-decoration: underline;
     background-color: #eeeeee;
     background-color: rgba(238, 238, 238, 0.7);
 }
-.bricon
-{
+
+.bricon {
     background: url(/resources/images/browser-icons.png);
 }
+
 /* jssor slider bullet navigator skin 01 css */
 /*
 .jssorb01 div           (normal)
@@ -74,6 +80,7 @@ a.captionOrange:hover
 .jssorb01 {
     position: absolute;
 }
+
 .jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
     position: absolute;
     /* size of bullet elment */
@@ -85,10 +92,23 @@ a.captionOrange:hover
     cursor: pointer;
     border: #000 1px solid;
 }
-.jssorb01 div { background-color: gray; }
-.jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
-.jssorb01 .av { background-color: #fff; }
-.jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
+
+.jssorb01 div {
+    background-color: gray;
+}
+
+.jssorb01 div:hover, .jssorb01 .av:hover {
+    background-color: #d3d3d3;
+}
+
+.jssorb01 .av {
+    background-color: #fff;
+}
+
+.jssorb01 .dn, .jssorb01 .dn:hover {
+    background-color: #555555;
+}
+
 /* jssor slider arrow navigator skin 05 css */
 /*
 .jssora05l                  (normal)
@@ -108,9 +128,27 @@ a.captionOrange:hover
     background: url(/resources/images/a17.png) no-repeat;
     overflow: hidden;
 }
-.jssora05l { background-position: -10px -40px; }
-.jssora05r { background-position: -70px -40px; }
-.jssora05l:hover { background-position: -130px -40px; }
-.jssora05r:hover { background-position: -190px -40px; }
-.jssora05l.jssora05ldn { background-position: -250px -40px; }
-.jssora05r.jssora05rdn { background-position: -310px -40px; }
+
+.jssora05l {
+    background-position: -10px -40px;
+}
+
+.jssora05r {
+    background-position: -70px -40px;
+}
+
+.jssora05l:hover {
+    background-position: -130px -40px;
+}
+
+.jssora05r:hover {
+    background-position: -190px -40px;
+}
+
+.jssora05l.jssora05ldn {
+    background-position: -250px -40px;
+}
+
+.jssora05r.jssora05rdn {
+    background-position: -310px -40px;
+}
