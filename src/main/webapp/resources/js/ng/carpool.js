@@ -134,8 +134,12 @@
 
 		$scope.login = function(){
 			$http.post( 'user/login', $scope.user)
-			.success(function(){
-
+			.success(function(data){
+				if(data.result) {
+					window.location.reload();
+				} else {
+					alert(data.errorString);
+				}
 			});
 		};
 	});
