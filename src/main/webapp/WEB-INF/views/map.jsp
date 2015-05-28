@@ -78,7 +78,7 @@
 					<input class="form-control" type="text" ng-model="user.userName" placeholder="Login" />
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" ng-model="user.password" placeholder="Password" />
+					<input class="form-control" type="password" ng-model="user.password" placeholder="Password" />
 				</div>
 				<button type="submit" class="btn btn-default">Login</button>
 			</form>
@@ -110,78 +110,95 @@
 
 
 	<div class="form-horizontal col-md-12" ng-controller="mapController" >
-		<div class="form-group">
-			<label for="fromLocation" class="col-sm-2 control-label">From Location</label>
-			<div class="col-sm-8">
-				<input class="form-control" id="fromLocation" type="text"/>
+		<div class="row">
+			<div class="col-md-10">
+
+				<div class="form-group">
+					<label for="fromLocation" class="col-sm-2 control-label">From Location</label>
+					<div class="col-sm-10">
+						<input class="form-control" id="fromLocation" type="text" ng-model="route.from"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="toLocation" class="col-sm-2 control-label">To Location</label>
+					<div class="col-sm-10">
+						<input class="form-control" id="toLocation" type="text" ng-model="route.to"/>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="toLocation" class="col-sm-2 control-label">Start time</label>
+					<div class="col-sm-3">
+						<input class="form-control" id="startTime" type="text" ng-model="route.startTime"/>
+					</div>
+					<label class="col-sm-2 control-label">&nbsp;</label>
+					<div class="col-sm-3 checkbox">
+						<label>
+							<input type="checkbox" checked ng-model="route.periodic"> is Periodic
+						</label>
+					</div>
+				</div>
+				<div class="form-group" ng-show="!route.periodic">
+					<label for="toLocation" class="col-sm-2 control-label">Start Date</label>
+					<div class="col-sm-5">
+						<input class="form-control" id="startDate" type="text" ng-model="route.startDate"/>
+					</div>
+				</div>
+				<div class="form-group" ng-show="route.periodic">
+					<label class="col-sm-2 control-label">Week dayes</label>
+					<div class="col-sm-1 checkbox">
+						<label>
+							<input type="checkbox" ng-model="route.week.monday"> Monday
+						</label>
+					</div>
+					<div class="col-sm-1 checkbox">
+						<label>
+							<input type="checkbox" ng-model="route.week.tuesday"> Tuesday
+						</label>
+					</div>
+					<div class="col-sm-1 checkbox">
+						<label>
+							<input type="checkbox" ng-model="route.week.wednesday"> Wednesday
+						</label>
+					</div>
+					<div class="col-sm-1 checkbox">
+						<label>
+							<input type="checkbox" ng-model="route.week.thursday"> Thursday
+						</label>
+					</div>
+					<div class="col-sm-1 checkbox">
+						<label>
+							<input type="checkbox" ng-model="route.week.friday"> Friday
+						</label>
+					</div>
+					<div class="col-sm-1 checkbox">
+						<label>
+							<input type="checkbox" ng-model="route.week.saturday"> Saturday
+						</label>
+					</div>
+					<div class="col-sm-1 checkbox">
+						<label>
+							<input type="checkbox" ng-model="route.week.sunday"> Sunday
+						</label>
+					</div>
+				</div>
+
+
 			</div>
-			<label class="col-sm-1 control-label">Length</label>
-			<label class="col-sm-1 control-label">12 Km</label>
+			<div class="col-md-2">
+				<div class="form-group">
+					<label class="col-sm-6 control-label">Length</label>
+					<label class="col-sm-6 control-label">12 Km</label>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-6 control-label">Time</label>
+					<label class="col-sm-6 control-label">123 m</label>
+				</div>
+			</div>
 		</div>
-		<div class="form-group">
-			<label for="toLocation" class="col-sm-2 control-label">To Location</label>
-			<div class="col-sm-8">
-				<input class="form-control" id="toLocation" type="text"/>
-			</div>
-			<label class="col-sm-1 control-label">Time</label>
-			<label class="col-sm-1 control-label">123 m</label>
-		</div>
-		<div class="form-group">
-			<label for="toLocation" class="col-sm-2 control-label">Start time</label>
-			<div class="col-sm-3">
-				<input class="form-control" id="startTime" type="text"/>
-			</div>
-			<label class="col-sm-2 control-label">&nbsp;</label>
-			<div class="col-sm-3 checkbox">
-				<label>
-					<input type="checkbox" checked> Parberakan e te voch
-				</label>
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="toLocation" class="col-sm-2 control-label">Start Date</label>
-			<div class="col-sm-5">
-				<input class="form-control" id="startDate" type="text"/>
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Start Date</label>
-			<div class="col-sm-1 checkbox">
-				<label>
-					<input type="checkbox" checked> Monday
-				</label>
-			</div>
-			<div class="col-sm-1 checkbox">
-				<label>
-					<input type="checkbox" checked> Tuesday
-				</label>
-			</div>
-			<div class="col-sm-1 checkbox">
-				<label>
-					<input type="checkbox" checked> Wednesday
-				</label>
-			</div>
-			<div class="col-sm-1 checkbox">
-				<label>
-					<input type="checkbox" checked> Thursday
-				</label>
-			</div>
-			<div class="col-sm-1 checkbox">
-				<label>
-					<input type="checkbox" checked> Friday
-				</label>
-			</div>
-			<div class="col-sm-1 checkbox">
-				<label>
-					<input type="checkbox" checked> Saturday
-				</label>
-			</div>
-			<div class="col-sm-1 checkbox">
-				<label>
-					<input type="checkbox" checked> Sunday
-				</label>
-			</div>
-		</div>
+
+
+
 		<div class="col-md-12 column angular-google-map-container">
 			<ui-gmap-google-map
 					id="map-canvas"

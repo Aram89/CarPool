@@ -83,7 +83,7 @@
           <input class="form-control" type="text" ng-model="user.userName" placeholder="Login" />
         </div>
         <div class="form-group">
-          <input class="form-control" type="text" ng-model="user.password" placeholder="Password" />
+          <input class="form-control" type="password" ng-model="user.password" placeholder="Password" />
         </div>
         <button type="submit" class="btn btn-default">Login</button>
       </form>
