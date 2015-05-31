@@ -127,9 +127,14 @@
 				</div>
 
 				<div class="form-group">
-					<label for="toLocation" class="col-sm-2 control-label">Start time</label>
+					<label for="startTime" class="col-sm-2 control-label">Start time</label>
 					<div class="col-sm-3">
-						<input class="form-control" id="startTime" type="text" ng-model="route.startTime"/>
+						<div id="startTimeBlock"  class="input-group date" >
+							<input class="form-control" id="startTime" type="text" ng-model="route.startTime"/>
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-time"></span>
+								</span>
+						</div>
 					</div>
 					<label class="col-sm-2 control-label">&nbsp;</label>
 					<div class="col-sm-3 checkbox">
@@ -139,9 +144,14 @@
 					</div>
 				</div>
 				<div class="form-group" ng-show="!route.periodic">
-					<label for="toLocation" class="col-sm-2 control-label">Start Date</label>
+					<label for="startDate" class="col-sm-2 control-label">Start Date</label>
 					<div class="col-sm-5">
-						<input class="form-control" id="startDate" type="text" ng-model="route.startDate"/>
+						<div id="startDateBlock"  class="input-group date" >
+							<input class="form-control" id="startDate" type="text" ng-model="route.startDate"/>
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-time"></span>
+								</span>
+						</div>
 					</div>
 				</div>
 				<div class="form-group" ng-show="route.periodic">
