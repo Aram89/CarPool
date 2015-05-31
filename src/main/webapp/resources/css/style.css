@@ -152,3 +152,17 @@ a.captionOrange:hover {
 .jssora05r.jssora05rdn {
     background-position: -310px -40px;
 }
+/*navigation*/
+#nav-height{
+    height: 50px;
+}
+.welcome-page{
+    margin-top: -20px;
+}
+.border-bottom-blue:hover{
+    margin-top: -10px;
+    height: 100%;
+    border-bottom-color: #62C4E2;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
