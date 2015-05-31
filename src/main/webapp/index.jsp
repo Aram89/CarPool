@@ -51,7 +51,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand page-scroll" href="#page-top">Carpool</a>
+      <a href="page-top"> <img alt="join as" src="/resources/images/carpool-logo-main.jpg" style="width: 100px;"/> </a>
     </div>
 
 
