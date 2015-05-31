@@ -11,15 +11,15 @@
 	});
 
 	carpool.controller('registrationController', function($scope, $http) {
-		
+
 		$scope.registration = function() {
 			$http.post('user/create' , $scope.user)
 			.success(function(data) {
 				console.log(data);
 			});
 		};
-		
-		
+
+
 	});
 
 	carpool.directive('ngRemoteCheck', ['$http', function ($http) {
@@ -29,14 +29,14 @@
 			link     : function (scope, elem, attrs, ctrl) {
 				if (!ctrl) return;
 				if (!attrs['ngRemoteCheck']) return;
-				
+
 				var checkUrl = attrs['ngRemoteCheck'],
 				    checkDuration = 333, oldVal = '', propName = 'name',
 				    timeoutId , isValid = false;
 				if(attrs['id']) propName = attrs['id'];
 				if(attrs['name']) propName = attrs['name'];
 
-				
+
 
 				var validator = function (value) {
 					ctrl.$$rawModelValue = value;
@@ -51,7 +51,7 @@
 							return value;
 						}
 					}
-					
+
 					isValid = oldVal == value;
 					if(!value) isValid = true;
 					if(!isValid) {
@@ -147,6 +147,20 @@
 	carpool.controller('mapController', function($scope, uiGmapGoogleMapApi) {
 		$scope.route = {};
 		$scope.route.latlng = {};
+
+		$('#startTimeBlock').datetimepicker({
+			format: 'LT',
+		}).on('dp.change', function(obj){
+            //$scope.route.startTime = $(obj).val();
+            $scope.route.startTimeStamp = obj.timeStamp;
+		});
+		$('#startDateBlock').datetimepicker({
+			format: 'DD/MM/YYYY',
+			defaultDate: new Date()
+		}).on('dp.change', function(obj){
+            //$scope.route.startDate = $(this).val();
+            $scope.route.startDateStamp = obj.timeStamp;
+		});
 
 		var projectionChanged = function(map, eventName, originalEventArgs){
 			var fromLocation = document.getElementById('fromLocation'),
