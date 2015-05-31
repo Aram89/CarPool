@@ -42,7 +42,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="carpool">
 
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top" id="nav-height" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" id="nav-height" role="navigation">
   <div class="container">
     <div class="welcome-page">
       <div class="navbar-header page-scroll">
@@ -74,24 +74,24 @@
             <a class="page-scroll border-bottom-blue" href="/map">Map</a>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        <ul class="nav navbar-nav navbar-right ">
+          <li><a href="#"><i class="fa fa-facebook fa-icon"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-icon"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus fa-icon"></i></a></li>
         </ul>
         <form class="navbar-form navbar-right" ng-controller="loginController" ng-submit="login">
           <div class="form-group">
-            <input class="form-control" type="text" ng-model="user.userName" placeholder="Login" />
+            <input class="form-control input-color" type="text" ng-model="user.userName" placeholder="Login" />
           </div>
           <div class="form-group">
-            <input class="form-control" type="password" ng-model="user.password" placeholder="Password" />
+            <input class="form-control input-color" type="password" ng-model="user.password" placeholder="Password" />
           </div>
-          <button type="submit" class="btn btn-default">Login</button>
+          <button type="submit" class="btn btn-default input-color">Login</button>
         </form>
       </div>
 
     </div>
-</nav>
+</div>
     </div>
 
 

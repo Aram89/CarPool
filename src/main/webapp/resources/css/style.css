@@ -166,3 +166,9 @@ a.captionOrange:hover {
     border-bottom-style: solid;
     border-bottom-width: 2px;
 }
+.fa-icon:hover{
+    color:#62C4E2;
+}
+.input-color:hover{
+    border: 2px solid #62C4E2;
+}
