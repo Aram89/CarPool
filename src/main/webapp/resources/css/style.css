@@ -140,6 +140,10 @@ a.captionOrange:hover {
 .page-scroll{
     font-weight: bold;
 }
+.page-scroll:hover{
+    font-weight: bold;
+    color: #F14B20 !important;
+}
 .fa-icon:hover{
     color:#62C4E2;
 }

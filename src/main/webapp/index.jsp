@@ -35,7 +35,6 @@
   <script type="text/javascript" src="/resources/js/jssor.js"></script>
   <script type="text/javascript" src="/resources/js/jssor.slider.js"></script>
   <script type="text/javascript" src="/resources/js/gallery.js"></script>
-
 </head>
 
 
@@ -74,6 +73,9 @@
             <a class="page-scroll" href="/map">Map</a>
           </li>
         </ul>
+
+
+
         <ul class="nav navbar-nav navbar-right ">
           <li><a href="#"><i class="fa fa-facebook fa-icon"></i></a></li>
           <li><a href="#"><i class="fa fa-twitter fa-icon"></i></a></li>
