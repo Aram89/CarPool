@@ -62,16 +62,16 @@
             <a class="page-scroll " href="#page-top"></a>
           </li>
           <li>
-            <a class="page-scroll border-bottom-blue" href="#join">Join</a>
+            <a class="page-scroll" href="#join">Join</a>
           </li>
           <li>
-            <a class="page-scroll border-bottom-blue" href="#find">Find</a>
+            <a class="page-scroll" href="#find">Find</a>
           </li>
           <li>
-            <a class="page-scroll border-bottom-blue" href="#about">About</a>
+            <a class="page-scroll" href="#about">About</a>
           </li>
           <li>
-            <a class="page-scroll border-bottom-blue" href="/map">Map</a>
+            <a class="page-scroll" href="/map">Map</a>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right ">

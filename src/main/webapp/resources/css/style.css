@@ -42,11 +42,6 @@
     border-radius: 4px;
 }
 
-.captionOrange {
-    background: #EB5100;
-    background-color: rgba(235, 81, 0, 0.6);
-}
-
 .captionBlack {
     font-size: 16px;
     background: #000;
@@ -129,21 +124,6 @@ a.captionOrange:hover {
     overflow: hidden;
 }
 
-.jssora05l {
-    background-position: -10px -40px;
-}
-
-.jssora05r {
-    background-position: -70px -40px;
-}
-
-.jssora05l:hover {
-    background-position: -130px -40px;
-}
-
-.jssora05r:hover {
-    background-position: -190px -40px;
-}
 
 .jssora05l.jssora05ldn {
     background-position: -250px -40px;
@@ -154,21 +134,19 @@ a.captionOrange:hover {
 }
 /*navigation*/
 #nav-height{
-    height: 50px;
+    border-bottom: 2px solid #F14B20 !important;
+    background-color: #fff;
 }
-.welcome-page{
-    margin-top: -20px;
-}
-.border-bottom-blue:hover{
-    margin-top: -10px;
-    height: 100%;
-    border-bottom-color: #62C4E2;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
+.page-scroll{
+    font-weight: bold;
 }
 .fa-icon:hover{
     color:#62C4E2;
 }
 .input-color:hover{
-    border: 2px solid #62C4E2;
+    border: 1px solid #62C4E2;
+    background: #fff;
+    color: #F14B20 !important;
+    background-color: #fff;
+
 }
