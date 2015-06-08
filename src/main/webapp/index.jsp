@@ -104,80 +104,83 @@
   <div class="container">
     <div class="row">
 
-<!--Slide Show-->
-      <div class="col-md-12 column">
+<%--<!--Slide Show-->--%>
+      <%--<div class="col-md-12 column">--%>
 
-        <!-- Jssor Slider Begin -->
-        <!-- To move inline styles to css file/block, please specify a class name for each element. -->
-        <div id="slider1_container" style="position: relative; width: 600px; height: 300px; overflow: hidden; ">
+        <%--<!-- Jssor Slider Begin -->--%>
+        <%--<!-- To move inline styles to css file/block, please specify a class name for each element. -->--%>
+        <%--<div id="slider1_container" style="position: relative; width: 600px; height: 300px; overflow: hidden; ">--%>
 
-          <!-- Loading Screen -->
-          <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
-                background-color: #000; top: 0px; left: 0px;width: 100%;height:100%;">
-            </div>
-            <div style="position: absolute; display: block; background: url(/resources/images/loading.gif) no-repeat center center;
-                top: 0px; left: 0px;width: 100%;height:100%;">
-            </div>
-          </div>
-
+          <%--<!-- Loading Screen -->--%>
+          <%--<div u="loading" style="position: absolute; top: 0px; left: 0px;">--%>
+            <%--<div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;--%>
+                <%--background-color: #000; top: 0px; left: 0px;width: 100%;height:100%;">--%>
+            <%--</div>--%>
+            <%--<div style="position: absolute; display: block; background: url(/resources/images/loading.gif) no-repeat center center;--%>
+                <%--top: 0px; left: 0px;width: 100%;height:100%;">--%>
+            <%--</div>--%>
+          <%--</div>--%>
+            <video width="1200" height="700" autoplay>
+                <source src="/resources/images/test.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
           <!-- Slides Container -->
-          <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;
-            overflow: hidden;">
-            <div>
-              <a u=image href="#"><img src="/resources/images/republic_square.jpg" /></a>
-              <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
-                slideshow transition twins
-              </div>
-            </div>
-            <div>
-              <a u=image href="#"><img src="/resources/images/02.jpg" /></a>
-              <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
-                random caption transition
-              </div>
-            </div>
-            <div>
-              <a u=image href="#"><img src="/resources/images/03.jpg" /></a>
-              <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
-                mobile ready, touch swipe
-              </div>
-            </div>
-            <div>
-              <a u=image href="#"><img src="/resources/images/04.jpg" /></a>
-              <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
-                responsive, scale smoothly
-              </div>
-            </div>
-          </div>
-          <!--#region Bullet Navigator Skin Begin -->
-          <!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->
-          <!-- bullet navigator container -->
-          <div u="navigator" class="jssorb01" style="bottom: 16px; right: 10px;">
-            <!-- bullet navigator item prototype -->
-            <div u="prototype"></div>
-          </div>
-          <!--#endregion Bullet Navigator Skin End -->
+          <%--<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;--%>
+            <%--overflow: hidden;">--%>
+            <%--<div>--%>
+              <%--<a u=image href="#"><img src="/resources/images/republic_square.jpg" /></a>--%>
+              <%--<div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">--%>
+                <%--slideshow transition twins--%>
+              <%--</div>--%>
+            <%--</div>--%>
+            <%--<div>--%>
+              <%--<a u=image href="#"><img src="/resources/images/02.jpg" /></a>--%>
+              <%--<div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">--%>
+                <%--random caption transition--%>
+              <%--</div>--%>
+            <%--</div>--%>
+            <%--<div>--%>
+              <%--<a u=image href="#"><img src="/resources/images/03.jpg" /></a>--%>
+              <%--<div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">--%>
+                <%--mobile ready, touch swipe--%>
+              <%--</div>--%>
+            <%--</div>--%>
+            <%--<div>--%>
+              <%--<a u=image href="#"><img src="/resources/images/04.jpg" /></a>--%>
+              <%--<div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">--%>
+                <%--responsive, scale smoothly--%>
+              <%--</div>--%>
+            <%--</div>--%>
+          <%--</div>--%>
+          <%--<!--#region Bullet Navigator Skin Begin -->--%>
+          <%--<!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->--%>
+          <%--<!-- bullet navigator container -->--%>
+          <%--<div u="navigator" class="jssorb01" style="bottom: 16px; right: 10px;">--%>
+            <%--<!-- bullet navigator item prototype -->--%>
+            <%--<div u="prototype"></div>--%>
+          <%--</div>--%>
+          <%--<!--#endregion Bullet Navigator Skin End -->--%>
 
-          <!--#region Arrow Navigator Skin Begin -->
-          <!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
-          <!-- Arrow Left -->
-        <span u="arrowleft" class="jssora05l" style="top: 123px; left: 8px;">
-        </span>
-          <!-- Arrow Right -->
-        <span u="arrowright" class="jssora05r" style="top: 123px; right: 8px;">
-        </span>
-          <a style="display: none" href="http://www.jssor.com">slider in html</a>
-          <!-- Trigger -->
-          <script>
-            jssor_slider1_starter('slider1_container');
-          </script>
-        </div>
-        <!-- Jssor Slider End -->
+          <%--<!--#region Arrow Navigator Skin Begin -->--%>
+          <%--<!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->--%>
+          <%--<!-- Arrow Left -->--%>
+        <%--<span u="arrowleft" class="jssora05l" style="top: 123px; left: 8px;">--%>
+        <%--</span>--%>
+          <%--<!-- Arrow Right -->--%>
+        <%--<span u="arrowright" class="jssora05r" style="top: 123px; right: 8px;">--%>
+        <%--</span>--%>
+          <%--<a style="display: none" href="http://www.jssor.com">slider in html</a>--%>
+          <%--<!-- Trigger -->--%>
+          <%--<script>--%>
+            <%--jssor_slider1_starter('slider1_container');--%>
+          <%--</script>--%>
+        <%--</div>--%>
+        <%--<!-- Jssor Slider End -->--%>
 
 
-      </div>
-  </div>
-</section>
+      <%--</div>--%>
+  <%--</div>--%>
+<%--</section>--%>
 
 
 
