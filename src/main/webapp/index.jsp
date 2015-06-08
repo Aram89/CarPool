@@ -120,8 +120,8 @@
                 <%--top: 0px; left: 0px;width: 100%;height:100%;">--%>
             <%--</div>--%>
           <%--</div>--%>
-            <video width="1200" height="700" autoplay>
-                <source src="/resources/images/test.mp4" type="video/mp4">
+            <video width="1400" height="800" autoplay>
+                <source src="/resources/images/test1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
           <!-- Slides Container -->
