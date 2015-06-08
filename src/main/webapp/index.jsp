@@ -30,158 +30,30 @@
   <link rel="apple-touch-icon-precomposed" href="/resources/img/apple-touch-icon-57-precomposed.png">
   <link rel="shortcut icon" href="/resources/img/favicon.png">
 
-  <!-- use jssor.slider.min.js instead for release -->
-  <!-- jssor.slider.min.js = (jssor.js + jssor.slider.js) -->
-  <script type="text/javascript" src="/resources/js/jssor.js"></script>
-  <script type="text/javascript" src="/resources/js/jssor.slider.js"></script>
-  <script type="text/javascript" src="/resources/js/gallery.js"></script>
 </head>
 
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="carpool">
 
 <!-- Navigation -->
-<div class="navbar navbar-default navbar-fixed-top" id="nav-height" role="navigation">
-  <div class="container">
-    <div class="welcome-page">
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="page-top"> <img alt="join as" src="/resources/img/logo-main.png" style="width: 50px;"/> </a>
-      </div>
-
-
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li class="hidden">
-            <a class="page-scroll " href="#page-top"></a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#join">Join</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#find">Find</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#about">About</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="/map">Map</a>
-          </li>
-        </ul>
-
-
-
-        <ul class="nav navbar-nav navbar-right ">
-          <li><a href="#"><i class="fa fa-facebook fa-icon"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter fa-icon"></i></a></li>
-          <li><a href="#"><i class="fa fa-google-plus fa-icon"></i></a></li>
-        </ul>
-        <form class="navbar-form navbar-right" ng-controller="loginController" ng-submit="login">
-          <div class="form-group">
-            <input class="form-control input-color" type="text" ng-model="user.userName" placeholder="Login" />
-          </div>
-          <div class="form-group">
-            <input class="form-control input-color" type="password" ng-model="user.password" placeholder="Password" />
-          </div>
-          <button type="submit" class="btn btn-default input-color">Login</button>
-        </form>
-      </div>
-
-    </div>
-</div>
-    </div>
+<%@include file="./WEB-INF/views/navigation.jsp"%>
 
 
 
 
 <!-- Intro Section -->
 <section id="intro" class="intro-section section">
-  <div class="container">
+  <div>
     <div class="row">
 
-<%--<!--Slide Show-->--%>
-      <%--<div class="col-md-12 column">--%>
+      <video width="100%" autoplay loop>
+        <source src="/resources/images/test.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
 
-        <%--<!-- Jssor Slider Begin -->--%>
-        <%--<!-- To move inline styles to css file/block, please specify a class name for each element. -->--%>
-        <%--<div id="slider1_container" style="position: relative; width: 600px; height: 300px; overflow: hidden; ">--%>
-
-          <%--<!-- Loading Screen -->--%>
-          <%--<div u="loading" style="position: absolute; top: 0px; left: 0px;">--%>
-            <%--<div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;--%>
-                <%--background-color: #000; top: 0px; left: 0px;width: 100%;height:100%;">--%>
-            <%--</div>--%>
-            <%--<div style="position: absolute; display: block; background: url(/resources/images/loading.gif) no-repeat center center;--%>
-                <%--top: 0px; left: 0px;width: 100%;height:100%;">--%>
-            <%--</div>--%>
-          <%--</div>--%>
-            <video width="1400" height="800" autoplay>
-                <source src="/resources/images/test1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-          <!-- Slides Container -->
-          <%--<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;--%>
-            <%--overflow: hidden;">--%>
-            <%--<div>--%>
-              <%--<a u=image href="#"><img src="/resources/images/republic_square.jpg" /></a>--%>
-              <%--<div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">--%>
-                <%--slideshow transition twins--%>
-              <%--</div>--%>
-            <%--</div>--%>
-            <%--<div>--%>
-              <%--<a u=image href="#"><img src="/resources/images/02.jpg" /></a>--%>
-              <%--<div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">--%>
-                <%--random caption transition--%>
-              <%--</div>--%>
-            <%--</div>--%>
-            <%--<div>--%>
-              <%--<a u=image href="#"><img src="/resources/images/03.jpg" /></a>--%>
-              <%--<div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">--%>
-                <%--mobile ready, touch swipe--%>
-              <%--</div>--%>
-            <%--</div>--%>
-            <%--<div>--%>
-              <%--<a u=image href="#"><img src="/resources/images/04.jpg" /></a>--%>
-              <%--<div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">--%>
-                <%--responsive, scale smoothly--%>
-              <%--</div>--%>
-            <%--</div>--%>
-          <%--</div>--%>
-          <%--<!--#region Bullet Navigator Skin Begin -->--%>
-          <%--<!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->--%>
-          <%--<!-- bullet navigator container -->--%>
-          <%--<div u="navigator" class="jssorb01" style="bottom: 16px; right: 10px;">--%>
-            <%--<!-- bullet navigator item prototype -->--%>
-            <%--<div u="prototype"></div>--%>
-          <%--</div>--%>
-          <%--<!--#endregion Bullet Navigator Skin End -->--%>
-
-          <%--<!--#region Arrow Navigator Skin Begin -->--%>
-          <%--<!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->--%>
-          <%--<!-- Arrow Left -->--%>
-        <%--<span u="arrowleft" class="jssora05l" style="top: 123px; left: 8px;">--%>
-        <%--</span>--%>
-          <%--<!-- Arrow Right -->--%>
-        <%--<span u="arrowright" class="jssora05r" style="top: 123px; right: 8px;">--%>
-        <%--</span>--%>
-          <%--<a style="display: none" href="http://www.jssor.com">slider in html</a>--%>
-          <%--<!-- Trigger -->--%>
-          <%--<script>--%>
-            <%--jssor_slider1_starter('slider1_container');--%>
-          <%--</script>--%>
-        <%--</div>--%>
-        <%--<!-- Jssor Slider End -->--%>
-
-
-      <%--</div>--%>
-  <%--</div>--%>
-<%--</section>--%>
-
+    </div>
+  </div>
+</section>
 
 
 <!-- Join Section -->
