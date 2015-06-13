@@ -1,9 +1,14 @@
 package org.proffart.carpool.controller;
 
+import org.proffart.carpool.domain.User;
 import org.proffart.carpool.utils.RequestMappings;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * Created by Aram on 4/26/2015.

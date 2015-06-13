@@ -22,8 +22,6 @@ public class Ride {
     private double endLatitude;
     private double endLongitude;
 
-
-
     public String getStartPoint() {
         return startPoint;
     }

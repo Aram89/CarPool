@@ -3,6 +3,7 @@ package org.proffart.carpool.domain;
 
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 /**
  * Created by Aram on 4/11/2015.
@@ -11,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class User {
 
-    private int id;
+    private int id = 0;
     private String userName;
     private String firstName;
     private String lastName;

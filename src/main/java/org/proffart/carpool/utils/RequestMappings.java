@@ -18,6 +18,11 @@ public interface RequestMappings {
     public static final String mapPage = "map";
     public static final String registrationPage = "registration";
 
+    public static final String car = "car";
+    public static final String createCar = "/create";
+    public static final String editCar = "/edit";
+    public static final String deleteCar = "/delete";
+
 
 
 }

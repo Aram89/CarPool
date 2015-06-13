@@ -18,19 +18,9 @@ public class RideController {
     @Autowired
     RideService rideService;
 
-
-
     @RequestMapping(value = RequestMappings.createRide, method = RequestMethod.POST)
-    public ResponseEntity create(@RequestBody Ride ride) {
-        try {
-            rideService.createRide(ride);
-            return new ResponseEntity(HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity create(@RequestBody Ride ride) throws Exception{
+       rideService.createRide(ride);
+       return new ResponseEntity(HttpStatus.OK);
     }
-
-
-
-
 }

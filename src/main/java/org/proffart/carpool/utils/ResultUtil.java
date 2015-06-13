@@ -1,7 +1,6 @@
 package org.proffart.carpool.utils;
 
-import com.fasterxml.jackson.databind.SerializationConfig;
-import com.fasterxml.jackson.databind.SerializationFeature;
+
 import org.codehaus.jackson.map.ObjectMapper;
 import org.proffart.carpool.controller.json.CheckResponse;
 import org.springframework.http.HttpStatus;
