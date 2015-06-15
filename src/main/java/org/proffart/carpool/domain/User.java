@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by Aram on 4/11/2015.
  */
 
-
+@XmlRootElement
 public class User {
 
     private int id = 0;

@@ -22,6 +22,8 @@
 
 
 
+
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/views/</value>
@@ -39,7 +41,44 @@
         <!--<property name="dataSource" ref="dataSource" />-->
     </bean>
 
+    <!--Spring social-->
+    <!--<bean class="org.springframework.social.connect.web.ProviderSignInController">-->
+        <!--&lt;!&ndash; relies on by-type autowiring for the constructor-args &ndash;&gt;-->
+        <!--<constructor-arg ref="signInAdapter" />-->
+    <!--</bean>-->
 
+    <!--<bean id="connectionFactoryLocator"-->
+          <!--class="org.springframework.social.connect.support.ConnectionFactoryRegistry">-->
+        <!--<property name="connectionFactories">-->
+            <!--<list>-->
+                <!--<bean class="org.springframework.social.twitter.connect.TwitterConnectionFactory">-->
+                    <!--<constructor-arg value="${twitter.consumerKey}" />-->
+                    <!--<constructor-arg value="${twitter.consumerSecret}" />-->
+                <!--</bean>-->
+                <!--<bean class="org.springframework.social.facebook.connect.FacebookConnectionFactory">-->
+                    <!--<constructor-arg value="${facebook.clientId}" />-->
+                    <!--<constructor-arg value="${facebook.clientSecret}" />-->
+                <!--</bean>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="connectionRepository" factory-method="createConnectionRepository"-->
+          <!--factory-bean="usersConnectionRepository" scope="request">-->
+        <!--<constructor-arg value="#{request.userPrincipal.name}" />-->
+    <!--</bean>-->
+
+    <!--<bean id="signInAdapter" class="com.test.social.SimpleSignInAdapter"/>-->
+
+    <!--<bean id="usersConnectionRepository"-->
+          <!--class="org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository">-->
+        <!--<constructor-arg ref="dataSource" />-->
+        <!--<constructor-arg ref="connectionFactoryLocator" />-->
+        <!--<constructor-arg ref="textEncryptor" />-->
+    <!--</bean>-->
+
+    <!--<bean id="textEncryptor" class="org.springframework.security.crypto.encrypt.Encryptors"-->
+          <!--factory-method="noOpText" />-->
 
     <bean id="userDAO"
           class="org.proffart.carpool.dao.UserDAOImpl">

@@ -20,21 +20,23 @@ import java.util.Map;
  */
 
 public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
+    @Override
     public void insert(User user) throws SQLException {
         Integer id = (Integer) getSqlMapClient().insert("user.insert", user);
     }
 
+    @Override
     public Integer getCount(String userName) throws SQLException {
         return (Integer)getSqlMapClient().queryForObject("user.checkUserName", userName);
     }
 
+    @Override
     public Integer getEmailCount(String email) throws SQLException {
         return (Integer)getSqlMapClient().queryForObject("user.checkEmail", email);
     }
 
-
-
-    public String getPassword(String userName) throws SQLException {
-        return (String)getSqlMapClient().queryForObject("user.getPassword",userName);
+    @Override
+    public User getUser(String userName) throws SQLException {
+        return (User)getSqlMapClient().queryForObject("user.getUser",userName);
     }
 }
