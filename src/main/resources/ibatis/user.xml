@@ -23,14 +23,13 @@
 
     <resultMap id="password" class="user">
         <result property="password" column="password"/>
-        <result property="salt" column="salt"/>
     </resultMap>
     
 
 
     <insert id="insert" parameterClass="user">
-        INSERT INTO user(id,password,salt,email,phone,token,enabled,fb_link,tw_link,go_link,userName,first_name,last_name)
-        values (#id#,#password#,#salt#,#email#,#phone#,#token#,#enabled#,#fbLink#,#twLink#,#goLink#,#userName#,#firstName#,#lastName#)
+        INSERT INTO user(id,password,email,phone,token,enabled,fb_link,tw_link,go_link,userName,first_name,last_name)
+        values (#id#,#password#,#email#,#phone#,#token#,#enabled#,#fbLink#,#twLink#,#goLink#,#userName#,#firstName#,#lastName#)
 
         <selectKey resultClass="int" keyProperty="id">
             select last_insert_id() as id
@@ -49,19 +48,19 @@
 
 
     <update id="update" parameterClass="User">
-        UPDATE User
+        UPDATE user
         SET    first_name = #firstName#
         WHERE  id = #id#
     </update>
 
     <delete id="delete" parameterClass="int">
-        DELETE FROM User
+        DELETE FROM user
         WHERE  id = #id#
     </delete>
 
 
     <select id="getPassword" resultMap="password" parameterClass="String">
-        SELECT password,salt  FROM User
+        SELECT password  FROM user
         WHERE userName=#userName#
     </select>
 

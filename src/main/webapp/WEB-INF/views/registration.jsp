@@ -38,7 +38,6 @@
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" name="regForm" ng-controller="registrationController" ng-submit="registration()" novalidate>
-						<fieldset>
 
 
 						
@@ -105,12 +104,11 @@
 						<div class="form-group">
 						  <label class="col-md-4 control-label" for="register"></label>
 						  <div class="col-md-4">
-							<button type="submit" id="register" name="register" class="btn btn-success" ng-disabled="regForm.$invalid">Register Me</button>
+							<button type="submit" id="register" name="register" class="btn btn-success" ng-disabled="regForm.$invalid || !enable">Register Me</button>
 						  </div>
 						</div>
 
-						</fieldset>
-						
+
 						
 						</form>
 
@@ -125,5 +123,5 @@
   
 	<footer>
 	</footer>
-   </body>
+ </body>
 </html>

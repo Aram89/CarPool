@@ -287,10 +287,10 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="!enable">
           Close
         </button>
-        <button type="button" class="btn btn-success" ng-click="registration()" ng-disabled="regForm.$invalid">
+        <button type="button" class="btn btn-success" ng-click="registration()" ng-disabled="regForm.$invalid || !enable">
           Register Me
         </button>
       </div>
@@ -355,7 +355,7 @@
 
 
   <div class="form-group " ng-class="{ 'has-error' : regForm.confirmPassword.$invalid && !regForm.confirmPassword.$pristine }">
-    <label class="col-md-4 control-label" for="confirmPassword">Password Agan</label>
+    <label class="col-md-4 control-label" for="confirmPassword">Password Again</label>
 
     <div class="col-md-6">
       <div class="input-group">
@@ -506,6 +506,8 @@
 <script type="text/javascript" src="/resources/js/lodash.min.js"></script>
 <script type="text/javascript" src="/resources/js/angular.min.js"></script>
 <script type="text/javascript" src="/resources/js/angular-google-maps.min.js"></script>
+<script type="text/javascript" src="/resources/js/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<!-- -->
 <script type="text/javascript" src="/resources/js/ng/carpool.js"></script>
 <!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>

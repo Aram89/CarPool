@@ -82,12 +82,13 @@
 				<div class="form-group">
 					<label for="startTime" class="col-sm-2 control-label">Start time</label>
 					<div class="col-sm-3">
-						<div id="startTimeBlock"  class="input-group date" >
-							<input class="form-control" id="startTime" type="text" ng-model="route.startTime"/>
-								<span class="input-group-addon">
-									<span class="glyphicon glyphicon-time"></span>
-								</span>
-						</div>
+						<timepicker
+								id="startTime"
+								ng-model="route.startTime"
+								hour-step="1"
+								minute-step="15"
+								show-meridian="false">
+						</timepicker>
 					</div>
 					<label class="col-sm-2 control-label">&nbsp;</label>
 					<div class="col-sm-3 checkbox">
@@ -99,12 +100,13 @@
 				<div class="form-group" ng-show="!route.periodic">
 					<label for="startDate" class="col-sm-2 control-label">Start Date</label>
 					<div class="col-sm-5">
-						<div id="startDateBlock"  class="input-group date" >
-							<input class="form-control" id="startDate" type="text" ng-model="route.startDate"/>
-								<span class="input-group-addon">
-									<span class="glyphicon glyphicon-time"></span>
-								</span>
-						</div>
+
+						<datepicker
+								id="startDate"
+								ng-model="route.startDate"
+								>
+						</datepicker>
+
 					</div>
 				</div>
 				<div class="form-group" ng-show="route.periodic">
@@ -193,6 +195,8 @@
 <script type="text/javascript" src="/resources/js/lodash.min.js"></script>
 <script type="text/javascript" src="/resources/js/angular.min.js"></script>
 <script type="text/javascript" src="/resources/js/angular-google-maps.min.js"></script>
+<script type="text/javascript" src="/resources/js/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<!-- -->
 <script type="text/javascript" src="/resources/js/ng/carpool.js"></script>
 <!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>

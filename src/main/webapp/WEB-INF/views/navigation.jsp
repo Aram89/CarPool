@@ -41,14 +41,14 @@
           <li><a href="#"><i class="fa fa-twitter fa-icon"></i></a></li>
           <li><a href="#"><i class="fa fa-google-plus fa-icon"></i></a></li>
         </ul>
-        <form class="navbar-form navbar-right" ng-controller="loginController" ng-submit="login">
+        <form name="loginForm" class="navbar-form navbar-right" ng-controller="loginController" ng-submit="login()">
           <div class="form-group">
-            <input class="form-control input-color" type="text" ng-model="user.userName" placeholder="Login" />
+            <input class="form-control input-color" type="text" ng-model="user.userName" name="login" placeholder="Login" required/>
           </div>
           <div class="form-group">
-            <input class="form-control input-color" type="password" ng-model="user.password" placeholder="Password" />
+            <input class="form-control input-color" type="password" ng-model="user.password" name="password" placeholder="Password" required/>
           </div>
-          <button type="submit" class="btn btn-default input-color">Login</button>
+          <button type="submit" class="btn btn-default input-color" ng-disabled="loginForm.$invalid || loading">Login</button>
         </form>
       </div>
 

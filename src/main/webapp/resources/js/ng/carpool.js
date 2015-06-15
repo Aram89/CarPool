@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	var carpool = angular.module('carpool', ['uiGmapgoogle-maps']);
+	var carpool = angular.module('carpool', ['uiGmapgoogle-maps', 'ui.bootstrap']);
 	carpool.config(function(uiGmapGoogleMapApiProvider) {
 		uiGmapGoogleMapApiProvider.configure({
 			//    key: 'your api key',
@@ -12,10 +12,22 @@
 
 	carpool.controller('registrationController', function($scope, $http) {
 
+		$scope.user = {};
+		$scope.enable = true;
+
 		$scope.registration = function() {
-			$http.post('user/create' , $scope.user)
+			$scope.enable = false;
+			$http({
+				url: 'user/create',
+				method: 'POST',
+				data: $scope.user
+			})
 			.success(function(data) {
-				console.log(data);
+				if(data.result) {
+					window.location.reload();
+				} else {
+					$scope.enable = true;
+				}
 			});
 		};
 
@@ -131,13 +143,20 @@
 
 	carpool.controller('loginController', function($scope, $http) {
 		$scope.user = {};
+		$scope.loading = false;
 
 		$scope.login = function(){
-			$http.post( 'user/login', $scope.user)
+			$scope.loading = true;
+			$http({
+				url : 'user/login',
+				method: 'POST',
+				data  : $scope.user
+			})
 			.success(function(data){
 				if(data.result) {
 					window.location.reload();
 				} else {
+					$scope.loading = false;
 					alert(data.errorString);
 				}
 			});
@@ -149,7 +168,7 @@
 		$scope.route.latlng = {};
 
 		$('#startTimeBlock').datetimepicker({
-			format: 'LT',
+			format: 'LT'
 		}).on('dp.change', function(obj){
             //$scope.route.startTime = $(obj).val();
             $scope.route.startTimeStamp = obj.timeStamp;

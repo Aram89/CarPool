@@ -39,10 +39,10 @@
 
 /*navigation*/
 #nav-height{
-    border-bottom: 2px solid #F14B20 !important;
-    background-color: #fff;
+    border-bottom: 2px solid rgba(241, 75, 32, 0.91) !important;
+    background-color: rgba(215, 215, 215, 0.4);
 }
-.page-scroll{
+.page-scroll {
     font-weight: bold;
 }
 .page-scroll:hover{
@@ -54,7 +54,6 @@
 }
 .input-color:hover{
     border: 1px solid #62C4E2;
-    background: #fff;
     color: #F14B20 !important;
     background-color: #fff;
 

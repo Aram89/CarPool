@@ -1,18 +1,13 @@
 package org.proffart.carpool.controller;
 
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.proffart.carpool.dao.UserDAO;
 import org.proffart.carpool.domain.User;
 import org.proffart.carpool.service.UserService;
 import org.proffart.carpool.utils.ErrorStings;
 import org.proffart.carpool.utils.RequestMappings;
 import org.proffart.carpool.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -59,10 +54,7 @@ public class UserController {
         if (userService.userExists(user.getUserName())) {
             return ResultUtil.sendCheckResult(false, ErrorStings.USER_NAME_EXISTS);
         }
-        if (!user.getPassword().equals(user.getConfirmPassword())) {
-            return ResultUtil.sendCheckResult(false, ErrorStings.WRONG_PASSWORD);
-        }
         userService.create(user);
-        return new ResponseEntity(HttpStatus.OK);
+        return ResultUtil.sendCheckResult(true, null);
     }
 }

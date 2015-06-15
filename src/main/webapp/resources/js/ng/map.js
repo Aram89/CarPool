@@ -17,7 +17,7 @@
 		var projectionChanged = function(map, eventName, originalEventArgs){
 			var fromLocation = document.getElementById('from-location'),
 				toLocation = document.getElementById('to-location'),
-				fromLocationAutocomplete = new google.maps.places.Autocomplete(fromLocation),
+				fromLocationAutocomplete = new google.maps.places.Autocomplete(fromLocation, {types: ['geocode']}),
 				toLocationAutocomplete = new google.maps.places.Autocomplete(toLocation);
 			fromLocationAutocomplete.bindTo('bounds', map);
 			toLocationAutocomplete.bindTo('bounds', map);
@@ -100,7 +100,6 @@
 			});
 		};
 			
-		
 		 */
 		
 	});

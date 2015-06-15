@@ -27,11 +27,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void create(User user) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException {
         String password = user.getPassword();
-        String salt = StringUtils.generateRandomStrong(10);
-        String newPass = password + salt;
-        String hash = Utils.hash(newPass);
+        String hash = Utils.hash(password);
         user.setPassword(hash);
-        user.setSalt(salt);
         userDAO.insert(user);
     }
 
@@ -49,12 +46,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean checkCredentials(String userName, String password) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException {
-        User user = new User();
-        user = userDAO.getPassword(userName);
-        String salt = user.getSalt();
-        String correctPass = user.getPassword();
-        String passForCheck = password + salt;
-        String hash = Utils.hash(passForCheck);
-        return correctPass.equals(hash);
+        String pass = userDAO.getPassword(userName);
+        String hash = Utils.hash(pass);
+        return pass.equals(hash);
     }
 }
