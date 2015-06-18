@@ -44,17 +44,24 @@
 }
 .page-scroll {
     font-weight: bold;
+    color: #333 !important;
 }
 .page-scroll:hover{
     font-weight: bold;
     color: #F14B20 !important;
 }
+.fa-icon{
+    color:#333;
+}
 .fa-icon:hover{
     color:#62C4E2;
+}
+.input-color{
+    background: #fff;
+    color:#333;
 }
 .input-color:hover{
     border: 1px solid #62C4E2;
     color: #F14B20 !important;
-    background-color: #fff;
-
+    background: #fff;
 }
