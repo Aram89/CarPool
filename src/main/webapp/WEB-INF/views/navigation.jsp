@@ -48,7 +48,7 @@
           <div class="form-group">
             <input class="form-control input-color" type="password" ng-model="user.password" name="password" placeholder="Password" required/>
           </div>
-          <button type="submit" class="btn btn-default input-color" ng-disabled="loginForm.$invalid || loading">Login</button>
+          <button type="submit" class="btn btn-default input-color style-btn" ng-disabled="loginForm.$invalid || loading">Login</button>
         </form>
       </div>
 

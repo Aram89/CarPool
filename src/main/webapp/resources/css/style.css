@@ -39,23 +39,66 @@
 }
 
 /*navigation*/
-#nav-height{
+#nav-height {
     border-bottom: 2px solid rgba(241, 75, 32, 0.91) !important;
-    background-color: rgba(215, 215, 215, 0.4);
+    background-color: #fff;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+
+    /* IE 5-7 */
+    filter: alpha(opacity=70);
+
+    /* Netscape */
+    -moz-opacity: 0.7;
+
+    /* Safari 1.x */
+    -khtml-opacity: 0.7;
+
+    /* Good browsers */
+    opacity: 0.7 !important;
 }
 .page-scroll {
     font-weight: bold;
+    color: #333 !important;
 }
 .page-scroll:hover{
     font-weight: bold;
     color: #F14B20 !important;
 }
+.fa-icon{
+    color:#333;
+}
 .fa-icon:hover{
     color:#62C4E2;
+}
+.input-color{
+    background: #fff;
+    color:#333;
 }
 .input-color:hover{
     border: 1px solid #62C4E2;
     color: #F14B20 !important;
-    background-color: #fff;
+    background: #fff;
+}
 
+.style-btn {
+    color: #F14B20 !important;
+    font-weight: bold;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+
+    /* IE 5-7 */
+    filter: alpha(opacity=90);
+
+    /* Netscape */
+    -moz-opacity: 0.9;
+
+    /* Safari 1.x */
+    -khtml-opacity: 0.9;
+
+    /* Good browsers */
+    opacity: 0.9 !important;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent !important;
 }
