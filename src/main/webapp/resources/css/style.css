@@ -27,6 +27,7 @@
 
 .map-section {
     padding-top: 100px;
+    margin-bottom: 0;
 }
 
 .img-profile-thumbnail {
@@ -34,7 +35,7 @@
 }
 
 .angular-google-map-container {
-    height: 600px;
+    height: 550px;
 }
 
 /*navigation*/

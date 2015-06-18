@@ -159,6 +159,10 @@
 					$scope.loading = false;
 					alert(data.errorString);
 				}
+			})
+			.error(function(){
+				console.log(arguments);
+				alert('Error');
 			});
 		};
 	});
@@ -166,26 +170,19 @@
 	carpool.controller('mapController', function($scope, uiGmapGoogleMapApi) {
 		$scope.route = {};
 		$scope.route.latlng = {};
-
-		$('#startTimeBlock').datetimepicker({
-			format: 'LT'
-		}).on('dp.change', function(obj){
-            //$scope.route.startTime = $(obj).val();
-            $scope.route.startTimeStamp = obj.timeStamp;
-		});
-		$('#startDateBlock').datetimepicker({
-			format: 'DD/MM/YYYY',
-			defaultDate: new Date()
-		}).on('dp.change', function(obj){
-            //$scope.route.startDate = $(this).val();
-            $scope.route.startDateStamp = obj.timeStamp;
-		});
+		$scope.route.week = {
+			monday   : true,
+			tuesday  : true,
+			wednesday: true,
+			thursday : true,
+			friday   : true
+		};
 
 		var projectionChanged = function(map, eventName, originalEventArgs){
-			var fromLocation = document.getElementById('fromLocation'),
-				toLocation = document.getElementById('toLocation'),
+			var fromLocation  = document.getElementById('from_location'),
+				toLocation    = document.getElementById('to_location'),
 				fromLocationAutocomplete = new google.maps.places.Autocomplete(fromLocation, {types: ['geocode']}),
-				toLocationAutocomplete = new google.maps.places.Autocomplete(toLocation, {types: ['geocode']});
+				toLocationAutocomplete   = new google.maps.places.Autocomplete(toLocation, {types: ['geocode']});
 			fromLocationAutocomplete.bindTo('bounds', map);
 			toLocationAutocomplete.bindTo('bounds', map);
 			google.maps.event.addListener(fromLocationAutocomplete, 'place_changed', function() {

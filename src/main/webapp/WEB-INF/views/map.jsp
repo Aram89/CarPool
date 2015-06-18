@@ -45,7 +45,7 @@
 <!-- Intro Section -->
 <section id="map" class="map-section section">
 	<div class="container">
-		<div class="row">
+		<div class="row" ng-controller="mapController">
 
 			<ng-include src="'map-form.html'"></ng-include>
 
@@ -61,27 +61,26 @@
 <script type="text/ng-template" id="map-form.html">
 	<!-- MAP -->
 
+	<div class="col-md-4">
+		<form name="routeForm" ng-submit="saveRout()" novalidate>
 
-	<div class="form-horizontal col-md-12" ng-controller="mapController" >
-		<div class="row">
-			<div class="col-md-10">
+			<div class="form-group">
+				<label for="from_location" >From</label>
+				<input class="form-control" id="from_location" type="text" ng-model="route.from" required/>
+			</div>
 
-				<div class="form-group">
-					<label for="fromLocation" class="col-sm-2 control-label">From Location</label>
-					<div class="col-sm-10">
-						<input class="form-control" id="fromLocation" type="text" ng-model="route.from"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="toLocation" class="col-sm-2 control-label">To Location</label>
-					<div class="col-sm-10">
-						<input class="form-control" id="toLocation" type="text" ng-model="route.to"/>
-					</div>
-				</div>
+			<div class="form-group">
+				<label for="to_location" >To</label>
+				<input class="form-control" id="to_location" type="text" ng-model="route.to" required/>
+			</div>
 
-				<div class="form-group">
-					<label for="startTime" class="col-sm-2 control-label">Start time</label>
-					<div class="col-sm-3">
+
+			<div class="form-group">
+
+				<label>Start Time</label>
+
+				<div class="row">
+					<div class="col-xs-6">
 						<timepicker
 								id="startTime"
 								ng-model="route.startTime"
@@ -90,96 +89,83 @@
 								show-meridian="false">
 						</timepicker>
 					</div>
-					<label class="col-sm-2 control-label">&nbsp;</label>
-					<div class="col-sm-3 checkbox">
-						<label>
-							<input type="checkbox" checked ng-model="route.periodic"> is Periodic
-						</label>
+					<div class="col-xs-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" checked ng-model="route.periodic"> is Periodic
+							</label>
+						</div>
+						<button type="submit" class="btn btn-success" ng-disable="routeForm.$invalid">Save Route</button>
 					</div>
 				</div>
-				<div class="form-group" ng-show="!route.periodic">
-					<label for="startDate" class="col-sm-2 control-label">Start Date</label>
-					<div class="col-sm-5">
-
-						<datepicker
-								id="startDate"
-								ng-model="route.startDate"
-								>
-						</datepicker>
-
-					</div>
-				</div>
-				<div class="form-group" ng-show="route.periodic">
-					<label class="col-sm-2 control-label">Week dayes</label>
-					<div class="col-sm-1 checkbox">
-						<label>
-							<input type="checkbox" ng-model="route.week.monday"> Monday
-						</label>
-					</div>
-					<div class="col-sm-1 checkbox">
-						<label>
-							<input type="checkbox" ng-model="route.week.tuesday"> Tuesday
-						</label>
-					</div>
-					<div class="col-sm-1 checkbox">
-						<label>
-							<input type="checkbox" ng-model="route.week.wednesday"> Wednesday
-						</label>
-					</div>
-					<div class="col-sm-1 checkbox">
-						<label>
-							<input type="checkbox" ng-model="route.week.thursday"> Thursday
-						</label>
-					</div>
-					<div class="col-sm-1 checkbox">
-						<label>
-							<input type="checkbox" ng-model="route.week.friday"> Friday
-						</label>
-					</div>
-					<div class="col-sm-1 checkbox">
-						<label>
-							<input type="checkbox" ng-model="route.week.saturday"> Saturday
-						</label>
-					</div>
-					<div class="col-sm-1 checkbox">
-						<label>
-							<input type="checkbox" ng-model="route.week.sunday"> Sunday
-						</label>
-					</div>
-				</div>
-
 
 			</div>
-			<div class="col-md-2">
-				<div class="form-group">
-					<label class="col-sm-6 control-label">Length</label>
-					<label class="col-sm-6 control-label">12 Km</label>
+
+			<div class="form-group" ng-hide="route.periodic">
+				<label>Start Day</label>
+				<datepicker
+						id="startDate"
+						ng-model="route.startDate">
+				</datepicker>
+			</div>
+
+			<div class="form-group" ng-show="route.periodic">
+				<label>Week Days</label>
+
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="route.week.monday"> Monday
+					</label>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-6 control-label">Time</label>
-					<label class="col-sm-6 control-label">123 m</label>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="route.week.tuesday"> Tuesday
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="route.week.wednesday"> Wednesday
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="route.week.thursday"> Thursday
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="route.week.friday"> Friday
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="route.week.saturday"> Saturday
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="route.week.sunday"> Sunday
+					</label>
 				</div>
 			</div>
-		</div>
 
+		</form>
+	</div>
 
-
-		<div class="col-md-12 column angular-google-map-container">
-			<ui-gmap-google-map
-					id="map-canvas"
-					center="map.center"
-					zoom="map.zoom"
-					draggable="true"
-					options="map.options"
-					control="map.control"
-					events="map.events"
-					>
-			</ui-gmap-google-map>
-		</div>
+	<div class="col-md-8 angular-google-map-container">
+		<ui-gmap-google-map
+				id="map_canvas"
+				center="map.center"
+				zoom="map.zoom"
+				draggable="true"
+				options="map.options"
+				control="map.control"
+				events="map.events"
+				>
+		</ui-gmap-google-map>
 	</div>
 
 	<!-- END MAP -->
-
 
 </script>
 

@@ -18,7 +18,6 @@ public class RideServiceImpl implements RideService {
     @Autowired
     RideDAO rideDAO;
 
-    @Override
     public void createRide(Ride ride) throws SQLException {
         rideDAO.insertRide(ride);
     }

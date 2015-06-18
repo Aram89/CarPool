@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserDAO userDAO;
 
-    @Override
     public void create(User user) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException {
         String password = user.getPassword();
         String hash = Utils.hash(user.getPassword());
@@ -38,19 +37,16 @@ public class UserServiceImpl implements UserService {
         userDAO.insert(user);
     }
 
-    @Override
     public Boolean userExists(String userName) throws SQLException {
         Integer count = userDAO.getCount(userName);
         return !count.equals(0);
     }
 
-    @Override
     public Boolean emailExists(String email) throws SQLException {
         Integer count = userDAO.getCount(email);
         return !count.equals(0);
     }
 
-    @Override
     public Boolean checkCredentials(String userName, String password) throws SQLException,
             UnsupportedEncodingException, NoSuchAlgorithmException, UserException {
         User user = null;

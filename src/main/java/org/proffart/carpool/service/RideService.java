@@ -9,5 +9,5 @@ import java.sql.SQLException;
  */
 public interface RideService {
 
-    public void createRide (Ride ride) throws SQLException;
+    void createRide (Ride ride) throws SQLException;
 }

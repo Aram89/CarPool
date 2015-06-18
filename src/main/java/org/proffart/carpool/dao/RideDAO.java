@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface RideDAO {
 
-    public void insertRide (Ride ride) throws SQLException;
-    public List<Ride> search (long startPoint, long endPoint);
-    public List<Ride> search (long startPoint, long endPint, String date);
+    void insertRide (Ride ride) throws SQLException;
+    List<Ride> search (long startPoint, long endPoint);
+    List<Ride> search (long startPoint, long endPint, String date);
 }

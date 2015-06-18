@@ -16,10 +16,10 @@ import java.sql.SQLException;
 @Service
 public interface UserService {
 
-    public void create (User user) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException;
-    public Boolean userExists (String userName) throws SQLException;
-    public Boolean emailExists (String email) throws SQLException;
-    public Boolean checkCredentials (String userName, String password) throws SQLException,
+    void create (User user) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException;
+    Boolean userExists (String userName) throws SQLException;
+    Boolean emailExists (String email) throws SQLException;
+    Boolean checkCredentials (String userName, String password) throws SQLException,
             UnsupportedEncodingException, NoSuchAlgorithmException, UserException;
 
 }

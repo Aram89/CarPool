@@ -12,18 +12,15 @@ import java.util.List;
 public class RideDAOImpl extends SqlMapClientDaoSupport implements RideDAO {
 
 
-    @Override
     public void insertRide(Ride ride) throws SQLException {
         Integer id = (Integer) getSqlMapClient().insert("user.insert", ride);
 
     }
 
-    @Override
     public List<Ride> search(long startPoint, long endPoint) {
         return null;
     }
 
-    @Override
     public List<Ride> search(long startPoint, long endPint, String date) {
         return null;
     }
