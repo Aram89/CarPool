@@ -44,14 +44,12 @@
 <!-- Intro Section -->
 <section id="intro" class="intro-section section">
   <div>
-    <div class="row">
 
       <video width="100%" autoplay loop>
         <source src="/resources/images/test3.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
 
-    </div>
   </div>
 </section>
 
