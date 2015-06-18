@@ -4,7 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import java.io.IOException;
 
 /**
  * Class for handling internal errors.
@@ -29,8 +32,10 @@ public class GeneralException {
      * @param ue ue
      * @return Bad Request
      */
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    @ResponseBody
     @ExceptionHandler(UserException.class)
-    public ResponseEntity userException(UserException ue) {
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    public Error userException(UserException ue) {
+        return new Error(ue.getMessage());
     }
 }

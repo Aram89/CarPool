@@ -4,7 +4,7 @@ import org.proffart.carpool.dao.UserDAO;
 import org.proffart.carpool.domain.Guest;
 import org.proffart.carpool.domain.User;
 import org.proffart.carpool.exception.UserException;
-import org.proffart.carpool.utils.ErrorStings;
+import org.proffart.carpool.exception.ErrorStrings;
 import org.proffart.carpool.utils.StringUtils;
 import org.proffart.carpool.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
         User user = null;
         user = userDAO.getUser(userName);
         if (user == null) {
-            throw new UserException(ErrorStings.USER_NAME_EXISTS);
+            throw new UserException(ErrorStrings.WRONG_USER_NAME);
         }
         String pass = Utils.hash(password);
         return pass.equals(user.getPassword());

@@ -38,7 +38,7 @@
             <li> <a href="/map"> Map </a> </li>
             <li> <a href="#about"> About  </a></li>
             <li> <a href="#contact"> Find </a></li>
-        </ul>
+        </ul>;2
     </nav>
     <div id="awesome">
         <a href="https://www.facebook.com"><i class="fa font fa-facebook"></i></a>

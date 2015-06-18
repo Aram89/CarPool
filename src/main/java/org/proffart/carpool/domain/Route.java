@@ -1,12 +1,9 @@
 package org.proffart.carpool.domain;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
 /**
- * Created by Aram on 4/21/2015.
+ * Created by Aram on 6/18/2015.
  */
-@XmlRootElement
-public class Ride {
+public class Route {
 
     private int userID;
     private int carID;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
-<sqlMap namespace="ride">
-    <typeAlias alias="ride" type="org.proffart.carpool.domain.Ride" />
-    <resultMap id="result" class="ride">
+<sqlMap namespace="route">
+    <typeAlias alias="route" type="org.proffart.carpool.domain.Route" />
+    <resultMap id="result" class="route">
         <result property="userID" column="userID"/>
         <result property="carID" column="carID"/>
         <result property="status" column="status"/>
@@ -16,10 +16,8 @@
         <result property="endLatitude" column="endLatitude"/>
     </resultMap>
 
-
-
-    <insert id="insert" parameterClass="ride">
-        INSERT INTO ride(userID,carID,status,type,duration,date,length,startPoint,endPoint,startLatitude,endLatitude)
+    <insert id="insert" parameterClass="route">
+        INSERT INTO route(userID,carID,status,type,duration,date,length,startPoint,endPoint,startLatitude,endLatitude)
         values (#userID#,#carID#,#status#,#type#,#duration#,#date#,#length#,#startPoint#,#endPoint#,#startLatitude#,#endLatitude#)
 
         <selectKey resultClass="int" keyProperty="id">

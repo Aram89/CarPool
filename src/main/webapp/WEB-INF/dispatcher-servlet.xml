@@ -85,8 +85,8 @@
         <property name="sqlMapClient" ref="sqlMap" />
     </bean>
 
-    <bean id="rideDAO"
-          class="org.proffart.carpool.dao.RideDAOImpl">
+    <bean id="routeDAO"
+          class="org.proffart.carpool.dao.RouteDAOImpl">
         <property name="sqlMapClient" ref="sqlMap" />
     </bean>
 
