@@ -45,9 +45,10 @@
 <section id="intro" class="intro-section section">
   <div>
 
-      <video width="100%" autoplay loop>
+      <video width="100%" autoplay loop">
         <source src="/resources/images/test3.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <h1>Carpool Project</h1>
+        <p> lets get started</p>
       </video>
 
   </div>
@@ -431,9 +432,9 @@
         </div>
 
         <div class="col-xs-6 col-md-4" style="padding:25px">
-          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
+          <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
+          <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
           <div class="col-xs-8 col-md-10">
             <button type="button" class="btn btn-default">Details</button>
           </div>
@@ -454,9 +455,9 @@
         </div>
 
         <div class="col-xs-6 col-md-4" style="padding:25px">
-          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
+          <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
+          <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
           <div class="col-xs-8 col-md-10">
             <button type="button" class="btn btn-default">Details</button>
           </div>
@@ -477,9 +478,9 @@
         </div>
 
         <div class="col-xs-6 col-md-4" style="padding:25px">
-          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
+          <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
+          <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
           <div class="col-xs-8 col-md-10">
             <button type="button" class="btn btn-default">Details</button>
           </div>
