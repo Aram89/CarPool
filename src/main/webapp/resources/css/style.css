@@ -126,10 +126,32 @@
     background-color: transparent !important;
 }
 /*Slideshow*/
-#video:hover{
-    filter:contrast(1) grayscale(0.3) sepia(0.2);
+#video:hover {
+    filter: contrast(1) grayscale(0.3) sepia(0.2);
     -webkit-filter: contrast(1) grayscale(0.3) sepia(0.2);
     -moz-filter: contrast(1) grayscale(0.3) sepia(0.2);
     -o-filter: contrast(1) grayscale(0.3) sepia(0.2);
     -ms-filter: contrast(1) grayscale(0.3) sepia(0.2);
+}
+.slider-heading{
+    font-size: 60px;
+    color: #fff;
+    font-weight: 100;
+    margin-top: -400px;
+    z-index: 200;
+    position: relative;
+}
+.join-btn{
+    z-index: 500;
+    margin-top: 0px;
+    position: relative;
+    width: 150px;
+    height: auto;
+    background-color: #F14B20;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.8;
+    transform: translateX(335%) translateY(10%);
+    -webkit-transform: translateX(335%) translateY(10%);
 }
