@@ -44,12 +44,13 @@
 <!-- Intro Section -->
 <section id="intro" class="intro-section section">
   <div>
+  <div id="video">
+    <video width="100%" autoplay loop>
+      <source src="/resources/images/test3.mp4" type="video/mp4">
+    </video>
 
-      <video width="100%" autoplay loop">
-        <source src="/resources/images/test3.mp4" type="video/mp4">
-        <h1>Carpool Project</h1>
-        <p> lets get started</p>
-      </video>
+  </div>
+
 
   </div>
 </section>
@@ -491,25 +492,6 @@
 
 
   </div>
-
-</script>
-
-<!-- jquery and bootstrap scripts -->
-<script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/resources/js/scrolling-nav.js"></script>
-<script type="text/javascript" src="/resources/js/moment.js"></script>
-<script type="text/javascript" src="/resources/js/bootstrap-datetimepicker.min.js"></script>
-<!-- angular scripts -->
-<script type="text/javascript" src="/resources/js/lodash.min.js"></script>
-<script type="text/javascript" src="/resources/js/angular.min.js"></script>
-<script type="text/javascript" src="/resources/js/angular-google-maps.min.js"></script>
-<script type="text/javascript" src="/resources/js/ui-bootstrap-tpls-0.13.0.min.js"></script>
-<!-- -->
-<script type="text/javascript" src="/resources/js/ng/carpool.js"></script>
-<!-- -->
-<script type="text/javascript" src="/resources/js/scripts.js"></script>
 
 
 </body>
