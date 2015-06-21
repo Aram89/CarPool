@@ -167,7 +167,7 @@
 		};
 	});
 
-	carpool.controller('mapController', function($scope, uiGmapGoogleMapApi) {
+	carpool.controller('mapController', function($scope, $filter, uiGmapGoogleMapApi) {
 		$scope.route = {};
 		$scope.route.latlng = {};
 		$scope.route.week = {
@@ -277,8 +277,8 @@
 			if(form.$valid) {
 				var saveRoute = angular.copy($scope.route);
 
-				//saveRoute.startDate = saveRoute.startDate; //TODO format Y-m-d
-				//saveRoute.startTime = saveRoute.startTime; //TODO format H:i
+				saveRoute.startDate = $filter('date')(saveRoute.startDate, 'yyyy-MM-dd');
+				saveRoute.startTime = $filter('date')(saveRoute.startTime, 'HH:mm');
 
 				console.log(saveRoute);
 				$http({
