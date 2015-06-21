@@ -62,7 +62,7 @@
 	<!-- MAP -->
 
 	<div class="col-md-4">
-		<form name="routeForm" ng-submit="saveRout()" novalidate>
+		<form name="routeForm" ng-submit="saveRoute(routeForm)" novalidate>
 
 			<div class="form-group">
 				<label for="from_location" >From</label>
@@ -164,7 +164,6 @@
 				>
 		</ui-gmap-google-map>
 	</div>
-
 	<!-- END MAP -->
 
 </script>
