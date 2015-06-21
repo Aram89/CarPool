@@ -175,7 +175,9 @@
 			tuesday  : true,
 			wednesday: true,
 			thursday : true,
-			friday   : true
+			friday   : true,
+			saturday : false,
+			sunday   : false
 		};
 
 		var projectionChanged = function(map, eventName, originalEventArgs){
@@ -188,19 +190,28 @@
 			google.maps.event.addListener(fromLocationAutocomplete, 'place_changed', function() {
 				var place = fromLocationAutocomplete.getPlace();
 				if (!place.geometry) {
+					$scope.route.fromLat = 0;
+					$scope.route.fromLng = 0;
 					$scope.route.latlng.from = '';
 					return;
 				}
-				$scope.route.latlng.from = place.geometry.location.lat() +', '+place.geometry.location.lng();
+				$scope.route.fromLat = place.geometry.location.lat();
+				$scope.route.fromLng = place.geometry.location.lng();
+				$scope.route.latlng.from = $scope.route.fromLat +', '+$scope.route.fromLng;
 				$scope.calcRoute();
 			});
 			google.maps.event.addListener(toLocationAutocomplete, 'place_changed', function() {
 				var place = toLocationAutocomplete.getPlace();
 				if (!place.geometry) {
+					$scope.route.toLat = 0;
+					$scope.route.toLng = 0;
 					$scope.route.latlng.to = '';
 					return;
 				}
-				$scope.route.latlng.to = place.geometry.location.lat() +', '+place.geometry.location.lng();
+
+				$scope.route.toLat = place.geometry.location.lat();
+				$scope.route.toLng = place.geometry.location.lng();
+				$scope.route.latlng.to = $scope.route.toLat +', '+$scope.route.toLng;
 				$scope.calcRoute();
 			});
 
@@ -218,6 +229,10 @@
 					$scope.route.to   = endLeg.end_address;
 					$scope.route.latlng.from = startLeg.start_location.k +', ' +startLeg.start_location.B;
 					$scope.route.latlng.to   = startLeg.end_location.k +', ' +startLeg.end_location.B;
+					$scope.route.fromLat = startLeg.start_location.k;
+					$scope.route.fromLng = startLeg.start_location.B;
+					$scope.route.toLat = startLeg.end_location.k;
+					$scope.route.toLng = startLeg.end_location.B;
 					$scope.$apply();
 				}
 			});
@@ -257,14 +272,30 @@
 			}
 		};
 
-		/*$scope.registration = function() {
-		 $http.post('http://localhost/test.php' , $scope.user)
-		 .success(function(data) {
-		 console.log(data);
-		 });
-		 };
 
-		 */
+		$scope.saveRoute = function (form) {
+			if(form.$valid) {
+				var saveRoute = angular.copy($scope.route);
+
+				//saveRoute.startDate = saveRoute.startDate; //TODO format Y-m-d
+				//saveRoute.startTime = saveRoute.startTime; //TODO format H:i
+
+				console.log(saveRoute);
+				$http({
+					url: 'route/create',
+					method: 'POST',
+					data: saveRoute
+				})
+					.success(function (data) {
+						if (data.result) {
+							window.location.reload();
+						} else {
+							//$scope.enable = true;
+						}
+					});
+			}
+
+		};
 
 	});
 
