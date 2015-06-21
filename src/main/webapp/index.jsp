@@ -309,10 +309,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default join-btn" data-dismiss="modal" ng-disabled="!enable">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="!enable">
                     Close
                 </button>
-                <button type="button" class="btn btn-success join-btn" ng-click="registration()"
+                <button type="button" class="btn btn-success" ng-click="registration()"
                         ng-disabled="regForm.$invalid || !enable">
                     Register Me
                 </button>
@@ -476,7 +476,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default join-btn">Details</button>
+                        <button type="button" class="btn btn-default">Details</button>
                     </div>
                 </div>
             </div>
@@ -501,7 +501,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default join-btn">Details</button>
+                        <button type="button" class="btn btn-default">Details</button>
                     </div>
                 </div>
             </div>
@@ -526,7 +526,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default join-btn">Details</button>
+                        <button type="button" class="btn btn-default">Details</button>
                     </div>
                 </div>
             </div>
