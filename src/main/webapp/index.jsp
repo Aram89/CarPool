@@ -58,50 +58,6 @@
     </div>
 </section>
 
-
-<!-- Join Section -->
-<section id="join" class="join-section section">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-8 column">
-                <h3 class="text-muted">
-                    h3. Lorem ipsum dolor sit amet.
-                </h3>
-
-                <p>
-                    Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien
-                    sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed
-                    vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere
-                    diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo
-                    imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna,
-                    vulputate nec bibendum nec, posuere nec lacus.
-                    <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et
-                        feugiat ipsum consequat eu.
-                    </small>
-                </p>
-            </div>
-            <div class="col-md-4 column">
-                <img alt="join as" src="/resources/images/join_as.jpg" style="width: 100%;">
-
-                <div class="row join-buttons">
-                    <div class="col-xs-6 column text-right">
-                        <a class="btn btn-default" href="#modal-container-registration" role="button"
-                           data-toggle="modal"> Join Default</a>
-                    </div>
-                    <div class="col-xs-6 column text-left">
-                        <a class="btn btn-default" href="#modal-container-registration" role="button"
-                           data-toggle="modal"> Join Default</a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</section>
-
-
 <!-- Find Section -->
 <section id="find" class="find-section section">
     <div class="container">
@@ -116,101 +72,14 @@
 </section>
 
 
+
+
+
+
 <!-- About Section -->
 <section id="about" class="about-section section">
     <div class="container">
         <div class="row">
-
-
-            <!-- MAP -->
-
-
-            <div class="form-horizontal col-md-12">
-                <div class="form-group">
-                    <label for="fromLocation" class="col-sm-2 control-label">From Location</label>
-
-                    <div class="col-sm-8">
-                        <input class="form-control" id="fromLocation" type="text"/>
-                    </div>
-                    <label class="col-sm-1 control-label">Length</label>
-                    <label class="col-sm-1 control-label">12 Km</label>
-                </div>
-                <div class="form-group">
-                    <label for="toLocation" class="col-sm-2 control-label">To Location</label>
-
-                    <div class="col-sm-8">
-                        <input class="form-control" id="toLocation" type="text"/>
-                    </div>
-                    <label class="col-sm-1 control-label">Time</label>
-                    <label class="col-sm-1 control-label">123 m</label>
-                </div>
-                <div class="form-group">
-                    <label for="toLocation" class="col-sm-2 control-label">Start time</label>
-
-                    <div class="col-sm-3">
-                        <input class="form-control" id="startTime" type="text"/>
-                    </div>
-                    <label class="col-sm-2 control-label">&nbsp;</label>
-
-                    <div class="col-sm-3 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Parberakan e te voch
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="toLocation" class="col-sm-2 control-label">Start Date</label>
-
-                    <div class="col-sm-5">
-                        <input class="form-control" id="startDate" type="text"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Start Date</label>
-
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Monday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Tuesday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Wednesday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Thursday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Friday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Saturday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Sunday
-                        </label>
-                    </div>
-                </div>
-                <div class="col-md-12 column">
-                </div>
-            </div>
-
-
-            <!-- END MAP -->
-
 
             <div class="col-md-12 column">
                 <h3 class="text-muted">
@@ -289,6 +158,22 @@
 </section>
 
 
+
+<!-- Contact Section -->
+<section id="contact" class="find-section section">
+    <div class="container">
+        <div class="row">
+
+            <ng-include src="'contact-form.html'"></ng-include>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
 <!-- modal -->
 
 <div class="modal fade" ng-controller="registrationController" id="modal-container-registration" role="dialog"
@@ -309,10 +194,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="!enable">
+                <button type="button" class="btn btn-default caroopl-btn" data-dismiss="modal" ng-disabled="!enable">
                     Close
                 </button>
-                <button type="button" class="btn btn-success" ng-click="registration()"
+                <button type="button" class="btn btn-success caroopl-btn" ng-click="registration()"
                         ng-disabled="regForm.$invalid || !enable">
                     Register Me
                 </button>
@@ -446,7 +331,7 @@
             </div>
 
             <div class="col-md-1 col-xs-12">
-                <button class="btn btn-block btn-default">
+                <button class="btn btn-block btn-default caroopl-btn">
                     <i class="fa fa-search"></i> Find
                 </button>
             </div>
@@ -476,7 +361,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default">Details</button>
+                        <button type="button" class="btn btn-default caroopl-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -501,7 +386,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default">Details</button>
+                        <button type="button" class="btn btn-default caroopl-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -526,17 +411,23 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default">Details</button>
+                        <button type="button" class="btn btn-default caroopl-btn">Details</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </script>
-</div>
 
 
-</div>
+<script type="text/ng-template" id="contact-form.html">
+
+
+    </div>
+</script>
+
+
+
 
 <!-- jquery and bootstrap scripts -->
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>

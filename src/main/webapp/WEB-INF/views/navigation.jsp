@@ -24,9 +24,6 @@
             <a class="page-scroll" href="<c:url value="/"/>#intro"></a>
           </li>
           <li>
-            <a class="page-scroll" href="<c:url value="/"/>#join">Join</a>
-          </li>
-          <li>
             <a class="page-scroll" href="<c:url value="/"/>#find">Find</a>
           </li>
           <li>
@@ -37,6 +34,9 @@
             <a class="page-scroll" href="<c:url value="/map"/>">Map</a>
           </li>
           <% } %>
+          <li>
+            <a class="page-scroll" href="<c:url value="/"/>#about">Contact</a>
+          </li>
         </ul>
 
 

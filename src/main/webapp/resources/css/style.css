@@ -155,3 +155,15 @@
     transform: translateX(335%) translateY(10%);
     -webkit-transform: translateX(335%) translateY(10%);
 }
+.caroopl-btn{
+    background-color: #F14B20;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.8
+}
+.caroopl-btn:hover{
+    background-color: #F14B20 !important;
+    color: #FFF !important;
+
+}
