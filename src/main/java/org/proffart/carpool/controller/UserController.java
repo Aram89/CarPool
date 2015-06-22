@@ -16,7 +16,9 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 /**
- * ;2Created by Aram on 4/11/2015.
+ * Controller for user requests.
+ *
+ * Created by Aram on 4/11/2015.
  */
 @RequestMapping(value = RequestMappings.user)
 @Controller

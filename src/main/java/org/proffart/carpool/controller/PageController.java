@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
 /**
+ * Controller for returning static pages.
+ *
  * Created by Aram on 4/26/2015.
  */
 @Controller

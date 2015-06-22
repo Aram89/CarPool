@@ -7,13 +7,10 @@
         <result property="carID" column="carID"/>
         <result property="status" column="status"/>
         <result property="type" column="type"/>
-        <result property="duration" column="duration"/>
-        <result property="length" column="length"/>
         <result property="date" column="length"/>
         <result property="startPoint" column="startPoint"/>
         <result property="endPoint" column="endPoint"/>
-        <result property="startLatitude" column="startLatitude"/>
-        <result property="endLatitude" column="endLatitude"/>
+
     </resultMap>
 
     <insert id="insert" parameterClass="route">

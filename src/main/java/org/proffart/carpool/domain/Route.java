@@ -5,19 +5,46 @@ package org.proffart.carpool.domain;
  */
 public class Route {
 
+    // Route owner id.
     private int userID;
+
+    // Route car id.
     private int carID;
+
+    // Route date.
     private String date;
-    private String status;
+
+    // Route type.
     private String type;
-    private double duration;
-    private double length;
+
+    // Startpoint address.
     private String startPoint;
+
+    // Endpoint address.
     private String endPoint;
-    private double startLatitude;
-    private double startLongitude;
-    private double endLatitude;
-    private double endLongitude;
+
+    // Week days.
+    private Week week;
+
+    // Coordinates.
+
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
+    }
+
+    public Week getWeek() {
+        return week;
+    }
+
+    public void setWeek(Week week) {
+        this.week = week;
+    }
+
+    private Coordinate coordinate;
 
     public String getStartPoint() {
         return startPoint;
@@ -33,54 +60,6 @@ public class Route {
 
     public void setEndPoint(String endPoint) {
         this.endPoint = endPoint;
-    }
-
-    public double getStartLatitude() {
-        return startLatitude;
-    }
-
-    public void setStartLatitude(double startLatitude) {
-        this.startLatitude = startLatitude;
-    }
-
-    public double getStartLongitude() {
-        return startLongitude;
-    }
-
-    public void setStartLongitude(double startLongitude) {
-        this.startLongitude = startLongitude;
-    }
-
-    public double getEndLatitude() {
-        return endLatitude;
-    }
-
-    public void setEndLatitude(double endLatitude) {
-        this.endLatitude = endLatitude;
-    }
-
-    public double getEndLongitude() {
-        return endLongitude;
-    }
-
-    public void setEndLongitude(double endLongitude) {
-        this.endLongitude = endLongitude;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setLength(double length) {
-        this.length = length;
-    }
-
-    public double getDuration() {
-        return duration;
-    }
-
-    public void setDuration(double duration) {
-        this.duration = duration;
     }
 
 
@@ -106,15 +85,6 @@ public class Route {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getType() {
