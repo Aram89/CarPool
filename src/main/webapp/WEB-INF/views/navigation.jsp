@@ -35,7 +35,7 @@
           </li>
           <% } %>
           <li>
-            <a class="page-scroll" href="<c:url value="/"/>#about">Contact</a>
+            <a class="page-scroll" href="<c:url value="/"/>#contact">Contact</a>
           </li>
         </ul>
 

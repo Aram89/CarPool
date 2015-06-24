@@ -131,25 +131,32 @@
                     </div>
                 </div>
             </div>
-
-        <footer>
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12 column text-center">
-                        <span class="label label-primary">email@site.com</span>
-                        <i class="fa fa-facebook"></i>
-                        <i class="fa fa-twitter"></i>
-                        <i class="fa fa-google-plus"></i>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-
         </div>
     </div>
 </section>
 
+<!--Contact us-->
+    <section id="contact" /*class="about-section section"*/>
+        <!--Google map-->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+            <div style="overflow:hidden;height:300px;width:100%;"><div id="gmap_canvas" style="height:300px;width:100%;"></div>
+                <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                    <a class="google-map-code" href="http://premium-wordpress-themes.me" id="get-map-data">the molitor.</a></div>
+                        <script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(40.1991299,44.47688300000004),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.1991299, 44.47688300000004)});infowindow = new google.maps.InfoWindow({content:"<b></b><br/>6/1 Abelyan street,<br/> Yervan" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+    </section>
+
+<!--footer-->
+    <div class="col-xs-12 col-lg-12 no-padding footer">
+        <div class="container">
+            <div class="col-xs-12 text-center">
+                <ul>
+                    <small  class="footer-title">
+                        &copy; 2015 Carpool
+                    </small>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 <!-- modal -->
 
