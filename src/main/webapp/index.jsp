@@ -178,10 +178,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default carpool-btn" data-dismiss="modal" ng-disabled="!enable">
+                <button type="button" class="btn btn-default btn-carpool" data-dismiss="modal" ng-disabled="!enable">
                     Close
                 </button>
-                <button type="button" class="btn btn-success carpool-btn" ng-click="registration()"
+                <button type="button" class="btn btn-success btn-carpool" ng-click="registration()"
                         ng-disabled="regForm.$invalid || !enable">
                     Register Me
                 </button>
@@ -315,7 +315,7 @@
             </div>
 
             <div class="col-md-1 col-xs-12">
-                <button class="btn btn-block btn-default carpool-btn">
+                <button class="btn btn-block btn-default btn-carpool">
                     <i class="fa fa-search"></i> Find
                 </button>
             </div>
@@ -344,7 +344,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default carpool-btn">Details</button>
+                        <button type="button" class="btn btn-default btn-carpool">Details</button>
                     </div>
                 </div>
             </div>
@@ -369,7 +369,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default carpool-btn">Details</button>
+                        <button type="button" class="btn btn-default btn-carpool">Details</button>
                     </div>
                 </div>
             </div>
@@ -394,7 +394,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default carpool-btn">Details</button>
+                        <button type="button" class="btn btn-default btn-carpool">Details</button>
                     </div>
                 </div>
             </div>
