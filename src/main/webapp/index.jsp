@@ -50,57 +50,9 @@
                 <h1 class="slider-heading text-center"> Let's get started</h1>
                 <button type="button" class="btn btn-default join-btn"> Join</button>
             </div>
-
-
-        </div>
-
-
-    </div>
-</section>
-
-
-<!-- Join Section -->
-<section id="join" class="join-section section">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-8 column">
-                <h3 class="text-muted">
-                    h3. Lorem ipsum dolor sit amet.
-                </h3>
-
-                <p>
-                    Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien
-                    sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed
-                    vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere
-                    diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo
-                    imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna,
-                    vulputate nec bibendum nec, posuere nec lacus.
-                    <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et
-                        feugiat ipsum consequat eu.
-                    </small>
-                </p>
-            </div>
-            <div class="col-md-4 column">
-                <img alt="join as" src="/resources/images/join_as.jpg" style="width: 100%;">
-
-                <div class="row join-buttons">
-                    <div class="col-xs-6 column text-right">
-                        <a class="btn btn-default" href="#modal-container-registration" role="button"
-                           data-toggle="modal"> Join Default</a>
-                    </div>
-                    <div class="col-xs-6 column text-left">
-                        <a class="btn btn-default" href="#modal-container-registration" role="button"
-                           data-toggle="modal"> Join Default</a>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
 </section>
-
 
 <!-- Find Section -->
 <section id="find" class="find-section section">
@@ -120,98 +72,6 @@
 <section id="about" class="about-section section">
     <div class="container">
         <div class="row">
-
-
-            <!-- MAP -->
-
-
-            <div class="form-horizontal col-md-12">
-                <div class="form-group">
-                    <label for="fromLocation" class="col-sm-2 control-label">From Location</label>
-
-                    <div class="col-sm-8">
-                        <input class="form-control" id="fromLocation" type="text"/>
-                    </div>
-                    <label class="col-sm-1 control-label">Length</label>
-                    <label class="col-sm-1 control-label">12 Km</label>
-                </div>
-                <div class="form-group">
-                    <label for="toLocation" class="col-sm-2 control-label">To Location</label>
-
-                    <div class="col-sm-8">
-                        <input class="form-control" id="toLocation" type="text"/>
-                    </div>
-                    <label class="col-sm-1 control-label">Time</label>
-                    <label class="col-sm-1 control-label">123 m</label>
-                </div>
-                <div class="form-group">
-                    <label for="toLocation" class="col-sm-2 control-label">Start time</label>
-
-                    <div class="col-sm-3">
-                        <input class="form-control" id="startTime" type="text"/>
-                    </div>
-                    <label class="col-sm-2 control-label">&nbsp;</label>
-
-                    <div class="col-sm-3 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Parberakan e te voch
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="toLocation" class="col-sm-2 control-label">Start Date</label>
-
-                    <div class="col-sm-5">
-                        <input class="form-control" id="startDate" type="text"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Start Date</label>
-
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Monday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Tuesday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Wednesday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Thursday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Friday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Saturday
-                        </label>
-                    </div>
-                    <div class="col-sm-1 checkbox">
-                        <label>
-                            <input type="checkbox" checked> Sunday
-                        </label>
-                    </div>
-                </div>
-                <div class="col-md-12 column">
-                </div>
-            </div>
-
-
-            <!-- END MAP -->
-
-
             <div class="col-md-12 column">
                 <h3 class="text-muted">
                     About
@@ -272,7 +132,7 @@
                 </div>
             </div>
 
-
+        <footer>
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12 column text-center">
@@ -283,6 +143,8 @@
                     </div>
                 </div>
             </div>
+        </footer>
+
 
         </div>
     </div>
@@ -309,10 +171,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="!enable">
+                <button type="button" class="btn btn-default carpool-btn" data-dismiss="modal" ng-disabled="!enable">
                     Close
                 </button>
-                <button type="button" class="btn btn-success" ng-click="registration()"
+                <button type="button" class="btn btn-success carpool-btn" ng-click="registration()"
                         ng-disabled="regForm.$invalid || !enable">
                     Register Me
                 </button>
@@ -413,11 +275,11 @@
 
 <script type="text/ng-template" id="search-form.html">
 
-    <div ng-controller="findController">
+    <div ng-controller="findController" class="find-div">
         <h3 class="text-muted">
             Find Car or Driver
         </h3>
-        <hr>
+        <hr class="hr">
         <div class="row">
 
             <div class="col-md-4 col-xs-12">
@@ -446,7 +308,7 @@
             </div>
 
             <div class="col-md-1 col-xs-12">
-                <button class="btn btn-block btn-default">
+                <button class="btn btn-block btn-default carpool-btn">
                     <i class="fa fa-search"></i> Find
                 </button>
             </div>
@@ -458,8 +320,7 @@
 
             <div class="row section-row">
                 <div class="col-xs-6 col-md-4">
-                    <img src="/resources/images/join_as.jpg"
-                         class="img-responsive img-thumbnail img-profile-thumbnail"/>
+                    <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
                 </div>
                 <div class="col-xs-6 col-md-4">
                     <h3>Profile Name </h3>
@@ -476,7 +337,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default">Details</button>
+                        <button type="button" class="btn btn-default carpool-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -501,7 +362,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default">Details</button>
+                        <button type="button" class="btn btn-default carpool-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -526,7 +387,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default">Details</button>
+                        <button type="button" class="btn btn-default carpool-btn">Details</button>
                     </div>
                 </div>
             </div>

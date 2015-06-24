@@ -87,16 +87,16 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 
     /* IE 5-7 */
-    filter: alpha(opacity=70);
+    filter: alpha(opacity=90);
 
     /* Netscape */
-    -moz-opacity: 0.7;
+    -moz-opacity: 0.9;
 
     /* Safari 1.x */
-    -khtml-opacity: 0.7;
+    -khtml-opacity: 0.9;
 
     /* Good browsers */
-    opacity: 0.7 !important;
+    opacity: 0.9 !important;
 }
 .input-color:hover{
     border: 1px solid #62C4E2;
@@ -111,16 +111,16 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 
     /* IE 5-7 */
-    filter: alpha(opacity=70);
+    filter: alpha(opacity=80);
 
     /* Netscape */
-    -moz-opacity: 0.7;
+    -moz-opacity: 0.8;
 
     /* Safari 1.x */
-    -khtml-opacity: 0.7;
+    -khtml-opacity: 0.8;
 
     /* Good browsers */
-    opacity: 0.7 !important;
+    opacity: 0.8 !important;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     background-color: transparent !important;
@@ -151,7 +151,50 @@
     color: #fff;
     font-size: 18px;
     font-weight: bold;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+    /* IE 5-7 */
+    filter: alpha(opacity=80);
+
+    /* Netscape */
+    -moz-opacity: 0.8;
+
+    /* Safari 1.x */
+    -khtml-opacity: 0.8;
     opacity: 0.8;
     transform: translateX(335%) translateY(10%);
     -webkit-transform: translateX(335%) translateY(10%);
+}
+ .join-btn:hover{
+    background-color: #f13a20 !important;
+    color: #fff !important;
+}
+.carpool-btn{
+    background-color: #F14B20;
+    color: #fff;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+    /* IE 5-7 */
+    filter: alpha(opacity=80);
+
+    /* Netscape */
+    -moz-opacity: 0.8;
+
+    /* Safari 1.x */
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+.carpool-btn:hover{
+    background-color: #f13a20 !important;
+    color: #fff !important;
+}
+/*Find a car section*/
+.find-div{
+    margin-top: -80px;
+}
+
+.hr{
+    border-top: 1px solid #62C4E2 !important;
 }
