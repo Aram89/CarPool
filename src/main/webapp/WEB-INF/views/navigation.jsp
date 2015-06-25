@@ -39,6 +39,11 @@
           </li>
         </ul>
 
+        <!--Weather-->
+        <div class="weather-block">
+          <i class="fa fa-umbrella fa-icon"></i>
+          <div id="weather"></div>
+        </div>
 
 
         <ul class="nav navbar-nav navbar-right ">

@@ -136,13 +136,45 @@
 </section>
 
 <!--Contact us-->
-    <section id="contact" /*class="about-section section"*/>
+    <section id="contact">
+        <div class="col-lg-3 col-xs-12 pull-left">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your Name * </label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Email * </label>
+                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Subject * </label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Subject">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Message * </label>
+                    <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-1 pull-left btn-send">
+                        <button class="btn btn-default btn-carpool">Send</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
         <!--Google map-->
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-            <div style="overflow:hidden;height:300px;width:100%;"><div id="gmap_canvas" style="height:300px;width:100%;"></div>
+        <div class="col-lg-9 col-xs-12 pull-right">
+            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+            <div style="overflow:hidden;height:400px;width:100%;"><div id="gmap_canvas" style="height: 400px;width:100%;"></div>
                 <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-                    <a class="google-map-code" href="http://premium-wordpress-themes.me" id="get-map-data">the molitor.</a></div>
-                        <script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(40.1991299,44.47688300000004),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.1991299, 44.47688300000004)});infowindow = new google.maps.InfoWindow({content:"<b></b><br/>6/1 Abelyan street,<br/> Yervan" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+                <a class="google-map-code" href="http://premium-wordpress-themes.me" id="get-map-data">the molitor.</a></div>
+            <script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(40.1991299,44.47688300000004),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.1991299, 44.47688300000004)});infowindow = new google.maps.InfoWindow({content:"<b></b><br/>6/1 Abelyan street,<br/> Yervan" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+        </div>
+
     </section>
 
 <!--footer-->
@@ -423,6 +455,38 @@
 <script type="text/javascript" src="/resources/js/ng/carpool.js"></script>
 <!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>
+<!-- Weather widget-->
+<script type="text/javascript" src="/resources/js/jquery.simpleWeather.min.js"></script>
+
+<!--Weather-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.simpleWeather({
+            location: 'Moscow, Russia',
+            woeid: '',
+            unit: 'c',
+            success: function(weather) {
+                html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+
+                $("#weather").html(html);
+            },
+            error: function(error) {
+                $("#weather").html('<p>'+error+'</p>');
+            }
+        });
+    });
+    window.onload = (function(){
+        $(window).scroll(function () {
+            if( $(window).scrollTop() > 200 ) {
+                //$('#header').css('display','block');
+                $('#header').fadeIn();
+            }else{
+                $('#header').fadeOut();
+                //$('#header').css('display','none');
+            }
+        })
+    })
+</script>
 
 </body>
 </html>
