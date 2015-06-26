@@ -126,12 +126,12 @@
     background-color: transparent !important;
 }
 /*Slideshow*/
-#video:hover {
-    filter: contrast(1) grayscale(0.3) sepia(0.2);
-    -webkit-filter: contrast(1) grayscale(0.3) sepia(0.2);
-    -moz-filter: contrast(1) grayscale(0.3) sepia(0.2);
-    -o-filter: contrast(1) grayscale(0.3) sepia(0.2);
-    -ms-filter: contrast(1) grayscale(0.3) sepia(0.2);
+#video{
+    filter: brightness(1.5);
+    -webkit-filter: brightness(1.5);
+    -moz-filter: brightness(1.5);
+    -o-filter: brightness(1.5);
+    -ms-filter: brightness(1.5);
 }
 .slider-heading{
     font-size: 60px;
@@ -175,7 +175,11 @@
     color: #fff !important;
 }
 .btn-carpool{
-    background-color: #F14B20;
+    background-image: -o-linear-gradient(top, #F14A20 0%, #F2891F 100%);
+    background-image: -moz-linear-gradient(top, #F14A20 0%, #F2891F 100%);
+    background-image: -webkit-linear-gradient(top, #F14A20 0%, #F2891F 100%);
+    background-image: -ms-linear-gradient(top, #F14A20 0%, #F2891F 100%);
+    background-image: linear-gradient(to top, #F14A20 0%, #F2891F 100%);
     color: #fff;
     /* IE 8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
@@ -191,7 +195,7 @@
     opacity: 0.8;
 }
 .btn-carpool:hover{
-    background-color: #f13a20 !important;
+    background-color:  #F14B20 !important;
     color: #fff !important;
 }
 /*Find a car section*/
@@ -205,7 +209,11 @@
 
 /*footer*/
 .footer{
-    background-color: #F14B20;
+    background-image: -o-linear-gradient(top, #F14A20 0%, #F2891F 100%);
+    background-image: -moz-linear-gradient(top, #F14A20 0%, #F2891F 100%);
+    background-image: -webkit-linear-gradient(top, #F14A20 0%, #F2891F 100%);
+    background-image: -ms-linear-gradient(top, #F14A20 0%, #F2891F 100%);
+    background-image: linear-gradient(to top, #F14A20 0%, #F2891F 100%);
 }
 .footer-title{
     color:#fff;

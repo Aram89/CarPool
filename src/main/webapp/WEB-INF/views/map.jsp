@@ -95,7 +95,7 @@
 								<input type="checkbox" checked ng-model="route.periodic"> is Periodic
 							</label>
 						</div>
-						<button type="submit" class="btn btn-success" ng-disabled="routeForm.$invalid">Save Route</button>
+						<button type="submit" class="btn btn-success btn-carpool" ng-disabled="routeForm.$invalid">Save Route</button>
 					</div>
 				</div>
 
@@ -185,7 +185,38 @@
 <script type="text/javascript" src="/resources/js/ng/carpool.js"></script>
 <!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>
+<!-- Weather widget-->
+<script type="text/javascript" src="/resources/js/jquery.simpleWeather.min.js"></script>
 
+<!--Weather-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.simpleWeather({
+			location: 'Moscow, Russia',
+			woeid: '',
+			unit: 'c',
+			success: function(weather) {
+				html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+
+				$("#weather").html(html);
+			},
+			error: function(error) {
+				$("#weather").html('<p>'+error+'</p>');
+			}
+		});
+	});
+	window.onload = (function(){
+		$(window).scroll(function () {
+			if( $(window).scrollTop() > 200 ) {
+				//$('#header').css('display','block');
+				$('#header').fadeIn();
+			}else{
+				$('#header').fadeOut();
+				//$('#header').css('display','none');
+			}
+		})
+	})
+</script>
 
 </body>
 </html>
