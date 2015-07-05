@@ -42,7 +42,7 @@
         <!--Weather-->
         <div class="weather-block">
           <i class="fa fa-umbrella fa-icon"></i>
-          <div id="weather"></div>
+          <div id="weather"> <h2>&nbsp;</h2> </div>
         </div>
 
 

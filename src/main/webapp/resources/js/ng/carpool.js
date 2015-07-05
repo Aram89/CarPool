@@ -127,8 +127,8 @@
 			defaultDate: new Date()
 		});
 		uiGmapGoogleMapApi.then(function(maps) {
-			var findFromInput = document.getElementById('searchFrom'),
-				findToInput = document.getElementById('searchTo'),
+			var findFromInput        = document.getElementById('searchFrom'),
+				findToInput          = document.getElementById('searchTo'),
 				findFromAutocomplete = new google.maps.places.Autocomplete(findFromInput, {types: ['geocode']}),
 				findToAutocomplete   = new google.maps.places.Autocomplete(findToInput, {types: ['geocode']});
 

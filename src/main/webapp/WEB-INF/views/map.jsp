@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="carpool">
 <head>
 	<meta charset="utf-8">
 	<title>Carpool Armenia</title>
@@ -34,7 +34,7 @@
 </head>
 
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="carpool">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 <!-- Navigation -->
 <%@include file="./navigation.jsp"%>
@@ -168,55 +168,7 @@
 
 </script>
 
-
-<!-- jquery and bootstrap scripts -->
-<script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/resources/js/scrolling-nav.js"></script>
-<script type="text/javascript" src="/resources/js/moment.js"></script>
-<script type="text/javascript" src="/resources/js/bootstrap-datetimepicker.min.js"></script>
-<!-- angular scripts -->
-<script type="text/javascript" src="/resources/js/lodash.min.js"></script>
-<script type="text/javascript" src="/resources/js/angular.min.js"></script>
-<script type="text/javascript" src="/resources/js/angular-google-maps.min.js"></script>
-<script type="text/javascript" src="/resources/js/ui-bootstrap-tpls-0.13.0.min.js"></script>
-<!-- -->
-<script type="text/javascript" src="/resources/js/ng/carpool.js"></script>
-<!-- -->
-<script type="text/javascript" src="/resources/js/scripts.js"></script>
-<!-- Weather widget-->
-<script type="text/javascript" src="/resources/js/jquery.simpleWeather.min.js"></script>
-
-<!--Weather-->
-<script type="text/javascript">
-	$(document).ready(function () {
-		$.simpleWeather({
-			location: 'Moscow, Russia',
-			woeid: '',
-			unit: 'c',
-			success: function(weather) {
-				html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-
-				$("#weather").html(html);
-			},
-			error: function(error) {
-				$("#weather").html('<p>'+error+'</p>');
-			}
-		});
-	});
-	window.onload = (function(){
-		$(window).scroll(function () {
-			if( $(window).scrollTop() > 200 ) {
-				//$('#header').css('display','block');
-				$('#header').fadeIn();
-			}else{
-				$('#header').fadeOut();
-				//$('#header').css('display','none');
-			}
-		})
-	})
-</script>
+<%@include file="./scripts.jsp" %>
 
 </body>
 </html>
