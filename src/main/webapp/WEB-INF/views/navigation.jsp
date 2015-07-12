@@ -1,7 +1,5 @@
-<%@ page import="org.proffart.carpool.service.UserServiceImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<% Boolean isLogged = UserServiceImpl.isLogged(); %>
 <div class="navbar navbar-default navbar-fixed-top" id="nav-height" role="navigation">
   <div class="container">
     <div class="welcome-page">
@@ -53,7 +51,7 @@
         </ul>
 
         <% if(!isLogged) { %>
-        <form name="loginForm" class="navbar-form navbar-right" ng-controller="loginController" ng-submit="login()">
+        <form name="loginForm" class="navbar-form navbar-right" ng-controller="LoginController" ng-submit="login()">
           <div class="form-group">
             <input class="form-control input-color" type="text" ng-model="user.userName" name="login" placeholder="Login" required/>
           </div>

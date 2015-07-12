@@ -2,11 +2,14 @@ package org.proffart.carpool.domain;
 
 public class Route {
 
+    // Route id
+    private int id;
+
     // Route owner id.
-    private int userID;
+    private int userId;
 
     // Route car id.
-    private int carID;
+    private int carId;
 
     // Route date.
     private String date;
@@ -22,6 +25,11 @@ public class Route {
 
     // Week days.
     private Week week;
+
+    private Double startLatitude;
+    private Double endLatitude;
+    private Double startLongitude;
+    private Double endLongitude;
 
     // Coordinates.
 
@@ -59,21 +67,28 @@ public class Route {
         this.endPoint = endPoint;
     }
 
-
-    public int getUserID() {
-        return userID;
+    public int getId() {
+        return id;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getCarID() {
-        return carID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setCarID(int carID) {
-        this.carID = carID;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getCarId() {
+        return carId;
+    }
+
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     public String getDate() {
@@ -90,5 +105,37 @@ public class Route {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Double getStartLatitude() {
+        return startLatitude;
+    }
+
+    public void setStartLatitude(Double startLatitude) {
+        this.startLatitude = startLatitude;
+    }
+
+    public Double getEndLatitude() {
+        return endLatitude;
+    }
+
+    public void setEndLatitude(Double endLatitude) {
+        this.endLatitude = endLatitude;
+    }
+
+    public Double getStartLongitude() {
+        return startLongitude;
+    }
+
+    public void setStartLongitude(Double startLongitude) {
+        this.startLongitude = startLongitude;
+    }
+
+    public Double getEndLongitude() {
+        return endLongitude;
+    }
+
+    public void setEndLongitude(Double endLongitude) {
+        this.endLongitude = endLongitude;
     }
 }

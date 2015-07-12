@@ -45,7 +45,7 @@
 <!-- Intro Section -->
 <section id="map" class="map-section section">
 	<div class="container">
-		<div class="row" ng-controller="mapController">
+		<div class="row" ng-controller="MapController">
 
 			<ng-include src="'map-form.html'"></ng-include>
 

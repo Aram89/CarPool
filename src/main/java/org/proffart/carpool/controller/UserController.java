@@ -61,6 +61,7 @@ public class UserController {
             throw new UserException(ErrorStrings.USER_NAME_EXISTS);
         }
         userService.create(user);
+        login(user);
         return new ResponseEntity(HttpStatus.OK);
     }
 }

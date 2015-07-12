@@ -10,30 +10,6 @@
 		});
 	});
 
-	carpool.controller('registrationController', function($scope, $http) {
-
-		$scope.user = {};
-		$scope.enable = true;
-
-		$scope.registration = function() {
-			$scope.enable = false;
-			$http({
-				url: 'user/create',
-				method: 'POST',
-				data: $scope.user
-			})
-			.success(function(data) {
-				if(data.result) {
-					window.location.reload();
-				} else {
-					$scope.enable = true;
-				}
-			});
-		};
-
-
-	});
-
 	carpool.directive('ngRemoteCheck', ['$http', function ($http) {
 		return {
 			restrict : 'A',
@@ -120,7 +96,57 @@
 
 	}]);
 
-	carpool.controller('findController', function($scope, $http, uiGmapGoogleMapApi) {
+	carpool.controller('RegistrationController', function($scope, $http) {
+
+		$scope.user = {};
+		$scope.enable = true;
+
+		$scope.registration = function() {
+			$scope.enable = false;
+			$http({
+				url: 'user/create',
+				method: 'POST',
+				data: $scope.user
+			})
+				.success(function(data) {
+					if(data.result) {
+						window.location.reload();
+					} else {
+						$scope.enable = true;
+					}
+				});
+		};
+
+
+	});
+
+	carpool.controller('LoginController', function ($scope, $http) {
+		$scope.user = {};
+		$scope.loading = false;
+
+		$scope.login = function() {
+			$scope.loading = true;
+			$http({
+				url : 'user/login',
+				method: 'POST',
+				data  : $scope.user
+			})
+			.success(function(data){
+				if(data.result) {
+					window.location.reload();
+				} else {
+					$scope.loading = false;
+					alert(data.errorString);
+				}
+			})
+			.error(function(){
+				$scope.loading = false;
+				alert('Error');
+			});
+		};
+	});
+
+	carpool.controller('FindController', function ($scope, $http, uiGmapGoogleMapApi) {
 		$('#searchDateBlock').datetimepicker({
 			sideBySide: true,
 			format : 'DD/MM/YYYY HH:mm',
@@ -141,33 +167,7 @@
 		});
 	});
 
-	carpool.controller('loginController', function($scope, $http) {
-		$scope.user = {};
-		$scope.loading = false;
-
-		$scope.login = function(){
-			$scope.loading = true;
-			$http({
-				url : 'user/login',
-				method: 'POST',
-				data  : $scope.user
-			})
-			.success(function(data){
-				if(data.result) {
-					window.location.reload();
-				} else {
-					$scope.loading = false;
-					alert(data.errorString);
-				}
-			})
-			.error(function(){
-				console.log(arguments);
-				alert('Error');
-			});
-		};
-	});
-
-	carpool.controller('mapController', function($scope, $filter, uiGmapGoogleMapApi) {
+	carpool.controller('MapController', function ($scope, $filter, uiGmapGoogleMapApi) {
 		$scope.route = {};
 		$scope.route.latlng = {};
 		$scope.route.week = {
@@ -298,5 +298,67 @@
 		};
 
 	});
+
+	carpool.controller('CarsController', function ($scope, $http) {
+		$scope.cars = [];
+
+		$scope.setEditableItem = function (obj, editable) {
+			for(var i=0; i<$scope.cars.length; ++i) {
+				if(obj && $scope.cars[i] === obj) {
+					$scope.cars[i].editable = editable;
+				} else if(!$scope.cars[i].id) {
+					$scope.cars.splice(i, 1);
+					i--;
+					break;
+				} else {
+					$scope.cars[i].editable = false;
+				}
+			}
+		};
+
+		$scope.addNewCar = function() {
+			var car = {
+				id: 1
+			};
+			$scope.cars.push(car);
+			$scope.setEditableItem(car, true);
+		};
+
+		$scope.editCar = function(car) {
+			$scope.setEditableItem(car, true);
+		};
+
+		$scope.deleteCar = function(car) {
+
+		};
+
+		$scope.saveCar = function(car) {
+
+		};
+
+
+	});
+
+	carpool.controller('RoutsController', function ($scope, $http) {
+		$scope.routs = {};
+		$scope.rout  = {};
+
+		$scope.addRout = function (form) {
+			if(form.$invalid) return;
+
+		};
+	});
+
+	carpool.controller('ContactController', function ($scope) {
+		$scope.contact = {};
+
+		$scope.send = function (form) {
+			if(form.$invalid) return;
+
+
+
+		};
+	});
+
 
 })();

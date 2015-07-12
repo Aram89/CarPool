@@ -11,9 +11,10 @@
             <property name="JDBC.ConnectionURL"
                       value="jdbc:mysql://localhost:3306/carpool"/>
             <property name="JDBC.Username" value="root"/>
-            <property name="JDBC.Password" value="root"/>
+            <property name="JDBC.Password" value="1234"/>
         </dataSource>
     </transactionManager>
+    <sqlMap resource="ibatis/car.xml"/>
     <sqlMap resource="ibatis/user.xml"/>
     <sqlMap resource="ibatis/route.xml"/>
 

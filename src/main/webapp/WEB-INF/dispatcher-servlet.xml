@@ -90,6 +90,11 @@
         <property name="sqlMapClient" ref="sqlMap" />
     </bean>
 
+    <bean id="carDAO"
+          class="org.proffart.carpool.dao.CarDAOImpl">
+        <property name="sqlMapClient" ref="sqlMap" />
+    </bean>
+
     <mvc:resources mapping="/resources/**" location="/resources/" />
 	
 	<mvc:annotation-driven />

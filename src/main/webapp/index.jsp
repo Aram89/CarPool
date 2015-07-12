@@ -1,3 +1,6 @@
+<%@ page import="org.proffart.carpool.service.UserServiceImpl" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% Boolean isLogged = true; //UserServiceImpl.isLogged(); %>
 <!DOCTYPE html>
 <html lang="en" ng-app="carpool">
 <head>
@@ -47,8 +50,18 @@
                 <source src="/resources/images/test3.mp4" type="video/mp4">
             </video>
             <div class="container">
+                <% if(isLogged) { %>
                 <h1 class="slider-heading text-center"> Let's get started</h1>
-                <a class="btn btn-default join-btn" href="#modal-container-registration" role="button" data-toggle="modal"> Join </a>
+                <div style="text-align: center">
+                    <a class="btn btn-default" href="#modal-container-cars"  role="button" data-toggle="modal"> My cars </a>
+                    <a class="btn btn-default" href="#modal-container-routs" role="button" data-toggle="modal"> My routs </a>
+                </div>
+                <% }else{ %>
+                <h1 class="slider-heading text-center"> Let's get started</h1>
+                <div style="text-align: center">
+                    <a class="btn btn-default join-btn" href="#modal-container-registration" role="button" data-toggle="modal"> Join </a>
+                </div>
+                <% } %>
             </div>
         </div>
     </div>
@@ -136,29 +149,33 @@
 </section>
 
 <!--Contact us-->
-    <section id="contact">
+    <section id="contact" ng-controller="ContactController">
         <div class="col-lg-3 col-xs-12 pull-left">
-            <form>
+            <form ng-submit="send(contactForm)" name="contactForm" novalidate>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Your Name * </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Email * </label>
-                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Subject * </label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Subject">
+                    <label for="contactEmail">Email * </label>
+                    <input type="email" ng-model="contact.email" class="form-control" id="contactEmail" name="contactEmail" placeholder="Email" required>
+                    <p class="help-block" ng-show="contactForm.contactEmail.$error.required && !contactForm.contactEmail.$pristine">
+                      Please enter your email
+                    </p>
+                    <p class="help-block" ng-show="contactForm.contactEmail.$error.email && !contactForm.contactEmail.$pristine">
+                      Please enter valid email
+                    </p>
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Message * </label>
-                    <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                    <label for="contactContent">Message * </label>
+                    <textarea ng-model="contact.content" class="form-control" id="contactContent" name="contactContent" rows="10" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
+                    <p class="help-block" ng-show="contactForm.contactContent.$error.required && !contactForm.contactContent.$pristine">
+                        Please enter message
+                    </p>
+                    <p class="help-block" ng-show="contactForm.contactContent.$error.minlength && !contactForm.contactContent.$pristine">
+                        Your message is a short
+                    </p>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-lg-1 pull-left btn-send">
+                    <div class="col-xs-12 pull-left btn-send">
                         <button class="btn btn-default btn-carpool">Send</button>
                     </div>
                 </div>
@@ -192,7 +209,7 @@
 
 <!-- modal -->
 
-<div class="modal fade" ng-controller="registrationController" id="modal-container-registration" role="dialog"
+<div class="modal fade" ng-controller="RegistrationController" id="modal-container-registration" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -221,6 +238,57 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" ng-controller="CarsController" id="modal-container-cars" role="dialog"
+     aria-labelledby="carsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="carsModalLabel">
+                    My Cars
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <ng-include src="'cars.html'"></ng-include>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-carpool" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" ng-controller="RoutsController" id="modal-container-routs" role="dialog"
+     aria-labelledby="routsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="routsModalLabel">
+                    My Cars
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <ng-include src="'routs.html'"></ng-include>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-carpool" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- angular templates -->
 <script type="text/ng-template" id="registration-fieldset.html">
@@ -314,7 +382,7 @@
 
 <script type="text/ng-template" id="search-form.html">
 
-    <div ng-controller="findController" class="find-div">
+    <div ng-controller="FindController" class="find-div">
         <h3 class="text-muted">
             Find Car or Driver
         </h3>
@@ -432,6 +500,52 @@
             </div>
         </div>
     </div>
+</script>
+
+<script type="text/ng-template" id="cars.html">
+
+<div class="row">
+    <div class="col-xs-6 col-md-3"><strong> Model </strong></div>
+    <div class="col-xs-6 col-md-3"><strong> Number </strong></div>
+    <div class="col-xs-10 col-md-4"><strong> Description </strong></div>
+    <div class="col-xs-2 col-md-2">
+        <button type="button" class="btn btn-success btn-sm" ng-click="addNewCar()">
+            <i class="fa fa-plus"></i>
+        </button>
+    </div>
+</div>
+
+<div class="row" ng-repeat="car in cars" style="margin-top: 7px; margin-bottom: 7px;">
+    <div class="col-xs-6 col-md-3">
+        <span ng-hide="car.editable" ng-bind="car.model"></span>
+        <input type="text" class="form-control" ng-model="car.model" ng-show="car.editable">
+    </div>
+    <div class="col-xs-6 col-md-3">
+        <span ng-hide="car.editable" ng-bind="car.number"></span>
+        <input type="text" class="form-control" ng-model="car.number" ng-show="car.editable">
+    </div>
+    <div class="col-xs-10 col-md-4">
+        <span ng-hide="car.editable" ng-bind="car.description"></span>
+        <textarea ng-model="car.description" class="form-control" rows="1" ng-show="car.editable"></textarea>
+    </div>
+    <div class="col-xs-2 col-md-2">
+        <button type="button" class="btn btn-primary btn-xs" ng-hide="car.editable" ng-click="editCar(car)">
+            <i class="fa fa-edit"></i>
+        </button>
+        <button type="button" class="btn btn-success btn-xs" ng-show="car.editable" ng-click="saveCar(car)">
+            <i class="fa fa-check"></i>
+        </button>
+        <button type="button" class="btn btn-danger btn-xs" ng-click="deleteCar(car)">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+</div>
+
+
+</script>
+
+<script type="text/ng-template" id="routs.html">
+
 </script>
 
 <%@include file="./WEB-INF/views/scripts.jsp" %>

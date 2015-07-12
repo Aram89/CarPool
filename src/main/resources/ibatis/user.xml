@@ -16,9 +16,11 @@
         <result property="fbLink" column="fbLink"/>
         <result property="twLink" column="twLink"/>
         <result property="goLink" column="goLink"/>
+        <!--
         <result property="fbId" column="fbId"/>
         <result property="twId" column="twId"/>
         <result property="goId" column="goId"/>
+        -->
     </resultMap>
 
     <resultMap id="password" class="user">
@@ -29,7 +31,7 @@
 
     <insert id="insert" parameterClass="user">
         INSERT INTO user(id, password, email, phone, token, enabled, fbLink, twLink, goLink, userName, firstName, lastName)
-        values (#id#, #password#, #email#, #phone#, #token#, #enabled#, #fbLink#, #twLink#, #goLink#, #userName#, #firstName#, #lastName#)
+        values (#id#, #password#, #email#, #phone#, #token#, #enabled#, #fbLink#, #twLink#, #goLink#, #userName#,#firstName#,#lastName#)
 
         <selectKey resultClass="int" keyProperty="id">
             select last_insert_id() as id
