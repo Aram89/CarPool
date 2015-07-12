@@ -108,13 +108,13 @@
 				method: 'POST',
 				data: $scope.user
 			})
-				.success(function(data) {
-					if(data.result) {
-						window.location.reload();
-					} else {
-						$scope.enable = true;
-					}
-				});
+			.success(function() {
+				window.location.reload();
+			})
+			.error(function(){
+				$scope.enable = true;
+				alert('Error');
+			});
 		};
 
 
@@ -132,12 +132,7 @@
 				data  : $scope.user
 			})
 			.success(function(data){
-				if(data.result) {
-					window.location.reload();
-				} else {
-					$scope.loading = false;
-					alert(data.errorString);
-				}
+				window.location.reload();
 			})
 			.error(function(){
 				$scope.loading = false;
@@ -299,44 +294,107 @@
 
 	});
 
-	carpool.controller('CarsController', function ($scope, $http) {
-		$scope.cars = [];
+	carpool.controller('CarsController', function ($rootScope, $scope, $http) {
+		$rootScope.cars = [];
+		var tmpCar;
+
+		$scope.getCars = function() {
+			$http({
+				url : 'car/list',
+				method: 'GET'
+			})
+			.success(function(cars) {
+				$rootScope.cars = cars;
+			})
+			.error(function(){
+				alert('Error');
+			});
+		};
 
 		$scope.setEditableItem = function (obj, editable) {
 			for(var i=0; i<$scope.cars.length; ++i) {
 				if(obj && $scope.cars[i] === obj) {
 					$scope.cars[i].editable = editable;
-				} else if(!$scope.cars[i].id) {
-					$scope.cars.splice(i, 1);
-					i--;
-					break;
 				} else {
-					$scope.cars[i].editable = false;
+					if($scope.cars[i].id) {
+						$scope.cars[i].editable = false;
+					} else {
+						$scope.cars.splice(i, 1);
+						i--;
+					}
 				}
 			}
 		};
 
 		$scope.addNewCar = function() {
-			var car = {
-				id: 1
-			};
+			var car = {id:0};
 			$scope.cars.push(car);
 			$scope.setEditableItem(car, true);
 		};
 
 		$scope.editCar = function(car) {
+			tmpCar = angular.copy(car);
 			$scope.setEditableItem(car, true);
 		};
 
 		$scope.deleteCar = function(car) {
-
+			var name = car.model+' '+car.number;
+			var r = confirm("You want to remove "+name+",\n Are You sure ?");
+			if (r) {
+				$http({
+					url : 'car/delete',
+					method: 'GET',
+					params: {carId : car.id}
+				})
+				.success(function(){
+					$scope.cars.splice($scope.cars.indexOf(car), 1);
+					$scope.$apply();
+				})
+				.error(function(){
+					alert('Error');
+				});
+			}
 		};
+
 
 		$scope.saveCar = function(car) {
-
+			$scope.setEditableItem(car, false);
+			if(car.id) {
+				$http({
+					url: 'car/edit',
+					method: 'POST',
+					data: car
+				})
+				.success(function () {
+				})
+				.error(function () {
+					alert('Error');
+				});
+			} else {
+				$http({
+					url: 'car/create',
+					method: 'POST',
+					data: car
+				})
+				.success(function (carId) {
+					car.id = carId;
+				})
+				.error(function () {
+					alert('Error');
+				});
+			}
 		};
 
+		$scope.cancelEdit = function(car) {
+			if(car.id) {
+				var index = $scope.cars.indexOf(car);
+				$scope.cars[index] = angular.copy(tmpCar);
+			}
+			tmpCar = null;
+			$scope.setEditableItem(null, false);
+		};
 
+		$scope.getCars();
 	});
 
 	carpool.controller('RoutsController', function ($scope, $http) {

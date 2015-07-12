@@ -61,9 +61,21 @@
     </delete>
 
 
-    <select id="getUser" resultClass="User" parameterClass="String">
-        SELECT password FROM User
-        WHERE userName = #userName#
+    <select id="getUser" resultClass="user" parameterClass="String">
+        SELECT
+          `user`.id,
+          `user`.userName,
+          `user`.firstName,
+          `user`.lastName,
+          `user`.password,
+          `user`.token,
+          `user`.phone,
+          `user`.enabled,
+          `user`.fbLink,
+          `user`.twLink,
+          `user`.goLink
+         FROM `user`
+        WHERE `user`.userName = #userName#
     </select>
 
 </sqlMap>

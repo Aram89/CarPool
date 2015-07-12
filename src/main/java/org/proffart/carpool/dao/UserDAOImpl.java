@@ -19,6 +19,6 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
     }
 
     public User getUser(String userName) throws SQLException {
-        return (User)getSqlMapClient().queryForObject("user.getUser",userName);
+        return (User) getSqlMapClient().queryForObject("user.getUser", userName);
     }
 }

@@ -49,7 +49,12 @@ public class UserServiceImpl implements UserService {
             throw new UserException(ErrorStrings.WRONG_USER_NAME);
         }
         String pass = Utils.hash(password);
-        return pass.equals(user.getPassword());
+        if(pass.equals(user.getPassword())) {
+            ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+            HttpSession session = attr.getRequest().getSession();
+            session.setAttribute("userObject", user);
+        }
+        return isLogged();
     }
 
     public static User getCurrentUser() {

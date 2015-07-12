@@ -1,6 +1,6 @@
 <%@ page import="org.proffart.carpool.service.UserServiceImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% Boolean isLogged = true; //UserServiceImpl.isLogged(); %>
+<% Boolean isLogged = UserServiceImpl.isLogged(); %>
 <!DOCTYPE html>
 <html lang="en" ng-app="carpool">
 <head>
@@ -209,39 +209,10 @@
 
 <!-- modal -->
 
-<div class="modal fade" ng-controller="RegistrationController" id="modal-container-registration" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                <h4 class="modal-title" id="myModalLabel">
-                    Register Yourself
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="panel-body">
-                    <form class="form-horizontal" name="regForm" ng-submit="registration()" 1novalidate>
-                        <ng-include src="'registration-fieldset.html'"></ng-include>
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-carpool" data-dismiss="modal" ng-disabled="!enable">
-                    Close
-                </button>
-                <button type="button" class="btn btn-success btn-carpool" ng-click="registration()"
-                        ng-disabled="regForm.$invalid || !enable">
-                    Register Me
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
+<% if(isLogged) { %>
 
 <div class="modal fade" ng-controller="CarsController" id="modal-container-cars" role="dialog"
-     aria-labelledby="carsModalLabel" aria-hidden="true">
+     aria-labelledby="carsModalLabel" aria-hidden="true" >
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -287,7 +258,38 @@
         </div>
     </div>
 </div>
+<% } else { %>
 
+<div class="modal fade" ng-controller="RegistrationController" id="modal-container-registration" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Register Yourself
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <form class="form-horizontal" name="regForm" ng-submit="registration()" 1novalidate>
+                        <ng-include src="'registration-fieldset.html'"></ng-include>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-carpool" data-dismiss="modal" ng-disabled="!enable">
+                    Close
+                </button>
+                <button type="button" class="btn btn-success btn-carpool" ng-click="registration()"
+                        ng-disabled="regForm.$invalid || !enable">
+                    Register Me
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>
 
 
 <!-- angular templates -->
@@ -532,11 +534,15 @@
         <button type="button" class="btn btn-primary btn-xs" ng-hide="car.editable" ng-click="editCar(car)">
             <i class="fa fa-edit"></i>
         </button>
-        <button type="button" class="btn btn-success btn-xs" ng-show="car.editable" ng-click="saveCar(car)">
+        <button type="button" class="btn btn-danger btn-xs" ng-hide="car.editable" ng-click="deleteCar(car)">
+            <i class="fa fa-trash"></i>
+        </button>
+        <button type="button" class="btn btn-success btn-xs" ng-show="car.editable" ng-click="saveCar(car)"
+            ng-disable="!car.model && !car.number && !car.description">
             <i class="fa fa-check"></i>
         </button>
-        <button type="button" class="btn btn-danger btn-xs" ng-click="deleteCar(car)">
-            <i class="fa fa-trash"></i>
+        <button type="button" class="btn btn-warning btn-xs" ng-show="car.editable" ng-click="cancelEdit(car)">
+            <i class="fa fa-times"></i>
         </button>
     </div>
 </div>
