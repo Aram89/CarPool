@@ -7,14 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.SQLClientInfoException;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by Aram on 6/18/2015.
- */
 @Transactional
 @Service
 public class RouteServiceImpl implements RouteService {

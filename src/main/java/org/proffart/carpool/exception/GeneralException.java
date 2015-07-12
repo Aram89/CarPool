@@ -11,7 +11,6 @@ import java.io.IOException;
 
 /**
  * Class for handling internal errors.
- * Created by Aram on 6/12/2015.
  */
 @ControllerAdvice
 public class GeneralException {

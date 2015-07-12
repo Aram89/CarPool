@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -18,7 +21,6 @@ import java.sql.SQLException;
 /**
  * Controller for user requests.
  *
- * Created by Aram on 4/11/2015.
  */
 @RequestMapping(value = RequestMappings.user)
 @Controller

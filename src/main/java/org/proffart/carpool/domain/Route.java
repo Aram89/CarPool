@@ -1,8 +1,5 @@
 package org.proffart.carpool.domain;
 
-/**
- * Created by Aram on 6/18/2015.
- */
 public class Route {
 
     // Route owner id.

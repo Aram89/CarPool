@@ -15,7 +15,6 @@ import java.sql.SQLException;
 /**
  * Controller for manipulating routes.
  *
- * Created by Aram on 6/18/2015.
  */
 public class RouteController {
 

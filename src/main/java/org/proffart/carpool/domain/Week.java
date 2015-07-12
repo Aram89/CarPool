@@ -1,8 +1,5 @@
 package org.proffart.carpool.domain;
 
-/**
- * Created by Karine on 6/22/2015.
- */
 public class Week {
 
     private boolean monday;

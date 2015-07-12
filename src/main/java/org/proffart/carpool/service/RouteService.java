@@ -3,13 +3,9 @@ package org.proffart.carpool.service;
 import org.proffart.carpool.domain.Coordinate;
 import org.proffart.carpool.domain.Route;
 
-import java.sql.SQLClientInfoException;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by Aram on 6/18/2015.
- */
 public interface RouteService {
 
     /**

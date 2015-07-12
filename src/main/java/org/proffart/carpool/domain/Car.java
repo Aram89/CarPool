@@ -1,8 +1,5 @@
 package org.proffart.carpool.domain;
 
-/**
- * Created by Aram on 5/17/2015.
- */
 public class Car {
 
     private int id;

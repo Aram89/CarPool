@@ -9,9 +9,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
-/**
- * Created by Aram on 4/13/2015.
- */
 @Transactional
 @Service
 public interface UserService {
