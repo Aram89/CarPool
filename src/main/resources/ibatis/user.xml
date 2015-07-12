@@ -6,19 +6,19 @@
 
     <resultMap id="result" class="user">
         <result property="id" column="id"/>
-        <result property="userName" column="user_name"/>
-        <result property="firstName" column="first_name"/>
-        <result property="lastName" column="last_name"/>
+        <result property="userName" column="userName"/>
+        <result property="firstName" column="firstName"/>
+        <result property="lastName" column="lastName"/>
         <result property="password" column="password"/>
         <result property="token" column="token"/>
         <result property="phone" column="phone"/>
         <result property="enabled" column="enabled"/>
-        <result property="fbLink" column="fb_link"/>
-        <result property="twLink" column="tw_link"/>
-        <result property="goLink" column="go_link"/>
-        <result property="fbID" column="fb_id"/>
-        <result property="twID" column="tw_id"/>
-        <result property="goID" column="go_id"/>
+        <result property="fbLink" column="fbLink"/>
+        <result property="twLink" column="twLink"/>
+        <result property="goLink" column="goLink"/>
+        <result property="fbId" column="fbId"/>
+        <result property="twId" column="twId"/>
+        <result property="goId" column="goId"/>
     </resultMap>
 
     <resultMap id="password" class="user">
@@ -28,8 +28,8 @@
 
 
     <insert id="insert" parameterClass="user">
-        INSERT INTO user(id,password,email,phone,token,enabled,fb_link,tw_link,go_link,userName,first_name,last_name)
-        values (#id#,#password#,#email#,#phone#,#token#,#enabled#,#fbLink#,#twLink#,#goLink#,#userName#,#firstName#,#lastName#)
+        INSERT INTO user(id, password, email, phone, token, enabled, fbLink, twLink, goLink, userName, firstName, lastName)
+        values (#id#, #password#, #email#, #phone#, #token#, #enabled#, #fbLink#, #twLink#, #goLink#, #userName#, #firstName#, #lastName#)
 
         <selectKey resultClass="int" keyProperty="id">
             select last_insert_id() as id
@@ -49,7 +49,7 @@
 
     <update id="update" parameterClass="User">
         UPDATE User
-        SET    first_name = #firstName#
+        SET    firstName = #firstName#
         WHERE  id = #id#
     </update>
 
@@ -61,7 +61,7 @@
 
     <select id="getUser" resultClass="User" parameterClass="String">
         SELECT password FROM User
-        WHERE userName=#userName#
+        WHERE userName = #userName#
     </select>
 
 </sqlMap>

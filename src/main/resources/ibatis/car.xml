@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="car">
+    <typeAlias alias="car" type="org.proffart.carpool.domain.Car"/>
+
+    <resultMap id="result" class="car">
+        <result property="id" column="id"/>
+        <result property="userId" column="userId"/>
+        <result property="number" column="number"/>
+        <result property="model" column="model"/>
+        <result property="description" column="description"/>
+    </resultMap>
+
+    <insert id="insert" parameterClass="car">
+        INSERT INTO car ( userId, number, model, description)
+        VALUES ( #userId#, #number#, #model#, #description# )
+
+        <selectKey resultClass="int" keyProperty="id">
+            SELECT last_insert_id() AS id
+        </selectKey>
+    </insert>
+    <update id="update" parameterClass="car">
+        UPDATE car
+        SET car.number = #number#,
+        car.model = #model#,
+        car.description = #description#
+        WHERE car.id = #id#
+    </update>
+
+    <delete id="deleteById" parameterClass="int">
+        DELETE FROM car WHERE car.id = #id#
+    </delete>
+
+    <select id="getCars" resultClass="car" parameterClass="int">
+        SELECT * FROM car WHERE car.userId = #userId#
+    </select>
+
+
+</sqlMap>

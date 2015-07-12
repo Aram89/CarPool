@@ -2,20 +2,11 @@ package org.proffart.carpool.domain;
 
 public class Car {
 
-    private int id;
-    private int userID;
-    private String model;
-    private String numbers;
-    private String color;
-    private String description;
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
+    public int id;
+    public int userId;
+    public String number;
+    public String model;
+    public String description;
 
     public int getId() {
         return id;
@@ -23,6 +14,22 @@ public class Car {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getModel() {
@@ -33,22 +40,6 @@ public class Car {
         this.model = model;
     }
 
-    public String getNumbers() {
-        return numbers;
-    }
-
-    public void setNumbers(String numbers) {
-        this.numbers = numbers;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -56,6 +47,4 @@ public class Car {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
 }

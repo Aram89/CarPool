@@ -20,7 +20,6 @@ import java.sql.SQLException;
 
 /**
  * Controller for user requests.
- *
  */
 @RequestMapping(value = RequestMappings.user)
 @Controller

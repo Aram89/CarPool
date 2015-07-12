@@ -19,6 +19,7 @@ public interface RequestMappings {
     public static final String createCar = "/create";
     public static final String editCar = "/edit";
     public static final String deleteCar = "/delete";
+    public static final String getCarList = "/list";
 
 
 

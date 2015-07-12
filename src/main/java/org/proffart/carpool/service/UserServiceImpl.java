@@ -22,7 +22,7 @@ import java.sql.SQLException;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserDAO userDAO;
+    private UserDAO userDAO;
 
     public void create(User user) throws SQLException, UnsupportedEncodingException, NoSuchAlgorithmException {
         String password = user.getPassword();

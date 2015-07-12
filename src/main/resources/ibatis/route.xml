@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="route">
-    <typeAlias alias="route" type="org.proffart.carpool.domain.Route" />
+    <typeAlias alias="route" type="org.proffart.carpool.domain.Route"/>
     <resultMap id="result" class="route">
-        <result property="userID" column="userID"/>
-        <result property="carID" column="carID"/>
+        <result property="id" column="id"/>
+        <result property="userId" column="userId"/>
+        <result property="carId" column="carId"/>
         <result property="type" column="type"/>
         <result property="date" column="length"/>
         <result property="startPoint" column="startPoint"/>
         <result property="endPoint" column="endPoint"/>
-
+        <result property="startLatitude" column="startLatitude"/>
+        <result property="endLatitude" column="endLatitude"/>
+        <result property="startLongitude" column="startLongitude"/>
+        <result property="endLongitude" column="endLongitude"/>
     </resultMap>
 
     <insert id="insert" parameterClass="route">
-        INSERT INTO route(userID,carID,type,date,startPoint,endPoint)
-        values (#userID#,#carID#,#type#,#date#,#startPoint#,#endPoint#)
+        INSERT INTO route( userId, carId, type, date, startPoint, endPoint,
+                      startLatitude, endLatitude, startLongitude, endLongitude )
+        VALUES ( #userId#, #carId#, #type#, #date#, #startPoint#, #endPoint#,
+                 #startLatitude#, #endLatitude#, #startLongitude#, #endLongitude# )
 
         <selectKey resultClass="int" keyProperty="id">
-            select last_insert_id() as id
+            SELECT last_insert_id() AS id
         </selectKey>
     </insert>
 </sqlMap>

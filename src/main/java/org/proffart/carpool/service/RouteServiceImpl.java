@@ -16,7 +16,7 @@ import java.util.List;
 public class RouteServiceImpl implements RouteService {
 
     @Autowired
-    RouteDAO routeDAO;
+    private RouteDAO routeDAO;
 
 
     public void create(Route route) throws SQLException {
