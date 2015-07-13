@@ -162,138 +162,6 @@
 		});
 	});
 
-	carpool.controller('MapController', function ($scope, $filter, uiGmapGoogleMapApi) {
-		$scope.route = {};
-		$scope.route.latlng = {};
-		$scope.route.week = {
-			monday   : true,
-			tuesday  : true,
-			wednesday: true,
-			thursday : true,
-			friday   : true,
-			saturday : false,
-			sunday   : false
-		};
-
-		var projectionChanged = function(map, eventName, originalEventArgs){
-			var fromLocation  = document.getElementById('from_location'),
-				toLocation    = document.getElementById('to_location'),
-				fromLocationAutocomplete = new google.maps.places.Autocomplete(fromLocation, {types: ['geocode']}),
-				toLocationAutocomplete   = new google.maps.places.Autocomplete(toLocation, {types: ['geocode']});
-			fromLocationAutocomplete.bindTo('bounds', map);
-			toLocationAutocomplete.bindTo('bounds', map);
-			google.maps.event.addListener(fromLocationAutocomplete, 'place_changed', function() {
-				var place = fromLocationAutocomplete.getPlace();
-				if (!place.geometry) {
-					$scope.route.fromLat = 0;
-					$scope.route.fromLng = 0;
-					$scope.route.latlng.from = '';
-					return;
-				}
-				$scope.route.fromLat = place.geometry.location.lat();
-				$scope.route.fromLng = place.geometry.location.lng();
-				$scope.route.latlng.from = $scope.route.fromLat +', '+$scope.route.fromLng;
-				$scope.calcRoute();
-			});
-			google.maps.event.addListener(toLocationAutocomplete, 'place_changed', function() {
-				var place = toLocationAutocomplete.getPlace();
-				if (!place.geometry) {
-					$scope.route.toLat = 0;
-					$scope.route.toLng = 0;
-					$scope.route.latlng.to = '';
-					return;
-				}
-
-				$scope.route.toLat = place.geometry.location.lat();
-				$scope.route.toLng = place.geometry.location.lng();
-				$scope.route.latlng.to = $scope.route.toLat +', '+$scope.route.toLng;
-				$scope.calcRoute();
-			});
-
-		};
-
-		uiGmapGoogleMapApi.then(function(maps) {
-			var directionsDisplay = new maps.DirectionsRenderer({draggable: true});
-			maps.event.addListener(directionsDisplay, 'directions_changed', function() {
-				var directionPoints = directionsDisplay.getDirections(), legs, startLeg, endLeg;
-				if(directionPoints.status == maps.DirectionsStatus.OK) {
-					legs = directionPoints.routes[0].legs;
-					startLeg = legs[0];
-					endLeg   = legs[legs.length - 1];
-					$scope.route.from = startLeg.start_address;
-					$scope.route.to   = endLeg.end_address;
-					$scope.route.latlng.from = startLeg.start_location.k +', ' +startLeg.start_location.B;
-					$scope.route.latlng.to   = startLeg.end_location.k +', ' +startLeg.end_location.B;
-					$scope.route.fromLat = startLeg.start_location.k;
-					$scope.route.fromLng = startLeg.start_location.B;
-					$scope.route.toLat = startLeg.end_location.k;
-					$scope.route.toLng = startLeg.end_location.B;
-					$scope.$apply();
-				}
-			});
-			$scope.calcRoute = function () {
-				if($scope.route.from && $scope.route.to) {
-					var directionsService = new maps.DirectionsService();
-					directionsDisplay.setMap($scope.map.control.getGMap());
-					var request = {
-						origin:      $scope.route.latlng.from,
-						destination: $scope.route.latlng.to,
-						// waypoints: ways,
-						// optimizeWaypoints: true,
-						travelMode: maps.TravelMode.WALKING
-					};
-					directionsService.route(request, function(response, status) {
-						if (status == maps.DirectionsStatus.OK) {
-							directionsDisplay.setDirections(response);
-						}
-					});
-				}
-				return;
-			};
-		});
-		$scope.map = {
-			center: {
-				latitude: 40.1533904,
-				longitude: 44.4885671
-			},
-			options: {
-				maxZoom: 20,
-				minZoom: 3
-			},
-			zoom: 15,
-			control: {},
-			events: {
-				projection_changed: projectionChanged
-			}
-		};
-
-
-		$scope.saveRoute = function (form) {
-			if(form.$valid) {
-				var saveRoute = angular.copy($scope.route);
-
-				saveRoute.startDate = $filter('date')(saveRoute.startDate, 'yyyy-MM-dd');
-				saveRoute.startTime = $filter('date')(saveRoute.startTime, 'HH:mm');
-
-				console.log(saveRoute);
-				$http({
-					url: 'route/create',
-					method: 'POST',
-					data: saveRoute
-				})
-					.success(function (data) {
-						if (data.result) {
-							window.location.reload();
-						} else {
-							//$scope.enable = true;
-						}
-					});
-			}
-
-		};
-
-	});
-
 	carpool.controller('CarsController', function ($rootScope, $scope, $http) {
 		$rootScope.cars = [];
 		var tmpCar;
@@ -397,16 +265,6 @@
 		$scope.getCars();
 	});
 
-	carpool.controller('RoutsController', function ($scope, $http) {
-		$scope.routs = {};
-		$scope.rout  = {};
-
-		$scope.addRout = function (form) {
-			if(form.$invalid) return;
-
-		};
-	});
-
 	carpool.controller('ContactController', function ($scope) {
 		$scope.contact = {};
 
@@ -416,6 +274,166 @@
 
 
 		};
+	});
+
+	carpool.controller('RoutsController', function ($scope, $http, $filter, uiGmapGoogleMapApi) {
+		$rootScope.routes = [];
+		$scope.route = {
+			monday   : true,
+			tuesday  : true,
+			wednesday: true,
+			thursday : true,
+			friday   : true,
+			saturday : false,
+			sunday   : false
+		};
+		$scope.route.latlng = {};
+
+		var projectionChanged = function(map, eventName, originalEventArgs){
+			var fromLocation  = document.getElementById('from_location'),
+				toLocation    = document.getElementById('to_location'),
+				fromLocationAutocomplete = new google.maps.places.Autocomplete(fromLocation, {types: ['geocode']}),
+				toLocationAutocomplete   = new google.maps.places.Autocomplete(toLocation, {types: ['geocode']});
+			fromLocationAutocomplete.bindTo('bounds', map);
+			toLocationAutocomplete.bindTo('bounds', map);
+			google.maps.event.addListener(fromLocationAutocomplete, 'place_changed', function() {
+				var place = fromLocationAutocomplete.getPlace();
+				if (!place.geometry) {
+					$scope.route.startLatitude = 0;
+					$scope.route.startLongitude = 0;
+					$scope.route.latlng.from = '';
+					return;
+				}
+				$scope.route.startLatitude = place.geometry.location.lat();
+				$scope.route.startLongitude = place.geometry.location.lng();
+				$scope.route.latlng.from = $scope.route.startLatitude +', '+$scope.route.startLongitude;
+				$scope.calcRoute();
+			});
+			google.maps.event.addListener(toLocationAutocomplete, 'place_changed', function() {
+				var place = toLocationAutocomplete.getPlace();
+				if (!place.geometry) {
+					$scope.route.endLatitude = 0;
+					$scope.route.endLongitude = 0;
+					$scope.route.latlng.to = '';
+					return;
+				}
+
+				$scope.route.endLatitude = place.geometry.location.lat();
+				$scope.route.endLongitude = place.geometry.location.lng();
+				$scope.route.latlng.to = $scope.route.endLatitude +', '+$scope.route.endLongitude;
+				$scope.calcRoute();
+			});
+
+		};
+
+		uiGmapGoogleMapApi.then(function(maps) {
+			var directionsDisplay = new maps.DirectionsRenderer({draggable: true});
+			maps.event.addListener(directionsDisplay, 'directions_changed', function() {
+				var directionPoints = directionsDisplay.getDirections(), legs, startLeg, endLeg;
+				if(directionPoints.status == maps.DirectionsStatus.OK) {
+					legs = directionPoints.routes[0].legs;
+					startLeg = legs[0];
+					endLeg   = legs[legs.length - 1];
+					$scope.route.startPoint = startLeg.start_address;
+					$scope.route.endPoint   = endLeg.end_address;
+					$scope.route.latlng.from = startLeg.start_location.k +', ' +startLeg.start_location.B;
+					$scope.route.latlng.to   = startLeg.end_location.k +', ' +startLeg.end_location.B;
+					$scope.route.startLatitude = startLeg.start_location.k;
+					$scope.route.startLongitude = startLeg.start_location.B;
+					$scope.route.endLatitude = startLeg.end_location.k;
+					$scope.route.endLongitude = startLeg.end_location.B;
+					$scope.$apply();
+				}
+			});
+			$scope.calcRoute = function () {
+				if($scope.route.startPoint && $scope.route.endPoint) {
+					var directionsService = new maps.DirectionsService();
+					directionsDisplay.setMap($scope.map.control.getGMap());
+					var request = {
+						origin:      $scope.route.latlng.from,
+						destination: $scope.route.latlng.to,
+						// waypoints: ways,
+						// optimizeWaypoints: true,
+						travelMode: maps.TravelMode.WALKING
+					};
+					directionsService.route(request, function(response, status) {
+						if (status == maps.DirectionsStatus.OK) {
+							directionsDisplay.setDirections(response);
+						}
+					});
+				}
+				return;
+			};
+		});
+		$scope.map = {
+			center: {
+				latitude: 40.1533904,
+				longitude: 44.4885671
+			},
+			options: {
+				maxZoom: 20,
+				minZoom: 3
+			},
+			zoom: 15,
+			control: {},
+			events: {
+				projection_changed: projectionChanged
+			}
+		};
+
+
+		$scope.getRoutes = function() {
+			$http({
+				url: 'route/list',
+				method: 'GET',
+			})
+			.success(function (routes) {
+				$rootScope.routes = routes || [];
+			})
+			.error(function () {
+				alert('Error');
+			});
+		};
+
+		$scope.editRout = function (route) {
+			$scope.route = angular.copy(route);
+			$scope.route.latlng = {
+				from: route.startLatitude +', '+route.startLongitude,
+				to: route.endLatitude +', '+route.endLongitude
+			};
+			$scope.route.startDate = new Date(route.startDate);
+			$scope.route.startTime = new Date(route.startTime);
+
+			$('#modal-container-routs').modal('show');
+		};
+
+		$scope.saveRoute = function (form) {
+			if(form.$valid) {
+				var saveRoute = angular.copy($scope.route);
+
+				saveRoute.startDate = $filter('date')(saveRoute.startDate, 'yyyy-MM-dd');
+				saveRoute.startTime = $filter('date')(saveRoute.startTime, 'HH:mm');
+				delete saveRoute.latlng;
+
+				console.log(saveRoute);
+
+				$http({
+					url: 'route/create',
+					method: 'POST',
+					data: saveRoute
+				})
+				.success(function (routId) {
+					saveRoute.id = routId;
+					$scope.routes.push(saveRoute);
+					$('#modal-container-routs').modal('hide');
+				})
+				.error(function () {
+					alert('Error');
+				});
+			}
+
+		};
+
 	});
 
 

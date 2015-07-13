@@ -7,15 +7,22 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class RouteDAOImpl extends SqlMapClientDaoSupport implements RouteDAO {
-    public void createRoute(Route route) throws SQLException {
 
+    public int insertRoute(Route route) throws SQLException {
+       return (Integer) getSqlMapClient().insert("route.insert", route);
     }
 
-    public List<Route> search(long startPoint, long endPoint) {
-        return null;
+    public List<Route> getRoutes(int userId) throws SQLException {
+        //noinspection unchecked
+        return getSqlMapClient().queryForList("route.getRoutes", userId);
     }
 
-    public List<Route> search(long startPoint, long endPint, String date) {
-        return null;
+    public void updateRouteData(Route route) throws SQLException {
+        getSqlMapClient().update("route.update", route);
     }
+
+    public void deleteRoute(int routeId) throws SQLException {
+        getSqlMapClient().delete("route.deleteById", routeId);
+    }
+
 }

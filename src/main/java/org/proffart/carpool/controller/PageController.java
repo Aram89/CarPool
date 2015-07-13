@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PageController {
     @RequestMapping(value = RequestMappings.mapPage, method = RequestMethod.GET)
     public String map() {
-        return "map";
+        return "routs";
     }
 
     @RequestMapping(value = RequestMappings.registrationPage, method = RequestMethod.GET)

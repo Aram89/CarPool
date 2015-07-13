@@ -8,9 +8,12 @@ public interface RequestMappings {
     public static final String checkUserName = "/check-user-name";
     public static final String checkEmail = "/check-email";
 
-    public static final String ride = "ride";
-    public static final String createRide = "/create";
-    public static final String searchRide = "/search";
+
+    public static final String route = "ride";
+    public static final String getRouteList = "/list";
+    public static final String createRoute = "/create";
+    public static final String editRoute = "/edit";
+    public static final String deleteRoute = "/delete";
 
     public static final String mapPage = "map";
     public static final String registrationPage = "registration";
@@ -20,7 +23,6 @@ public interface RequestMappings {
     public static final String editCar = "/edit";
     public static final String deleteCar = "/delete";
     public static final String getCarList = "/list";
-
 
 
 }

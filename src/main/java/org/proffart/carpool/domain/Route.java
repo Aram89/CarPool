@@ -11,61 +11,39 @@ public class Route {
     // Route car id.
     private int carId;
 
-    // Route date.
-    private String date;
+    // Route Stat date.
+    private String statDate;
 
-    // Route type.
-    private String type;
+    // Route Stat Time.
+    private String startTime;
 
-    // Startpoint address.
+    private boolean periodic;
+
+    // Start point address.
     private String startPoint;
 
-    // Endpoint address.
+    // End point address.
     private String endPoint;
-
-    // Week days.
-    private Week week;
 
     private Double startLatitude;
     private Double endLatitude;
     private Double startLongitude;
     private Double endLongitude;
 
-    // Coordinates.
 
-    public Coordinate getCoordinate() {
-        return coordinate;
-    }
+    // Week
+    private boolean monday;
+    private boolean tuesday;
+    private boolean wednesday;
+    private boolean thursday;
+    private boolean friday;
+    private boolean saturday;
+    private boolean sunday;
 
-    public void setCoordinate(Coordinate coordinate) {
-        this.coordinate = coordinate;
-    }
 
-    public Week getWeek() {
-        return week;
-    }
-
-    public void setWeek(Week week) {
-        this.week = week;
-    }
-
-    private Coordinate coordinate;
-
-    public String getStartPoint() {
-        return startPoint;
-    }
-
-    public void setStartPoint(String startPoint) {
-        this.startPoint = startPoint;
-    }
-
-    public String getEndPoint() {
-        return endPoint;
-    }
-
-    public void setEndPoint(String endPoint) {
-        this.endPoint = endPoint;
-    }
+    /**
+     * Setters and Getters
+     */
 
     public int getId() {
         return id;
@@ -91,20 +69,44 @@ public class Route {
         this.carId = carId;
     }
 
-    public String getDate() {
-        return date;
+    public String getStatDate() {
+        return statDate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setStatDate(String statDate) {
+        this.statDate = statDate;
     }
 
-    public String getType() {
-        return type;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public boolean isPeriodic() {
+        return periodic;
+    }
+
+    public void setPeriodic(boolean periodic) {
+        this.periodic = periodic;
+    }
+
+    public String getStartPoint() {
+        return startPoint;
+    }
+
+    public void setStartPoint(String startPoint) {
+        this.startPoint = startPoint;
+    }
+
+    public String getEndPoint() {
+        return endPoint;
+    }
+
+    public void setEndPoint(String endPoint) {
+        this.endPoint = endPoint;
     }
 
     public Double getStartLatitude() {
@@ -137,5 +139,61 @@ public class Route {
 
     public void setEndLongitude(Double endLongitude) {
         this.endLongitude = endLongitude;
+    }
+
+    public boolean isMonday() {
+        return monday;
+    }
+
+    public void setMonday(boolean monday) {
+        this.monday = monday;
+    }
+
+    public boolean isTuesday() {
+        return tuesday;
+    }
+
+    public void setTuesday(boolean tuesday) {
+        this.tuesday = tuesday;
+    }
+
+    public boolean isWednesday() {
+        return wednesday;
+    }
+
+    public void setWednesday(boolean wednesday) {
+        this.wednesday = wednesday;
+    }
+
+    public boolean isThursday() {
+        return thursday;
+    }
+
+    public void setThursday(boolean thursday) {
+        this.thursday = thursday;
+    }
+
+    public boolean isFriday() {
+        return friday;
+    }
+
+    public void setFriday(boolean friday) {
+        this.friday = friday;
+    }
+
+    public boolean isSaturday() {
+        return saturday;
+    }
+
+    public void setSaturday(boolean saturday) {
+        this.saturday = saturday;
+    }
+
+    public boolean isSunday() {
+        return sunday;
+    }
+
+    public void setSunday(boolean sunday) {
+        this.sunday = sunday;
     }
 }

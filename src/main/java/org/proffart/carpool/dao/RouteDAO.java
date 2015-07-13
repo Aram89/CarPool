@@ -6,7 +6,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface RouteDAO {
-    void createRoute (Route route) throws SQLException;
-    List<Route> search (long startPoint, long endPoint);
-    List<Route> search (long startPoint, long endPint, String date);
+    int insertRoute (Route route) throws SQLException;
+    List<Route> getRoutes(int userId) throws SQLException;
+    void updateRouteData(Route route) throws SQLException;
+    void deleteRoute(int routeId) throws SQLException;
 }

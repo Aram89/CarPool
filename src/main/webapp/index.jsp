@@ -237,23 +237,18 @@
 
 <div class="modal fade" ng-controller="RoutsController" id="modal-container-routs" role="dialog"
      aria-labelledby="routsModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 <h4 class="modal-title" id="routsModalLabel">
-                    My Cars
+                    Add Rout
                 </h4>
             </div>
             <div class="modal-body">
                 <div class="panel-body">
                     <ng-include src="'routs.html'"></ng-include>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-carpool" data-dismiss="modal">
-                    Close
-                </button>
             </div>
         </div>
     </div>
@@ -551,7 +546,7 @@
 </script>
 
 <script type="text/ng-template" id="routs.html">
-
+<%@include file="./WEB-INF/views/routs.jsp" %>
 </script>
 
 <%@include file="./WEB-INF/views/scripts.jsp" %>

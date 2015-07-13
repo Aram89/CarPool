@@ -18,3 +18,10 @@
 <script type="text/javascript" src="/resources/js/jquery.simpleWeather.min.js"></script>
 <!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('#modal-container-routs').on('shown.bs.modal', function () {
+      window.dispatchEvent(new Event('resize'));
+    });
+  });
+</script>

@@ -1,14 +1,12 @@
 package org.proffart.carpool.service;
 
 import org.proffart.carpool.dao.RouteDAO;
-import org.proffart.carpool.domain.Coordinate;
 import org.proffart.carpool.domain.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
-import java.util.Collections;
 import java.util.List;
 
 @Transactional
@@ -19,15 +17,20 @@ public class RouteServiceImpl implements RouteService {
     private RouteDAO routeDAO;
 
 
-    public void create(Route route) throws SQLException {
-        routeDAO.createRoute(route);
+    public int addRoute(Route route) throws SQLException {
+        return routeDAO.insertRoute(route);
     }
 
-    public List<Route> search(Coordinate coordinate, long date) throws SQLException {
-        return Collections.emptyList();
+    public void removeRoute(int routeId) {
+        routeDAO.deleteRoute(routeId);
     }
 
-    public List<Route> search() throws SQLException {
-        return null;
+    public void updateRouteData(Route route) {
+        route.setUserId(UserServiceImpl.getCurrentUser().getId());
+        routeDAO.updateRouteData(route);
+    }
+
+    public List<Route> getRoutes() throws SQLException {
+        return routeDAO.getRoutes(UserServiceImpl.getCurrentUser().getId());
     }
 }

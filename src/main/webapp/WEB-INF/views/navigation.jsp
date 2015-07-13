@@ -27,11 +27,6 @@
           <li>
             <a class="page-scroll" href="<c:url value="/"/>#about">About</a>
           </li>
-          <% if(isLogged) { %>
-          <li>
-            <a class="page-scroll" href="<c:url value="/map"/>">Map</a>
-          </li>
-          <% } %>
           <li>
             <a class="page-scroll" href="<c:url value="/"/>#contact">Contact</a>
           </li>
@@ -61,7 +56,11 @@
           <button type="submit" class="btn btn-default input-color style-btn" ng-disabled="loginForm.$invalid || loading">Login</button>
         </form>
         <% } else { %>
-
+        <ul id="rout_list" class="nav navbar-nav navbar-right ">
+          <li>
+            <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
+          </li>
+        </ul>
         <% } %>
       </div>
 
