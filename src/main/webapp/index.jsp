@@ -538,7 +538,7 @@
             <i class="fa fa-trash"></i>
         </button>
         <button type="button" class="btn btn-success btn-xs" ng-show="car.editable" ng-click="saveCar(car)"
-            ng-disable="!car.model && !car.number && !car.description">
+            ng-disabled="!car.model && !car.number && !car.description">
             <i class="fa fa-check"></i>
         </button>
         <button type="button" class="btn btn-warning btn-xs" ng-show="car.editable" ng-click="cancelEdit(car)">
