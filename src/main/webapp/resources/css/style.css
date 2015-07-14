@@ -129,11 +129,31 @@
 }
 /*Slideshow*/
 #video{
-    filter: brightness(1.5);
-    -webkit-filter: brightness(1.5);
-    -moz-filter: brightness(1.5);
-    -o-filter: brightness(1.5);
-    -ms-filter: brightness(1.5);
+    filter: brightness(2.0);
+    -webkit-filter: brightness(2.0);
+    -moz-filter: brightness(2.0);
+    -o-filter: brightness(2.0);
+    -ms-filter: brightness(2.0);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    background-size: cover;
+}
+.video-cover {
+    position: absolute;
+    width: 100%;
+    height: 99.5%;
+    background-image: url(/resources/images/video-cover.png);
+    background-size: 3px 3px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(56, 55, 55, 0.3);
 }
 .slider-heading{
     font-size: 60px;
@@ -169,8 +189,7 @@
     /* Safari 1.x */
     -khtml-opacity: 0.8;
     opacity: 0.8;
-    transform: translateX(335%) translateY(10%);
-    -webkit-transform: translateX(335%) translateY(10%);
+    z-index: 20000;
 }
  .join-btn:hover{
     background-color: #f13a20 !important;
@@ -201,10 +220,9 @@
     color: #fff !important;
 }
 /*Find a car section*/
-.find-div{
-    margin-top: -20px;
+#find{
+    margin-top: 50%;
 }
-
 .hr{
     border-top: 1px solid #62C4E2 !important;
 }
