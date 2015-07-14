@@ -276,7 +276,7 @@
 		};
 	});
 
-	carpool.controller('RoutsController', function ($scope, $http, $filter, uiGmapGoogleMapApi) {
+	carpool.controller('RoutsController', function ($rootScope, $scope, $http, $filter, uiGmapGoogleMapApi) {
 		$rootScope.routes = [];
 		$scope.route = {
 			monday   : true,

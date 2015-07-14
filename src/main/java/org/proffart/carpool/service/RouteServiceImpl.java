@@ -21,11 +21,11 @@ public class RouteServiceImpl implements RouteService {
         return routeDAO.insertRoute(route);
     }
 
-    public void removeRoute(int routeId) {
+    public void removeRoute(int routeId) throws SQLException {
         routeDAO.deleteRoute(routeId);
     }
 
-    public void updateRouteData(Route route) {
+    public void updateRouteData(Route route) throws SQLException {
         route.setUserId(UserServiceImpl.getCurrentUser().getId());
         routeDAO.updateRouteData(route);
     }
