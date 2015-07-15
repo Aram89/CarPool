@@ -53,13 +53,13 @@
                 <% if(isLogged) { %>
                 <h1 class="slider-heading text-center"> Let's get started</h1>
                 <div style="text-align: center">
-                    <a class="btn btn-default" href="#modal-container-cars"  role="button" data-toggle="modal"> My cars </a>
-                    <a class="btn btn-default" href="#modal-container-routs" role="button" data-toggle="modal"> My routs </a>
+                    <a class="btn btn-default btn-join" href="#modal-container-cars"  role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
+                    <a class="btn btn-default btn-join" href="#modal-container-routs" role="button" data-toggle="modal"><i class="fa fa-exchange"></i> My routs </a>
                 </div>
                 <% }else{ %>
                 <h1 class="slider-heading text-center"> Let's get started</h1>
                 <div style="text-align: center">
-                    <a class="btn btn-default join-btn" href="#modal-container-registration" role="button" data-toggle="modal"> Join </a>
+                    <a class="btn btn-default btn-join" href="#modal-container-registration" role="button" data-toggle="modal"> Join </a>
                 </div>
                 <% } %>
             </div>
@@ -88,18 +88,16 @@
                 <h3 class="text-muted">
                     About
                 </h3>
+                    <hr class="hr">
 
                 <div class="row clearfix">
                     <div class="col-md-8 column">
                         <p>
                             Lorem ipsum dolor sit amet,
                             <strong>consectetur adipiscing elit</strong>.
-                            Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst.
-                            Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et,
+                            Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst.Nam purus nibh, lacinia non faucibus et,
                             pharetra in dolor.
-                            Sed iaculis posuere diam ut cursus.
                             <em>
-                                Morbi commodo sodales nisi id sodales.
                                 Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus,
                                 id bibendum diam velit et dui.
                             </em>
@@ -124,11 +122,10 @@
                             Lorem ipsum dolor sit amet,
                             <strong>consectetur adipiscing elit</strong>.
                             Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst.
-                            Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et,
+                            Nam purus nibh, lacinia non faucibus et,
                             pharetra in dolor.
                             Sed iaculis posuere diam ut cursus.
                             <em>
-                                Morbi commodo sodales nisi id sodales.
                                 Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus,
                                 id bibendum diam velit et dui.
                             </em>
@@ -149,48 +146,57 @@
 
 <!--Contact us-->
     <section id="contact" ng-controller="ContactController">
-        <div class="col-lg-3 col-xs-12 pull-left">
-            <form ng-submit="send(contactForm)" name="contactForm" novalidate>
-                <div class="form-group">
-                    <label for="contactEmail">Email * </label>
-                    <input type="email" ng-model="contact.email" class="form-control" id="contactEmail" name="contactEmail" placeholder="Email" required>
-                    <p class="help-block" ng-show="contactForm.contactEmail.$error.required && !contactForm.contactEmail.$pristine">
-                      Please enter your email
-                    </p>
-                    <p class="help-block" ng-show="contactForm.contactEmail.$error.email && !contactForm.contactEmail.$pristine">
-                      Please enter valid email
-                    </p>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactContent">Message * </label>
-                    <textarea ng-model="contact.content" class="form-control" id="contactContent" name="contactContent" rows="10" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
-                    <p class="help-block" ng-show="contactForm.contactContent.$error.required && !contactForm.contactContent.$pristine">
-                        Please enter message
-                    </p>
-                    <p class="help-block" ng-show="contactForm.contactContent.$error.minlength && !contactForm.contactContent.$pristine">
-                        Your message is a short
-                    </p>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-xs-12 pull-left btn-send">
-                        <button class="btn btn-default btn-carpool">Send</button>
+        <div class="container">
+            <h3 class="text-muted">
+                Contact Us
+            </h3>
+            <hr class="hr">
+            <div class="col-lg-3 col-xs-12 pull-left">
+                <h5><i class="fa fa-mobile fa-icon"></i> Tel:+374 55 26 30 65 </h5>
+                <address><i class="fa fa-map-marker fa-icon"></i> 6/1 Abelyan street,
+                    Yerevan 0038, RA
+                </address>
+                <form ng-submit="send(contactForm)" name="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="contactEmail">Email * </label>
+                        <input type="email" ng-model="contact.email" class="form-control" id="contactEmail" name="contactEmail" placeholder="Email" required>
+                        <p class="help-block" ng-show="contactForm.contactEmail.$error.required && !contactForm.contactEmail.$pristine">
+                            Please enter your email
+                        </p>
+                        <p class="help-block" ng-show="contactForm.contactEmail.$error.email && !contactForm.contactEmail.$pristine">
+                            Please enter valid email
+                        </p>
                     </div>
-                </div>
 
-            </form>
+                    <div class="form-group">
+                        <label for="contactContent">Message * </label>
+                        <textarea ng-model="contact.content" class="form-control" id="contactContent" name="contactContent" rows="10" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
+                        <p class="help-block" ng-show="contactForm.contactContent.$error.required && !contactForm.contactContent.$pristine">
+                            Please enter message
+                        </p>
+                        <p class="help-block" ng-show="contactForm.contactContent.$error.minlength && !contactForm.contactContent.$pristine">
+                            Your message is a short
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12 pull-left btn-send">
+                            <button class="btn btn-default btn-join">Send</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <!--Google map-->
+            <div class="col-lg-9 col-xs-12 pull-right">
+                <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+                <div style="overflow:hidden;height:400px;width:100%;"><div id="gmap_canvas" style="height: 400px;width:100%;"></div>
+                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                    <a class="google-map-code" href="http://premium-wordpress-themes.me" id="get-map-data">the molitor.</a></div>
+                <script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(40.1991299,44.47688300000004),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.1991299, 44.47688300000004)});infowindow = new google.maps.InfoWindow({content:"<b></b><br/>6/1 Abelyan street,<br/> Yervan" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+            </div>
         </div>
-
-        <!--Google map-->
-        <div class="col-lg-9 col-xs-12 pull-right">
-            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-            <div style="overflow:hidden;height:400px;width:100%;"><div id="gmap_canvas" style="height: 400px;width:100%;"></div>
-                <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-                <a class="google-map-code" href="http://premium-wordpress-themes.me" id="get-map-data">the molitor.</a></div>
-            <script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(40.1991299,44.47688300000004),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.1991299, 44.47688300000004)});infowindow = new google.maps.InfoWindow({content:"<b></b><br/>6/1 Abelyan street,<br/> Yervan" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
-        </div>
-
     </section>
 
 <!--footer-->
@@ -199,7 +205,7 @@
             <div class="col-xs-12 text-center">
                 <ul>
                     <small  class="footer-title">
-                        &copy; 2015 Carpool
+                        &copy; 2015 Carpool. All Rights Reserved.
                     </small>
                 </ul>
             </div>
@@ -226,7 +232,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-carpool" data-dismiss="modal">
+                <button type="button" class="btn btn-default btn-join" data-dismiss="modal">
                     Close
                 </button>
             </div>
@@ -272,10 +278,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-carpool" data-dismiss="modal" ng-disabled="!enable">
+                <button type="button" class="btn btn-default btn-join" data-dismiss="modal" ng-disabled="!enable">
                     Close
                 </button>
-                <button type="button" class="btn btn-success btn-carpool" ng-click="registration()"
+                <button type="button" class="btn btn-success btn-blue" ng-click="registration()"
                         ng-disabled="regForm.$invalid || !enable">
                     Register Me
                 </button>
@@ -411,7 +417,7 @@
             </div>
 
             <div class="col-md-1 col-xs-12">
-                <button class="btn btn-block btn-default btn-carpool">
+                <button class="btn btn-block btn-default btn-find">
                     <i class="fa fa-search"></i> Find
                 </button>
             </div>
@@ -440,7 +446,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default btn-carpool">Details</button>
+                        <button type="button" class="btn btn-default btn-join">Details</button>
                     </div>
                 </div>
             </div>
@@ -465,7 +471,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default btn-carpool">Details</button>
+                        <button type="button" class="btn btn-default btn-join">Details</button>
                     </div>
                 </div>
             </div>
@@ -490,7 +496,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default btn-carpool">Details</button>
+                        <button type="button" class="btn btn-default btn-join">Details</button>
                     </div>
                 </div>
             </div>

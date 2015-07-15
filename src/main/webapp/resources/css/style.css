@@ -167,8 +167,7 @@
     background-color: #F14B20 !important;
     color: #fff !important;
 }
-.join-btn{
-    z-index: 500;
+.btn-join{
     margin-top: 0px;
     position: relative;
     width: 150px;
@@ -191,40 +190,51 @@
     opacity: 0.8;
     z-index: 20000;
 }
- .join-btn:hover{
+ .btn-join:hover{
     background-color: #f13a20 !important;
     color: #fff !important;
 }
-.btn-carpool{
-    background-image: -o-linear-gradient(top, #F14A20 0%, #F2891F 100%);
-    background-image: -moz-linear-gradient(top, #F14A20 0%, #F2891F 100%);
-    background-image: -webkit-linear-gradient(top, #F14A20 0%, #F2891F 100%);
-    background-image: -ms-linear-gradient(top, #F14A20 0%, #F2891F 100%);
-    background-image: linear-gradient(to top, #F14A20 0%, #F2891F 100%);
-    color: #fff;
-    /* IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+ .btn-find{
+     margin-top: 0px;
+     position: relative;
+     width: 80px;
+     height: auto;
+     background-color: #F14B20;
+     color: #fff;
+     font-size: 18px;
+     font-weight: bold;
+     /* IE 8 */
+     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 
-    /* IE 5-7 */
-    filter: alpha(opacity=80);
+     /* IE 5-7 */
+     filter: alpha(opacity=80);
 
-    /* Netscape */
-    -moz-opacity: 0.8;
+     /* Netscape */
+     -moz-opacity: 0.8;
 
-    /* Safari 1.x */
-    -khtml-opacity: 0.8;
-    opacity: 0.8;
-}
-.btn-carpool:hover{
-    background-color:  #F14B20 !important;
-    color: #fff !important;
-}
+     /* Safari 1.x */
+     -khtml-opacity: 0.8;
+     opacity: 0.8;
+     z-index: 20000;
+ }
+ .btn-blue{
+     background-color: #62C4E2 !important;
+     color: #fff;
+     font-size: 18px;
+     font-weight: bold;
+ }
+ .btn-blue:hover{
+     background-color: #23a8bf!important;
+ }
 /*Find a car section*/
 #find{
     margin-top: 50%;
 }
 .hr{
     border-top: 1px solid #62C4E2 !important;
+}
+.popup-map{
+    left: 20px !important;
 }
 
 /*footer*/

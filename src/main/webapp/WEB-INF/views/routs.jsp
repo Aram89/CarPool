@@ -34,7 +34,7 @@
 								<input type="checkbox" checked ng-model="route.periodic"> is Periodic
 							</label>
 						</div>
-						<button type="submit" class="btn btn-success btn-carpool" ng-disabled="routeForm.$invalid">Save Route</button>
+						<button type="submit" class="btn btn-success btn-blue" ng-disabled="routeForm.$invalid">Save Route</button>
 					</div>
 				</div>
 
@@ -91,7 +91,7 @@
 		</form>
 	</div>
 
-	<div class="col-md-8 angular-google-map-container">
+	<div class="col-md-8 angular-google-map-container popup-map">
 		<ui-gmap-google-map
 				id="map_canvas"
 				center="map.center"
