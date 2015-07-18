@@ -53,12 +53,17 @@
           <div class="form-group">
             <input class="form-control input-color" type="password" ng-model="user.password" name="password" placeholder="Password" required/>
           </div>
-          <button type="submit" class="btn btn-default input-color style-btn" ng-disabled="loginForm.$invalid || loading">Login</button>
+          <button type="submit" class="btn btn-default input-color style-btn" ng-disabled="loginForm.$invalid || loading"><i class="fa fa-sign-in"></i> Login</button>
         </form>
         <% } else { %>
-        <ul id="rout_list" class="nav navbar-nav navbar-right ">
-          <li>
-            <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
+
+        <ul class="nav navbar-nav navbar-right " ng-controller="LoginController">
+          <li><a href="#" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
+        </ul>
+
+        <ul id="rout_list" class="nav navbar-nav navbar-right routes" ng-cloak>
+          <li ng-repeat="route in routes">
+            <a href="#" ng-click="editRoute(route)" data-toggle="tooltip" data-placement="bottom" data-html="true" title="{{route.startPoint}} {{route.endPoint}}"><i class="fa fa-road"></i></a>
           </li>
         </ul>
         <% } %>

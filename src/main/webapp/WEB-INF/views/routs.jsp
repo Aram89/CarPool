@@ -1,7 +1,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
+
+
 	<div class="col-md-4">
-		<form name="routeForm" ng-submit="saveRoute(routeForm)" novalidate>
+		<form name="routeForm" novalidate>
+
+			<div class="form-group">
+				<label for="route_car" >Car</label>
+				<ui-select id="route_car" ng-model="route.car" theme="select2" ng-disabled="disabled" style="width: 100%;">
+					<ui-select-match placeholder="Select a car in the list">{{$select.selected.number}}</ui-select-match>
+					<ui-select-choices repeat="car in cars">
+						<div ng-bind-html="car.number | highlight: $select.search"></div>
+						<small>
+							model: {{car.model}}
+							desciption: <span ng-bind-html="car.desciption | highlight: $select.search"></span>
+						</small>
+					</ui-select-choices>
+				</ui-select>
+			</div>
 
 			<div class="form-group">
 				<label for="from_location" >From</label>
@@ -34,7 +51,7 @@
 								<input type="checkbox" checked ng-model="route.periodic"> is Periodic
 							</label>
 						</div>
-						<button type="submit" class="btn btn-success btn-blue" ng-disabled="routeForm.$invalid">Save Route</button>
+						<button type="button" class="btn btn-success btn-blue" ng-disabled="routeForm.$invalid" ng-click="saveRoute(routeForm)">Save Route</button>
 					</div>
 				</div>
 

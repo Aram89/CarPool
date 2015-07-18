@@ -26,16 +26,26 @@ CREATE TABLE `route` (
   `id`             INT(11) NOT NULL AUTO_INCREMENT,
   `userId`         INT(11)          DEFAULT NULL,
   `carId`          INT(11)          DEFAULT NULL,
-  `type`           CHAR(100)        DEFAULT NULL,
-  `date`           DATE             DEFAULT NULL,
-  `duration`       BIGINT(20)       DEFAULT NULL,
-  `startPoint`     CHAR(100)        DEFAULT NULL,
+  `startDate`      DATE             DEFAULT NULL,
+  `startTime`      TIME             DEFAULT NULL,
+
+  `periodic`       BIGINT(20)       DEFAULT NULL,
+
+  `startPoint`     CHAR(255)        DEFAULT NULL,
+  `endPoint`       CHAR(255)        DEFAULT NULL,
+
   `startLatitude`  DECIMAL(11, 8)   DEFAULT NULL,
-  `endLatitude`    DECIMAL(11, 8)   DEFAULT NULL,
   `startLongitude` DECIMAL(11, 8)   DEFAULT NULL,
+  `endLatitude`    DECIMAL(11, 8)   DEFAULT NULL,
   `endLongitude`   DECIMAL(11, 8)   DEFAULT NULL,
-  `status`         CHAR(100)        DEFAULT NULL,
-  `length`         BIGINT(20)       DEFAULT NULL,
+
+  `monday`         BOOL             DEFAULT FALSE,
+  `tuesday`        BOOL             DEFAULT FALSE,
+  `wednesday`      BOOL             DEFAULT FALSE,
+  `thursday`       BOOL             DEFAULT FALSE,
+  `friday`         BOOL             DEFAULT FALSE,
+  `saturday`       BOOL             DEFAULT FALSE,
+  `sunday`         BOOL             DEFAULT FALSE,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

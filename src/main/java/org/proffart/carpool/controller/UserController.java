@@ -38,6 +38,11 @@ public class UserController {
         }
         return new ResponseEntity(HttpStatus.OK);
     }
+    @RequestMapping(value = RequestMappings.logout, method = RequestMethod.GET)
+    public ResponseEntity logout() {
+        userService.logout();
+        return new ResponseEntity(HttpStatus.OK);
+    }
 
     @RequestMapping(value = RequestMappings.checkUserName, method = RequestMethod.GET)
     public ResponseEntity checkUserName(@RequestParam(value = "userName") String userName) throws Exception {
