@@ -6,7 +6,7 @@
         <result property="id" column="id"/>
         <result property="userId" column="userId"/>
         <result property="carId" column="carId"/>
-        <result property="statDate" column="statDate"/>
+        <result property="startDate" column="startDate"/>
         <result property="startTime" column="startTime"/>
 
         <result property="periodic" column="periodic"/>
@@ -29,8 +29,8 @@
     </resultMap>
 
     <insert id="insert" parameterClass="route">
-        INSERT INTO route ( userId, carId, statDate, startTime, periodic, startPoint, endPoint, startLatitude, endLatitude, startLongitude, endLongitude, monday, tuesday, wednesday, thursday, friday, saturday, sunday )
-        VALUES (#userId#, #carId#, #statDate#, #startTime#, #periodic#, #startPoint#, #endPoint#, #startLatitude#, #endLatitude#, #startLongitude#, #endLongitude#, #monday#, #tuesday#, #wednesday#, #thursday#, #friday#, #saturday#, #sunday#)
+        INSERT INTO route ( userId, carId, startDate, startTime, periodic, startPoint, endPoint, startLatitude, endLatitude, startLongitude, endLongitude, monday, tuesday, wednesday, thursday, friday, saturday, sunday )
+        VALUES (#userId#, #carId#, #startDate#, #startTime#, #periodic#, #startPoint#, #endPoint#, #startLatitude#, #endLatitude#, #startLongitude#, #endLongitude#, #monday#, #tuesday#, #wednesday#, #thursday#, #friday#, #saturday#, #sunday#)
 
         <selectKey resultClass="int" keyProperty="id">
             SELECT last_insert_id() AS id
@@ -41,7 +41,7 @@
         UPDATE route
         SET
         route.carId = #carId#,
-        route.statDate = #statDate#,
+        route.startDate = #startDate#,
         route.startTime = #startTime#,
         route.periodic = #periodic#,
         route.startPoint = #startPoint#,

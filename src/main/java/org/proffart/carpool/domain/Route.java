@@ -12,7 +12,7 @@ public class Route {
     private int carId;
 
     // Route Stat date.
-    private String statDate;
+    private String startDate;
 
     // Route Stat Time.
     private String startTime;
@@ -69,12 +69,12 @@ public class Route {
         this.carId = carId;
     }
 
-    public String getStatDate() {
-        return statDate;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setStatDate(String statDate) {
-        this.statDate = statDate;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
     public String getStartTime() {

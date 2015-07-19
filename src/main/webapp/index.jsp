@@ -15,11 +15,20 @@
     <!--script src="js/less-1.3.3.min.js"></script-->
     <!--append ‘#!watch’ to the browser URL, then refresh the page. -->
 
+    <!-- angular scripts -->
+    <script type="text/javascript" src="/resources/js/lodash.min.js"></script>
+    <script type="text/javascript" src="/resources/js/angular.min.js"></script>
+
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
     <link href="/resources/css/scrolling-nav.css" rel="stylesheet">
     <link href="/resources/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/resources/css/selectize.default.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css" rel="stylesheet">
+
+    <link href="/resources/css/select.css" rel="stylesheet">
     <link href="/resources/css/style.css" rel="stylesheet">
+
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>

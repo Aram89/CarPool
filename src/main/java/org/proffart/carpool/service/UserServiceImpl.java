@@ -57,6 +57,12 @@ public class UserServiceImpl implements UserService {
         return isLogged();
     }
 
+    public void logout() {
+        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        HttpSession session = attr.getRequest().getSession();
+        session.setAttribute("userObject", null);
+    }
+
     public static User getCurrentUser() {
         User user = null;
         try {

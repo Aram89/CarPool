@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	var carpool = angular.module('carpool', ['uiGmapgoogle-maps', 'ui.bootstrap']);
+	var carpool = angular.module('carpool', ['uiGmapgoogle-maps','ngSanitize', 'ui.bootstrap','ui.select']);
 	carpool.config(function(uiGmapGoogleMapApiProvider) {
 		uiGmapGoogleMapApiProvider.configure({
 			//    key: 'your api key',
@@ -132,6 +132,21 @@
 				data  : $scope.user
 			})
 			.success(function(data){
+				window.location.reload();
+			})
+			.error(function(){
+				$scope.loading = false;
+				alert('Error');
+			});
+		};
+
+		$scope.logout = function(){
+			$scope.loading = true;
+			$http({
+				url : 'user/logout',
+				method: 'GET'
+			})
+			.success(function(){
 				window.location.reload();
 			})
 			.error(function(){
@@ -288,6 +303,11 @@
 			sunday   : false
 		};
 		$scope.route.latlng = {};
+		$scope.$watch('cars', function() {
+			if($rootScope.cars.length == 1) {
+				$scope.route.car = $scope.cars[0];
+			}
+		});
 
 		var projectionChanged = function(map, eventName, originalEventArgs){
 			var fromLocation  = document.getElementById('from_location'),
@@ -304,10 +324,12 @@
 					$scope.route.latlng.from = '';
 					return;
 				}
-				$scope.route.startLatitude = place.geometry.location.lat();
-				$scope.route.startLongitude = place.geometry.location.lng();
-				$scope.route.latlng.from = $scope.route.startLatitude +', '+$scope.route.startLongitude;
-				$scope.calcRoute();
+				if(place.geometry.location.lat() && place.geometry.location.lng()) {
+					$scope.route.startLatitude = place.geometry.location.lat();
+					$scope.route.startLongitude = place.geometry.location.lng();
+					$scope.route.latlng.from = $scope.route.startLatitude + ', ' + $scope.route.startLongitude;
+					$scope.calcRoute();
+				}
 			});
 			google.maps.event.addListener(toLocationAutocomplete, 'place_changed', function() {
 				var place = toLocationAutocomplete.getPlace();
@@ -317,11 +339,12 @@
 					$scope.route.latlng.to = '';
 					return;
 				}
-
-				$scope.route.endLatitude = place.geometry.location.lat();
-				$scope.route.endLongitude = place.geometry.location.lng();
-				$scope.route.latlng.to = $scope.route.endLatitude +', '+$scope.route.endLongitude;
-				$scope.calcRoute();
+				if(place.geometry.location.lat() && place.geometry.location.lng()) {
+					$scope.route.endLatitude = place.geometry.location.lat();
+					$scope.route.endLongitude = place.geometry.location.lng();
+					$scope.route.latlng.to = $scope.route.endLatitude + ', ' + $scope.route.endLongitude;
+					$scope.calcRoute();
+				}
 			});
 
 		};
@@ -336,12 +359,12 @@
 					endLeg   = legs[legs.length - 1];
 					$scope.route.startPoint = startLeg.start_address;
 					$scope.route.endPoint   = endLeg.end_address;
-					$scope.route.latlng.from = startLeg.start_location.k +', ' +startLeg.start_location.B;
-					$scope.route.latlng.to   = startLeg.end_location.k +', ' +startLeg.end_location.B;
-					$scope.route.startLatitude = startLeg.start_location.k;
-					$scope.route.startLongitude = startLeg.start_location.B;
-					$scope.route.endLatitude = startLeg.end_location.k;
-					$scope.route.endLongitude = startLeg.end_location.B;
+					$scope.route.latlng.from = startLeg.start_location.A +', ' +startLeg.start_location.F;
+					$scope.route.latlng.to   = startLeg.end_location.A +', ' +startLeg.end_location.F;
+					$scope.route.startLatitude = startLeg.start_location.A;
+					$scope.route.startLongitude = startLeg.start_location.F;
+					$scope.route.endLatitude = startLeg.end_location.A;
+					$scope.route.endLongitude = startLeg.end_location.F;
 					$scope.$apply();
 				}
 			});
@@ -381,11 +404,14 @@
 			}
 		};
 
+		$scope.openForAddRoute = function() {
+			$scope.route.id = 0;
+		};
 
 		$scope.getRoutes = function() {
 			$http({
 				url: 'route/list',
-				method: 'GET',
+				method: 'GET'
 			})
 			.success(function (routes) {
 				$rootScope.routes = routes || [];
@@ -395,16 +421,23 @@
 			});
 		};
 
-		$scope.editRout = function (route) {
+		$rootScope.editRoute = function (route) {
 			$scope.route = angular.copy(route);
 			$scope.route.latlng = {
 				from: route.startLatitude +', '+route.startLongitude,
 				to: route.endLatitude +', '+route.endLongitude
 			};
-			$scope.route.startDate = new Date(route.startDate);
-			$scope.route.startTime = new Date(route.startTime);
-
+			$scope.route.startDate = route.startDate ? new Date(route.startDate) : new Date();
+			$scope.route.startTime = route.startTime ? new Date(route.startTime) : new Date();
+			for(var index in $scope.cars) {
+				var car = $scope.cars[index];
+				if(car.id == $scope.route.carId) {
+					$scope.route.car = car;
+					break;
+				}
+			}
 			$('#modal-container-routs').modal('show');
+			return false;
 		};
 
 		$scope.saveRoute = function (form) {
@@ -413,9 +446,9 @@
 
 				saveRoute.startDate = $filter('date')(saveRoute.startDate, 'yyyy-MM-dd');
 				saveRoute.startTime = $filter('date')(saveRoute.startTime, 'HH:mm');
+				saveRoute.carId = saveRoute.car.id;
 				delete saveRoute.latlng;
-
-				console.log(saveRoute);
+				delete saveRoute.car;
 
 				$http({
 					url: 'route/create',
@@ -424,6 +457,7 @@
 				})
 				.success(function (routId) {
 					saveRoute.id = routId;
+					//$scope.route.id = routId;
 					$scope.routes.push(saveRoute);
 					$('#modal-container-routs').modal('hide');
 				})
@@ -434,6 +468,7 @@
 
 		};
 
+		$scope.getRoutes();
 	});
 
 

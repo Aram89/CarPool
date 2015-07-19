@@ -18,5 +18,5 @@ public interface UserService {
     Boolean emailExists (String email) throws SQLException;
     Boolean checkCredentials (String userName, String password) throws SQLException,
             UnsupportedEncodingException, NoSuchAlgorithmException, UserException;
-
+    void logout();
 }

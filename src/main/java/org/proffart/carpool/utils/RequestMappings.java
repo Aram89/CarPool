@@ -5,11 +5,12 @@ public interface RequestMappings {
     public static final String user = "user";
     public static final String createUser = "/create";
     public static final String login = "/login";
+    public static final String logout = "/logout";
     public static final String checkUserName = "/check-user-name";
     public static final String checkEmail = "/check-email";
 
 
-    public static final String route = "ride";
+    public static final String route = "route";
     public static final String getRouteList = "/list";
     public static final String createRoute = "/create";
     public static final String editRoute = "/edit";

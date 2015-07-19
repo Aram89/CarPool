@@ -18,6 +18,7 @@ public class RouteServiceImpl implements RouteService {
 
 
     public int addRoute(Route route) throws SQLException {
+        route.setUserId(UserServiceImpl.getCurrentUser().getId());
         return routeDAO.insertRoute(route);
     }
 
