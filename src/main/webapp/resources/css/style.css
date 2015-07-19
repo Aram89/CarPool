@@ -163,6 +163,14 @@
     z-index: 200;
     position: relative;
 }
+.slider-title{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 100;
+    margin-top: 0px;
+    z-index: 300;
+    position: relative;
+}
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default{
     background-color: #F14B20 !important;
     color: #fff !important;
@@ -170,30 +178,32 @@
 .btn-join{
     margin-top: 0px;
     position: relative;
-    width: 150px;
+    width: 120px;
     height: auto;
     background-color: #F14B20;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
-    /* IE 8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-
-    /* IE 5-7 */
     filter: alpha(opacity=80);
-
-    /* Netscape */
     -moz-opacity: 0.8;
-
-    /* Safari 1.x */
     -khtml-opacity: 0.8;
     opacity: 0.8;
-    z-index: 20000;
+    border-radius: 0;
+    border: none;
 }
  .btn-join:hover{
     background-color: #f13a20 !important;
     color: #fff !important;
+     border-radius: 0;
+     border: none;
 }
+ .btn-index{
+     z-index: 20000;
+     width: 210px;
+     border-radius: 0;
+     border: none;
+ }
  .btn-find{
      margin-top: 0px;
      position: relative;
@@ -215,18 +225,13 @@
      /* Safari 1.x */
      -khtml-opacity: 0.8;
      opacity: 0.8;
-     z-index: 20000;
+     border: none;
+     border-radius: 0;
  }
- .btn-blue{
-     background-color: #62C4E2 !important;
-     color: #fff;
-     font-size: 18px;
-     font-weight: bold;
- }
- .btn-blue:hover{
-     background-color: #23a8bf!important;
- }
-/*Find a car section*/
+.btn-find{
+    border-radius: 0;
+    border: none;
+}/*Find a car section*/
 #find{
     margin-top: 50%;
 }
@@ -239,11 +244,11 @@
 
 /*footer*/
 .footer{
-    background-image: -o-linear-gradient(top, #F14A20 0%, #F2891F 100%);
-    background-image: -moz-linear-gradient(top, #F14A20 0%, #F2891F 100%);
-    background-image: -webkit-linear-gradient(top, #F14A20 0%, #F2891F 100%);
-    background-image: -ms-linear-gradient(top, #F14A20 0%, #F2891F 100%);
-    background-image: linear-gradient(to top, #F14A20 0%, #F2891F 100%);
+    background-image: -o-linear-gradient(top, #FC3605 0%, #F98209 100%);
+    background-image: -moz-linear-gradient(top, #FC3605 0%, #F98209 100%);
+    background-image: -webkit-linear-gradient(top, #FC3605 0%, #F98209 100%);
+    background-image: -ms-linear-gradient(top, #FC3605 0%, #F98209 100%);
+    background-image: linear-gradient(to top, #FC3605 0%, #F98209 100%);
 }
 .footer-title{
     color:#fff;
@@ -278,4 +283,8 @@ i {
     margin-top: -13px;
     margin-bottom: 0px;
     margin-left: -15px;
+}
+.btn-reg{
+    margin-bottom: 10px;
+    margin-top: 7px;
 }

@@ -34,7 +34,7 @@
 								<input type="checkbox" checked ng-model="route.periodic"> is Periodic
 							</label>
 						</div>
-						<button type="submit" class="btn btn-success btn-blue" ng-disabled="routeForm.$invalid">Save Route</button>
+						<button type="submit" class="btn btn-success" ng-disabled="routeForm.$invalid">Save Route</button>
 					</div>
 				</div>
 

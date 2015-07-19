@@ -52,14 +52,16 @@
             <div class="container">
                 <% if(isLogged) { %>
                 <h1 class="slider-heading text-center"> Let's get started</h1>
+                <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
                 <div style="text-align: center">
-                    <a class="btn btn-default btn-join" href="#modal-container-cars"  role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
-                    <a class="btn btn-default btn-join" href="#modal-container-routs" role="button" data-toggle="modal"><i class="fa fa-exchange"></i> My routs </a>
+                    <a class="btn btn-default btn-join btn-index" href="#modal-container-cars"  role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
+                    <a class="btn btn-default btn-join btn-index" href="#modal-container-routs" role="button" data-toggle="modal"><i class="fa fa-exchange"></i> My routs </a>
                 </div>
                 <% }else{ %>
                 <h1 class="slider-heading text-center"> Let's get started</h1>
+                <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
                 <div style="text-align: center">
-                    <a class="btn btn-default btn-join" href="#modal-container-registration" role="button" data-toggle="modal"> Join </a>
+                    <a class="btn btn-default btn-join btn-index " href="#modal-container-registration" role="button" data-toggle="modal"> BECOME A MEMBER </a>
                 </div>
                 <% } %>
             </div>
@@ -92,54 +94,22 @@
 
                 <div class="row clearfix">
                     <div class="col-md-8 column">
-                        <p>
-                            Lorem ipsum dolor sit amet,
-                            <strong>consectetur adipiscing elit</strong>.
-                            Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst.Nam purus nibh, lacinia non faucibus et,
-                            pharetra in dolor.
-                            <em>
-                                Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus,
-                                id bibendum diam velit et dui.
-                            </em>
-                            Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
-                            <small>
-                                Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices
-                                massa,
-                                et feugiat ipsum consequat eu.
-                            </small>
+                        <p class="text-left">
+                            In the last decade, car pooling has become more & more popular. It’s an interesting and eco-friendly way to travel, you meet new people on the road and you save some money from both sides.
                         </p>
+                        <h4 class="text-center">
+                            What is Carpool?
+                        </h4>
+                        <ul class="text-left">
+                            <li>
+                                Carpool is designed for local users in support of community transit and environmental goals. Its mission, vision and values lead to actions aimed at decreasing personal car ownership, reducing vehicle distance travelled, improving urban land use and development, providing affordable access to vehicles for all constituencies, as well as motivating residents to walk, cycle and take buses and trains, and decreasing dependence on fossil fuels while reducing the emission of greenhouse gases.
+                            </li>
+                        </ul>
                     </div>
                     <div class="col-md-4 column">
                         <img src="/resources/images/join_as.jpg" style="width: 100%;" class="img-thumbnail">
                     </div>
                 </div>
-                <div class="row clearfix">
-                    <div class="col-md-4 column">
-                        <img src="/resources/images/join_as.jpg" style="width: 100%;" class="img-thumbnail">
-                    </div>
-                    <div class="col-md-8 column">
-                        <p>
-                            Lorem ipsum dolor sit amet,
-                            <strong>consectetur adipiscing elit</strong>.
-                            Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst.
-                            Nam purus nibh, lacinia non faucibus et,
-                            pharetra in dolor.
-                            Sed iaculis posuere diam ut cursus.
-                            <em>
-                                Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus,
-                                id bibendum diam velit et dui.
-                            </em>
-                            Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
-                            <small>
-                                Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices
-                                massa,
-                                et feugiat ipsum consequat eu.
-                            </small>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -181,7 +151,7 @@
 
                     <div class="form-group">
                         <div class="col-xs-12 pull-left btn-send">
-                            <button class="btn btn-default btn-join">Send</button>
+                            <button class="btn btn-default btn-find btn-reg">Send</button>
                         </div>
                     </div>
 
