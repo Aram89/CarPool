@@ -9,8 +9,8 @@
 <script type="text/javascript" src="/resources/js/moment.js"></script>
 <script type="text/javascript" src="/resources/js/bootstrap-datetimepicker.min.js"></script>
 
-<script src="/resources/js/angular-sanitize.js"></script>
-<script src="/resources/js/select.js"></script>
+<script type="text/javascript" src="/resources/js/angular-sanitize.js"></script>
+<script type="text/javascript" src="/resources/js/select.js"></script>
 <!----->
 <script type="text/javascript" src="/resources/js/angular-google-maps.min.js"></script>
 <script type="text/javascript" src="/resources/js/ui-bootstrap-tpls-0.13.0.min.js"></script>

@@ -14,8 +14,6 @@
     <!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
     <!--script src="js/less-1.3.3.min.js"></script-->
     <!--append ‘#!watch’ to the browser URL, then refresh the page. -->
-    <!--jQuery lib-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- angular scripts -->
     <script type="text/javascript" src="/resources/js/lodash.min.js"></script>
     <script type="text/javascript" src="/resources/js/angular.min.js"></script>
@@ -125,6 +123,7 @@
                         <img src="/resources/images/join_as.jpg" style="width: 100%;" class="img-thumbnail">
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </section>
@@ -184,8 +183,10 @@
                             </ul>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
+    </div>
 </section>
 
 <!--Contact us-->
@@ -214,7 +215,7 @@
 
                     <div class="form-group">
                         <label for="contactContent">Message * </label>
-                        <textarea ng-model="contact.content" class="form-control" id="contactContent" name="contactContent" rows="10" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
+                        <textarea ng-model="contact.content" class="form-control" id="contactContent" name="contactContent" rows="7" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
                         <p class="help-block" ng-show="contactForm.contactContent.$error.required && !contactForm.contactContent.$pristine">
                             Please enter message
                         </p>
