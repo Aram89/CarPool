@@ -31,7 +31,6 @@
 
     <!--jQuery custom content scroller-->
     <link href="/resources/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-    <script type="text/javascript" src="/resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <!--end-->
 
     <!--Fonts-->
@@ -74,7 +73,7 @@
                 <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
                 <div style="text-align: center">
                     <a class="btn btn-default btn-join btn-index" href="#modal-container-cars"  role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
-                    <a class="btn btn-default btn-join btn-index" href="#modal-container-routs" role="button" data-toggle="modal"><i class="fa fa-exchange"></i> My routs </a>
+                    <a class="btn btn-default btn-join btn-index" href="#modal-container-routs" role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> My routs </a>
                 </div>
                 <% }else{ %>
                 <h1 class="slider-heading text-center"> Let's get started</h1>

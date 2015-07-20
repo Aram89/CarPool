@@ -404,7 +404,7 @@
 			}
 		};
 
-		$scope.openForAddRoute = function() {
+		$rootScope.openForAddRoute = function() {
 			$scope.route.id = 0;
 		};
 
@@ -436,6 +436,8 @@
 					break;
 				}
 			}
+			console.log($scope.route);
+
 			$('#modal-container-routs').modal('show');
 			return false;
 		};
@@ -450,22 +452,52 @@
 				delete saveRoute.latlng;
 				delete saveRoute.car;
 
-				$http({
-					url: 'route/create',
-					method: 'POST',
-					data: saveRoute
-				})
-				.success(function (routId) {
-					saveRoute.id = routId;
-					//$scope.route.id = routId;
-					$scope.routes.push(saveRoute);
-					$('#modal-container-routs').modal('hide');
-				})
-				.error(function () {
-					alert('Error');
-				});
+				if(saveRoute.id > 0) {
+					$http({
+						url: 'route/edit',
+						method: 'POST',
+						data: saveRoute
+					})
+					.success(function () {
+						$('#modal-container-routs').modal('hide');
+					})
+					.error(function () {
+						alert('Error');
+					});
+				} else {
+					$http({
+						url: 'route/create',
+						method: 'POST',
+						data: saveRoute
+					})
+					.success(function (routId) {
+						saveRoute.id = routId;
+						//$scope.route.id = routId;
+						$scope.routes.push(saveRoute);
+						$('#modal-container-routs').modal('hide');
+					})
+					.error(function () {
+						alert('Error');
+					});
+				}
 			}
 
+		};
+
+		$scope.deleteRoute = function () {
+			$http({
+				url: 'route/delete',
+				method: 'GET',
+				params: { routeId: $scope.route.id }
+			})
+			.success(function () {
+				$scope.route.id = 0;
+				$scope.routes.splice($scope.routes.indexOf($scope.route), 1);
+				$('#modal-container-routs').modal('hide');
+			})
+			.error(function () {
+				alert('Error');
+			});
 		};
 
 		$scope.getRoutes();

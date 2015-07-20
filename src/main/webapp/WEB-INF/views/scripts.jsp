@@ -18,6 +18,7 @@
 <script type="text/javascript" src="/resources/js/ng/carpool.js"></script>
 <!-- Weather widget-->
 <script type="text/javascript" src="/resources/js/jquery.simpleWeather.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>
 <script type="text/javascript">
