@@ -61,7 +61,7 @@
         <% } else { %>
 
         <ul class="nav navbar-nav navbar-right " ng-controller="LoginController">
-          <li>
+          <li style="margin-top: 5px;">
             <button type="submit" class="btn btn-default input-color style-btn" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a>
             </button>
           </li>

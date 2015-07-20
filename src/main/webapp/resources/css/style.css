@@ -188,7 +188,7 @@ body{
     font-weight: 500;
     font-size: 30px;
     letter-spacing: 1px;
-    color: #333;
+    color: #F14B20 !important;
     font-family:'raleway.medium';
 }
 @font-face {
@@ -213,13 +213,12 @@ body{
     -moz-opacity: 0.8;
     -khtml-opacity: 0.8;
     opacity: 0.8;
-    border-radius: 0;
+    border-radius: 5px !important;
     border: none;
 }
  .btn-join:hover{
     background-color: #f13a20 !important;
     color: #fff !important;
-     border-radius: 0;
      border: none;
 }
  .btn-index{
@@ -258,6 +257,9 @@ body{
 }/*Find a car section*/
 #find{
     margin-top: 50%;
+}
+.btn-bottom{
+    margin-bottom: 50px;
 }
 .hr{
     border-top: 1px solid #62C4E2 !important;
@@ -304,13 +306,4 @@ i {
     display: inline-block;
     font-size: 14px;
     margin-top:0%;
-}
-.btn-send{
-    margin-top: -13px;
-    margin-bottom: 0px;
-    margin-left: -15px;
-}
-.btn-reg{
-    margin-bottom: 10px;
-    margin-top: 7px;
 }

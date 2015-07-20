@@ -101,7 +101,7 @@
 </section>
 
 
-<!-- About Section -->
+<!-- what we do -->
 <section id="about" class="about-section section">
     <div class="container">
         <div class="row">
@@ -115,15 +115,14 @@
                     <div class="col-md-8 column">
                         <p class="text-left">
                             In the last decade, car pooling has become more & more popular. It’s an interesting and eco-friendly way to travel, you meet new people on the road and you save some money from both sides.
+                            Carpool is a spontaneous ridesharing service for mobile and web. Passengers, looking for a ride, can find local community drivers on the phone. Users with a car can register as a driver and start receiving ride requests from passengers.
                         </p>
                         <h4 class="text-center">
                             What is Carpool?
                         </h4>
-                        <ul class="text-left">
-                            <li>
+                        <p class="text-left">
                                 Carpool is designed for local users in support of community transit and environmental goals. Its mission, vision and values lead to actions aimed at decreasing personal car ownership, reducing vehicle distance travelled, improving urban land use and development, providing affordable access to vehicles for all constituencies, as well as motivating residents to walk, cycle and take buses and trains, and decreasing dependence on fossil fuels while reducing the emission of greenhouse gases.
-                            </li>
-                        </ul>
+                        </p>
                     </div>
                     <div class="col-md-4 column">
                         <img src="/resources/images/join_as.jpg" style="width: 100%;" class="img-thumbnail">
@@ -131,6 +130,40 @@
                 </div>
         </div>
     </div>
+</section>
+
+<!-- Benefits Section -->
+<section id="benefits" class="about-section section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 column">
+                <h3 class="text-center headings">
+                    Benefits
+                </h3>
+                <hr class="hr">
+
+                <div class="row clearfix">
+                    <div class="col-md-12 column">
+                        <p class="text-center">
+                            In the last decade, car pooling has become more & more popular. It’s an interesting and eco-friendly way to travel, you meet new people on the road and you save some money from both sides.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-4">
+                            <h3 class="text-center">Environment</h3>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h3 class="text-center">Drivers</h3>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h3 class="text-center">Riders</h3>
+                        </div>
+                    </div>
+            </div>
+        </div>
 </section>
 
 <!--Contact us-->
@@ -169,8 +202,8 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-xs-12 pull-left btn-send">
-                            <button class="btn btn-default btn-find btn-reg">Send</button>
+                        <div class="col-xs-12">
+                            <button class="col-lg-12 btn btn-default input-color style-btn btn-bottom">Send</button>
                         </div>
                     </div>
 
@@ -221,7 +254,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-join" data-dismiss="modal">
+                <button type="button" class="btn btn-default input-color style-btn" data-dismiss="modal">
                     Close
                 </button>
             </div>
@@ -267,7 +300,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-join" data-dismiss="modal" ng-disabled="!enable">
+                <button type="button" class="btn btn-default input-color style-btn" data-dismiss="modal" ng-disabled="!enable">
                     Close
                 </button>
                 <button type="button" class="btn btn-success btn-blue" ng-click="registration()"
@@ -406,7 +439,7 @@
             </div>
 
             <div class="col-md-1 col-xs-12">
-                <button class="btn btn-block btn-default btn-find">
+                <button class="btn btn-block btn-default input-color style-btn">
                     <i class="fa fa-search"></i> Find
                 </button>
             </div>
@@ -435,7 +468,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default btn-join">Details</button>
+                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -459,7 +492,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default btn-join">Details</button>
+                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -483,7 +516,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default btn-join">Details</button>
+                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -508,7 +541,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default btn-join">Details</button>
+                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -533,7 +566,7 @@
                     <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
 
                     <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default btn-join">Details</button>
+                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
                     </div>
                 </div>
             </div>
