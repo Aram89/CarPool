@@ -166,22 +166,23 @@ body{
     background-color: rgba(56, 55, 55, 0.3);
 }
 .slider-heading{
-    font-size: 60px;
+    font-size: 50px;
     color: #fff;
-    font-weight: 100;
-    margin-top: -400px;
+    font-weight: lighter;
+    margin-top: -350px;
     z-index: 200;
     position: relative;
     font-family:'raleway.medium';
 }
-.slider-title{
+.slider-title {
     color: #fff;
-    font-size: 30px;
-    font-weight: 100;
+    font-size: 23px;
+    font-weight: lighter;
     margin-top: 0px;
     z-index: 300;
+    margin-bottom: 20px;
     position: relative;
-    font-family:'raleway.medium';
+    font-family: 'raleway.medium';
 }
 .headings{
     text-transform: uppercase;
@@ -190,6 +191,10 @@ body{
     letter-spacing: 1px;
     color: #F14B20 !important;
     font-family:'raleway.medium';
+}
+.paragraphs {
+    color: #606060;
+    line-height: 1.8;
 }
 @font-face {
     font-family:'raleway.medium';
@@ -265,11 +270,28 @@ body{
     border-top: 1px solid #62C4E2 !important;
     width: 100px;
     height: 1px;
+    margin-bottom: 80px;
 }
 .popup-map{
     left: 20px !important;
 }
-
+/*benefits*/
+.icon-border{
+    border: 2px solid #62C4E2;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    margin-left: 125px;
+}
+.hr-benefit{
+    border-top: 1px solid #62C4E2 !important;
+    width: 50px;
+    height: 1px;
+}
+.icon-orange{
+    color:#62C4E2 !important;
+}
 /*footer*/
 .footer{
     background-image: -o-linear-gradient(top, #FC3605 0%, #F98209 100%);
