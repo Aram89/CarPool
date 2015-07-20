@@ -28,6 +28,7 @@
 
     <link href="/resources/css/select.css" rel="stylesheet">
     <link href="/resources/css/style.css" rel="stylesheet">
+    <link href="/resources/css/media_queries.css" rel="stylesheet">
 
     <!--jQuery custom content scroller-->
     <link href="/resources/css/jquery.mCustomScrollbar.css" rel="stylesheet">
@@ -112,14 +113,11 @@
 
                 <div class="row clearfix">
                     <div class="col-md-8 column">
-                        <p class="text-left">
+                        <p class="text-left paragraphs">
                             In the last decade, car pooling has become more & more popular. It’s an interesting and eco-friendly way to travel, you meet new people on the road and you save some money from both sides.
                             Carpool is a spontaneous ridesharing service for mobile and web. Passengers, looking for a ride, can find local community drivers on the phone. Users with a car can register as a driver and start receiving ride requests from passengers.
                         </p>
-                        <h4 class="text-center">
-                            What is Carpool?
-                        </h4>
-                        <p class="text-left">
+                        <p class="text-left paragraphs">
                                 Carpool is designed for local users in support of community transit and environmental goals. Its mission, vision and values lead to actions aimed at decreasing personal car ownership, reducing vehicle distance travelled, improving urban land use and development, providing affordable access to vehicles for all constituencies, as well as motivating residents to walk, cycle and take buses and trains, and decreasing dependence on fossil fuels while reducing the emission of greenhouse gases.
                         </p>
                     </div>
@@ -143,22 +141,47 @@
 
                 <div class="row clearfix">
                     <div class="col-md-12 column">
-                        <p class="text-center">
-                            In the last decade, car pooling has become more & more popular. It’s an interesting and eco-friendly way to travel, you meet new people on the road and you save some money from both sides.
+                        <p class="text-center paragraphs">
+                            From the moment you request a ride to the moment you arrive, the Uber experience has been designed from the ground up with your safety in mind.
+                            Making cities better is at the heart of everything we do. It’s much more than improving the way people get around. It’s celebrating what makes those cities special, caring about the people who make them great, and being responsible citizens. That’s why we work hard to keep our streets safe for everyone, whether they’re on foot, on a bike, or in another car.
                         </p>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="col-lg-4">
-                            <h3 class="text-center">Environment</h3>
+                            <div class="text-center icon-border">
+                                <i class="fa fa-tree fa-2x icon-orange"></i>
+                            </div>
+                            <h3 class="text-center headings">Environment</h3>
+                            <hr class="hr-benefit" />
+                            <ul class="paragraphs">
+                                <li class="paragraphs">We recommend that the driver and passenger share the driving expenses.</li>
+                                <li class="paragraphs">Carpool is all about the community. Be friendly.</li>
+                            </ul>
                         </div>
 
                         <div class="col-lg-4">
-                            <h3 class="text-center">Drivers</h3>
+                            <div class="text-center icon-border">
+                                <i class="fa fa-car fa-2x icon-orange"></i>
+                            </div>
+                            <h3 class="text-center headings">Drivers</h3>
+                            <hr class="hr-benefit" />
+                            <ul>
+                                <li class="paragraphs">You must have a valid driver's license (show it to your passengers if requested).</li>
+                                <li class="paragraphs">Obey traffic laws and respect the speed limit.</li>
+                                <li class="paragraphs">Zero tolerance for drinking and driving. </li>
+                            </ul>
                         </div>
 
                         <div class="col-lg-4">
-                            <h3 class="text-center">Riders</h3>
+                            <div class="text-center icon-border">
+                                <i class="fa fa-users fa-2x icon-orange"></i>
+                            </div>
+                            <h3 class="text-center headings">Riders</h3>
+                            <hr class="hr-benefit" />
+                            <ul>
+                                <li class="paragraphs">Register as a passenger if you're looking for a driver.</li>
+                            </ul>
                         </div>
                     </div>
             </div>
@@ -201,9 +224,7 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-xs-12">
-                            <button class="col-lg-12 btn btn-default input-color style-btn btn-bottom">Send</button>
-                        </div>
+                            <button class="col-lg-12 col-xs-12 btn btn-default input-color style-btn btn-bottom">Send</button>
                     </div>
 
                 </form>
