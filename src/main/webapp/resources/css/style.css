@@ -1,3 +1,15 @@
+body{
+    font-family:'AurulentSans-Regular';
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+    color: #333;
+}
+@font-face {
+    font-family:'AurulentSans-Regular';
+    src: url('/resources/fonts/AurulentSans-Regular.otf');
+}
 .join-buttons {
     position: relative;
     top: -57px;
@@ -16,9 +28,7 @@
 }
 
 .content-wrap {
-    height: 450px;
-    overflow-x: hidden;
-    overflow-y: scroll
+    height: 400px;
 }
 
 .section-row {
@@ -68,8 +78,9 @@
     /*background-color: transparent;*/
 }
 .page-scroll {
-    font-weight: bold;
+    font-weight: 600;
     color: #333 !important;
+    font-size: 14px;
     text-shadow: 1px 0 0 rgba(255, 255, 255, 0.5), -1px 0 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5), 1px 1px rgba(255, 255, 255, 0.5), -1px -1px 0 rgba(255, 255, 255, 0.5), 1px -1px 0 rgba(255, 255, 255, 0.5), -1px 1px 0 rgba(255, 255, 255, 0.5);
 }
 .page-scroll:hover{
@@ -105,7 +116,6 @@
     color: #F14B20 !important;
     background: #fff;
 }
-
 .style-btn {
     color: #F14B20 !important;
     font-weight: bold;
@@ -162,6 +172,7 @@
     margin-top: -400px;
     z-index: 200;
     position: relative;
+    font-family:'raleway.medium';
 }
 .slider-title{
     color: #fff;
@@ -170,6 +181,19 @@
     margin-top: 0px;
     z-index: 300;
     position: relative;
+    font-family:'raleway.medium';
+}
+.headings{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: #333;
+    font-family:'raleway.medium';
+}
+@font-face {
+    font-family:'raleway.medium';
+    src: url('/resources/fonts/raleway.medium.ttf');
 }
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default{
     background-color: #F14B20 !important;
@@ -183,7 +207,7 @@
     background-color: #F14B20;
     color: #fff;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: normal;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     filter: alpha(opacity=80);
     -moz-opacity: 0.8;
@@ -237,6 +261,8 @@
 }
 .hr{
     border-top: 1px solid #62C4E2 !important;
+    width: 100px;
+    height: 1px;
 }
 .popup-map{
     left: 20px !important;
@@ -259,7 +285,7 @@
     height: 40px;
     display: inline-block;
     position: absolute;
-    left: 30%;
+    left: 37%;
     margin-top: -5px;
 }
 #weather{

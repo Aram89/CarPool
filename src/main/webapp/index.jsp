@@ -14,11 +14,11 @@
     <!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
     <!--script src="js/less-1.3.3.min.js"></script-->
     <!--append ‘#!watch’ to the browser URL, then refresh the page. -->
-
+    <!--jQuery lib-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- angular scripts -->
     <script type="text/javascript" src="/resources/js/lodash.min.js"></script>
     <script type="text/javascript" src="/resources/js/angular.min.js"></script>
-
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
     <link href="/resources/css/scrolling-nav.css" rel="stylesheet">
@@ -29,6 +29,16 @@
     <link href="/resources/css/select.css" rel="stylesheet">
     <link href="/resources/css/style.css" rel="stylesheet">
 
+    <!--jQuery custom content scroller-->
+    <link href="/resources/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <script type="text/javascript" src="/resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--end-->
+
+    <!--Fonts-->
+    <link href="/resources/fonts/OpenSans-Regular.ttf" rel="stylesheet">
+    <link href="/resources/fonts/raleway.medium.ttf" rel="stylesheet">
+    <link href="/resources/fonts/modern-sans-serif-7.regular.ttf" rel="stylesheet">
+    <!--end-->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -96,8 +106,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 column">
-                <h3 class="text-muted">
-                    About
+                <h3 class="text-center headings">
+                    What We Do?
                 </h3>
                     <hr class="hr">
 
@@ -126,7 +136,7 @@
 <!--Contact us-->
     <section id="contact" ng-controller="ContactController">
         <div class="container">
-            <h3 class="text-muted">
+            <h3 class="text-center headings">
                 Contact Us
             </h3>
             <hr class="hr">
@@ -364,7 +374,7 @@
 <script type="text/ng-template" id="search-form.html">
 
     <div ng-controller="FindController" class="find-div">
-        <h3 class="text-muted">
+        <h3 class="text-center headings">
             Find Car or Driver
         </h3>
         <hr class="hr">
@@ -404,7 +414,55 @@
         </div>
 
 
-        <div class="content-wrap">
+        <div class="content-wrap mCustomScrollbar" data-mcs-theme="dark">
+
+            <div class="row section-row">
+                <div class="col-xs-6 col-md-4">
+                    <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <h3>Profile Name </h3>
+                    <ul>
+                        <li> from:</li>
+                        <li> to:</li>
+                        <li> date:</li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-4" style="padding:25px">
+                    <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
+                    <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
+
+                    <div class="col-xs-8 col-md-10">
+                        <button type="button" class="btn btn-default btn-join">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row section-row">
+                <div class="col-xs-6 col-md-4">
+                    <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <h3>Profile Name </h3>
+                    <ul>
+                        <li> from:</li>
+                        <li> to:</li>
+                        <li> date:</li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-4" style="padding:25px">
+                    <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
+                    <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
+
+                    <div class="col-xs-8 col-md-10">
+                        <button type="button" class="btn btn-default btn-join">Details</button>
+                    </div>
+                </div>
+            </div>
 
             <div class="row section-row">
                 <div class="col-xs-6 col-md-4">

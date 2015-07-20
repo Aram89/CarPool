@@ -25,7 +25,10 @@
             <a class="page-scroll" href="<c:url value="/"/>#find">Find</a>
           </li>
           <li>
-            <a class="page-scroll" href="<c:url value="/"/>#about">About</a>
+            <a class="page-scroll" href="<c:url value="/"/>#about">What We Do</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="<c:url value="/"/>#benefits">Benefits</a>
           </li>
           <li>
             <a class="page-scroll" href="<c:url value="/"/>#contact">Contact</a>
@@ -58,7 +61,10 @@
         <% } else { %>
 
         <ul class="nav navbar-nav navbar-right " ng-controller="LoginController">
-          <li><a href="#" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
+          <li>
+            <button type="submit" class="btn btn-default input-color style-btn" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a>
+            </button>
+          </li>
         </ul>
 
         <ul id="rout_list" class="nav navbar-nav navbar-right routes" ng-cloak>
