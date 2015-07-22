@@ -162,6 +162,14 @@
 			format : 'DD/MM/YYYY HH:mm',
 			defaultDate: new Date()
 		});
+		$scope.loading = false;
+		$scope.findResult = [];
+		$scope.find = {
+			startLatitude  : 0,
+		 	startLongitude : 0,
+			endLatitude    : 0,
+			endLongitude   : 0
+		};
 		uiGmapGoogleMapApi.then(function(maps) {
 			var findFromInput        = document.getElementById('searchFrom'),
 				findToInput          = document.getElementById('searchTo'),
@@ -169,12 +177,46 @@
 				findToAutocomplete   = new google.maps.places.Autocomplete(findToInput, {types: ['geocode']});
 
 			google.maps.event.addListener(findFromAutocomplete, 'place_changed', function() {
-
+				var place = findFromAutocomplete.getPlace();
+				if (!place.geometry) {
+					$scope.find.startLatitude = 0;
+					$scope.find.startLongitude = 0;
+				} else if(place.geometry.location.lat() && place.geometry.location.lng()) {
+					$scope.find.startLatitude = place.geometry.location.lat();
+					$scope.find.startLongitude = place.geometry.location.lng();
+				}
 			});
 			google.maps.event.addListener(findToAutocomplete, 'place_changed', function() {
-
+				var place = findToAutocomplete.getPlace();
+				if (!place.geometry) {
+					$scope.find.endLatitude = 0;
+					$scope.find.endLongitude = 0;
+				} else if(place.geometry.location.lat() && place.geometry.location.lng()) {
+					$scope.find.endLatitude = place.geometry.location.lat();
+					$scope.find.endLongitude = place.geometry.location.lng();
+				}
 			});
 		});
+		$scope.doFind = function() {
+			$scope.loading = true;
+
+			$scope.find.date = '';
+			$scope.find.time = '';
+
+			$http({
+				url : 'rout/find',
+				method: 'GET',
+				params: $scope.find
+			})
+			.success(function(data) {
+				$scope.loading = false;
+				$scope.findResult = data || [];
+			})
+			.error(function() {
+				$scope.loading = false;
+				alert('Error');
+			});
+		};
 	});
 
 	carpool.controller('CarsController', function ($rootScope, $scope, $http) {

@@ -166,3 +166,7 @@
     </div>
   </div>
 </div>
+
+<script type="text/ng-template" id="search-user-block.html">
+<%@include file="search-user-block.jsp" %>
+</script>
