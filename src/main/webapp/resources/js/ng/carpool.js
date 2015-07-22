@@ -503,5 +503,41 @@
 		$scope.getRoutes();
 	});
 
+	carpool.controller('ProfileController', function($rootScope, $scope, $http){
+		var profileData = {};
+		$scope.profile = {};
+
+		$rootScope.openProfile = function(){
+			$http({
+				url: 'user/get-profile-data',
+				method: 'GET'
+			}).success(function (profile) {
+				$scope.profile = profile;
+				profileData = angular.copy($scope.profile);
+			})
+			.error(function () {
+				alert('Error');
+			});
+		};
+
+		$scope.saveProfileData = function() {
+			$http({
+				url: 'user/save-profile-data',
+				method: 'POST',
+				data: $scope.profile
+			}).success(function () {
+				profileData = angular.copy($scope.profile);
+				$('#modal-container-profile').modal('hide');
+			})
+			.error(function () {
+				alert('Error');
+			});
+		};
+
+		$scope.cancelProfileSave = function(){
+			$scope.profile = angular.copy(profileData);
+		};
+
+	});
 
 })();

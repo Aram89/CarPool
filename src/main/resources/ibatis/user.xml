@@ -16,11 +16,11 @@
         <result property="fbLink" column="fbLink"/>
         <result property="twLink" column="twLink"/>
         <result property="goLink" column="goLink"/>
-        <!--
+
         <result property="fbId" column="fbId"/>
         <result property="twId" column="twId"/>
         <result property="goId" column="goId"/>
-        -->
+
     </resultMap>
 
     <resultMap id="password" class="user">
@@ -48,13 +48,6 @@
         where email = #email#
     </select>
 
-
-    <update id="update" parameterClass="User">
-        UPDATE User
-        SET    firstName = #firstName#
-        WHERE  id = #id#
-    </update>
-
     <delete id="delete" parameterClass="int">
         DELETE FROM User
         WHERE  id = #id#
@@ -77,5 +70,23 @@
          FROM `user`
         WHERE `user`.userName = #userName#
     </select>
+
+    <select id="getUserById" resultClass="user" parameterClass="int">
+        SELECT * FROM `user` WHERE `user`.id = #userId#
+    </select>
+
+    <update id="update" parameterClass="user">
+        UPDATE `user` SET
+          `user`.firstName = #firstName#,
+          `user`.lastName = #lastName#,
+          `user`.phone = #phone#,
+          `user`.fbLink = #fbLink#,
+          `user`.twLink = #twLink#,
+          `user`.goLink = #goLink#,
+          `user`.fbId = #fbId#,
+          `user`.twId = #twId#,
+          `user`.twId = #twId#
+        WHERE `user`.id = #id#
+    </update>
 
 </sqlMap>

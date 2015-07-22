@@ -19,9 +19,9 @@ public class User {
     private String fbLink;
     private String twLink;
     private String goLink;
-    private long fbID;
-    private long twID;
-    private long goID;
+    private long fbId;
+    private long twId;
+    private long goId;
 
 
     public int getId() {
@@ -121,27 +121,27 @@ public class User {
         this.goLink = goLink;
     }
 
-    public long getFbID() {
-        return fbID;
+    public long getFbId() {
+        return fbId;
     }
 
-    public void setFbID(long fbID) {
-        this.fbID = fbID;
+    public void setFbId(long fbId) {
+        this.fbId = fbId;
     }
 
-    public long getTwID() {
-        return twID;
+    public long getTwId() {
+        return twId;
     }
 
-    public void setTwID(long twID) {
-        this.twID = twID;
+    public void setTwId(long twId) {
+        this.twId = twId;
     }
 
-    public long getGoID() {
-        return goID;
+    public long getGoId() {
+        return goId;
     }
 
-    public void setGoID(long goID) {
-        this.goID = goID;
+    public void setGoId(long goId) {
+        this.goId = goId;
     }
 }

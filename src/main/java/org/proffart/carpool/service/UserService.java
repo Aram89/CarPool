@@ -19,4 +19,6 @@ public interface UserService {
     Boolean checkCredentials (String userName, String password) throws SQLException,
             UnsupportedEncodingException, NoSuchAlgorithmException, UserException;
     void logout();
+    User getProfileData() throws SQLException;
+    void updateProfileData(User user) throws SQLException;
 }

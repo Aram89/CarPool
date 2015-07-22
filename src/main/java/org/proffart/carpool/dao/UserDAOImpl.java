@@ -21,4 +21,12 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
     public User getUser(String userName) throws SQLException {
         return (User) getSqlMapClient().queryForObject("user.getUser", userName);
     }
+
+    public User getUserById(int userId) throws SQLException {
+        return (User) getSqlMapClient().queryForObject("user.getUserById", userId);
+    }
+
+    public void updateUserData(User user) throws SQLException {
+        getSqlMapClient().update("user.update", user);
+    }
 }

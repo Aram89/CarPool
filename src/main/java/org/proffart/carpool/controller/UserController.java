@@ -69,4 +69,20 @@ public class UserController {
         userService.checkCredentials(user.getUserName(), user.getPassword());
         return new ResponseEntity(HttpStatus.OK);
     }
+
+    @RequestMapping(value = RequestMappings.getProfileData, method = RequestMethod.GET)
+    public ResponseEntity getProfileData() throws Exception {
+        //noinspection unchecked
+        return new ResponseEntity(userService.getProfileData(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = RequestMappings.saveProfileData, method = RequestMethod.POST)
+    public ResponseEntity saveProfileData(@RequestBody User user) throws Exception {
+        userService.updateProfileData(user);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+
+
+
 }

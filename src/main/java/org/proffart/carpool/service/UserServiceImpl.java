@@ -63,6 +63,19 @@ public class UserServiceImpl implements UserService {
         session.setAttribute("userObject", null);
     }
 
+    public User getProfileData() throws SQLException {
+        User user = null;
+        if(isLogged()) {
+            user = userDAO.getUserById(getCurrentUser().getId());
+        }
+        return user;
+    }
+
+    public void updateProfileData(User user) throws SQLException {
+        userDAO.updateUserData(user);
+    }
+
+
     public static User getCurrentUser() {
         User user = null;
         try {

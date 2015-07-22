@@ -61,28 +61,29 @@
 
 <!-- Intro Section -->
 <section id="intro" class="intro-section section">
-        <div id="video">
-            <video width="100%" autoplay loop>
-                <source src="/resources/images/test3.mp4" type="video/mp4">
-            </video>
-            <div class="video-cover"></div>
-            <div class="container">
-                <% if(isLogged) { %>
-                <h1 class="slider-heading text-center"> Let's get started</h1>
-                <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
-                <div style="text-align: center">
-                    <a class="btn btn-default btn-join btn-index" href="#modal-container-cars"  role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
-                    <a class="btn btn-default btn-join btn-index" href="#modal-container-routs" role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> My routs </a>
-                </div>
-                <% }else{ %>
-                <h1 class="slider-heading text-center"> Let's get started</h1>
-                <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
-                <div style="text-align: center">
-                    <a class="btn btn-default btn-join btn-index " href="#modal-container-registration" role="button" data-toggle="modal"> BECOME A MEMBER </a>
-                </div>
-                <% } %>
+    <div id="video">
+        <video width="100%" autoplay loop>
+            <source src="/resources/images/test3.mp4" type="video/mp4">
+        </video>
+        <div class="video-cover"></div>
+        <div class="container">
+            <% if(isLogged) { %>
+            <h1 class="slider-heading text-center"> Let's get started</h1>
+            <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
+            <div style="text-align: center">
+                <a class="btn btn-default btn-join btn-index" href="#modal-container-profile"  role="button" data-toggle="modal" ng-click="openProfile()"><i class="fa fa-user"></i> My Profile </a>
+                <a class="btn btn-default btn-join btn-index" href="#modal-container-cars"     role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
+                <a class="btn btn-default btn-join btn-index" href="#modal-container-routs"    role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> My routs </a>
             </div>
+            <% }else{ %>
+            <h1 class="slider-heading text-center"> Let's get started</h1>
+            <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
+            <div style="text-align: center">
+                <a class="btn btn-default btn-join btn-index " href="#modal-container-registration" role="button" data-toggle="modal"> BECOME A MEMBER </a>
+            </div>
+            <% } %>
         </div>
+    </div>
 </section>
 
 <!-- Find Section -->
@@ -301,6 +302,33 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" ng-controller="ProfileController" id="modal-container-profile" role="dialog"
+     aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="profileModalLabel">
+                    Change Profile info
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <ng-include src="'profile.html'"></ng-include>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default input-color style-btn" data-dismiss="modal" ng-click="cancelProfileSave()">
+                    Close
+                </button>
+                <button type="button" class="btn btn-success input-color style-btn" ng-click="saveProfileData()">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 <% } else { %>
 
 <div class="modal fade" ng-controller="RegistrationController" id="modal-container-registration" role="dialog"
@@ -333,317 +361,35 @@
     </div>
 </div>
 <% } %>
-
-
 <!-- angular templates -->
-<script type="text/ng-template" id="registration-fieldset.html">
 
-    <fieldset>
-
-
-        <div class="form-group" ng-class="{ 'has-error' : regForm.userName.$invalid && !regForm.userName.$pristine }">
-            <label class="col-md-4 control-label" for="userName">Login Name</label>
-
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input id="userName" name="userName" class="form-control" placeholder="Your login name"
-                           ng-model="user.userName"
-                           ng-remote-check="user/check-user-name/"
-                           required type="text">
-                </div>
-                <p class="help-block" ng-show="regForm.userName.$error.required && !regForm.userName.$pristine">Please
-                    enter your login</p>
-
-                <p class="help-block" ng-show="regForm.userName.$error.remote && !regForm.userName.$pristine">This login
-                    already exist</p>
-            </div>
-        </div>
-
-
-        <div class="form-group" ng-class="{ 'has-error' : regForm.email.$invalid && !regForm.email.$pristine }">
-            <label class="col-md-4 control-label" for="email">Email</label>
-
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                    <input id="email" name="email" class="form-control" placeholder="Your Email"
-                           ng-model="user.email"
-                           ng-remote-check="user/check-email/"
-                           required type="email">
-                </div>
-                <p class="help-block" ng-show="regForm.email.$error.required && !regForm.email.$pristine">Please enter
-                    your email</p>
-
-                <p class="help-block" ng-show="regForm.email.$error.email && !regForm.email.$pristine">Email is not a
-                    valid</p>
-
-                <p class="help-block" ng-show="regForm.email.$error.remote && !regForm.email.$pristine">This email
-                    already exist</p>
-            </div>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-error' : regForm.passwd.$invalid && !regForm.passwd.$pristine }">
-            <label class="col-md-4 control-label" for="passwd">Password</label>
-
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input id="passwd" name="passwd" class="form-control" placeholder="Enter Password"
-                           ng-model="user.password" required type="password">
-                </div>
-                <p class="help-block" ng-show="regForm.passwd.$error.required && !regForm.passwd.$pristine">Please enter
-                    your password</p>
-            </div>
-        </div>
-
-
-        <div class="form-group "
-             ng-class="{ 'has-error' : regForm.confirmPassword.$invalid && !regForm.confirmPassword.$pristine }">
-            <label class="col-md-4 control-label" for="confirmPassword">Password Again</label>
-
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input id="confirmPassword" name="confirmPassword" class="form-control"
-                           placeholder="Retype Password"
-                           ng-model="user.confirmPassword"
-                           ng-match="user.password"
-                           required type="password">
-                </div>
-                <p class="help-block"
-                   ng-show="regForm.confirmPassword.$error.required && !regForm.confirmPassword.$pristine">Please enter
-                    your verify password</p>
-
-                <p class="help-block"
-                   ng-show="regForm.confirmPassword.$error.match && !regForm.confirmPassword.$pristine">Password
-                    confirmation doesnot match</p>
-            </div>
-        </div>
-
-    </fieldset>
-
-</script>
 
 <script type="text/ng-template" id="search-form.html">
-
-    <div ng-controller="FindController" class="find-div">
-        <h3 class="text-center headings">
-            Find Car or Driver
-        </h3>
-        <hr class="hr">
-        <div class="row">
-
-            <div class="col-md-4 col-xs-12">
-                <input id="searchFrom" type="text" class="form-control find-input" placeholder="From">
-            </div>
-
-            <div class="col-md-4 col-xs-12">
-                <input id="searchTo" type="text" class="form-control find-input" placeholder="To">
-            </div>
-
-            <div class="col-md-3 col-xs-12">
-                <div class="row">
-                    <div class="col-xs-12">
-
-                        <div class="form-group">
-                            <div id="searchDateBlock" class="input-group date">
-                                <input id="searchDate" type="text" class="form-control">
-                  <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-1 col-xs-12">
-                <button class="btn btn-block btn-default input-color style-btn">
-                    <i class="fa fa-search"></i> Find
-                </button>
-            </div>
-
-        </div>
-
-
-        <div class="content-wrap mCustomScrollbar" data-mcs-theme="dark">
-
-            <div class="row section-row">
-                <div class="col-xs-6 col-md-4">
-                    <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <h3>Profile Name </h3>
-                    <ul>
-                        <li> from:</li>
-                        <li> to:</li>
-                        <li> date:</li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-6 col-md-4" style="padding:25px">
-                    <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-                    <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row section-row">
-                <div class="col-xs-6 col-md-4">
-                    <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <h3>Profile Name </h3>
-                    <ul>
-                        <li> from:</li>
-                        <li> to:</li>
-                        <li> date:</li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-6 col-md-4" style="padding:25px">
-                    <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-                    <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row section-row">
-                <div class="col-xs-6 col-md-4">
-                    <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <h3>Profile Name </h3>
-                    <ul>
-                        <li> from:</li>
-                        <li> to:</li>
-                        <li> date:</li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-6 col-md-4" style="padding:25px">
-                    <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-                    <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row section-row">
-                <div class="col-xs-6 col-md-4">
-                    <img src="/resources/images/join_as.jpg"
-                         class="img-responsive img-thumbnail img-profile-thumbnail"/>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <h3>Profile Name </h3>
-                    <ul>
-                        <li> from:</li>
-                        <li> to:</li>
-                        <li> date:</li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-6 col-md-4" style="padding:25px">
-                    <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-                    <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row section-row">
-                <div class="col-xs-6 col-md-4">
-                    <img src="/resources/images/join_as.jpg"
-                         class="img-responsive img-thumbnail img-profile-thumbnail"/>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <h3>Profile Name </h3>
-                    <ul>
-                        <li> from:</li>
-                        <li> to:</li>
-                        <li> date:</li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-6 col-md-4" style="padding:25px">
-                    <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-                    <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-                    <div class="col-xs-8 col-md-10">
-                        <button type="button" class="btn btn-default input-color style-btn">Details</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<%@include file="./WEB-INF/views/search-form.jsp" %>
 </script>
 
+<% if(!isLogged) { %>
+
+<script type="text/ng-template" id="registration-fieldset.html">
+<%@include file="./WEB-INF/views/registration.jsp" %>
+</script>
+
+<% } else { %>
+
 <script type="text/ng-template" id="cars.html">
-
-<div class="row">
-    <div class="col-xs-6 col-md-3"><strong> Model </strong></div>
-    <div class="col-xs-6 col-md-3"><strong> Number </strong></div>
-    <div class="col-xs-10 col-md-4"><strong> Description </strong></div>
-    <div class="col-xs-2 col-md-2">
-        <button type="button" class="btn btn-success btn-sm" ng-click="addNewCar()">
-            <i class="fa fa-plus"></i>
-        </button>
-    </div>
-</div>
-
-<div class="row" ng-repeat="car in cars" style="margin-top: 7px; margin-bottom: 7px;">
-    <div class="col-xs-6 col-md-3">
-        <span ng-hide="car.editable" ng-bind="car.model"></span>
-        <input type="text" class="form-control" ng-model="car.model" ng-show="car.editable">
-    </div>
-    <div class="col-xs-6 col-md-3">
-        <span ng-hide="car.editable" ng-bind="car.number"></span>
-        <input type="text" class="form-control" ng-model="car.number" ng-show="car.editable">
-    </div>
-    <div class="col-xs-10 col-md-4">
-        <span ng-hide="car.editable" ng-bind="car.description"></span>
-        <textarea ng-model="car.description" class="form-control" rows="1" ng-show="car.editable"></textarea>
-    </div>
-    <div class="col-xs-2 col-md-2">
-        <button type="button" class="btn btn-primary btn-xs" ng-hide="car.editable" ng-click="editCar(car)">
-            <i class="fa fa-edit"></i>
-        </button>
-        <button type="button" class="btn btn-danger btn-xs" ng-hide="car.editable" ng-click="deleteCar(car)">
-            <i class="fa fa-trash"></i>
-        </button>
-        <button type="button" class="btn btn-success btn-xs" ng-show="car.editable" ng-click="saveCar(car)"
-            ng-disabled="!car.model && !car.number && !car.description">
-            <i class="fa fa-check"></i>
-        </button>
-        <button type="button" class="btn btn-warning btn-xs" ng-show="car.editable" ng-click="cancelEdit(car)">
-            <i class="fa fa-times"></i>
-        </button>
-    </div>
-</div>
-
-
+<%@include file="./WEB-INF/views/cars.jsp" %>
 </script>
 
 <script type="text/ng-template" id="routs.html">
 <%@include file="./WEB-INF/views/routs.jsp" %>
 </script>
+
+<script type="text/ng-template" id="profile.html">
+<%@include file="./WEB-INF/views/profile.jsp" %>
+</script>
+
+<% } %>
+
 
 <%@include file="./WEB-INF/views/scripts.jsp" %>
 
