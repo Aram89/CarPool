@@ -1,5 +1,7 @@
 package org.proffart.carpool.dao;
 
+import org.proffart.carpool.domain.Find;
+import org.proffart.carpool.domain.FindResult;
 import org.proffart.carpool.domain.Route;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
@@ -23,6 +25,11 @@ public class RouteDAOImpl extends SqlMapClientDaoSupport implements RouteDAO {
 
     public void deleteRoute(int routeId) throws SQLException {
         getSqlMapClient().delete("route.deleteById", routeId);
+    }
+
+    public List<FindResult> findRoutes(Find find) throws SQLException {
+        //noinspection unchecked
+        return getSqlMapClient().queryForList("route.find", find);
     }
 
 }

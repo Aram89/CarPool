@@ -2,6 +2,8 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="route">
     <typeAlias alias="route" type="org.proffart.carpool.domain.Route"/>
+    <typeAlias alias="findResult" type="org.proffart.carpool.domain.FindResult"/>
+    <typeAlias alias="find" type="org.proffart.carpool.domain.Find"/>
     <resultMap id="result" class="route">
         <result property="id" column="id"/>
         <result property="userId" column="userId"/>
@@ -27,6 +29,44 @@
         <result property="saturday" column="saturday"/>
         <result property="sunday" column="sunday"/>
     </resultMap>
+
+    <resultMap id="findResult" class="findResult">
+        <result property="userId" column="userId"/>
+        <result property="routeId" column="routeId"/>
+        <result property="profileName" column="profileName"/>
+        <result property="startPoint" column="startPoint"/>
+        <result property="endPoint" column="endPoint"/>
+        <result property="date" column="date"/>
+        <result property="startTime" column="startTime"/>
+        <result property="firstName" column="firstName"/>
+        <result property="lastName" column="lastName"/>
+        <result property="carNumber" column="carNumber"/>
+        <result property="carModel" column="carModel"/>
+        <result property="carDescription" column="carDescription"/>
+        <result property="startDate" column="startDate"/>
+        <result property="fbLink" column="fbLink"/>
+        <result property="twLink" column="twLink"/>
+        <result property="goLink" column="goLink"/>
+        <result property="periodic" column="periodic"/>
+        <result property="monday" column="monday"/>
+        <result property="tuesday" column="tuesday"/>
+        <result property="wednesday" column="wednesday"/>
+        <result property="thursday" column="thursday"/>
+        <result property="friday" column="friday"/>
+        <result property="saturday" column="saturday"/>
+        <result property="sunday" column="sunday"/>
+    </resultMap>
+
+    <resultMap id="find" class="find">
+        <result property="startDate" column="startDate"/>
+        <result property="startTime" column="startTime"/>
+        <result property="startLatitude" column="startLatitude"/>
+        <result property="endLatitude" column="endLatitude"/>
+        <result property="startLongitude" column="startLongitude"/>
+        <result property="endLongitude" column="endLongitude"/>
+        <result property="dayname" column="dayname"/>
+    </resultMap>
+
 
     <insert id="insert" parameterClass="route">
         INSERT INTO route ( userId, carId, startDate, startTime, periodic, startPoint, endPoint, startLatitude, endLatitude, startLongitude, endLongitude, monday, tuesday, wednesday, thursday, friday, saturday, sunday )
@@ -67,6 +107,42 @@
 
     <select id="getRoutes" resultClass="route" parameterClass="int">
         SELECT * FROM route WHERE route.userId = #userId#
+    </select>
+
+    <select id="find" resultClass="findResult" parameterClass="find">
+        SELECT
+         route.userId,
+         route.id AS routeId,
+         `user`.username AS profileName,
+         route.startPoint,
+         route.endPoint,
+         route.startTime,
+         `user`.firstName,
+         `user`.lastName,
+         car.number AS carNumber,
+         car.model AS carModel,
+         car.description AS carDescription,
+         route.startDate,
+         `user`.fbLink,
+         `user`.twLink,
+         `user`.goLink,
+         route.periodic,
+         route.monday,
+         route.tuesday,
+         route.wednesday,
+         route.thursday,
+         route.friday,
+         route.saturday,
+         route.sunday
+         FROM route
+        LEFT JOIN `user` ON (route.userId  = `user`.id)
+        LEFT JOIN car    ON (route.carId = car.id)
+        ORDER BY
+        IF(route.periodic = 0, route.$dayname$ -1, DATEDIFF(route.startDate, #startDate#)),
+        TIMEDIFF(route.startTime, #startTime#),
+        IF(#startLatitude# > 0 AND #startLongitude# >0, Haversine(#startLatitude#, route.startLatitude, #startLongitude#, route.startLongitude), 1),
+        IF(#endLatitude# > 0 AND #endLongitude# >0, Haversine(#endLatitude#, route.endLatitude, #endLongitude#, route.endLongitude), 1)
+        LIMIT 100
     </select>
 
 

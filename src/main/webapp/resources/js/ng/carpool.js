@@ -199,14 +199,15 @@
 		});
 		$scope.doFind = function() {
 			$scope.loading = true;
+			var date = $('#searchDateBlock').data("DateTimePicker").date();
 
-			$scope.find.date = '';
-			$scope.find.time = '';
+			$scope.find.startDate = date.format('YYYY-MM-DD');
+			$scope.find.startTime = date.format('HH:mm:00');
 
 			$http({
-				url : 'rout/find',
-				method: 'GET',
-				params: $scope.find
+				url : 'route/find',
+				method: 'POST',
+				data: $scope.find
 			})
 			.success(function(data) {
 				$scope.loading = false;
@@ -217,6 +218,8 @@
 				alert('Error');
 			});
 		};
+
+		$scope.doFind();
 	});
 
 	carpool.controller('CarsController', function ($rootScope, $scope, $http) {

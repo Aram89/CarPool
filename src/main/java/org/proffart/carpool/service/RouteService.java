@@ -1,5 +1,7 @@
 package org.proffart.carpool.service;
 
+import org.proffart.carpool.domain.Find;
+import org.proffart.carpool.domain.FindResult;
 import org.proffart.carpool.domain.Route;
 
 import java.sql.SQLException;
@@ -11,4 +13,5 @@ public interface RouteService {
     void removeRoute(int routeId) throws SQLException;
     void updateRouteData(Route route) throws SQLException;
     List <Route> getRoutes() throws SQLException;
+    List<FindResult> findRoutes(Find find) throws SQLException;
 }

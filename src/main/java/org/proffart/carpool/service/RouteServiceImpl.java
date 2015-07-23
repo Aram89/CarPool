@@ -1,6 +1,8 @@
 package org.proffart.carpool.service;
 
 import org.proffart.carpool.dao.RouteDAO;
+import org.proffart.carpool.domain.Find;
+import org.proffart.carpool.domain.FindResult;
 import org.proffart.carpool.domain.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +35,9 @@ public class RouteServiceImpl implements RouteService {
 
     public List<Route> getRoutes() throws SQLException {
         return routeDAO.getRoutes(UserServiceImpl.getCurrentUser().getId());
+    }
+
+    public List<FindResult> findRoutes(Find find) throws SQLException {
+        return routeDAO.findRoutes(find);
     }
 }

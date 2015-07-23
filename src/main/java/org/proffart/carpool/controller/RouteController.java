@@ -1,5 +1,6 @@
 package org.proffart.carpool.controller;
 
+import org.proffart.carpool.domain.Find;
 import org.proffart.carpool.domain.Route;
 import org.proffart.carpool.service.RouteService;
 import org.proffart.carpool.utils.RequestMappings;
@@ -48,6 +49,12 @@ public class RouteController {
     public ResponseEntity getList() throws SQLException {
         //noinspection unchecked
         return new ResponseEntity(routeService.getRoutes(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = RequestMappings.findRoutes, method = RequestMethod.POST)
+    public ResponseEntity findRoutes(@RequestBody Find find) throws SQLException {
+        //noinspection unchecked
+        return new ResponseEntity(routeService.findRoutes(find), HttpStatus.OK);
     }
 
 

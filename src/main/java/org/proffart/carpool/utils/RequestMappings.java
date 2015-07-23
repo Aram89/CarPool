@@ -17,6 +17,7 @@ public interface RequestMappings {
     public static final String createRoute = "/create";
     public static final String editRoute = "/edit";
     public static final String deleteRoute = "/delete";
+    public static final String findRoutes = "/find";
 
     public static final String mapPage = "map";
     public static final String registrationPage = "registration";

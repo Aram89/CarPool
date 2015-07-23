@@ -33,7 +33,7 @@
     </div>
 
     <div class="col-md-1 col-xs-12">
-      <button class="btn btn-block btn-default input-color style-btn">
+      <button class="btn btn-block btn-default input-color style-btn" ng-click="doFind()">
         <i class="fa fa-search"></i> Find
       </button>
     </div>
@@ -43,127 +43,10 @@
 
   <div class="content-wrap mCustomScrollbar" data-mcs-theme="dark">
 
-    <div class="row section-row">
-      <div class="col-xs-6 col-md-4">
-        <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
-      </div>
-      <div class="col-xs-6 col-md-4">
-        <h3>Profile Name </h3>
-        <ul>
-          <li> from:</li>
-          <li> to:</li>
-          <li> date:</li>
-        </ul>
-      </div>
-
-      <div class="col-xs-6 col-md-4" style="padding:25px">
-        <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-        <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-        <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-        <div class="col-xs-8 col-md-10">
-          <button type="button" class="btn btn-default input-color style-btn">Details</button>
-        </div>
-      </div>
+    <div class="row section-row" ng-repeat="result in findResult"
+      ng-include="'search-user-block.html'">
     </div>
 
-    <div class="row section-row">
-      <div class="col-xs-6 col-md-4">
-        <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
-      </div>
-      <div class="col-xs-6 col-md-4">
-        <h3>Profile Name </h3>
-        <ul>
-          <li> from:</li>
-          <li> to:</li>
-          <li> date:</li>
-        </ul>
-      </div>
-
-      <div class="col-xs-6 col-md-4" style="padding:25px">
-        <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-        <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-        <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-        <div class="col-xs-8 col-md-10">
-          <button type="button" class="btn btn-default input-color style-btn">Details</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="row section-row">
-      <div class="col-xs-6 col-md-4">
-        <img src="/resources/images/join_as.jpg" class="img-responsive img-thumbnail img-profile-thumbnail"/>
-      </div>
-      <div class="col-xs-6 col-md-4">
-        <h3>Profile Name </h3>
-        <ul>
-          <li> from:</li>
-          <li> to:</li>
-          <li> date:</li>
-        </ul>
-      </div>
-
-      <div class="col-xs-6 col-md-4" style="padding:25px">
-        <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-        <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-        <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-        <div class="col-xs-8 col-md-10">
-          <button type="button" class="btn btn-default input-color style-btn">Details</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="row section-row">
-      <div class="col-xs-6 col-md-4">
-        <img src="/resources/images/join_as.jpg"
-             class="img-responsive img-thumbnail img-profile-thumbnail"/>
-      </div>
-      <div class="col-xs-6 col-md-4">
-        <h3>Profile Name </h3>
-        <ul>
-          <li> from:</li>
-          <li> to:</li>
-          <li> date:</li>
-        </ul>
-      </div>
-
-      <div class="col-xs-6 col-md-4" style="padding:25px">
-        <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-        <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-        <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-        <div class="col-xs-8 col-md-10">
-          <button type="button" class="btn btn-default input-color style-btn">Details</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="row section-row">
-      <div class="col-xs-6 col-md-4">
-        <img src="/resources/images/join_as.jpg"
-             class="img-responsive img-thumbnail img-profile-thumbnail"/>
-      </div>
-      <div class="col-xs-6 col-md-4">
-        <h3>Profile Name </h3>
-        <ul>
-          <li> from:</li>
-          <li> to:</li>
-          <li> date:</li>
-        </ul>
-      </div>
-
-      <div class="col-xs-6 col-md-4" style="padding:25px">
-        <a href="#"><i class="fa fa-facebook fa-icon"></i></a>
-        <a href="#"><i class="fa fa-twitter fa-icon"></i></a>
-        <a href="#"><i class="fa fa-google-plus fa-icon"></i></a>
-
-        <div class="col-xs-8 col-md-10">
-          <button type="button" class="btn btn-default input-color style-btn">Details</button>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
