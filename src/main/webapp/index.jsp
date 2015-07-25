@@ -22,7 +22,7 @@
     <link href="/resources/css/scrolling-nav.css" rel="stylesheet">
     <link href="/resources/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="/resources/css/selectize.default.css" rel="stylesheet">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css" rel="stylesheet">
+    <link href="/resources/css/select2.css" rel="stylesheet">
 
     <link href="/resources/css/select.css" rel="stylesheet">
     <link href="/resources/css/style.css" rel="stylesheet">
