@@ -111,17 +111,18 @@
                     <hr class="hr">
 
                 <div class="row clearfix">
-                    <div class="col-md-8 column">
+                    <div class="col-md-7 column">
                         <p class="text-left paragraphs">
-                            In the last decade, car pooling has become more & more popular. It’s an interesting and eco-friendly way to travel, you meet new people on the road and you save some money from both sides.
-                            Carpool is a spontaneous ridesharing service for mobile and web. Passengers, looking for a ride, can find local community drivers on the phone. Users with a car can register as a driver and start receiving ride requests from passengers.
+                            Carpool is designed for local users in support of community transit and environmental goals. Its mission, vision and values lead to actions aimed at decreasing personal car ownership, reducing vehicle distance travelled, improving urban land use and development, providing affordable access to vehicles for all constituencies, as well as motivating residents to walk, cycle and take buses and trains, and decreasing dependence on fossil fuels while reducing the emission of greenhouse gases.
                         </p>
-                        <p class="text-left paragraphs">
-                                Carpool is designed for local users in support of community transit and environmental goals. Its mission, vision and values lead to actions aimed at decreasing personal car ownership, reducing vehicle distance travelled, improving urban land use and development, providing affordable access to vehicles for all constituencies, as well as motivating residents to walk, cycle and take buses and trains, and decreasing dependence on fossil fuels while reducing the emission of greenhouse gases.
-                        </p>
+                        <ul class="text-left paragraphs">
+                            <li><i class="fa fa-check check-icon"></i>Carpool is a spontaneous ridesharing service for mobile and web.</li>
+                            <li><i class="fa fa-check check-icon"></i>Passengers, looking for a ride, can find local community drivers on the phone.</li>
+                            <li><i class="fa fa-check check-icon"></i>Users with a car can register as a driver and start receiving ride requests from passengers.</li>
+                        </ul>
                     </div>
-                    <div class="col-md-4 column">
-                        <img src="/resources/images/join_as.jpg" style="width: 100%;" class="img-thumbnail">
+                    <div class="col-md-5 column">
+                        <img src="/resources/images/what-we-do.jpg" style="width: 100%;" class="img-thumbnail">
                     </div>
                 </div>
             </div>
@@ -155,8 +156,8 @@
                             <h3 class="text-center headings">Environment</h3>
                             <hr class="hr-benefit" />
                             <ul class="paragraphs">
-                                <li class="paragraphs">We recommend that the driver and passenger share the driving expenses.</li>
-                                <li class="paragraphs">Carpool is all about the community. Be friendly.</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>We recommend that the driver and passenger share the driving expenses.</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Carpool is all about the community. Be friendly.</li>
                             </ul>
                         </div>
 
@@ -167,9 +168,9 @@
                             <h3 class="text-center headings">Drivers</h3>
                             <hr class="hr-benefit" />
                             <ul>
-                                <li class="paragraphs">You must have a valid driver's license (show it to your passengers if requested).</li>
-                                <li class="paragraphs">Obey traffic laws and respect the speed limit.</li>
-                                <li class="paragraphs">Zero tolerance for drinking and driving. </li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>You must have a valid driver's license (show it to your passengers if requested).</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Obey traffic laws and respect the speed limit.</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Zero tolerance for drinking and driving. </li>
                             </ul>
                         </div>
 
@@ -177,10 +178,11 @@
                             <div class="text-center icon-border">
                                 <i class="fa fa-users fa-2x icon-orange"></i>
                             </div>
-                            <h3 class="text-center headings">Riders</h3>
+                            <h3 class="text-center headings">passengers</h3>
                             <hr class="hr-benefit" />
                             <ul>
-                                <li class="paragraphs">Register as a passenger if you're looking for a driver.</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Register as a passenger if you're looking for a driver.</li>
+
                             </ul>
                         </div>
                     </div>

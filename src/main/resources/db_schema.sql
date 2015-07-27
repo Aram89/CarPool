@@ -2,10 +2,18 @@ DROP TABLE IF EXISTS `user`;
 DROP TABLE IF EXISTS `route`;
 DROP TABLE IF EXISTS `car`;
 
+
+
+
+
+
 CREATE TABLE `user` (
   `id`        INT(11) NOT NULL AUTO_INCREMENT,
   `userName`  CHAR(50)         DEFAULT NULL,
   `salt`      CHAR(20)         DEFAULT NULL,
+
+
+
   `email`     CHAR(50)         DEFAULT NULL,
   `phone`     CHAR(50)         DEFAULT NULL,
   `token`     CHAR(50)         DEFAULT NULL,

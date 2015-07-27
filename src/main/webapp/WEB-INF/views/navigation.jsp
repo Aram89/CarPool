@@ -36,7 +36,7 @@
         </ul>
 
         <!--Weather-->
-        <div class="weather-block">
+        <div class="col-lg-2 col-xs-12 weather-block">
           <i class="fa fa-umbrella fa-icon"></i>
           <div id="weather"> <h2>&nbsp;</h2> </div>
         </div>
