@@ -1,51 +1,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="col-md-12">
-  <form name="profileForm" novalidate>
+  <dl class="dl-horizontal">
 
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <div class="form-group">
-          <label for="profile_email" >Email</label>
-          <input class="form-control" disabled id="profile_email" type="email" required value="{{profile.email}}"/>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <div class="form-group">
-          <label for="profile_phone" >Phone</label>
-          <input class="form-control" id="profile_phone" type="text" ng-model="profile.phone"/>
-        </div>
-      </div>
-    </div>
+    <dt ng-show="driver.phone">Phone</dt>
+    <dd ng-show="driver.phone">{{driver.firstName}}</dd>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <div class="form-group">
-          <label for="profile_first_name" >First Name</label>
-          <input class="form-control" id="profile_first_name" type="text" ng-model="profile.firstName"/>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <div class="form-group">
-          <label for="profile_last_name" >Last Name</label>
-          <input class="form-control" id="profile_last_name" type="text" ng-model="profile.lastName"/>
-        </div>
-      </div>
-    </div>
+    <dt ng-show="driver.firstName">First Name</dt>
+    <dd ng-show="driver.firstName">{{driver.firstName}}</dd>
 
-    <div class="form-group">
-      <label for="profile_fb_link" >Facebook link</label>
-      <input class="form-control" id="profile_fb_link" type="text" ng-model="profile.fbLink"/>
-    </div>
+    <dt ng-show="driver.lastName">Last Name</dt>
+    <dd ng-show="driver.lastName">{{driver.lastName}}</dd>
 
-    <div class="form-group">
-      <label for="profile_tw_link" >Twitter link</label>
-      <input class="form-control" id="profile_tw_link" type="text" ng-model="profile.twLink"/>
-    </div>
+    <dt ng-show="driver.fbLink || driver.twLink || driver.goLink">Social links</dt>
+    <dd ng-show="driver.fbLink || driver.twLink || driver.goLink">
+      <a ng-show="result.fbLink" href="{{driver.fbLink}}"><i class="fa fa-facebook fa-icon"></i></a>
+      <a ng-show="result.twLink" href="{{driver.twLink}}"><i class="fa fa-twitter fa-icon"></i></a>
+      <a ng-show="result.goLink" href="{{driver.goLink}}"><i class="fa fa-google-plus fa-icon"></i></a>
+    </dd>
 
-    <div class="form-group">
-      <label for="profile_go_link" >Google plus link</label>
-      <input class="form-control" id="profile_go_link" type="text" ng-model="profile.goLink"/>
-    </div>
+  </dl>
 
-  </form>
 </div>

@@ -258,6 +258,9 @@
 			var car = {id:0};
 			$scope.cars.push(car);
 			$scope.setEditableItem(car, true);
+			setTimeout(function(){
+				$('[data-toggle="tooltip"]').tooltip()
+			}, 0);
 		};
 
 		$scope.editCar = function(car) {
@@ -460,6 +463,9 @@
 			})
 			.success(function (routes) {
 				$rootScope.routes = routes || [];
+				setTimeout(function(){
+					$('[data-toggle="tooltip"]').tooltip()
+				}, 0);
 			})
 			.error(function () {
 				alert('Error');
@@ -481,7 +487,6 @@
 					break;
 				}
 			}
-			console.log($scope.route);
 
 			$('#modal-container-routs').modal('show');
 			return false;
@@ -505,6 +510,9 @@
 					})
 					.success(function () {
 						$('#modal-container-routs').modal('hide');
+						setTimeout(function(){
+							$('[data-toggle="tooltip"]').tooltip()
+						}, 0);
 					})
 					.error(function () {
 						alert('Error');
@@ -520,6 +528,9 @@
 						//$scope.route.id = routId;
 						$scope.routes.push(saveRoute);
 						$('#modal-container-routs').modal('hide');
+						setTimeout(function(){
+							$('[data-toggle="tooltip"]').tooltip()
+						}, 0);
 					})
 					.error(function () {
 						alert('Error');
@@ -539,6 +550,9 @@
 				$scope.route.id = 0;
 				$scope.routes.splice($scope.routes.indexOf($scope.route), 1);
 				$('#modal-container-routs').modal('hide');
+				setTimeout(function(){
+					$('[data-toggle="tooltip"]').tooltip()
+				}, 0);
 			})
 			.error(function () {
 				alert('Error');

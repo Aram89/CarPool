@@ -344,10 +344,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default input-color style-btn" data-dismiss="modal" ng-click="cancelProfileSave()">
+                <button type="button" class="btn btn-default" ng-click="cancelProfileSave()" data-dismiss="modal">
                     Close
                 </button>
-                <button type="button" class="btn btn-success input-color style-btn" ng-click="saveProfileData()">
+                <button type="button" class="btn btn-success" ng-click="saveProfileData()">
                     Save
                 </button>
             </div>

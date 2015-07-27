@@ -5,7 +5,8 @@
   <div class="col-xs-6 col-md-3"><strong> Number </strong></div>
   <div class="col-xs-10 col-md-4"><strong> Description </strong></div>
   <div class="col-xs-2 col-md-2">
-    <button type="button" class="btn btn-success btn-sm" ng-click="addNewCar()">
+    <button type="button" class="btn btn-success btn-sm" ng-click="addNewCar()"
+            data-toggle="tooltip" title="Add new car">
       <i class="fa fa-plus"></i>
     </button>
   </div>
@@ -25,17 +26,21 @@
     <textarea ng-model="car.description" class="form-control" rows="1" ng-show="car.editable"></textarea>
   </div>
   <div class="col-xs-2 col-md-2">
-    <button type="button" class="btn btn-primary btn-xs" ng-hide="car.editable" ng-click="editCar(car)">
+    <button type="button" class="btn btn-primary btn-xs" ng-hide="car.editable" ng-click="editCar(car)"
+            data-toggle="tooltip" title="Edit car data">
       <i class="fa fa-edit"></i>
     </button>
-    <button type="button" class="btn btn-danger btn-xs" ng-hide="car.editable" ng-click="deleteCar(car)">
+    <button type="button" class="btn btn-danger btn-xs" ng-hide="car.editable" ng-click="deleteCar(car)"
+            data-toggle="tooltip" title="Remove">
       <i class="fa fa-trash"></i>
     </button>
     <button type="button" class="btn btn-success btn-xs" ng-show="car.editable" ng-click="saveCar(car)"
-            ng-disabled="!car.model && !car.number && !car.description">
+            ng-disabled="!car.model && !car.number && !car.description"
+            data-toggle="tooltip" title="Save">
       <i class="fa fa-check"></i>
     </button>
-    <button type="button" class="btn btn-warning btn-xs" ng-show="car.editable" ng-click="cancelEdit(car)">
+    <button type="button" class="btn btn-warning btn-xs" ng-show="car.editable" ng-click="cancelEdit(car)"
+            data-toggle="tooltip" title="Cancel">
       <i class="fa fa-times"></i>
     </button>
   </div>

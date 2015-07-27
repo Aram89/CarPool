@@ -69,7 +69,7 @@
 
         <ul id="rout_list" class="nav navbar-nav navbar-right routes" ng-cloak>
           <li ng-repeat="route in routes">
-            <a href="#" ng-click="editRoute(route)" data-toggle="tooltip" data-placement="bottom" data-html="true" title="{{route.startPoint}} {{route.endPoint}}"><i class="fa fa-road"></i></a>
+            <a href="#" ng-click="editRoute(route)" data-toggle="tooltip" data-placement="bottom" data-html="true" title="{{route.startPoint}}<br><br>{{route.endPoint}}"><i class="fa fa-road"></i></a>
           </li>
         </ul>
         <% } %>
