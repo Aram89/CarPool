@@ -143,7 +143,7 @@
                 <div class="row clearfix">
                     <div class="col-md-12 column">
                         <p class="text-center paragraphs">
-                            From the moment you request a ride to the moment you arrive, the Uber experience has been designed from the ground up with your safety in mind.
+                            From the moment you request a ride to the moment you arrive, the Carpool experience has been designed from the ground up with your safety in mind.
                             Making cities better is at the heart of everything we do. It’s much more than improving the way people get around. It’s celebrating what makes those cities special, caring about the people who make them great, and being responsible citizens. That’s why we work hard to keep our streets safe for everyone, whether they’re on foot, on a bike, or in another car.
                         </p>
                     </div>
@@ -182,7 +182,7 @@
                             <hr class="hr-benefit" />
                             <ul>
                                 <li class="paragraphs"><i class="fa fa-check check-icon"></i>Register as a passenger if you're looking for a driver.</li>
-
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Carpooling is also a wonderful way to meet interesting people, get to know the people you work with or go to school with, and to make new friends.</li>
                             </ul>
                         </div>
                     </div>
@@ -344,12 +344,13 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" ng-click="cancelProfileSave()" data-dismiss="modal">
-                    Close
-                </button>
                 <button type="button" class="btn btn-success" ng-click="saveProfileData()">
                     Save
                 </button>
+                <button type="button" class="btn btn-default" ng-click="cancelProfileSave()" data-dismiss="modal">
+                    Close
+                </button>
+
             </div>
         </div>
     </div>
@@ -374,12 +375,12 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default input-color style-btn" data-dismiss="modal" ng-disabled="!enable">
-                    Close
-                </button>
                 <button type="button" class="btn btn-success btn-blue" ng-click="registration()"
                         ng-disabled="regForm.$invalid || !enable">
                     Register Me
+                </button>
+                <button type="button" class="btn btn-default input-color style-btn" data-dismiss="modal" ng-disabled="!enable">
+                    Close
                 </button>
             </div>
         </div>
