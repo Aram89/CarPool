@@ -111,7 +111,7 @@
                     <hr class="hr">
 
                 <div class="row clearfix">
-                    <div class="col-md-7 column">
+                    <div class="col-md-12 column">
                         <p class="text-left paragraphs">
                             Carpool is designed for local users in support of community transit and environmental goals. Its mission, vision and values lead to actions aimed at decreasing personal car ownership, reducing vehicle distance travelled, improving urban land use and development, providing affordable access to vehicles for all constituencies, as well as motivating residents to walk, cycle and take buses and trains, and decreasing dependence on fossil fuels while reducing the emission of greenhouse gases.
                         </p>
@@ -121,8 +121,25 @@
                             <li><i class="fa fa-check check-icon"></i>Users with a car can register as a driver and start receiving ride requests from passengers.</li>
                         </ul>
                     </div>
-                    <div class="col-md-5 column">
-                        <img src="/resources/images/what-we-do.jpg" style="width: 100%;" class="img-thumbnail">
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <img src="/resources/images/smartphone.png" class="img-responsive center-block">
+                            <h2 class="text-center" style="color: #F14B20">Request a ride</h2>
+                                <p class="text-center paragraphs">With just one tap, get matched with a friendly, background-checked driver.</p>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <img src="/resources/images/car-ride.png" class="img-responsive center-block">
+                            <h2 class="text-center" style="color: #F14B20"> Get picked up</h2>
+                                <p class="text-center paragraphs">You’ll see their profile so you know who you’re riding with.</p>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <img src="/resources/images/jumping.png" class="img-responsive center-block">
+                            <h2 class="text-center" style="color: #F14B20">Get there fast</h2>
+                                <p class="text-center paragraphs">When the ride ends, just leave a feedback with your phone.</p>
                     </div>
                 </div>
             </div>
@@ -150,8 +167,8 @@
 
                     <div class="col-lg-12">
                         <div class="col-lg-4">
-                            <div class="text-center icon-border">
-                                <i class="fa fa-tree fa-2x icon-orange"></i>
+                            <div class="text-center icon-border center-block">
+                                <i class="fa fa-tree fa-2x icon-blue"></i>
                             </div>
                             <h3 class="text-center headings">Environment</h3>
                             <hr class="hr-benefit" />
@@ -162,8 +179,8 @@
                         </div>
 
                         <div class="col-lg-4">
-                            <div class="text-center icon-border">
-                                <i class="fa fa-car fa-2x icon-orange"></i>
+                            <div class="text-center icon-border center-block">
+                                <i class="fa fa-car fa-2x icon-blue"></i>
                             </div>
                             <h3 class="text-center headings">Drivers</h3>
                             <hr class="hr-benefit" />
@@ -175,8 +192,8 @@
                         </div>
 
                         <div class="col-lg-4">
-                            <div class="text-center icon-border">
-                                <i class="fa fa-users fa-2x icon-orange"></i>
+                            <div class="text-center icon-border center-block">
+                                <i class="fa fa-users fa-2x icon-blue"></i>
                             </div>
                             <h3 class="text-center headings">passengers</h3>
                             <hr class="hr-benefit" />
