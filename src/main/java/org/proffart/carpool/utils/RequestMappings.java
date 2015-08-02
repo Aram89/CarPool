@@ -10,6 +10,7 @@ public interface RequestMappings {
     public static final String checkEmail = "/check-email";
     public static final String getProfileData = "/get-profile-data";
     public static final String saveProfileData = "/save-profile-data";
+    public static final String getUserPublicData = "/get-user-public-data";
 
 
     public static final String route = "route";
@@ -27,6 +28,7 @@ public interface RequestMappings {
     public static final String editCar = "/edit";
     public static final String deleteCar = "/delete";
     public static final String getCarList = "/list";
+
 
 
 }

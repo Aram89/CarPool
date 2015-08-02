@@ -19,6 +19,6 @@
   <a ng-show="result.goLink" href="{{result.goLink}}"><i class="fa fa-google-plus fa-icon"></i></a>
 
   <div class="col-xs-8 col-md-10">
-    <button type="button" class="btn btn-default input-color style-btn">Details</button>
+    <button type="button" class="btn btn-default input-color style-btn" ng-click="getUserPublicData(result.userId)">Details</button>
   </div>
 </div>

@@ -395,7 +395,7 @@
 </script>
 
 <script type="text/ng-template" id="profile-view.html">
-    <%@include file="./WEB-INF/views/profile-view.jsp" %>
+<%@include file="./WEB-INF/views/profile-view.jsp" %>
 </script>
 
 

@@ -29,4 +29,8 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
     public void updateUserData(User user) throws SQLException {
         getSqlMapClient().update("user.update", user);
     }
+
+    public User getUserPublicData(int userId) throws SQLException {
+        return (User) getSqlMapClient().queryForObject("user.getUserPublicData", userId);
+    }
 }

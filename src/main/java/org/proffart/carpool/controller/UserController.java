@@ -82,6 +82,13 @@ public class UserController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    @RequestMapping(value = RequestMappings.getUserPublicData, method = RequestMethod.GET)
+    public ResponseEntity getUserPublicData(@RequestParam(value = "userId") int userId) throws Exception {
+        //noinspection unchecked
+        return new ResponseEntity(userService.getUserPublicData(userId), HttpStatus.OK);
+    }
+
+
 
 
 

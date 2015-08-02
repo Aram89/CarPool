@@ -139,10 +139,10 @@
         LEFT JOIN car    ON (route.carId = car.id)
         WHERE IF(route.periodic = 1, DATE(route.startDate) >= DATE(#startDate#), TRUE )
         ORDER BY
-        IF(route.periodic = 0, route.$dayname$ -1, 0 - DATEDIFF(DATE(route.startDate), DATE(#startDate#))),
-        TIMEDIFF(TIME(route.startTime), TIME(#startTime#)),
         IF(#startLatitude# > 0 AND #startLongitude# >0, Haversine(#startLatitude#, route.startLatitude, #startLongitude#, route.startLongitude), 1),
-        IF(#endLatitude# > 0 AND #endLongitude# >0, Haversine(#endLatitude#, route.endLatitude, #endLongitude#, route.endLongitude), 1)
+        IF(#endLatitude# > 0 AND #endLongitude# >0, Haversine(#endLatitude#, route.endLatitude, #endLongitude#, route.endLongitude), 1),
+        ABS(TIMEDIFF(TIME(route.startTime), TIME(#startTime#))),
+        IF(route.periodic = 0, route.$dayname$ -1, DATEDIFF(DATE(route.startDate), DATE(#startDate#)))
         LIMIT 100
     </select>
 

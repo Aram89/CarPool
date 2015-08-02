@@ -75,6 +75,10 @@ public class UserServiceImpl implements UserService {
         userDAO.updateUserData(user);
     }
 
+    public User getUserPublicData(int userId) throws SQLException {
+        return userDAO.getUserPublicData(userId);
+    }
+
 
     public static User getCurrentUser() {
         User user = null;

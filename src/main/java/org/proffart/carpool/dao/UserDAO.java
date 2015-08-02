@@ -12,4 +12,5 @@ public interface UserDAO {
     User getUser (String userName) throws SQLException;
     User getUserById(int userId) throws SQLException;
     void updateUserData(User user) throws SQLException;
+    User getUserPublicData(int userId) throws SQLException;
 }

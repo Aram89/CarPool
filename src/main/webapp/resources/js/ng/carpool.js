@@ -120,7 +120,7 @@
 
 	});
 
-	carpool.controller('LoginController', function ($scope, $http) {
+	carpool.controller('LoginController', function ($scope, $rootScope, $http) {
 		$scope.user = {};
 		$scope.loading = false;
 
@@ -151,6 +151,23 @@
 			})
 			.error(function(){
 				$scope.loading = false;
+				alert('Error');
+			});
+		};
+
+		$rootScope.driver = {};
+		$rootScope.getUserPublicData = function(userId) {
+			$rootScope.driver = {};
+			$('#modal-container-profile-view').modal('show');
+			$http({
+				url: 'user/get-user-public-data',
+				method: 'GET',
+				params: {userId: userId}
+			})
+			.success(function(driverData){
+				$rootScope.driver = driverData || {};
+			})
+			.error(function(){
 				alert('Error');
 			});
 		};

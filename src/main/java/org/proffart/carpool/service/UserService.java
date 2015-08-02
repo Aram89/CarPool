@@ -21,4 +21,5 @@ public interface UserService {
     void logout();
     User getProfileData() throws SQLException;
     void updateProfileData(User user) throws SQLException;
+    User getUserPublicData(int userId) throws SQLException;
 }

@@ -75,6 +75,20 @@
         SELECT * FROM `user` WHERE `user`.id = #userId#
     </select>
 
+
+    <select id="getUserPublicData" resultClass="user" parameterClass="int">
+        SELECT
+            `user`.id,
+            `user`.userName,
+            `user`.firstName,
+            `user`.lastName,
+            `user`.phone,
+            `user`.fbLink,
+            `user`.twLink,
+            `user`.goLink
+         FROM `user` WHERE `user`.id = #userId#
+    </select>
+
     <update id="update" parameterClass="user">
         UPDATE `user` SET
           `user`.firstName = #firstName#,
