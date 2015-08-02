@@ -62,7 +62,7 @@
 <!-- Intro Section -->
 <section id="intro" class="intro-section section">
     <div id="video">
-        <video width="100%" autoplay loop>
+        <video width="100%" autoplay loop muted>
             <source src="/resources/images/video1.mp4" type="video/mp4">
         </video>
         <div class="video-cover"></div>
