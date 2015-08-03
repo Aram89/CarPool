@@ -66,7 +66,7 @@ public class UserController {
             throw new UserException(ErrorStrings.USER_NAME_EXISTS);
         }
         userService.create(user);
-        userService.checkCredentials(user.getUserName(), user.getPassword());
+        userService.checkCredentials(user.getUserName());
         return new ResponseEntity(HttpStatus.OK);
     }
 

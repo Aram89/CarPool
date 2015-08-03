@@ -57,6 +57,18 @@ public class UserServiceImpl implements UserService {
         return isLogged();
     }
 
+    public Boolean checkCredentials(String userName) throws UserException, SQLException {
+        User user = null;
+        user = userDAO.getUser(userName);
+        if (user == null) {
+            throw new UserException(ErrorStrings.WRONG_USER_NAME);
+        }
+        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        HttpSession session = attr.getRequest().getSession();
+        session.setAttribute("userObject", user);
+        return isLogged();
+    }
+
     public void logout() {
         ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         HttpSession session = attr.getRequest().getSession();
