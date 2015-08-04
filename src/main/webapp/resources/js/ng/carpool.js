@@ -368,8 +368,9 @@
 			sunday   : false
 		};
 		$scope.route.latlng = {};
+		$scope.route.startDate = new Date();
 		$scope.$watch('cars', function() {
-			if($rootScope.cars.length == 1) {
+			if($rootScope.cars.length > 0) {
 				$scope.route.car = $scope.cars[0];
 			}
 		});
@@ -450,7 +451,6 @@
 						}
 					});
 				}
-				return;
 			};
 		});
 		$scope.map = {
@@ -496,7 +496,13 @@
 				to: route.endLatitude +', '+route.endLongitude
 			};
 			$scope.route.startDate = route.startDate ? new Date(route.startDate) : new Date();
-			$scope.route.startTime = route.startTime ? new Date(route.startTime) : new Date();
+			$scope.route.startTime = new Date();
+			if(route.startTime) {
+				var timeArr = route.startTime.split(":");
+				$scope.route.startTime.setHours(timeArr[0]);
+				$scope.route.startTime.setMinutes(timeArr[1]);
+			}
+
 			for(var index in $scope.cars) {
 				var car = $scope.cars[index];
 				if(car.id == $scope.route.carId) {
@@ -504,6 +510,7 @@
 					break;
 				}
 			}
+			$scope.calcRoute();
 
 			$('#modal-container-routs').modal('show');
 			return false;

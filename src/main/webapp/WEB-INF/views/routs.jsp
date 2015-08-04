@@ -11,7 +11,7 @@
 						<div ng-bind-html="car.number | highlight: $select.search"></div>
 						<small>
 							model: {{car.model}}
-							desciption: <span ng-bind-html="car.desciption | highlight: $select.search"></span>
+							description: <span ng-bind-html="car.description | highlight: $select.search"></span>
 						</small>
 					</ui-select-choices>
 				</ui-select>
