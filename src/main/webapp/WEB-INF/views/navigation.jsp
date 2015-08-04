@@ -11,7 +11,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="page-scroll" href="<c:url value="/"/>#intro" >
-          <img alt="join as" src="/resources/img/logo-main.png" style="width: 50px;"/>
+          <img alt="join as" src="/resources/img/logo-main.png" style="width: 52px; margin-top: 4px;"/>
         </a>
       </div>
 
@@ -41,13 +41,13 @@
           <div id="weather"> <h2>&nbsp;</h2> </div>
         </div>
 
-
+<!--
         <ul class="nav navbar-nav navbar-right ">
           <li><a href="https://www.facebook.com/Armeniacarpool?ref=aymt_homepage_panel"><i class="fa fa-facebook fa-icon"></i></a></li>
           <li><a href="#"><i class="fa fa-twitter fa-icon"></i></a></li>
           <li><a href="#"><i class="fa fa-google-plus fa-icon"></i></a></li>
         </ul>
-
+-->
         <% if(!isLogged) { %>
         <form name="loginForm" class="navbar-form navbar-right" ng-controller="LoginController" ng-submit="login()">
           <div class="form-group">
@@ -60,11 +60,8 @@
         </form>
         <% } else { %>
 
-        <ul class="nav navbar-nav navbar-right " ng-controller="LoginController">
-          <li style="margin-top: 5px;">
-            <button type="submit" class="btn btn-default input-color style-btn" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a>
-            </button>
-          </li>
+        <ul class="nav navbar-nav navbar-right" ng-controller="LoginController">
+          <li> <a href="#" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a> </li>
         </ul>
 
         <ul id="rout_list" class="nav navbar-nav navbar-right routes" ng-cloak>
