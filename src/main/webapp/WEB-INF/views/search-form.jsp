@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<div ng-controller="FindController" class="find-div">
+<div ng-controller="FindController" class="find-div relative">
   <h3 class="text-center headings">
     Find Car or Driver
   </h3>
@@ -42,11 +42,12 @@
 
 
   <div class="content-wrap mCustomScrollbar" data-mcs-theme="dark">
-
     <div class="row section-row" ng-repeat="result in findResult"
       ng-include="'search-user-block.html'">
     </div>
-
+  </div>
+  <div class="loader-wrapper" ng-show="loading">
+    <div class="loader"></div>
   </div>
 </div>
 

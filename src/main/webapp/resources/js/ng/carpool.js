@@ -134,9 +134,20 @@
 			.success(function(data){
 				window.location.reload();
 			})
-			.error(function(){
+			.error(function(data, status){
 				$scope.loading = false;
-				alert('Error');
+				if(status == 400) {
+					switch (data.errorString) {
+						case "wrongUserName" :
+							alert("Incorrect Username \n\n The Username you entered does not belong to any account.");
+							break;
+						case "wrongPassword" :
+							alert("Please re-enter your password \n\nThe password you entered is incorrect. Please try again (make sure your caps lock is off).");
+							break;
+					}
+				} else {
+					alert('Error');
+				}
 			});
 		};
 

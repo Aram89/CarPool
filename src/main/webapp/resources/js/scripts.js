@@ -23,6 +23,6 @@ jQuery(document).ready(function($){
             //$('#header').css('display','none');
         }
     });
-
+    
 });
 
