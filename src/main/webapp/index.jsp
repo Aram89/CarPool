@@ -64,22 +64,23 @@
     <div id="video">
         <video width="100%" autoplay loop muted>
             <source src="/resources/images/video1.mp4" type="video/mp4">
+            <source src="/resources/images/carpool.ogg" type="video/ogg">
         </video>
         <div class="video-cover"></div>
         <div class="container">
             <% if(isLogged) { %>
             <h1 class="slider-heading text-center"> Let's get started</h1>
             <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
-            <div style="text-align: center">
-                <a class="btn btn-default btn-join btn-index" href="#modal-container-profile"  role="button" data-toggle="modal" ng-click="openProfile()"><i class="fa fa-user"></i> My Profile </a>
-                <a class="btn btn-default btn-join btn-index" href="#modal-container-cars"     role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
-                <a class="btn btn-default btn-join btn-index" href="#modal-container-routs"    role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> My routs </a>
+            <div style="text-align: center" class="container">
+                <a class="btn btn-default btn-lg btn-join btn-index " href="#modal-container-profile"  role="button" data-toggle="modal" ng-click="openProfile()"><i class="fa fa-user"></i> My Profile </a>
+                <a class="btn btn-default btn-lg btn-join btn-index " href="#modal-container-cars"     role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
+                <a class="btn btn-default btn-lg btn-join btn-index " href="#modal-container-routs"    role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> My routes </a>
             </div>
             <% }else{ %>
             <h1 class="slider-heading text-center"> Let's get started</h1>
             <p class="text-center slider-title">Connecting people who need to travel with drivers who have empty seats.</p>
             <div style="text-align: center">
-                <a class="btn btn-default btn-join btn-index " href="#modal-container-registration" role="button" data-toggle="modal"> BECOME A MEMBER </a>
+                <a class="btn btn-default btn-lg btn-join btn-index " href="#modal-container-registration" role="button" data-toggle="modal"> BECOME A MEMBER </a>
             </div>
             <% } %>
         </div>

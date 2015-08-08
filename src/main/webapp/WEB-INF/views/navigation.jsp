@@ -61,7 +61,7 @@
         <% } else { %>
 
         <ul class="nav navbar-nav navbar-right" ng-controller="LoginController">
-          <li> <a href="#" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a> </li>
+          <li> <a href="#" ng-click="logout()" class="logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
         </ul>
 
         <ul id="rout_list" class="nav navbar-nav navbar-right routes" ng-cloak>
