@@ -174,8 +174,8 @@
                             <h3 class="text-center headings">Environment</h3>
                             <hr class="hr-benefit" />
                             <ul class="paragraphs">
-                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>We recommend that the driver and passenger share the driving expenses.</li>
-                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Carpool is all about the community. Be friendly.</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Carpool reduces air pollution and traffic congestion, something that benefits all of us.</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Carpool reduces  traffic jams in big cities</li>
                             </ul>
                         </div>
 
@@ -186,9 +186,8 @@
                             <h3 class="text-center headings">Drivers</h3>
                             <hr class="hr-benefit" />
                             <ul>
-                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>You must have a valid driver's license (show it to your passengers if requested).</li>
-                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Obey traffic laws and respect the speed limit.</li>
-                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Zero tolerance for drinking and driving. </li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Keeping in touch with new people.</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Carpool allows drivers to share their car cost with others.</li>
                             </ul>
                         </div>
 
@@ -199,9 +198,8 @@
                             <h3 class="text-center headings">passengers</h3>
                             <hr class="hr-benefit" />
                             <ul>
-                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Register as a passenger if you're looking for a driver.</li>
-                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Carpooling is also a wonderful way to meet interesting people, get to know the people you work with or go to school with, and to make new friends.</li>
-                            </ul>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>Save time and lower  travel costs.</li>
+                                <li class="paragraphs"><i class="fa fa-check check-icon"></i>It makes your rides more comfortable and interesting.</li>
                         </div>
                     </div>
                 </div>
