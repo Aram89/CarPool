@@ -49,7 +49,7 @@
         </ul>
 -->
         <% if(!isLogged) { %>
-        <form name="loginForm" class="navbar-form navbar-right" ng-controller="LoginController" ng-submit="login()">
+        <form name="loginForm" method="post" class="navbar-form navbar-right" ng-controller="LoginController" ng-submit="login()">
           <div class="form-group">
             <input class="form-control input-color" type="text" ng-model="user.userName" name="login" placeholder="Login" required/>
           </div>
