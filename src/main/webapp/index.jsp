@@ -97,7 +97,7 @@
         </div>
 
     </div>
-
+    <div class="col-xs-12 left-to-right" style="margin-top: 50px;"></div>
 </section>
 
 
@@ -146,6 +146,7 @@
             </div>
         </div>
     </div>
+    <div class="col-xs-12 left-to-right" style="margin-top:80px"></div>
 </section>
 
 <!-- Benefits Section -->
@@ -206,6 +207,7 @@
             </div>
         </div>
     </div>
+    <div class="col-xs-12 left-to-right" style="margin-top: 50px;"></div>
 </section>
 
 <!--Contact us-->
@@ -259,6 +261,7 @@
                 <script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(40.1991299,44.47688300000004),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.1991299, 44.47688300000004)});infowindow = new google.maps.InfoWindow({content:"<b></b><br/>6/1 Abelyan street,<br/> Yervan" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
             </div>
         </div>
+        <div class="col-xs-12 left-to-right" style="margin-top: 10px;"></div>
     </section>
 
 <!--footer-->

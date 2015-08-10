@@ -147,7 +147,7 @@ body{
     -moz-filter: brightness(2.0);
     -o-filter: brightness(2.0);
     -ms-filter: brightness(2.0);
-    position: absolute;
+    /*position: absolute;*/
     right: 0;
     bottom: 0;
     min-width: 100%;
@@ -264,7 +264,7 @@ body{
     border: none;
 }/*Find a car section*/
 #find{
-    margin-top: 50%;
+    /*margin-top: 50%;*/
 }
 .btn-bottom{
     margin-bottom: 50px;
@@ -325,8 +325,8 @@ ul li{
     font-weight: bold;
 }
 .footer-icon{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 .fa-icon-footer{
     color:#fff !important;
@@ -337,16 +337,16 @@ ul li{
 .icon-footer{
     border: 1px solid #c3c3c3;
     border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    line-height: 105px;
+    width: 70px;
+    height: 70px;
+    line-height: 90px;
     background-color: #c3c3c3;
 }
 .icon-footer:hover{
     border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    line-height: 105px;
+    width: 75px;
+    height: 75px;
+    line-height: 95px;
 }
 .twitter:hover{
     background-color: #62C4E2;
@@ -363,9 +363,6 @@ ul li{
 .instagram:hover{
     background-color: #3F729B;
     border: 1px solid #3F729B;
-}
-.hr-footer{
-    color:#3c3c3c !important;
 }
 .lower-title{
     margin: 50px auto;
@@ -392,6 +389,31 @@ i {
     display: inline-block;
     font-size: 14px;
     margin-top:0%;
+}
+
+/*border-bottom gradient*/
+.left-to-right {
+    height: 2px;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62C4E2), to(#fff));
+    background-image:
+    -webkit-linear-gradient(180deg, #62C4E2, #fff),
+    -webkit-linear-gradient(180deg, #62C4E2, #fff);
+    background-image:
+    -moz-linear-gradient(180deg, #62C4E2, #fff),
+    -moz-linear-gradient(180deg, #62C4E2, #fff)
+;
+    background-image:
+    -o-linear-gradient(180deg, #62C4E2, #fff),
+    -o-linear-gradient(180deg, #62C4E2, #fff)
+;
+    background-image:
+    linear-gradient(90deg, #62C4E2, #fff),
+    linear-gradient(90deg, #62C4E2, #fff)
+;
+    -moz-background-size: 100% 5px;
+    background-size: 100% 5px;
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
 }
 
 /* loader start */
