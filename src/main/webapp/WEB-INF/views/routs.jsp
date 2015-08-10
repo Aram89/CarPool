@@ -45,11 +45,15 @@
 					<div class="col-xs-6">
 						<div class="checkbox">
 							<label>
-								<input type="checkbox" checked ng-model="route.periodic"> is Periodic
+								<input type="checkbox" checked ng-model="route.periodic"> Periodic
 							</label>
 						</div>
-						<button type="submit" class="btn btn-success" ng-disabled="routeForm.$invalid">Save Route</button>
-						<button type="button" class="btn btn-danger" ng-show="route.id > 0"  ng-click="deleteRoute()">Delete Route</button>
+
+						<div class="btn-group inline">
+							<button type="submit" class="btn btn-success" ng-disabled="routeForm.$invalid">Save </button>
+							<button type="button" class="btn btn-danger" ng-show="route.id > 0"  ng-click="deleteRoute()">Delete</button>
+						</div>
+
 					</div>
 				</div>
 

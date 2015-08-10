@@ -18,7 +18,7 @@
         enter your login</p>
 
       <p class="help-block" ng-show="regForm.userName.$error.remote && !regForm.userName.$pristine">This login
-        already exist</p>
+        already exists</p>
     </div>
   </div>
 
@@ -41,7 +41,7 @@
         valid</p>
 
       <p class="help-block" ng-show="regForm.email.$error.remote && !regForm.email.$pristine">This email
-        already exist</p>
+        already exists</p>
     </div>
   </div>
 
@@ -79,7 +79,7 @@
 
       <p class="help-block"
          ng-show="regForm.confirmPassword.$error.match && !regForm.confirmPassword.$pristine">Password
-        confirmation doesnot match</p>
+        confirmation does not match</p>
     </div>
   </div>
 

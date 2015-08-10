@@ -317,15 +317,58 @@ ul li{
 }
 /*footer*/
 .footer{
-    background-image: -o-linear-gradient(top, #FC3605 0%, #F98209 100%);
-    background-image: -moz-linear-gradient(top, #FC3605 0%, #F98209 100%);
-    background-image: -webkit-linear-gradient(top, #FC3605 0%, #F98209 100%);
-    background-image: -ms-linear-gradient(top, #FC3605 0%, #F98209 100%);
-    background-image: linear-gradient(to top, #FC3605 0%, #F98209 100%);
+    background: #fff !important;
+    color:#c3c3c3;
 }
 .footer-title{
-    color:#fff;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.footer-icon{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.fa-icon-footer{
+    color:#fff !important;
+}
+.fa-icon-footer:hover{
+    color:#fff !important;
+}
+.icon-footer{
+    border: 1px solid #c3c3c3;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    line-height: 105px;
+    background-color: #c3c3c3;
+}
+.icon-footer:hover{
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    line-height: 105px;
+}
+.twitter:hover{
+    background-color: #62C4E2;
+    border: 1px solid #62C4E2;
+}
+.facebook:hover{
+    background-color: #3B5998;
+    border: 1px solid #3B5998;
+}
+.google:hover{
+    background-color: #C83131;
+    border: 1px solid #C83131;
+}
+.instagram:hover{
+    background-color: #3F729B;
+    border: 1px solid #3F729B;
+}
+.hr-footer{
+    color:#3c3c3c !important;
+}
+.lower-title{
+    margin: 50px auto;
 }
 /*Weather*/
 .weather-block{

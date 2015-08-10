@@ -124,7 +124,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12">
+                <div class="col-lg-12 lower-title">
                     <div class="col-lg-4">
                         <img src="/resources/images/smartphone.png" class="img-responsive center-block">
                             <h2 class="text-center" style="color: #F14B20">Request a ride</h2>
@@ -166,7 +166,7 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 lower-title">
                         <div class="col-lg-4">
                             <div class="text-center icon-border center-block">
                                 <i class="fa fa-tree fa-2x icon-blue"></i>
@@ -215,7 +215,7 @@
                 Contact Us
             </h3>
             <hr class="hr">
-            <div class="col-lg-3 col-xs-12 pull-left">
+            <div class="col-lg-3 col-xs-12 pull-left lower-title">
                 <h5><i class="fa fa-mobile fa-icon"></i> Tel:+374 55 26 30 65 </h5>
                 <address><i class="fa fa-map-marker fa-icon"></i> 6/1 Abelyan street,
                     Yerevan 0038, RA
@@ -251,7 +251,7 @@
             </div>
 
             <!--Google map-->
-            <div class="col-lg-9 col-xs-12 pull-right">
+            <div class="col-lg-9 col-xs-12 pull-right lower-title">
                 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
                 <div style="overflow:hidden;height:400px;width:100%;"><div id="gmap_canvas" style="height: 400px;width:100%;"></div>
                     <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
@@ -264,8 +264,46 @@
 <!--footer-->
     <div class="col-xs-12 col-lg-12 no-padding footer">
         <div class="container">
+            <div class="col-lg-12 footer-icon">
+                <div class="col-lg-3">
+                    <div class="text-center  icon-footer  twitter center-block">
+                        <a href="" class="fa-icon-footer">
+                            <i class="fa fa-twitter  fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="text-center icon-footer facebook center-block">
+                        <a href="https://www.facebook.com/Armeniacarpool?ref=aymt_homepage_panel" class="fa-icon-footer">
+                            <i class="fa fa-facebook fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="text-center  icon-footer google center-block">
+                        <a href="" class="fa-icon-footer">
+                            <i class="fa fa-google-plus fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="text-center  icon-footer instagram center-block">
+                        <a href="" class="fa-icon-footer">
+                            <i class="fa fa-instagram fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                <div class="col-xs-12">
+                    <hr/>
+                </div>
+
+
             <div class="col-xs-12 text-center">
-                <ul>
+                <ul class="lower-title">
                     <small  class="footer-title">
                         &copy; 2015 Carpool. All Rights Reserved.
                     </small>
@@ -332,7 +370,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 <h4 class="modal-title" id="routsModalLabel">
-                    Add Rout
+                    Add Route
                 </h4>
             </div>
             <div class="modal-body">
@@ -380,7 +418,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 <h4 class="modal-title" id="myModalLabel">
-                    Register Yourself
+                    Register
                 </h4>
             </div>
             <div class="modal-body">
@@ -393,7 +431,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-success btn-blue" ng-click="registration()"
                         ng-disabled="regForm.$invalid || !enable">
-                    Register Me
+                    Register
                 </button>
                 <button type="button" class="btn btn-default input-color style-btn" data-dismiss="modal" ng-disabled="!enable">
                     Close
