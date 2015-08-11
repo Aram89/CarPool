@@ -49,10 +49,8 @@
 							</label>
 						</div>
 
-						<div class="btn-group inline">
 							<button type="submit" class="btn btn-success" ng-disabled="routeForm.$invalid">Save </button>
 							<button type="button" class="btn btn-danger" ng-show="route.id > 0"  ng-click="deleteRoute()">Delete</button>
-						</div>
 
 					</div>
 				</div>

@@ -300,13 +300,10 @@
                     </div>
                 </div>
             </div>
-                <div class="col-xs-12">
-                    <hr/>
-                </div>
 
 
             <div class="col-xs-12 text-center">
-                <ul class="lower-title">
+                <ul>
                     <small  class="footer-title">
                         &copy; 2015 Carpool. All Rights Reserved.
                     </small>
