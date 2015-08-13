@@ -54,20 +54,6 @@ body{
 #nav-height {
     border-bottom: 2px solid #F14B20 !important;
     background-color: rgba(255, 255, 255, 0.6);
-    /* IE 8
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; */
-
-    /* IE 5-7
-    filter: alpha(opacity=70); */
-
-    /* Netscape
-    -moz-opacity: 0.7; */
-
-    /* Safari 1.x
-    -khtml-opacity: 0.7;*/
-
-    /* Good browsers
-    opacity: 0.7 !important;*/
 }
 #nav-height .form-group input,
 #nav-height .form-group button {
@@ -142,12 +128,11 @@ body{
 }
 /*Slideshow*/
 #video{
-    filter: brightness(2.0);
-    -webkit-filter: brightness(2.0);
-    -moz-filter: brightness(2.0);
-    -o-filter: brightness(2.0);
-    -ms-filter: brightness(2.0);
-    /*position: absolute;*/
+    filter: brightness(1.2);
+    -webkit-filter: brightness(1.2);
+    -moz-filter: brightness(1.2);
+    -o-filter: brightness(1.2);
+    -ms-filter: brightness(1.2);
     right: 0;
     bottom: 0;
     min-width: 100%;
@@ -264,9 +249,6 @@ body{
     border-radius: 0;
     border: none;
 }/*Find a car section*/
-#find{
-    /*margin-top: 50%;*/
-}
 .btn-bottom{
     margin-bottom: 50px;
 }
