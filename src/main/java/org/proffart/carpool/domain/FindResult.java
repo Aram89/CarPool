@@ -24,6 +24,10 @@ public class FindResult {
     private String twLink;
     private String goLink;
 
+    private long fbId;
+    private long twId;
+    private long goId;
+
     private boolean periodic;
 
     private boolean monday;
@@ -288,5 +292,29 @@ public class FindResult {
 
     public void setSunday(boolean sunday) {
         this.sunday = sunday;
+    }
+
+    public long getFbId() {
+        return fbId;
+    }
+
+    public void setFbId(long fbId) {
+        this.fbId = fbId;
+    }
+
+    public long getTwId() {
+        return twId;
+    }
+
+    public void setTwId(long twId) {
+        this.twId = twId;
+    }
+
+    public long getGoId() {
+        return goId;
+    }
+
+    public void setGoId(long goId) {
+        this.goId = goId;
     }
 }

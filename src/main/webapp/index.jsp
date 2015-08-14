@@ -74,7 +74,7 @@
             <div style="text-align: center" class="container">
                 <a class="btn btn-default btn-md btn-join btn-index " href="#modal-container-profile"  role="button" data-toggle="modal" ng-click="openProfile()"><i class="fa fa-user"></i> My Profile </a>
                 <a class="btn btn-default btn-md btn-join btn-index " href="#modal-container-cars"     role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
-                <a class="btn btn-default btn-md btn-join btn-index " href="#modal-container-routs"    role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> My routes </a>
+                <a class="btn btn-default btn-md btn-join btn-index " href="#modal-container-routs"    role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> Add routes </a>
             </div>
             <% }else{ %>
             <h1 class="slider-heading text-center"> Let's get started</h1>
@@ -211,58 +211,68 @@
 </section>
 
 <!--Contact us-->
-    <section id="contact" ng-controller="ContactController">
-        <div class="container">
-            <h3 class="text-center headings">
-                Contact Us
-            </h3>
-            <hr class="hr">
-            <div class="col-lg-3 col-xs-12 pull-left lower-title">
-                <h5><i class="fa fa-mobile fa-icon"></i> Tel:+374 55 26 30 65 </h5>
-                <address><i class="fa fa-map-marker fa-icon"></i> 6/1 Abelyan street,
-                    Yerevan 0038, RA
-                </address>
-                <form ng-submit="send(contactForm)" name="contactForm" novalidate>
-                    <div class="form-group">
-                        <label for="contactEmail">Email * </label>
-                        <input type="email" ng-model="contact.email" class="form-control" id="contactEmail" name="contactEmail" placeholder="Email" required>
-                        <p class="help-block" ng-show="contactForm.contactEmail.$error.required && !contactForm.contactEmail.$pristine">
-                            Please enter your email
-                        </p>
-                        <p class="help-block" ng-show="contactForm.contactEmail.$error.email && !contactForm.contactEmail.$pristine">
-                            Please enter valid email
-                        </p>
-                    </div>
+<section id="contact" ng-controller="ContactController">
+    <div class="container">
+        <div id="fb-root"></div>
 
-                    <div class="form-group">
-                        <label for="contactContent">Message * </label>
-                        <textarea ng-model="contact.content" class="form-control" id="contactContent" name="contactContent" rows="7" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
-                        <p class="help-block" ng-show="contactForm.contactContent.$error.required && !contactForm.contactContent.$pristine">
-                            Please enter message
-                        </p>
-                        <p class="help-block" ng-show="contactForm.contactContent.$error.minlength && !contactForm.contactContent.$pristine">
-                            Your message is a short
-                        </p>
-                    </div>
+        <h3 class="text-center headings">
+            Contact Us
+        </h3>
+        <hr class="hr">
+        <div class="col-lg-3 col-xs-12 pull-left lower-title">
+            <h5><i class="fa fa-mobile fa-icon"></i> Tel:+374 55 26 30 65 </h5>
+            <address><i class="fa fa-map-marker fa-icon"></i> 6/1 Abelyan street,
+                Yerevan 0038, RA
+            </address>
+            <form ng-submit="send(contactForm)" name="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="contactEmail">Email * </label>
+                    <input type="email" ng-model="contact.email" class="form-control" id="contactEmail" name="contactEmail" placeholder="Email" required>
+                    <p class="help-block" ng-show="contactForm.contactEmail.$error.required && !contactForm.contactEmail.$pristine">
+                        Please enter your email
+                    </p>
+                    <p class="help-block" ng-show="contactForm.contactEmail.$error.email && !contactForm.contactEmail.$pristine">
+                        Please enter valid email
+                    </p>
+                </div>
 
-                    <div class="form-group">
-                            <button class="col-lg-12 col-xs-12 btn btn-default input-color style-btn btn-bottom">Send</button>
-                    </div>
+                <div class="form-group">
+                    <label for="contactContent">Message * </label>
+                    <textarea ng-model="contact.content" class="form-control" id="contactContent" name="contactContent" rows="7" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
+                    <p class="help-block" ng-show="contactForm.contactContent.$error.required && !contactForm.contactContent.$pristine">
+                        Please enter message
+                    </p>
+                    <p class="help-block" ng-show="contactForm.contactContent.$error.minlength && !contactForm.contactContent.$pristine">
+                        Your message is a short
+                    </p>
+                </div>
 
-                </form>
-            </div>
+                <div class="form-group">
+                        <button class="col-lg-12 col-xs-12 btn btn-default input-color style-btn btn-bottom">Send</button>
+                </div>
 
-            <!--Google map-->
-            <div class="col-lg-9 col-xs-12 pull-right lower-title">
-                <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-                <div style="overflow:hidden;height:400px;width:100%;"><div id="gmap_canvas" style="height: 400px;width:100%;"></div>
-                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-                    <a class="google-map-code" href="http://premium-wordpress-themes.me" id="get-map-data">the molitor.</a></div>
-                <script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(40.1991299,44.47688300000004),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.1991299, 44.47688300000004)});infowindow = new google.maps.InfoWindow({content:"<b></b><br/>6/1 Abelyan street,<br/> Yervan" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+            </form>
+        </div>
+
+        <!--Google map-->
+        <div class="col-lg-9 col-xs-12 pull-right lower-title">
+            <div style="overflow:hidden;height:400px;width:100%;">
+                <div id="gmap_canvas" style="height: 400px;width:100%;">
+                    <ui-gmap-google-map center="{latitude: 40.1991299, longitude: 44.47688300000004}" zoom="14">
+                        <ui-gmap-marker
+                            idKey="'pin'"
+                            coords="{latitude: 40.1991299, longitude: 44.47688300000004}"
+                            options="{'draggable':false}"
+                            content="{labelContent: '<b></b><br/>6/1 Abelyan street,<br/> Yervan' }"
+                            >
+                        </ui-gmap-marker>
+                    </ui-gmap-google-map>
+                </div>
             </div>
         </div>
-        <div class="col-xs-12 left-to-right" style="margin-top: 10px;"></div>
-    </section>
+    </div>
+    <div class="col-xs-12 left-to-right" style="margin-top: 10px;"></div>
+</section>
 
 <!--footer-->
     <div class="col-xs-12 col-lg-12 no-padding footer">
@@ -398,7 +408,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" ng-click="saveProfileData()">
+                <button type="button" class="btn btn-success" ng-click="saveProfileData()" data-dismiss="none">
                     Save
                 </button>
                 <button type="button" class="btn btn-default" ng-click="cancelProfileSave()" data-dismiss="modal">

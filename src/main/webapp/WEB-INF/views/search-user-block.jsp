@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="col-xs-6 col-md-2">
-  <img src="/resources/images/profile_icon.png"
+  <img ng-src="{{result.fbId > 0  && 'https://graph.facebook.com/'+result.fbId+'/picture?type=large' || '/resources/images/profile_icon.png'}}"
        class="img-responsive img-thumbnail img-profile-thumbnail"/>
 </div>
 <div class="col-xs-6 col-md-6">

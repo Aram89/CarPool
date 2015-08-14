@@ -21,6 +21,7 @@
 <script type="text/javascript" src="/resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- -->
 <script type="text/javascript" src="/resources/js/scripts.js"></script>
+<script type="text/javascript" src="//connect.facebook.net/en_US/sdk.js"></script>
 <script type="text/javascript">
   jQuery(document).ready(function($){
     $('#modal-container-routs').on('shown.bs.modal', function () {

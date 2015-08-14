@@ -32,11 +32,20 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="profile_fb_link" >Facebook link</label>
-      <input class="form-control" id="profile_fb_link" type="text" ng-model="profile.fbLink"/>
+    <div class="form-group center-block">
+      <button ng-hide="profile.fbLink" class="btn btn-default" type="button" ng-click="connectWithFacebook()">
+        <i class="fa fa-facebook"></i>
+        Connect With Facebook
+      </button>
+      <div ng-show="profile.fbLink">
+        <a href="{{profile.fbLink}}" target="_blank" data-toggle="tooltip" title="Facebook Page">
+        <img ng-src="https://graph.facebook.com/{{profile.fbId}}/picture?type=small"
+             class="img-thumbnail">
+        </a>
+        <a href="#" ng-click="removeFbConnection()" class="btn btn-link"> Delete </a>
+      </div>
     </div>
-
+<!--
     <div class="form-group">
       <label for="profile_tw_link" >Twitter link</label>
       <input class="form-control" id="profile_tw_link" type="text" ng-model="profile.twLink"/>
@@ -46,6 +55,6 @@
       <label for="profile_go_link" >Google plus link</label>
       <input class="form-control" id="profile_go_link" type="text" ng-model="profile.goLink"/>
     </div>
-
+-->
   </form>
 </div>

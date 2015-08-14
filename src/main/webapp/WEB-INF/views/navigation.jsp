@@ -37,7 +37,7 @@
 
         <!--Weather-->
         <div class="col-lg-2 col-xs-12 weather-block">
-          <i class="fa fa-umbrella fa-icon"></i>
+          <i class="fa fa-umbrella fa-icon page-scroll"></i>
           <div id="weather"> <h2>&nbsp;</h2> </div>
         </div>
 
@@ -61,12 +61,12 @@
         <% } else { %>
 
         <ul class="nav navbar-nav navbar-right" ng-controller="LoginController">
-          <li> <a href="#" ng-click="logout()" class="logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
+          <li> <a href="#" ng-click="logout()" class="logout page-scroll"><i class="fa fa-sign-out"></i> Logout</a> </li>
         </ul>
 
         <ul id="rout_list" class="nav navbar-nav navbar-right routes" ng-cloak>
           <li ng-repeat="route in routes">
-            <a href="#" ng-click="editRoute(route)" data-toggle="tooltip" data-placement="bottom" data-html="true" title="{{route.startPoint}}<br><br>{{route.endPoint}}"><i class="fa fa-road"></i></a>
+            <a href="#" class="page-scroll" ng-click="editRoute(route)" data-toggle="tooltip" data-placement="bottom" data-html="true" title="{{route.startPoint}}<br><br>{{route.endPoint}}"><i class="fa fa-road"></i></a>
           </li>
         </ul>
         <% } %>

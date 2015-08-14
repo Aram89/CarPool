@@ -66,7 +66,10 @@
           `user`.enabled,
           `user`.fbLink,
           `user`.twLink,
-          `user`.goLink
+          `user`.goLink,
+          `user`.fbId,
+          `user`.twId,
+          `user`.goId
          FROM `user`
         WHERE `user`.userName = #userName#
     </select>
@@ -85,7 +88,10 @@
             `user`.phone,
             `user`.fbLink,
             `user`.twLink,
-            `user`.goLink
+            `user`.goLink,
+            `user`.fbId,
+            `user`.twId,
+            `user`.goId
          FROM `user` WHERE `user`.id = #userId#
     </select>
 
@@ -97,9 +103,9 @@
           `user`.fbLink = #fbLink#,
           `user`.twLink = #twLink#,
           `user`.goLink = #goLink#,
-          `user`.fbId = #fbId#,
-          `user`.twId = #twId#,
-          `user`.twId = #twId#
+          `user`.fbId = IFNULL(#fbId#, 0),
+          `user`.twId = IFNULL(#twId#, 0),
+          `user`.goId = IFNULL(#goId#, 0)
         WHERE `user`.id = #id#
     </update>
 

@@ -356,7 +356,7 @@
 		$scope.getCars();
 	});
 
-	carpool.controller('ContactController', function ($scope) {
+	carpool.controller('ContactController', function ($scope, uiGmapGoogleMapApi) {
 		$scope.contact = {};
 
 		$scope.send = function (form) {
@@ -600,6 +600,13 @@
 	carpool.controller('ProfileController', function($rootScope, $scope, $http){
 		var profileData = {};
 		$scope.profile = {};
+		FB.init({
+			appId:   '467461446757088',
+			status:  true,
+			cookie:  true,
+			xfbml:   true,
+			version: 'v2.3'
+		});
 
 		$rootScope.openProfile = function(){
 			$http({
@@ -628,9 +635,33 @@
 			});
 		};
 
+        $scope.connectWithFacebook = function() {
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    FB.api('/me', function(response) {
+                        if(!$scope.profile.firstName) {
+                            $scope.profile.firstName = response.first_name;
+                        }
+                        if(!$scope.profile.lastName) {
+                            $scope.profile.lastName = response.last_name;
+                        }
+                        $scope.profile.fbLink = response.link;
+                        $scope.profile.fbId = response.id;
+                        $scope.$apply();
+                        //console.log(response);
+                    });
+                }
+            });
+        };
+
 		$scope.cancelProfileSave = function(){
 			$scope.profile = angular.copy(profileData);
 		};
+
+        $scope.removeFbConnection = function() {
+            $scope.profile.fbLink = '';
+            //$scope.profile.fbId = 0;
+        };
 
 	});
 
