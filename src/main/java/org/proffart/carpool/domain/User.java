@@ -19,9 +19,9 @@ public class User {
     private String fbLink;
     private String twLink;
     private String goLink;
-    private long fbId;
-    private long twId;
-    private long goId;
+    private long fbId = 0;
+    private long twId = 0;
+    private long goId = 0;
 
 
     public int getId() {

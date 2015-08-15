@@ -103,9 +103,9 @@
           `user`.fbLink = #fbLink#,
           `user`.twLink = #twLink#,
           `user`.goLink = #goLink#,
-          `user`.fbId = IFNULL(#fbId#, 0),
-          `user`.twId = IFNULL(#twId#, 0),
-          `user`.goId = IFNULL(#goId#, 0)
+          `user`.fbId = #fbId#,
+          `user`.twId = #twId#,
+          `user`.goId = #goId#
         WHERE `user`.id = #id#
     </update>
 

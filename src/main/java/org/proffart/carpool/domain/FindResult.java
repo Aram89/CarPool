@@ -298,23 +298,23 @@ public class FindResult {
         return fbId;
     }
 
-    public void setFbId(long fbId) {
-        this.fbId = fbId;
+    public void setFbId(Long fbId) {
+        this.fbId = fbId != null ? fbId.longValue() : 0;
     }
 
     public long getTwId() {
         return twId;
     }
 
-    public void setTwId(long twId) {
-        this.twId = twId;
+    public void setTwId(Long twId) {
+        this.twId = twId != null ? twId.longValue() : 0;
     }
 
     public long getGoId() {
         return goId;
     }
 
-    public void setGoId(long goId) {
-        this.goId = goId;
+    public void setGoId(Long goId) {
+        this.goId = goId != null ? goId.longValue() : 0;
     }
 }
