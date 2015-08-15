@@ -60,10 +60,11 @@
 
 
 <!-- Intro Section -->
-<section id="intro" class="intro-section section">
+<section class="intro-section section">
     <div id="video">
         <video width="100%" autoplay loop muted>
-            <source src="/resources/images/video1.mp4" type="video/mp4">
+            <source src="/resources/images/carpool.webm" type="video/webm">
+            <source src="/resources/images/carpool.mp4" type="video/mp4">
             <source src="/resources/images/carpool.ogg" type="video/ogg">
         </video>
         <div class="video-cover"></div>
