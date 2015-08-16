@@ -6,10 +6,10 @@
 <div class="col-xs-6 col-md-6">
   <h3>{{result.profileName}}</h3>
   <ul>
-    <li> From: {{result.startPoint}}</li>
-    <li> To:   {{result.endPoint}}</li>
-    <li> Date: {{result.date}}</li>
-    <li> Start Tiem: {{result.startTime}}</li>
+    <li> <b>From</b>: {{result.startPoint}}</li>
+    <li> <b>To</b>:   {{result.endPoint}}</li>
+    <li> <b>Date</b>: {{result.date}}</li>
+    <li> <b>Start Time</b>: {{result.startTime}}</li>
   </ul>
 </div>
 
