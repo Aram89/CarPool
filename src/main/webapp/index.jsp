@@ -397,7 +397,7 @@
 
 <div class="modal fade" ng-controller="ProfileController" id="modal-container-profile" role="dialog"
      aria-labelledby="profileModalLabel" aria-hidden="true"
-     <% if(UserServiceImpl.getCurrentUser().getFbLink().isEmpty()) { %>
+     <% if(UserServiceImpl.getCurrentUser().getFbLink() == null || UserServiceImpl.getCurrentUser().getFbLink().isEmpty()) { %>
      ng-init="autoInfoConnectFacebook()"
      <% } %>>
     <div class="modal-dialog">
