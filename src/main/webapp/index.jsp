@@ -22,7 +22,9 @@
     <link href="/resources/css/scrolling-nav.css" rel="stylesheet">
     <link href="/resources/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="/resources/css/selectize.default.css" rel="stylesheet">
+    <link href="/resources/css/ng-animation.css" rel="stylesheet">
     <link href="/resources/css/select2.css" rel="stylesheet">
+    <link href="/resources/css/angular-toastr.min.css" rel="stylesheet">
 
     <link href="/resources/css/select.css" rel="stylesheet">
     <link href="/resources/css/style.css" rel="stylesheet">
@@ -35,7 +37,7 @@
     <!--Fonts-->
     <link href="/resources/fonts/OpenSans-Regular.ttf" rel="stylesheet">
     <link href="/resources/fonts/raleway.medium.ttf" rel="stylesheet">
-    <link href="/resources/fonts/modern-sans-serif-7.regular.ttf" rel="stylesheet">
+    <!--<link href="/resources/fonts/modern-sans-serif-7.regular.ttf" rel="stylesheet">-->
     <!--end-->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -393,7 +395,10 @@
 </div>
 
 <div class="modal fade" ng-controller="ProfileController" id="modal-container-profile" role="dialog"
-     aria-labelledby="profileModalLabel" aria-hidden="true">
+     aria-labelledby="profileModalLabel" aria-hidden="true"
+     <% if(UserServiceImpl.getCurrentUser().getFbLink().isEmpty()) { %>
+     ng-init="autoInfoConnectFacebook()"
+     <% } %>>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -408,10 +413,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" ng-click="saveProfileData()" data-dismiss="none">
+                <button type="button" class="btn btn-success" ng-click="saveProfileData()" ng-disabled="!enable">
                     Save
                 </button>
-                <button type="button" class="btn btn-default" ng-click="cancelProfileSave()" data-dismiss="modal">
+                <button type="button" class="btn btn-default" ng-click="cancelProfileSave()" ng-disabled="!enable" data-dismiss="modal">
                     Close
                 </button>
 

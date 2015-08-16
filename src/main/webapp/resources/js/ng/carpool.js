@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	var carpool = angular.module('carpool', ['uiGmapgoogle-maps','ngSanitize', 'ui.bootstrap','ui.select']);
+	var carpool = angular.module('carpool', ['uiGmapgoogle-maps','ngSanitize', 'ui.bootstrap', 'ui.select', 'toastr']);
 	carpool.config(function(uiGmapGoogleMapApiProvider) {
 		uiGmapGoogleMapApiProvider.configure({
 			//    key: 'your api key',
@@ -96,7 +96,7 @@
 
 	}]);
 
-	carpool.controller('RegistrationController', function($scope, $http) {
+	carpool.controller('RegistrationController', function($scope, $http, toastr) {
 
 		$scope.user = {};
 		$scope.enable = true;
@@ -113,14 +113,14 @@
 			})
 			.error(function(){
 				$scope.enable = true;
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
 			});
 		};
 
 
 	});
 
-	carpool.controller('LoginController', function ($scope, $rootScope, $http) {
+	carpool.controller('LoginController', function ($scope, $rootScope, $http, toastr) {
 		$scope.user = {};
 		$scope.loading = false;
 
@@ -146,7 +146,7 @@
 							break;
 					}
 				} else {
-					alert('Error');
+					toastr.error('Something is wrong', 'Error');
 				}
 			});
 		};
@@ -162,7 +162,7 @@
 			})
 			.error(function(){
 				$scope.loading = false;
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
 			});
 		};
 
@@ -179,12 +179,12 @@
 				$rootScope.driver = driverData || {};
 			})
 			.error(function(){
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
 			});
 		};
 	});
 
-	carpool.controller('FindController', function ($scope, $http, uiGmapGoogleMapApi) {
+	carpool.controller('FindController', function ($scope, $http, uiGmapGoogleMapApi, toastr) {
 		$('#searchDateBlock').datetimepicker({
 			sideBySide: true,
 			format : 'DD/MM/YYYY HH:mm',
@@ -243,14 +243,14 @@
 			})
 			.error(function() {
 				$scope.loading = false;
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
 			});
 		};
 
 		$scope.doFind();
 	});
 
-	carpool.controller('CarsController', function ($rootScope, $scope, $http) {
+	carpool.controller('CarsController', function ($rootScope, $scope, $http, toastr) {
 		$rootScope.cars = [];
 		var tmpCar;
 
@@ -263,7 +263,7 @@
 				$rootScope.cars = cars;
 			})
 			.error(function(){
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
 			});
 		};
 
@@ -310,7 +310,7 @@
 					$scope.$apply();
 				})
 				.error(function(){
-					alert('Error');
+					toastr.error('Something is wrong', 'Error');
 				});
 			}
 		};
@@ -327,7 +327,7 @@
 				.success(function () {
 				})
 				.error(function () {
-					alert('Error');
+					toastr.error('Something is wrong', 'Error');
 				});
 			} else {
 				$http({
@@ -339,7 +339,7 @@
 					car.id = carId;
 				})
 				.error(function () {
-					alert('Error');
+					toastr.error('Something is wrong', 'Error');
 				});
 			}
 		};
@@ -356,7 +356,7 @@
 		$scope.getCars();
 	});
 
-	carpool.controller('ContactController', function ($scope, uiGmapGoogleMapApi) {
+	carpool.controller('ContactController', function ($scope, uiGmapGoogleMapApi, toastr) {
 		$scope.contact = {};
 
 		$scope.send = function (form) {
@@ -367,7 +367,7 @@
 		};
 	});
 
-	carpool.controller('RoutsController', function ($rootScope, $scope, $http, $filter, uiGmapGoogleMapApi) {
+	carpool.controller('RoutsController', function ($rootScope, $scope, $http, $filter, uiGmapGoogleMapApi, toastr) {
 		$rootScope.routes = [];
 		$scope.route = {
 			monday   : true,
@@ -496,7 +496,7 @@
 				}, 0);
 			})
 			.error(function () {
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
 			});
 		};
 
@@ -550,7 +550,7 @@
 						}, 0);
 					})
 					.error(function () {
-						alert('Error');
+						toastr.error('Something is wrong', 'Error');
 					});
 				} else {
 					$http({
@@ -568,7 +568,7 @@
 						}, 0);
 					})
 					.error(function () {
-						alert('Error');
+						toastr.error('Something is wrong', 'Error');
 					});
 				}
 			}
@@ -590,16 +590,17 @@
 				}, 0);
 			})
 			.error(function () {
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
 			});
 		};
 
 		$scope.getRoutes();
 	});
 
-	carpool.controller('ProfileController', function($rootScope, $scope, $http){
+	carpool.controller('ProfileController', function($rootScope, $scope, $http, toastr){
 		var profileData = {};
 		$scope.profile = {};
+		$scope.enable = true;
 		FB.init({
 			appId:   '467461446757088',
 			status:  true,
@@ -607,21 +608,45 @@
 			xfbml:   true,
 			version: 'v2.3'
 		});
+		$scope.autoInfoConnectFacebook = function() {
+            toastr.info('<button type="button" class="btn btn-default" onclick="window.carpool.openProfile(true)">Connect</button>We are opened today from 10 to 22 ',
+                'Information', {
+                    allowHtml : true,
+                    autoDismiss : false,
+                    tapToDismiss : false,
+                    closeButton: true,
+                    timeOut : 0
+                });
+		};
 
-		$rootScope.openProfile = function(){
+		$rootScope.openProfile = function(autoConnectFacebook){
+            autoConnectFacebook = autoConnectFacebook || false;
+            if(autoConnectFacebook) {
+                $('#modal-container-profile').modal('show');
+                toastr.clear();
+            }
+			$scope.enable = false;
 			$http({
 				url: 'user/get-profile-data',
 				method: 'GET'
 			}).success(function (profile) {
 				$scope.profile = profile;
 				profileData = angular.copy($scope.profile);
+				$scope.enable = true;
+                if(autoConnectFacebook) {
+                    $scope.connectWithFacebook();
+                }
 			})
 			.error(function () {
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
+				$scope.enable = true;
 			});
 		};
+		if(!window.carpool) window.carpool = {};
+		window.carpool.openProfile = $rootScope.openProfile;
 
 		$scope.saveProfileData = function() {
+			$scope.enable = false;
 			$http({
 				url: 'user/save-profile-data',
 				method: 'POST',
@@ -631,7 +656,8 @@
 				$('#modal-container-profile').modal('hide');
 			})
 			.error(function () {
-				alert('Error');
+				toastr.error('Something is wrong', 'Error');
+				$scope.enable = true;
 			});
 		};
 

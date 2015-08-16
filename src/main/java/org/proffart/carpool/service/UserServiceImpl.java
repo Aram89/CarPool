@@ -85,6 +85,10 @@ public class UserServiceImpl implements UserService {
 
     public void updateProfileData(User user) throws SQLException {
         userDAO.updateUserData(user);
+        user = userDAO.getUserById(getCurrentUser().getId());
+        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        HttpSession session = attr.getRequest().getSession();
+        session.setAttribute("userObject", user);
     }
 
     public User getUserPublicData(int userId) throws SQLException {

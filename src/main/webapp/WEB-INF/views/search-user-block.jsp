@@ -14,9 +14,9 @@
 </div>
 
 <div class="col-xs-6 col-md-4" style="padding:25px">
-  <a ng-show="result.fbLink" href="{{result.fbLink}}"><i class="fa fa-facebook fa-icon"></i></a>
-  <a ng-show="result.twLink" href="{{result.twLink}}"><i class="fa fa-twitter fa-icon"></i></a>
-  <a ng-show="result.goLink" href="{{result.goLink}}"><i class="fa fa-google-plus fa-icon"></i></a>
+  <a ng-show="result.fbLink" target="_blank" href="{{result.fbLink}}"><i class="fa fa-facebook fa-icon"></i></a>
+  <a ng-show="result.twLink" target="_blank" href="{{result.twLink}}"><i class="fa fa-twitter fa-icon"></i></a>
+  <a ng-show="result.goLink" target="_blank" href="{{result.goLink}}"><i class="fa fa-google-plus fa-icon"></i></a>
 
   <div class="col-xs-8 col-md-10">
     <button type="button" class="btn btn-default input-color style-btn" ng-click="getUserPublicData(result.userId)">Details</button>
