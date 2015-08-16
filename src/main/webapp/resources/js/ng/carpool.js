@@ -609,8 +609,8 @@
 			version: 'v2.3'
 		});
 		$scope.autoInfoConnectFacebook = function() {
-            toastr.info('<button type="button" class="btn btn-default" onclick="window.carpool.openProfile(true)">Connect</button>We are opened today from 10 to 22 ',
-                'Information', {
+            toastr.info('<br><button type="button" class="btn btn-default" onclick="window.carpool.openProfile(true)">Connect</button> Please connect you account with facebook! ',
+                '', {
                     allowHtml : true,
                     autoDismiss : false,
                     tapToDismiss : false,
