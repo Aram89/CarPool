@@ -1,5 +1,7 @@
 package org.proffart.carpool.exception;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,6 +17,8 @@ import java.io.IOException;
 @ControllerAdvice
 public class GeneralException {
 
+    private static Logger logger = LogManager.getLogger(GeneralException.class);
+
     /**
      * Returns INTERNAL_SERVER_ERROR
      * for all unhandled exceptions
@@ -23,6 +27,7 @@ public class GeneralException {
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity exception(Exception e) {
+        logger.error("INTERNAL ERROR: ", e);
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
