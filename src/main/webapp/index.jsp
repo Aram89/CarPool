@@ -327,9 +327,9 @@
 
 <!-- modal -->
 
-<div class="modal fade" id="modal-container-profile-view" role="dialog"
+<div class="modal fade" id="modal-container-details" role="dialog"
      aria-labelledby="profileViewModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -339,7 +339,7 @@
             </div>
             <div class="modal-body">
                 <div class="panel-body">
-                    <ng-include src="'profile-view.html'"></ng-include>
+                    <ng-include src="'details.html'"></ng-include>
                 </div>
             </div>
             <div class="modal-footer">
@@ -464,8 +464,8 @@
 <%@include file="./WEB-INF/views/search-form.jsp" %>
 </script>
 
-<script type="text/ng-template" id="profile-view.html">
-<%@include file="./WEB-INF/views/profile-view.jsp" %>
+<script type="text/ng-template" id="details.html">
+<%@include file="WEB-INF/views/details.jsp" %>
 </script>
 
 

@@ -261,6 +261,12 @@ body{
 .popup-map{
     left: 20px !important;
 }
+.details .dl-horizontal dt {
+    width: 100px;
+}
+.details .dl-horizontal dd {
+    margin-left: 120px;
+}
 /*what we do*/
 #about{
     padding-top: 50px;

@@ -167,9 +167,9 @@
 		};
 
 		$rootScope.driver = {};
-		$rootScope.getUserPublicData = function(userId) {
+		$rootScope.getUserPublicData = function(userId, currentRout) {
 			$rootScope.driver = {};
-			$('#modal-container-profile-view').modal('show');
+			$('#modal-container-details').modal('show');
 			$http({
 				url: 'user/get-user-public-data',
 				method: 'GET',
@@ -177,6 +177,7 @@
 			})
 			.success(function(driverData){
 				$rootScope.driver = driverData || {};
+                $rootScope.driver.r = currentRout;
 			})
 			.error(function(){
 				toastr.error('Something is wrong', 'Error');
