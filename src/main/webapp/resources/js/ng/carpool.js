@@ -139,10 +139,10 @@
 				if(status == 400) {
 					switch (data.errorString) {
 						case "wrongUserName" :
-							alert("Incorrect Username \n\n The Username you entered does not belong to any account.");
+							toastr.error('The Username you entered does not belong to any account.','Incorrect Username')
 							break;
 						case "wrongPassword" :
-							alert("Please re-enter your password \n\nThe password you entered is incorrect. Please try again (make sure your caps lock is off).");
+							toastr.error('The password you entered is incorrect. Please try again (make sure your caps lock is off).', 'Please re-enter your password');
 							break;
 					}
 				} else {
@@ -609,7 +609,7 @@
 			version: 'v2.3'
 		});
 		$scope.autoInfoConnectFacebook = function() {
-            toastr.info('<br><button type="button" class="btn btn-default" onclick="window.carpool.openProfile(true)">Connect</button> Please connect you account with facebook! ',
+            toastr.info('<br><button type="button" class="btn btn-default" onclick="window.carpool.openProfile(true)">Connect</button> Please connect your account with facebook! ',
                 '', {
                     allowHtml : true,
                     autoDismiss : false,

@@ -77,7 +77,7 @@
             <div style="text-align: center" class="container">
                 <a class="btn btn-default btn-md btn-join btn-index " href="#modal-container-profile"  role="button" data-toggle="modal" ng-click="openProfile()"><i class="fa fa-user"></i> My Profile </a>
                 <a class="btn btn-default btn-md btn-join btn-index " href="#modal-container-cars"     role="button" data-toggle="modal"><i class="fa fa-car"></i> My cars </a>
-                <a class="btn btn-default btn-md btn-join btn-index " href="#modal-container-routs"    role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> Add routes </a>
+                <a class="btn btn-default btn-md btn-join btn-index " href="#modal-container-routs"    role="button" data-toggle="modal" ng-click="openForAddRoute()"><i class="fa fa-exchange"></i> Add route </a>
             </div>
             <% }else{ %>
             <h1 class="slider-heading text-center"> Let's get started</h1>
