@@ -63,8 +63,9 @@
 
 <!-- Intro Section -->
 <section class="intro-section section">
+    <img src="/resources/img/yerevan-night.jpg" class="img-responsive hidden-lg mobile-size">
     <div id="video">
-        <video width="100%" autoplay loop muted>
+        <video width="100%" autoplay loop muted class="hidden-xs">
             <source src="/resources/images/carpool.webm" type="video/webm">
             <source src="/resources/images/carpool.mp4" type="video/mp4">
             <source src="/resources/images/carpool.ogg" type="video/ogg">
@@ -291,7 +292,7 @@
 
                 <div class="col-lg-3">
                     <div class="text-center icon-footer facebook center-block">
-                        <a href="https://www.facebook.com/Armeniacarpool?ref=aymt_homepage_panel" class="fa-icon-footer">
+                        <a href="https://www.facebook.com/Armeniacarpool?ref=aymt_homepage_panel" target="_blank" class="fa-icon-footer">
                             <i class="fa fa-facebook fa-3x"></i>
                         </a>
                     </div>

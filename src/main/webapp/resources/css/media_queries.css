@@ -23,7 +23,7 @@
 
     .slider-heading {
         font-size: 24px !important;
-        margin-top: -130px !important;
+        margin-top: -150px !important;
     }
     .slider-title {
         font-size: 10px !important;
@@ -35,4 +35,8 @@
     .footer-title {
         font-size: 10px;
     }
+    .mobile-size{
+        height:250px;
+    }
+
 }
