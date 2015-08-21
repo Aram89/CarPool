@@ -357,7 +357,7 @@
 		$scope.getCars();
 	});
 
-	carpool.controller('ContactController', function ($scope, uiGmapGoogleMapApi, toastr) {
+	carpool.controller('ContactController', function ($scope, $http, uiGmapGoogleMapApi, toastr) {
 		$scope.contact = {};
 
 		$scope.send = function (form) {
@@ -367,7 +367,7 @@
                     method: 'POST',
                     data: $scope.contact
                 })
-                .success(function (carId) {
+                .success(function () {
 					toastr.success('Thank you, your message was successfully sent, we will answer you soon.', 'Message was successfully sent');
 					$scope.contact = {};
                 })
