@@ -1,10 +1,12 @@
-body{
-    font-family:'AurulentSans-Regular';
+body {
+    font-family: 'AurulentSans-Regular';
     margin: 0;
     font-size: 14px;
     font-weight: normal;
     line-height: 18px;
     color: #333;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 @font-face {
     font-family:'AurulentSans-Regular';
@@ -53,7 +55,7 @@ body{
 /*navigation*/
 #nav-height {
     border-bottom: 2px solid #F14B20 !important;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 #nav-height .form-group input,
 #nav-height .form-group button {

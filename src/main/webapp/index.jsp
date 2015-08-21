@@ -116,7 +116,7 @@
 
                 <div class="row clearfix">
                     <div class="col-md-12 column">
-                        <p class="text-left paragraphs">
+                        <p class="text-center paragraphs">
                             Carpool is designed for local users in support of community transit and environmental goals. Its mission, vision and values lead to actions aimed at decreasing personal car ownership, reducing vehicle distance travelled, improving urban land use and development, providing affordable access to vehicles for all constituencies, as well as motivating residents to walk, cycle and take buses and trains, and decreasing dependence on fossil fuels while reducing the emission of greenhouse gases.
                         </p>
                         <ul class="text-left paragraphs">
