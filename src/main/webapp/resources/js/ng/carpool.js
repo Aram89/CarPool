@@ -361,10 +361,20 @@
 		$scope.contact = {};
 
 		$scope.send = function (form) {
-			if(form.$invalid) return;
-
-
-
+			if(form.$valid) {
+                $http({
+                    url: 'contact/create',
+                    method: 'POST',
+                    data: $scope.contact
+                })
+                .success(function (carId) {
+					toastr.success('Thank you, your message was successfully sent, we will answer you soon.', 'Message was successfully sent');
+					$scope.contact = {};
+                })
+                .error(function () {
+                    toastr.error('Something is wrong', 'Error');
+                });
+			}
 		};
 	});
 

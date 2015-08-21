@@ -2,6 +2,7 @@ package org.proffart.carpool.dao;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.proffart.carpool.domain.Contact;
 import org.proffart.carpool.domain.User;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
@@ -39,5 +40,9 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO {
 
     public User getUserPublicData(int userId) throws SQLException {
         return (User) getSqlMapClient().queryForObject("user.getUserPublicData", userId);
+    }
+
+    public int createContactUsMessage(Contact contact) throws SQLException {
+        return (Integer) getSqlMapClient().insert("contact.insert", contact);
     }
 }

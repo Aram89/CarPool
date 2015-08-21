@@ -1,5 +1,6 @@
 package org.proffart.carpool.service;
 
+import org.proffart.carpool.domain.Contact;
 import org.proffart.carpool.domain.User;
 import org.proffart.carpool.exception.UserException;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,6 @@ public interface UserService {
     User getProfileData() throws SQLException;
     void updateProfileData(User user) throws SQLException;
     User getUserPublicData(int userId) throws SQLException;
-
+    void createContactUsMessage(Contact contact) throws SQLException;
 
 }

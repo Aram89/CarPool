@@ -1,6 +1,7 @@
 package org.proffart.carpool.service;
 
 import org.proffart.carpool.dao.UserDAO;
+import org.proffart.carpool.domain.Contact;
 import org.proffart.carpool.domain.Guest;
 import org.proffart.carpool.domain.User;
 import org.proffart.carpool.exception.ErrorStrings;
@@ -93,6 +94,13 @@ public class UserServiceImpl implements UserService {
 
     public User getUserPublicData(int userId) throws SQLException {
         return userDAO.getUserPublicData(userId);
+    }
+
+    public void createContactUsMessage(Contact contact) throws SQLException {
+        if(isLogged()) {
+            contact.setUserId(getCurrentUser().getId());
+        }
+        userDAO.createContactUsMessage(contact);
     }
 
 

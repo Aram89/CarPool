@@ -1,5 +1,6 @@
 package org.proffart.carpool.dao;
 
+import org.proffart.carpool.domain.Contact;
 import org.proffart.carpool.domain.User;
 
 import java.sql.SQLException;
@@ -13,4 +14,5 @@ public interface UserDAO {
     User getUserById(int userId) throws SQLException;
     void updateUserData(User user) throws SQLException;
     User getUserPublicData(int userId) throws SQLException;
+    int createContactUsMessage(Contact contact) throws SQLException;
 }

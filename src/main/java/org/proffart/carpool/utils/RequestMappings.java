@@ -30,5 +30,6 @@ public interface RequestMappings {
     public static final String getCarList = "/list";
 
 
-
+    public static final String contact = "contact";
+    public static final String createContact = "/create";
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="contact">
+    <typeAlias alias="contact" type="org.proffart.carpool.domain.Contact"/>
+
+    <resultMap id="result" class="contact">
+        <result property="id" column="id"/>
+        <result property="userId" column="userId"/>
+        <result property="createDate" column="createDate"/>
+        <result property="email" column="email"/>
+        <result property="message" column="message"/>
+    </resultMap>
+
+    <insert id="insert" parameterClass="contact">
+        INSERT INTO contact ( userId, createDate, email, message)
+        VALUES ( #userId#, NOW(), #email#, #message# )
+
+        <selectKey resultClass="int" keyProperty="id">
+            SELECT last_insert_id() AS id
+        </selectKey>
+    </insert>
+
+</sqlMap>
