@@ -143,7 +143,7 @@
          FROM route
         LEFT JOIN `user` ON (route.userId  = `user`.id)
         LEFT JOIN car    ON (route.carId = car.id)
-        WHERE IF(route.periodic != 1, DATE(route.startDate) >= DATE(#startDate#), TRUE )
+        WHERE IF(route.periodic = 1, route.$dayname$ = 1, DATE(route.startDate) >= DATE(#startDate#) )
         ORDER BY
         IF(#startLatitude# > 0 AND #startLongitude# >0, Haversine(#startLatitude#, route.startLatitude, #startLongitude#, route.startLongitude), 1),
         IF(#endLatitude# > 0 AND #endLongitude# >0, Haversine(#endLatitude#, route.endLatitude, #endLongitude#, route.endLongitude), 1),
