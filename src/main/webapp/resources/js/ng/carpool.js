@@ -262,6 +262,9 @@
 			})
 			.success(function(cars) {
 				$rootScope.cars = cars;
+				if(!$rootScope.cars.length) {
+					$scope.addNewCar();
+				}
 			})
 			.error(function(){
 				toastr.error('Something is wrong', 'Error');
