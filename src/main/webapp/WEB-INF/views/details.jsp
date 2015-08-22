@@ -50,7 +50,7 @@
         <dt>Car info</dt>
         <dd>{{driver.r.carModel}} {{driver.r.carNumber}}</dd>
 
-        <dt ng-show="driver.r.carDescription">Car description</dt>
+        <dt ng-show="driver.r.carDescription">Description</dt>
         <dd ng-show="driver.r.carDescription">{{driver.r.carDescription}}</dd>
 
       </dl>
