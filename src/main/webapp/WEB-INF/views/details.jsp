@@ -43,6 +43,18 @@
         <dd>{{driver.r.startTime}}</dd>
 
       </dl>
+
+
+      <dl class="dl-horizontal">
+
+        <dt>Car info</dt>
+        <dd>{{driver.r.carModel}} {{driver.r.carNumber}}</dd>
+
+        <dt ng-show="driver.r.carDescription">Car description</dt>
+        <dd ng-show="driver.r.carDescription">{{driver.r.carDescription}}</dd>
+
+      </dl>
+
     </div>
   </div>
 
