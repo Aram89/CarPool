@@ -62,7 +62,7 @@
 
 
 <!-- Intro Section -->
-<section class="intro-section section">
+<section id="intro" class="intro-section section">
     <img src="/resources/img/yerevan-night.jpg" class="img-responsive hidden-lg mobile-size">
     <div id="video">
         <video width="100%" autoplay loop muted class="hidden-xs">
@@ -242,7 +242,7 @@
 
                 <div class="form-group">
                     <label for="contactContent">Message * </label>
-                    <textarea ng-model="contact.content" class="form-control" id="contactContent" name="contactContent" rows="7" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
+                    <textarea ng-model="contact.message" class="form-control" id="contactContent" name="contactContent" rows="7" placeholder="Message" ng-minlength="13" ng-maxlength="420" required></textarea>
                     <p class="help-block" ng-show="contactForm.contactContent.$error.required && !contactForm.contactContent.$pristine">
                         Please enter message
                     </p>
