@@ -39,7 +39,7 @@
         <dt>Date</dt>
         <dd>{{driver.r.date}}</dd>
 
-        <dt>Start Tiem</dt>
+        <dt>Start Time</dt>
         <dd>{{driver.r.startTime}}</dd>
 
       </dl>
