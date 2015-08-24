@@ -10,6 +10,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+          <img alt="beta" src="/resources/images/beta.png" style="width: 52px; margin-top: 4px;"/>
         <a class="page-scroll" href="<c:url value="/"/>#intro" >
           <img alt="join as" src="/resources/img/logo-main.png" style="width: 52px; margin-top: 4px;"/>
         </a>
