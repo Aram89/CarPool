@@ -3,8 +3,11 @@
 <div class="row">
   <div class="col-xs-6 col-md-3"><strong> Model </strong></div>
   <div class="col-xs-6 col-md-3"><strong> License Number </strong></div>
-  <div class="col-xs-10 col-md-4"><strong> Description </strong></div>
-  <div class="col-xs-2 col-md-2">
+  <div class="row">
+    <div class="col-xs-6 col-md-4"><strong> Description </strong></div>
+    <div class="col-xs-2 col-md-2">
+  </div>
+
     <button type="button" class="btn btn-success btn-sm" ng-click="addNewCar()"
             data-toggle="tooltip" title="Add new car">
       <i class="fa fa-plus"></i>
@@ -21,7 +24,7 @@
     <span ng-hide="car.editable" ng-bind="car.number"></span>
     <input type="text" class="form-control" ng-model="car.number" ng-show="car.editable">
   </div>
-  <div class="col-xs-10 col-md-4">
+  <div class="col-xs-12 col-md-4">
     <span ng-hide="car.editable" ng-bind="car.description"></span>
     <textarea ng-model="car.description" class="form-control" rows="1" ng-show="car.editable"></textarea>
   </div>

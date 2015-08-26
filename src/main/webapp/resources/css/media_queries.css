@@ -17,6 +17,18 @@
     .hr {
         margin-bottom: 10px;
     }
+    .find-div{
+        margin-top: -60px;
+    }
+    .about-section{
+        margin-top: -60px;
+    }
+    .popup-map{
+        left: 0px !important;
+    }
+    .mobile-icons{
+        margin-bottom: 5px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -33,10 +45,25 @@
         font-size: 10px !important;
     }
     .footer-title {
-        font-size: 10px;
+        font-size: 9px;
     }
     .mobile-size{
         height:250px;
     }
+    .find-div{
+        margin-top: -60px;
+    }
 
+    .about-section{
+        margin-top: -60px;
+    }
+    .mobile-picker{
+        margin-left: -44px;
+    }
+    .popup-map{
+        left: 0px !important;
+    }
+    .mobile-icons{
+        margin-bottom: 5px;
+    }
 }

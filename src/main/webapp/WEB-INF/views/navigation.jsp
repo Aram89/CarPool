@@ -4,13 +4,13 @@
   <div class="container">
     <div class="welcome-page">
       <div class="navbar-header page-scroll">
+          <img alt="beta" src="/resources/images/beta.png" style="width: 50px; margin-top: 0px;"/>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-          <img alt="beta" src="/resources/images/beta.png" style="width: 52px; margin-top: 4px;"/>
         <a class="page-scroll" href="<c:url value="/"/>#intro" >
           <img alt="join as" src="/resources/img/logo-main.png" style="width: 52px; margin-top: 4px;"/>
         </a>

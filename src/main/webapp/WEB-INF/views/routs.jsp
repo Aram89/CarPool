@@ -61,7 +61,8 @@
 				<label>Start Day</label>
 				<datepicker
 						id="startDate"
-						ng-model="route.startDate">
+						ng-model="route.startDate"
+						class="mobile-picker">
 				</datepicker>
 			</div>
 

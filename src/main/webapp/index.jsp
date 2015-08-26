@@ -282,7 +282,7 @@
     <div class="col-xs-12 col-lg-12 no-padding footer">
         <div class="container">
             <div class="col-lg-12 footer-icon">
-                <div class="col-lg-3">
+                <div class="col-lg-3 mobile-icons">
                     <div class="text-center  icon-footer  twitter center-block">
                         <a href="" class="fa-icon-footer">
                             <i class="fa fa-twitter  fa-3x"></i>
@@ -290,7 +290,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 mobile-icons">
                     <div class="text-center icon-footer facebook center-block">
                         <a href="https://www.facebook.com/Armeniacarpool?ref=aymt_homepage_panel" target="_blank" class="fa-icon-footer">
                             <i class="fa fa-facebook fa-3x"></i>
@@ -298,7 +298,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 mobile-icons">
                     <div class="text-center  icon-footer google center-block">
                         <a href="" class="fa-icon-footer">
                             <i class="fa fa-google-plus fa-3x"></i>
@@ -306,7 +306,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 mobile-icons">
                     <div class="text-center  icon-footer instagram center-block">
                         <a href="" class="fa-icon-footer">
                             <i class="fa fa-instagram fa-3x"></i>
